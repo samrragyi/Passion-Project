@@ -671,7 +671,7 @@ yue: { name:"廣東話", tag:"zh-HK", dir:"ltr",
     homeLabel:"Home",
     beforeYouBegin:"溫馨提示", continueButton:"I understand — continue",
     instructionsTitle:"How this works",
-    formalDisclaimer:"呢個工具只係供健康教育同見醫生前準備之用，並唔係診斷工具或醫療設備。所有醫療決定都應該喺諮詢合資格醫生之後作出。",
+    formalDisclaimer:"呢個工具只係用嚟做健康教育同埋幫你喺睇醫生之前做好準備，唔係診斷工具，亦唔可以代替專業嘅醫療意見。任何同你健康有關嘅決定，都一定要經過合資格醫生嘅指導先至可以做。",
     consentLabel:"我明",
     finalNoticeTitle:"Notice for Patient and Clinician",
     finalNoticeFrameworkLabel:"Clinical Framework:", finalNoticeFramework:"Generated via an open-source, patient-led tracking checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
@@ -1291,7 +1291,7 @@ let answers = new Array(15).fill(null);
 let isSpeaking = false, isPaused = false;
 
 /* ---------- LITE BUILD: only these languages show on the home screen ---------- */
-const LITE_LANGS = ["en", "hi", "yue"];
+const LITE_LANGS = ["yue", "en", "hi"];
 
 /* ---------- language picker page (home screen) ---------- */
 const languageGrid = document.getElementById("languageGrid");
