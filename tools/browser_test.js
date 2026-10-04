@@ -56,7 +56,8 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   const mine = tiles.find(t => t.g === meta.gloss && t.n === meta.name);
   ok(!!mine && mine.ok, `home tile shows "${meta.name}" / "${meta.gloss}" with its flag loaded`);
   ok(tiles.length === (await p.evaluate(() => window.LANGUAGES.length)) && tiles.every(t => t.ok), `all ${tiles.length} tiles have working flags`);
-  const glosses = tiles.map(t => t.g); ok(JSON.stringify(glosses) === JSON.stringify([...glosses].sort((a, b) => a.localeCompare(b, 'en'))), 'tiles are sorted A-Z by English name');
+  const expectOrder = await p.evaluate(() => window.LANGUAGES.slice().sort((a, b) => (b.code === 'en') - (a.code === 'en') || (a.group || a.gloss).localeCompare(b.group || b.gloss, 'en') || a.gloss.localeCompare(b.gloss, 'en')).map(l => l.gloss));
+  ok(JSON.stringify(tiles.map(t => t.g)) === JSON.stringify(expectOrder), 'tiles: English first, then countries A-Z, then English name A-Z inside each country');
   await p.screenshot({ path: `${SHOTS}/${code}_1_home.png` });
 
   // ------------------------------------------------------------ language loads, page 2

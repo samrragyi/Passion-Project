@@ -12,7 +12,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def p(*a): return os.path.join(ROOT, *a)
 
 manifest = open(p("languages.js"), encoding="utf-8").read()
-langs = re.findall(r'\{\s*code:\s*"([^"]+)"\s*,\s*name:\s*"([^"]+)"\s*,\s*gloss:\s*"([^"]+)"\s*,\s*audio:\s*(true|false)', manifest)
+langs = [(a, b, c, e) for a, b, c, d, e in re.findall(r'\{\s*code:\s*"([^"]+)"\s*,\s*name:\s*"([^"]+)"\s*,\s*gloss:\s*"([^"]+)"\s*,(?:\s*group:\s*"([^"]*)"\s*,)?\s*audio:\s*(true|false)', manifest)]
+n_groups = len(re.findall(r'group:\s*"[^"]+"', manifest))
+if n_groups != len(langs): print(f"WARNING {len(langs) - n_groups} language(s) in languages.js have no group (country): they sort by English name only")
 if not langs:
     sys.exit("Could not read any languages from languages.js")
 

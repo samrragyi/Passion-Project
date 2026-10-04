@@ -188,12 +188,15 @@ def ensure_flag(repo, code, settings):
 
 def update_languages_js(repo, code, name, gloss, has_audio):
     p = os.path.join(repo, "languages.js"); s = open(p, encoding="utf-8").read()
-    pat = re.compile(r"\{\s*code:\s*\"([^\"]+)\"\s*,\s*name:\s*\"([^\"]*)\"\s*,\s*gloss:\s*\"([^\"]*)\"\s*,\s*audio:\s*(true|false)\s*\}")
+    pat = re.compile(r"\{\s*code:\s*\"([^\"]+)\"\s*,\s*name:\s*\"([^\"]*)\"\s*,\s*gloss:\s*\"([^\"]*)\"\s*,(?:\s*group:\s*\"([^\"]*)\"\s*,)?\s*audio:\s*(true|false)\s*\}")
     block = re.search(r"window\.LANGUAGES\s*=\s*\[(.*?)\];", s, re.S)
-    entries = [(m[1], m[2], m[3], m[4] == "true") for m in pat.finditer(block.group(1))]
-    entries = [e for e in entries if e[0] != code] + [(code, name, gloss, has_audio)]
+    entries = [(m[1], m[2], m[3], m[4], m[5] == "true") for m in pat.finditer(block.group(1))]
+    reg = {l["code"]: l for l in S.registry()["languages"]}.get(code) or {}
+    group = reg.get("group")
+    if not group: warn(f"'{code}' has no 'group' (country) in tools/languages_registry.json: its tile will sort by its English name only"); group = ""
+    entries = [e for e in entries if e[0] != code] + [(code, name, gloss, group, has_audio)]
     J = lambda x: json.dumps(x, ensure_ascii=False)
-    new = "window.LANGUAGES = [\n" + ",\n".join(f"  {{ code: {J(c)}, name: {J(n)}, gloss: {J(g)}, audio: {'true' if a else 'false'} }}" for c, n, g, a in entries) + "\n];"
+    new = "window.LANGUAGES = [\n" + ",\n".join(f"  {{ code: {J(c)}, name: {J(n)}, gloss: {J(g)}, " + (f"group: {J(gr)}, " if gr else "") + f"audio: {'true' if a else 'false'} }}" for c, n, g, gr, a in entries) + "\n];"
     s = s[:block.start()] + new + s[block.end():]
     old = re.search(r'window\.ASSET_VERSION\s*=\s*"([^"]*)"', s).group(1); today = datetime.date.today().isoformat()
     m = re.match(r"^(\d{4}-\d{2}-\d{2})-(\d+)$", old); date, n = (m[1], int(m[2])) if m else (today, 0)

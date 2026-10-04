@@ -53,7 +53,7 @@ QUESTION_IDS = [f"q{i:02d}" for i in range(1, N_QUESTIONS + 1)]
 SETTINGS = [  # (id, label, notes)
  ("code", "Language code", "Short lowercase code, e.g. fr. Used in every file name."),
  ("name", "Name in its own language", "Shown big on the language tile, e.g. Français"),
- ("gloss", "Name in English", "Shown small on the tile; tiles are sorted A-Z by this"),
+ ("gloss", "Name in English", "Shown small on the tile"),
  ("tag", "Voice / locale tag", "e.g. fr-FR. Chooses the phone's built-in voice if a recording is missing"),
  ("dir", "Text direction", "ltr = left to right, rtl = right to left (Arabic, Persian, Urdu, Hebrew)"),
  ("flag", "Flag (country code)", "Two-letter country code of the flag to show, e.g. fr"),

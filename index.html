@@ -166,16 +166,19 @@
   }
   .page-sub{ text-align:center; color:var(--ink-soft); font-size:0.95rem; margin:0 0 28px; }
 
+  /* One column, one row per language: flag + the language's own name, English name on the far side.
+     Tiles come from languages.js in country order; the first tile of each country gets a little extra space above it
+     (.group-start), so e.g. all of India's languages read as one block. Any number of languages just flows down the page. */
   .language-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+    display:grid; grid-template-columns:1fr; gap:8px;
   }
-  /* tiles are generated from languages.js, so any number of languages just flows down the page */
   .lang-card{
     position:relative;
-    display:flex; flex-direction:column; align-items:center; gap:4px;
+    display:flex; flex-direction:row; align-items:center; gap:14px;
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
-    padding:18px 10px; cursor:pointer; transition:border-color .15s ease, transform .1s ease, background .15s ease;
+    padding:10px 16px; cursor:pointer; transition:border-color .15s ease, transform .1s ease, background .15s ease;
   }
+  .lang-card.group-start{ margin-top:12px; }
   .lang-card:hover{ border-color:var(--sage); background:var(--sage-pale); }
   .lang-card:active{ transform:translateY(1px); }
   .lang-card:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
@@ -195,12 +198,18 @@
   .lang-card.selected .lang-check{ opacity:1; transform:scale(1); }
   .lang-flag{ display:flex; align-items:center; justify-content:center; }
   .lang-flag img{
-    width:44px; height:33px; display:block; border-radius:4px;
+    display:block; border-radius:4px;
     box-shadow:0 0 0 1px rgba(36,38,31,0.15);
   }
   .lang-error{ color:#8F2B2B; background:#FBEAEA; border:1px solid #E3B4B4; border-radius:10px; padding:10px 12px; margin-top:12px; font-size:0.9rem; }
-  .lang-native{ font-family:var(--serif); color:var(--forest); font-size:1.02rem; }
-  .lang-gloss{ font-size:0.76rem; color:var(--ink-soft); }
+  .lang-native{ font-family:var(--serif); color:var(--forest); font-size:1.1rem; flex:1; text-align:start; }
+  .lang-gloss{ font-size:0.8rem; color:var(--ink-soft); text-align:end; }
+  .lang-flag img{ width:36px; height:27px; }
+  /* first screen: a slimmer header so the languages start higher up the page (many readers cannot read this English) */
+  #screen-language .hero-art{ max-width:110px; margin:0 auto 6px; }
+  #screen-language h1.appTitle{ font-size:clamp(1.3rem,5vw,1.7rem); margin-bottom:6px; }
+  #screen-language .appSubtitle{ font-size:.95rem; margin-bottom:12px; }
+  #screen-language .page-title{ font-size:1.25rem; margin:14px 0 10px; }
 
   .formal-disclaimer{
     background:#FBF3E7; border:1px solid #E3C79A; border-radius:var(--radius-lg);
@@ -239,10 +248,15 @@
   /* ---------- question screen ---------- */
   .q-meta{ margin-bottom:6px; }
   .q-section-row{ display:flex; align-items:center; gap:8px; }
+  /* Section header: the biggest text on the question screen (larger than the question titles, which are 1.2-1.4rem),
+     so the reader can tell at a glance which section she is in. Small "Section 1 / 6" label above, section name large below.
+     The three spans still add up to the exact text "prefix · name" (the test checks that); the " · " is hidden visually. */
   .q-section{
-    font-size:0.8rem; color:var(--berry); font-weight:700;
-    text-transform:uppercase; letter-spacing:0.04em;
+    display:flex; flex-direction:column; gap:2px; color:var(--berry); font-weight:700;
   }
+  .q-section-num{ font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em; }
+  .q-section-sep{ display:none; }
+  .q-section-name{ font-size:clamp(1.5rem,5.2vw,1.8rem); line-height:1.2; }
   .q-block{ margin-bottom:6px; scroll-margin-top:84px; }
   .q-subcount{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 4px; }
   .q-divider{ border:none; border-top:1px solid var(--line); margin:22px 0; }
@@ -511,7 +525,7 @@
     <ul class="legal-list">
       <li><strong>Educational Symptom Tracker Only:</strong> This tool is an educational symptom tracking aid created to help you prepare for a consultation with your NHS General Practitioner (GP). It does not provide medical advice, diagnosis, or treatment recommendations.</li>
       <li><strong>Clinical Guidance:</strong> Questioning is framed around the validated Greene Climacteric Scale (GCS) and aligns with National Institute for Health and Care Excellence (NICE NG23) guidelines on perimenopause and menopause assessment.</li>
-      <li><strong>100% Data Privacy (GDPR Compliant):</strong> This tool does not collect, store, transmit, or share any personal identifiable data or health records. All inputs remain strictly on your device during this session and are deleted as soon as you close your browser.</li>
+      <li><strong>100% Data Privacy:</strong> This tool does not collect, store, transmit, or share any personal identifiable data or health records. All inputs remain strictly on your device during this session and are deleted as soon as you close your browser.</li>
       <li><strong>Medical Emergencies:</strong> If you are experiencing severe pain, unusual bleeding, severe sudden chest pain, or mental health crisis, please contact NHS 111, your local GP surgery, or call 999 in an emergency.</li>
     </ul>
     </div>
@@ -665,16 +679,21 @@ let answers = new Array(15).fill(null);
 let isSpeaking = false, isPaused = false;
 
 /* ---------- language picker page (home screen) ----------
-   Built from window.LANGUAGES (languages.js), sorted A-Z by English name. */
+   Built from window.LANGUAGES (languages.js). One column. English is pinned first, then countries (group) A-Z, then English name A-Z inside a country,
+   so e.g. every language of India sits together. A language with no group sorts under its own English name. */
 const languageGrid = document.getElementById("languageGrid");
 const langError = document.getElementById("langError");
 function buildLanguagePicker(){
-  const langs = (window.LANGUAGES || []).slice().sort((a,b)=> a.gloss.localeCompare(b.gloss, "en"));
+  const langs = (window.LANGUAGES || []).slice().sort((a,b)=> (b.code==="en") - (a.code==="en") || (a.group||a.gloss).localeCompare(b.group||b.gloss, "en") || a.gloss.localeCompare(b.gloss, "en"));
+  let prevGroup = null;
   langs.forEach(l=>{
     const card = document.createElement("button");
     card.type = "button";
     card.className = "lang-card";
-    card.innerHTML = `<span class="lang-flag"><img src="flags/${l.code}.svg${ASSET_V}" alt="" width="44" height="33"></span>
+    const grp = l.group || l.gloss;
+    if (prevGroup !== null && grp !== prevGroup) card.classList.add("group-start");
+    prevGroup = grp;
+    card.innerHTML = `<span class="lang-flag"><img src="flags/${l.code}.svg${ASSET_V}" alt="" width="36" height="27"></span>
       <span class="lang-native"></span>
       <span class="lang-gloss"></span>
       <span class="lang-check" aria-hidden="true">
@@ -789,8 +808,11 @@ function renderSectionPage(secPageIdx){
   const tr = T[currentLang];
   const qIdxs = SECTION_MAP[secPageIdx];
 
-  document.getElementById("qSection").textContent =
-    tr.ui.sectionPrefix.replace("{n}", secPageIdx+1) + " · " + tr.sections[secPageIdx];
+  const qSec = document.getElementById("qSection");
+  qSec.textContent = "";
+  [["q-section-num", tr.ui.sectionPrefix.replace("{n}", secPageIdx+1)], ["q-section-sep", " · "], ["q-section-name", tr.sections[secPageIdx]]].forEach(([cls, txt])=>{
+    const sp = document.createElement("span"); sp.className = cls; sp.textContent = txt; qSec.appendChild(sp);
+  });
   document.getElementById("sectionVoiceBtn").setAttribute("data-voice-key", "s" + secPageIdx);
 
   const list = document.getElementById("questionList");

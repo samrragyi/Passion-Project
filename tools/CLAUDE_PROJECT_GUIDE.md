@@ -41,7 +41,7 @@ The owner's first message looks like: "New language: ko. Attached: filled templa
    more only if something fails or it is a first (right-to-left, a new script). The test browser may lack fonts for some scripts: judge looks on a phone.
 4. **Deliver:** present only `<code>-update.zip`, then give the owner the steps in section 6 and the list of warnings needing a human decision.
 5. Corrections later: the owner sends the corrected spreadsheet; rerun step 2. Never hand-edit `lang/*.js`.
-Not in the registry? Add an entry to `languages_registry.json`, run `python3 tools/fetch_flags.py`, then `python3 tools/make_template.py --code <code>`.
+Not in the registry? Add an entry to `languages_registry.json` (including its `group`, see section 7), run `python3 tools/fetch_flags.py`, then `python3 tools/make_template.py --code <code>`.
 If the English text of the app ever changes: regenerate templates (`make_template.py --all`); the builder refuses a template whose English has drifted.
 
 ## 4a. Standard wording (the 20 "common" fields)
@@ -63,7 +63,7 @@ The Audio sheet shows the exact script for each, built from the translation. The
 
 ## 6. What the owner does with the zip (give these steps every time, adapted)
 1. Unzip `<code>-update.zip`.
-2. On the repo page on GitHub: **Add file, Upload files**; drag in the `audio`, `flags` and `lang` folders and `languages.js`. Commit with a note like "Add Korean". (The web uploader takes at most 100 files per batch; a language is about 25.)
+2. On the repo page on GitHub: **Add file, Upload files**; open the unzipped folder and drag in what is INSIDE it, never the folder itself (once a whole `site-update-all` folder was uploaded by mistake and left a public duplicate of the site that had to be deleted by hand; the web uploader can add and overwrite files but never delete). Drag in the `audio`, `flags` and `lang` folders and `languages.js`. Commit with a note like "Add Korean". (The web uploader takes at most 100 files per batch; a language is about 25.)
 3. Wait about two minutes, then close and reopen the site on a phone (phones cache).
 4. Test on the phone: the tile (flag, native name, English name); the text; the page 2 speaker (should sound like a recording, not a robot); one question per section; the results page.
    **Listen to make sure each recording says the question shown on screen.** Claude cannot hear audio.
@@ -85,8 +85,10 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - **Build languages one at a time.** Each package replaces `languages.js` as a whole file, and a chat only knows the repo as it was when the chat started.
   So start a language's build chat only AFTER the previous language is committed to GitHub. Translators and recorders can work on many languages in parallel;
   only the build-and-upload step is one at a time. If two were built in parallel, merge by adding the missing language's line to `languages.js` by hand.
+- **Home-page tile order:** English is pinned first (code `en`, hard-coded in the sort in `index.html`); after it, tiles are grouped by country A-Z, then by English name A-Z inside a country (all of India's languages together; China: Cantonese, then Mandarin). The country is the `group` field of each language in `languages_registry.json`; the builder copies it into `languages.js` (`{ code, name, gloss, group, audio }`) and warns if it is missing (the tile then sorts by its English name alone). Every new registry entry needs a `group`. The home page is ONE column (a row per language: flag, own name, English name), and the first tile of each country has extra space above it (class `group-start`, set in `buildLanguagePicker`), so a country's languages read as a block. A two-column grid was tried and rejected: it split groups across rows. Groups are only used for ordering and spacing; their names are not shown. Bengali (Bangladesh) is its own group (Bangladesh), apart from India's Bengali.
 - Standard wording is a draft until a native speaker has seen it. Never describe it to the owner as translated or reviewed. The consent tick-box and privacy badge are the two to push for review.
 - The browser test's home-page check is wiring only (the page reads the pack); it cannot tell a translation from an English fallback. The builder's "identical to English" warning does that.
+- **Results-page notice strings** (`ui.finalNotice*`, e.g. the data-confidentiality note) are NOT in the translator template. New languages inherit them in English from `lang/en.js`; hi has its own translation. To change that wording, edit `en.js`, then every live pack with an exact-text replace that asserts the match (one line each), then bump `ASSET_VERSION`. When removing a word, search every script too (hi had it as "जीडीपीआर"; a search for the English word misses it).
 - Keep tool output short. Never print base64 or whole files. Re-use the scripts; do not rewrite them, and do not re-verify what they already check.
 
 ## 8. Open items (owner decisions: raise, don't fix unasked)
@@ -101,9 +103,9 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - Hong Kong flag (Cantonese) is a simplified drawing; the official artwork is available via `fetch_flags.py --force` if wanted.
 
 ## 9. Language registry (canonical file: `tools/languages_registry.json`)
-Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi).
+Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi), zh (Mandarin, Simplified).
 Truth check: what is live is whatever `languages.js` in the cloned repo lists; if this section and `languages.js` disagree, trust `languages.js` and tell the owner.
-Planned (15): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
-zh Mandarin (Simplified) | fr French | de German | ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
+Planned (14): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
+fr French | de German | ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
 ro Romanian | es Spanish (Spain) | tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
 The owner has confirmed these choices (Simplified, Spain, Gurmukhi, Philippines flag, the Bangladesh tile): do not ask again.

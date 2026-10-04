@@ -60,7 +60,7 @@ window.registerLanguage({
     "finalNoticeClinicianLabel": "Clinician Notice:",
     "finalNoticeClinician": "This document is a patient-generated symptom log (similar to a digital journal) mapped against standard Greene Climacteric Scale domains to support an efficient primary care consultation in line with NICE NG23 diagnostic principles.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",
-    "finalNoticeConfidentiality": "No data from this session has been saved to any server or external database, in compliance with UK GDPR principles. Once this tab or PDF export is closed, all entered information is permanently erased."
+    "finalNoticeConfidentiality": "No data from this session has been saved to any server or external database. Once this tab or PDF export is closed, all entered information is permanently erased."
   },
   "scale": [
     "전혀 없음",
