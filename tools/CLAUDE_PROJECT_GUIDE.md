@@ -26,9 +26,13 @@ Claude hands over a zip and the owner uploads it, so the owner stays in control.
 Never put base64 audio inside the HTML (that design hit a 16 MB wall at three languages).
 
 ## 4. The routine for ONE new language (a fresh chat per language)
-The owner's first message looks like: "New language: ko. Attached: filled template + audio zip." The registry already knows tag, direction and flag; don't ask.
+The owner's first message looks like: "New language: ko. Attached: filled template + audio (0001-0022.mp3, or a zip of them)." The registry already knows tag, direction and flag; don't ask.
 1. Set up (section 2). Uploaded files are in `/mnt/user-data/uploads/`.
-2. **Build:** `python3 tools/build_language.py --template <filled.xlsx> --audio <zip, or the uploads folder> --out /mnt/user-data/outputs`
+2. **Stage the audio** (recordings come from Narakeet as `0001.mp3`..`0022.mp3`, see section 5; unzip first if sent as a zip):
+   `python3 tools/stage_numbered_audio.py --code <code> --src /mnt/user-data/uploads --dest /tmp/audio_<code>`
+   It stops unless exactly 0001-0022 are present (no gaps, extras or duplicates) and copies them to `<code>_intro / _s1.._s6 / _q01.._q15.mp3`. Originals untouched.
+   Audio that already carries the `<code>_` prefix skips this step.
+   **Build:** `python3 tools/build_language.py --template <filled.xlsx> --audio /tmp/audio_<code> --out /mnt/user-data/outputs`
    - It writes the pack, converts audio to MP3 mono 96 kbps, rejects files carrying another language's prefix, checks clip lengths against text,
      updates `languages.js` (and bumps `ASSET_VERSION`), runs the checker and makes `<code>-update.zip`.
    - ERROR means no package was made: fix it with the owner. Every WARN needs a decision or an explanation to the owner in plain words.
@@ -41,11 +45,13 @@ Not in the registry? Add an entry to `languages_registry.json`, run `python3 too
 If the English text of the app ever changes: regenerate templates (`make_template.py --all`); the builder refuses a template whose English has drifted.
 
 ## 5. File names and audio (tell the owner and the recorder)
-- Exactly `<code>_intro.mp3`, `<code>_s1.mp3` to `<code>_s6.mp3`, `<code>_q01.mp3` to `<code>_q15.mp3`: 22 files. The code prefix removes all doubt about which language a file is.
-- `q01` is question 1: people count from 1, the code counts from 0, and the file names use the people numbers.
-- intro = all of page 2 read in order (welcome, 3 steps, colour legend, notice); section = the section name only; question = its short title, then the question.
-  The spreadsheet's Audio sheet shows the exact script, built from the translation.
-- Export MP3, mono, 96 kbps. Sending a zip beats 22 separate uploads.
+Recordings come from Narakeet and are numbered `0001.mp3` to `0022.mp3`. The numbering is FIXED, the same for every language, and matches column A of the spreadsheet's Audio sheet (older templates have no numbers there: the owner may have typed them in column D):
+- `0001` = intro (all of page 2 read in order: welcome, 3 steps, colour legend, notice)
+- `0002` to `0007` = section names s1 to s6 (the section name only)
+- `0008` to `0022` = questions q01 to q15 (short title, then the question). So question N is file `N + 7`, zero-padded: q01 = 0008, q15 = 0022.
+The Audio sheet shows the exact script for each, built from the translation. The stager (section 4, step 2) renames them to `<code>_intro`, `<code>_s1`..`_s6`, `<code>_q01`..`_q15` for the builder.
+- Export MP3, mono, 96 kbps. Send all 22 together (a zip is easiest). The stager refuses partial sets: if audio arrives in batches, wait for all 22, or build text-only meanwhile.
+- Numbered files carry no language name, so a stale `0001.mp3` from another chat would look valid. Defence: one fresh chat per language, and the stager's exact-22 check. If the count or numbers look wrong, stop and ask.
 
 ## 6. What the owner does with the zip (give these steps every time, adapted)
 1. Unzip `<code>-update.zip`.
@@ -61,7 +67,7 @@ If the English text of the app ever changes: regenerate templates (`make_templat
 - A change is not done until it is in the delivered package AND passed the real-browser test. "Syntax OK" is not a test. (An edit once sat unpublished while the old text stayed live.)
 - Files are checked by the code prefix and by length, not by guessing. The length check catches big mismatches (swapped long and short questions) but cannot catch a swap
   of two questions of similar length: only listening can. Say so to the owner.
-- Uploads from earlier chats can linger with identical names: that is why a fresh chat per language and the prefix rule exist. If a file has no prefix, stop and ask.
+- Uploads from earlier chats can linger with identical names: that is why a fresh chat per language, the prefix rule (for named files) and the exact 0001-0022 rule (for numbered files) exist. Any other unprefixed, unnumbered audio: stop and ask.
 - After tapping a language the app waits about 0.26 s before showing page 2. In tests, wait for `currentStep === 1`; never press Start early.
 - Phones cache files: `build_language.py` bumps `ASSET_VERSION`; if anything is replaced by hand, bump it too.
 - Language-specific CSS lives in `index.html`: Korean needs `word-break: keep-all` (already there under `:lang(ko)`). Japanese and Chinese wrap correctly by default.
@@ -79,11 +85,14 @@ If the English text of the app ever changes: regenerate templates (`make_templat
 - A footer disclaimer string exists in every pack but is never shown (the page reads it from the wrong place).
 - Cantonese answer-button labels were written by us and need a native speaker's check; the Korean ones were reviewed via the spreadsheet only if the owner confirms.
 - Q15 has two icon candidates; the bladder one is live, the other is `icons/q15-alt.webp`.
+- Bengali (bn): the whole 'Buttons & labels' sheet plus `consentLabel` came back blank (English fallback on Back/Next/Begin/answer buttons/consent); the owner decides whether to get it filled. No native review recorded: check the intro's wording for "menopause" and the section 6 title.
+- bn-bd (Bangladesh-flag tile) has no tested build procedure yet. Untested idea: reuse the bn spreadsheet and the same 22 recordings with code bn-bd (about 3 MB duplicate audio). Raise it with the owner, don't improvise.
 - Hong Kong flag (Cantonese) is a simplified drawing; the official artwork is available via `fetch_flags.py --force` if wanted.
 
 ## 9. Language registry (canonical file: `tools/languages_registry.json`)
-Live: en, hi, yue (Cantonese), ko.
-Planned (17): pa Punjabi (Gurmukhi, India flag) | bn Bengali (India flag) | bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
+Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag; built, to be confirmed live once committed).
+Truth check: what is live is whatever `languages.js` in the cloned repo lists; if this section and `languages.js` disagree, trust `languages.js` and tell the owner.
+Planned (16): pa Punjabi (Gurmukhi, India flag) | bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
 zh Mandarin (Simplified) | fr French | de German | ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
 ro Romanian | es Spanish (Spain) | tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
 The owner has confirmed these choices (Simplified, Spain, Gurmukhi, Philippines flag, the Bangladesh tile): do not ask again.

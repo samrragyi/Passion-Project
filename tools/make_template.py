@@ -86,17 +86,17 @@ def build(path, reg=None):
         style(qs.cell(r, 5), "in"); style(qs.cell(r, 6), "in"); fit_row(qs, r, [q["q"]], [58]); rows[qid] = ("Questions", r)
     greenify(qs, f"E2:F{len(S.QUESTION_IDS)+1}", "E2")
     # ---------------------------------------------------------------- Audio (what to record, file names)
-    au = wb.create_sheet("Audio"); header(au, ["File name (use exactly)", "What it is", "Script to read aloud (from your translation)", "Recorded? (Y/N)"], [26, 34, 90, 14])
+    au = wb.create_sheet("Audio"); header(au, ["Narakeet file name (use exactly)", "What it is", "Script to read aloud (from your translation)", "Recorded? (Y/N)"], [26, 34, 90, 14])
     code = "Settings!$C$2"
     def ref(fid): sh, r = rows[fid]; return f"'{sh}'!D{r}"
     intro_parts = [ref("introBody"), ref("how1"), ref("how2"), ref("how3")]
     intro_parts += [f'{ref(f"legend{i}_label")}&" — "&{ref(f"legend{i}_desc")}' for i in range(1, 5)]
     intro_parts += [ref("beforeYouBegin"), ref("formalDisclaimer")]
-    audio_rows = [(f'={code}&"_intro.mp3"', "Page 2: read ALL of it, one line after the other (about 1-2 minutes)", "=" + '&CHAR(10)&'.join(intro_parts))]
+    audio_rows = [("0001.mp3", "Page 2: read ALL of it, one line after the other (about 1-2 minutes)", "=" + '&CHAR(10)&'.join(intro_parts))]
     for i in range(N := S.N_SECTIONS):
-        audio_rows.append((f'={code}&"_s{i+1}.mp3"', f"Section {i+1} heading (just the section name)", f"=Sections!D{i+2}"))
+        audio_rows.append((f"{2+i:04d}.mp3", f"Section {i+1} heading (just the section name)", f"=Sections!D{i+2}"))
     for i in range(S.N_QUESTIONS):
-        audio_rows.append((f'={code}&"_q{i+1:02d}.mp3"', f"Question {i+1}: the title, then the question", f'=Questions!E{i+2}&". "&Questions!F{i+2}'))
+        audio_rows.append((f"{8+i:04d}.mp3", f"Question {i+1}: the title, then the question", f'=Questions!E{i+2}&". "&Questions!F{i+2}'))
     for r, (f, what, script) in enumerate(audio_rows, 2):
         au.cell(r, 1, f); au.cell(r, 2, what); au.cell(r, 3, script); au.cell(r, 4, None)
         style(au.cell(r, 1), "en"); style(au.cell(r, 2), "en"); style(au.cell(r, 3), "en"); style(au.cell(r, 4), "in")
@@ -119,10 +119,10 @@ def build(path, reg=None):
      ("7.  Medical wording should be read by a native speaker before this is sent back. Put their name in 'Reviewed by'.", None),
      ("", None),
      ("FOR THE PERSON RECORDING", "h"),
-     ("1.  The 'Audio' sheet lists all 22 recordings, the exact file name for each, and the exact script to read (it fills in from the translation).", None),
-     ("2.  Save every file with EXACTLY that name, e.g. ko_q01.mp3. The language code in front is what stops different languages being mixed up.", None),
+     ("1.  The 'Audio' sheet lists all 22 recordings, the exact file name for each (0001.mp3 to 0022.mp3, as Narakeet numbers them), and the exact script to read (it fills in from the translation).", None),
+     ("2.  Keep the numbers exactly as listed: 0001 is the page 2 intro, 0002-0007 the section names, 0008-0022 the 15 questions. The order is the same for every language, so never renumber or skip one.", None),
      ("3.  Export settings: MP3, mono (1 channel), 96 kbps. Smaller files load faster on phones.", None),
-     ("4.  Put all 22 files in one folder and zip it as <code>_audio.zip. Audio can arrive after the text; send the zip again when you have more.", None),
+     ("4.  Put all 22 files in one folder and zip it. Send all 22 together: a partial set cannot be used. Audio can arrive after the text.", None),
      ("", None),
      ("PROGRESS (updates as you type)", "h"),
      (f'="Page 2:  "&COUNTA(\'Page 2\'!D2:D{n_p2+1})&" of {n_p2}"', None),
