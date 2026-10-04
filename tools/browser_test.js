@@ -66,6 +66,9 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   ok(page2.lang === pk.tag && page2.dir === pk.dir, `page lang="${page2.lang}" dir="${page2.dir}" match the pack`);
   ok(page2.intro === pk.ui.introBody && page2.steps.join('|') === pk.howItWorks.join('|') && page2.legend === 4 && page2.head === pk.ui.beforeYouBegin && page2.notice === pk.ui.formalDisclaimer && page2.consent === pk.ui.consentLabel, 'page 2 shows the pack text (intro, 3 steps, 4 legend rows, notice, checkbox)');
   ok(page2.startDisabled && page2.start === pk.ui.startButton, 'Start button is locked until the checkbox is ticked');
+  const homeTxt = await p.evaluate(() => { const g = k => (document.querySelector(`[data-i18n="${k}"]`) || {}).textContent; return { appTitle: g('appTitle'), appSubtitle: g('appSubtitle'), privacyBadge: g('privacyBadge'), languagePageTitle: g('languagePageTitle') }; });
+  const homeBad = Object.keys(homeTxt).filter(k => homeTxt[k] !== pk.ui[k]);
+  ok(homeBad.length === 0, 'home-page headline, subtitle, privacy badge and language prompt are read from the pack (wiring only: untranslated text is caught by the builder identical-to-English warning)' + (homeBad.length ? ': ' + homeBad.join(', ') : ''));
   await wait(600); await p.screenshot({ path: `${SHOTS}/${code}_2_page2.png`, fullPage: true });
   const o2 = [['page 2', await overflow(p)]];
 

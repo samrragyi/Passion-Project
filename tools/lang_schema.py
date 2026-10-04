@@ -77,3 +77,23 @@ def set_path(pack, path, value):
 
 def registry():
     return json.load(open(os.path.join(ROOT, "tools", "languages_registry.json"), encoding="utf-8"))
+
+
+# ---------------------------------------------------------------- standard wording (tools/common_strings.json)
+def load_common():
+    """The master list of the 20 standard fields: {'fields', 'sensitive', 'supplied', 'languages'}. See common_strings.json."""
+    return json.load(open(os.path.join(ROOT, "tools", "common_strings.json"), encoding="utf-8"))
+
+def common_for(code):
+    """{field id: text} for one language ({} if the master has nothing for it)."""
+    return load_common()["languages"].get(code, {})
+
+def bump_asset_version(repo):
+    """Same cache-version bump build_language.py does; returns (old, new)."""
+    import datetime
+    p = os.path.join(repo, "languages.js"); s = open(p, encoding="utf-8").read()
+    old = re.search(r'window\.ASSET_VERSION\s*=\s*"([^"]*)"', s).group(1); today = datetime.date.today().isoformat()
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})-(\d+)$", old); date, n = (m[1], int(m[2])) if m else (today, 0)
+    if date < today: date, n = today, 0
+    new = f"{date}-{n+1}"; s = re.sub(r'(window\.ASSET_VERSION\s*=\s*)"[^"]*"', rf'\g<1>"{new}"', s)
+    open(p, "w", encoding="utf-8").write(s); return old, new

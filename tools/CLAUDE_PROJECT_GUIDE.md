@@ -22,7 +22,7 @@ Claude hands over a zip and the owner uploads it, so the owner stays in control.
 ## 3. Repo map
 `index.html` (the app: rarely changed) | `languages.js` (language list + `ASSET_VERSION` cache version) | `lang/<code>.js` (text) |
 `flags/<code>.svg` | `audio/<code>/` (intro, s1..s6, q01..q15 .mp3) | `icons/` (15 shared illustrations) | `tools/` (everything below) |
-`README.md`. `tools/languages_registry.json` lists every planned language with code, name, voice tag, direction, flag and status.
+`README.md`. `tools/languages_registry.json` lists every planned language with code, name, voice tag, direction, flag and status. `tools/common_strings.json` is the master list of standard wording (see section 4a).
 Never put base64 audio inside the HTML (that design hit a 16 MB wall at three languages).
 
 ## 4. The routine for ONE new language (a fresh chat per language)
@@ -43,6 +43,14 @@ The owner's first message looks like: "New language: ko. Attached: filled templa
 5. Corrections later: the owner sends the corrected spreadsheet; rerun step 2. Never hand-edit `lang/*.js`.
 Not in the registry? Add an entry to `languages_registry.json`, run `python3 tools/fetch_flags.py`, then `python3 tools/make_template.py --code <code>`.
 If the English text of the app ever changes: regenerate templates (`make_template.py --all`); the builder refuses a template whose English has drifted.
+
+## 4a. Standard wording (the 20 "common" fields)
+20 fields are the same kind of text in every language: consentLabel, the 4 buttons (start/back/next/finish), the 4 answer labels (scale1-4), questionCounter, sectionPrefix, listen/pause labels, print/restart buttons, and the home page (appTitle, appSubtitle, privacyBadge, languagePageTitle, homeLabel).
+`tools/common_strings.json` holds a wording for each of them in every language we plan (hi, yue, ko = what a translator supplied; every other language = a DRAFT written by Claude, not native-reviewed).
+- **Templates** (`make_template.py --code X`) come with these 20 pre-filled: BLUE = draft, PINK = draft that a native speaker MUST check (consentLabel, privacyBadge, scale1-4: consent / privacy / how bad a symptom is), plain yellow = supplied earlier. A Status column says which. Translators read and fix instead of translating from scratch.
+- **Builder:** a blank cell, or a cell left as the pre-filled draft, uses the master wording and produces ONE warning listing them, naming the meaning-critical ones and whether a reviewer is named in Settings. Relay that warning to the owner every time. A cell the translator changed always wins.
+- **Fixing one language after review:** the owner sends the corrected spreadsheet as usual (step 5); no master edit needed. Fixing a draft for everyone: edit `common_strings.json`, then rerun `make_template.py --all`. Live packs only get master text where a field is missing or still English: `python3 tools/apply_common.py` (never overwrites translator text; bumps ASSET_VERSION; hand over the changed `lang/*.js` plus `languages.js` as a zip).
+- bn-bd shares bn's wording in the master.
 
 ## 5. File names and audio (tell the owner and the recorder)
 Recordings come from Narakeet and are numbered `0001.mp3` to `0022.mp3`. The numbering is FIXED, the same for every language, and matches column A of the spreadsheet's Audio sheet (older templates have no numbers there: the owner may have typed them in column D):
@@ -77,6 +85,8 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - **Build languages one at a time.** Each package replaces `languages.js` as a whole file, and a chat only knows the repo as it was when the chat started.
   So start a language's build chat only AFTER the previous language is committed to GitHub. Translators and recorders can work on many languages in parallel;
   only the build-and-upload step is one at a time. If two were built in parallel, merge by adding the missing language's line to `languages.js` by hand.
+- Standard wording is a draft until a native speaker has seen it. Never describe it to the owner as translated or reviewed. The consent tick-box and privacy badge are the two to push for review.
+- The browser test's home-page check is wiring only (the page reads the pack); it cannot tell a translation from an English fallback. The builder's "identical to English" warning does that.
 - Keep tool output short. Never print base64 or whole files. Re-use the scripts; do not rewrite them, and do not re-verify what they already check.
 
 ## 8. Open items (owner decisions: raise, don't fix unasked)
@@ -85,16 +95,15 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - A footer disclaimer string exists in every pack but is never shown (the page reads it from the wrong place).
 - Cantonese answer-button labels were written by us and need a native speaker's check; the Korean ones were reviewed via the spreadsheet only if the owner confirms.
 - Q15 has two icon candidates; the bladder one is live, the other is `icons/q15-alt.webp`.
-- Bengali (bn): the whole 'Buttons & labels' sheet plus `consentLabel` came back blank (English fallback on Back/Next/Begin/answer buttons/consent); the owner decides whether to get it filled. No native review recorded: check the intro's wording for "menopause" and the section 6 title.
+- Standard wording drafts (section 4a) are live in bn, pa, yue and ko (gaps only) without native review. Ask the owner to get consentLabel, privacyBadge and the 4 answer labels (scale1-4) checked per language. Cantonese answer labels (scale) were written by us, not by a translator.
+- Bengali (bn): no native review recorded; check the intro's wording for "menopause" and the section 6 title.
 - bn-bd (Bangladesh-flag tile) has no tested build procedure yet. Untested idea: reuse the bn spreadsheet and the same 22 recordings with code bn-bd (about 3 MB duplicate audio). Raise it with the owner, don't improvise.
 - Hong Kong flag (Cantonese) is a simplified drawing; the official artwork is available via `fetch_flags.py --force` if wanted.
 
 ## 9. Language registry (canonical file: `tools/languages_registry.json`)
-Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag; built, to be confirmed live once committed).
+Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi).
 Truth check: what is live is whatever `languages.js` in the cloned repo lists; if this section and `languages.js` disagree, trust `languages.js` and tell the owner.
-Planned (16): pa Punjabi (Gurmukhi, India flag) | bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
+Planned (15): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
 zh Mandarin (Simplified) | fr French | de German | ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
 ro Romanian | es Spanish (Spain) | tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
 The owner has confirmed these choices (Simplified, Spain, Gurmukhi, Philippines flag, the Bangladesh tile): do not ask again.
-Not yet translated on the home page: hi, yue and ko still show English for the home-page headline, subtitle, privacy badge and "Select your language"
-(the newer template covers these). Offer a refresh only if the owner asks.

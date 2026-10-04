@@ -20,6 +20,7 @@ import lang_schema as S
 
 GREY = PatternFill("solid", fgColor="EDEDED"); INPUT = PatternFill("solid", fgColor="FFF8DC")
 HEAD = PatternFill("solid", fgColor="3B4F3A"); DONE = PatternFill("solid", fgColor="DDF0DD")
+DRAFT = PatternFill("solid", fgColor="DCE9F7"); MUST = PatternFill("solid", fgColor="F8D7DA")   # pre-filled draft / draft that MUST be reviewed
 WRAP = Alignment(wrap_text=True, vertical="top"); thin = Side(style="thin", color="CCCCCC")
 BOX = Border(left=thin, right=thin, top=thin, bottom=thin)
 
@@ -45,6 +46,7 @@ def greenify(ws, rng, first_cell):
 
 def build(path, reg=None):
     en = S.load_pack(os.path.join(S.ROOT, "lang", "en.js"))
+    common_all = S.load_common(); common = common_all["languages"].get((reg or {}).get("code"), {}); supplied = set(common_all["supplied"].get((reg or {}).get("code"), []))
     wb = Workbook()
     # ---------------------------------------------------------------- READ ME (filled last)
     rd = wb.active; rd.title = "READ ME"
@@ -59,15 +61,23 @@ def build(path, reg=None):
     rows = {}   # id -> (sheet, row)
     for sheet_name in ("Page 2", "Buttons & labels"):
         ws = wb.create_sheet(sheet_name)
-        header(ws, ["id", "Where it appears", "English (do not edit)", "Your translation"], [8, 40, 60, 60])
+        header(ws, ["id", "Where it appears", "English (do not edit)", "Your translation", "Status"], [8, 40, 60, 60, 46])
         r = 2
         for sh, fid, where, fpath, _ in S.FIELDS:
             if sh != sheet_name: continue
             english = S.get_path(en, fpath)
-            ws.cell(r, 1, fid); ws.cell(r, 2, where); ws.cell(r, 3, english); ws.cell(r, 4, None)
-            style(ws.cell(r, 1), "id"); style(ws.cell(r, 2), "en"); style(ws.cell(r, 3), "en"); style(ws.cell(r, 4), "in")
+            draft = common.get(fid)                      # standard wording pre-filled from tools/common_strings.json
+            ws.cell(r, 1, fid); ws.cell(r, 2, where); ws.cell(r, 3, english); ws.cell(r, 4, draft)
+            style(ws.cell(r, 1), "id"); style(ws.cell(r, 2), "en"); style(ws.cell(r, 3), "en"); style(ws.cell(r, 4), "in"); style(ws.cell(r, 5), "en")
+            if draft:
+                sens = fid in common_all["sensitive"]; ws.cell(r, 4).fill = MUST if sens else DRAFT
+                ws.cell(r, 5, ("TRUSTED: supplied earlier" if fid in supplied else
+                               ("DRAFT - native speaker MUST check (consent / privacy / meaning of the answer)" if sens else "DRAFT - please read, change if wrong")))
+                if fid in supplied: ws.cell(r, 4).fill = INPUT
+            else:
+                greenify(ws, f"D{r}", f"D{r}")
             fit_row(ws, r, [where, english], [40, 60]); rows[fid] = (sheet_name, r); r += 1
-        greenify(ws, f"D2:D{r-1}", "D2")
+
     # ---------------------------------------------------------------- Sections
     sc = wb.create_sheet("Sections"); header(sc, ["id", "Where it appears", "English (do not edit)", "Your translation"], [8, 40, 60, 60])
     for i, sid in enumerate(S.SECTION_IDS):
@@ -117,6 +127,7 @@ def build(path, reg=None):
      ("5.  Use one consistent politeness level throughout (formal or friendly, but not a mix).", None),
      ("6.  If a phrase has no natural translation, write the closest natural wording and tell us in the 'Variant / script note' setting.", None),
      ("7.  Medical wording should be read by a native speaker before this is sent back. Put their name in 'Reviewed by'.", None),
+     ("8.  BLUE and PINK cells are already filled with standard wording (buttons, answer labels, home page, consent). Read them. If one is wrong or unnatural in your language, overwrite it; if it is fine, leave it. PINK cells carry meaning that matters (consent, privacy, how bad a symptom is): a native speaker must confirm them. Nothing here has to be translated from scratch.", None),
      ("", None),
      ("FOR THE PERSON RECORDING", "h"),
      ("1.  The 'Audio' sheet lists all 22 recordings, the exact file name for each (0001.mp3 to 0022.mp3, as Narakeet numbers them), and the exact script to read (it fills in from the translation).", None),
@@ -126,7 +137,7 @@ def build(path, reg=None):
      ("", None),
      ("PROGRESS (updates as you type)", "h"),
      (f'="Page 2:  "&COUNTA(\'Page 2\'!D2:D{n_p2+1})&" of {n_p2}"', None),
-     (f'="Buttons & labels:  "&COUNTA(\'Buttons & labels\'!D2:D{n_bt+1})&" of {n_bt}"', None),
+     (f'="Buttons & labels:  "&COUNTA(\'Buttons & labels\'!D2:D{n_bt+1})&" of {n_bt}  (includes the pre-filled standard wording)"', None),
      (f'="Section names:  "&COUNTA(Sections!D2:D{S.N_SECTIONS+1})&" of {S.N_SECTIONS}"', None),
      (f'="Questions (titles + questions):  "&(COUNTA(Questions!E2:E{S.N_QUESTIONS+1})+COUNTA(Questions!F2:F{S.N_QUESTIONS+1}))&" of {2*S.N_QUESTIONS}"', None),
      (f'="Recordings marked done:  "&COUNTIF(Audio!D2:D{len(audio_rows)+1},"Y")&" of {len(audio_rows)}"', None),

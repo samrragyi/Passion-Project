@@ -71,9 +71,14 @@ def build_pack(code, settings, tr, en_tpl, repo):
     for i, qid in enumerate(S.QUESTION_IDS):
         if en_tpl.get(qid + "_t") != base["questions"][i]["t"] or en_tpl.get(qid + "_q") != base["questions"][i]["q"]: drift.append(qid)
     if drift: err(f"template's English no longer matches the app ({len(drift)} cells, e.g. {', '.join(drift[:4])}). Regenerate the template with tools/make_template.py and copy the translations across.")
-    missing, same = [], []
+    missing, same, drafted = [], [], []
+    common = S.common_for(code); supplied = set(S.load_common()["supplied"].get(code, []))
     def put(fid, path, kind="plain"):
         val = clean(fid, tr.get(fid)); english = S.get_path(base, path)
+        if val is None and fid in common:                      # blank cell: use the master wording (a DRAFT unless a translator supplied it)
+            val = common[fid]
+            if fid not in supplied: drafted.append(fid)
+        elif val is not None and fid in common and val == common[fid] and fid not in supplied: drafted.append(fid)   # left as the pre-filled draft
         if val is None: missing.append(fid); return
         if val == english and code != "en": same.append(fid)
         S.set_path(pack, path, val)
@@ -96,9 +101,14 @@ def build_pack(code, settings, tr, en_tpl, repo):
         for k in ("tag", "dir", "gloss"):
             if settings.get(k) and settings[k] != reg[k]: warn(f"Settings '{k}' = {settings[k]!r} but the registry says {reg[k]!r}")
     else: warn(f"'{code}' is not in tools/languages_registry.json (add it so the flag and sorting are known)")
+    if drafted:
+        sens = [f for f in drafted if f in S.load_common()["sensitive"]]; rev = settings.get("reviewer")
+        msg = f"{len(drafted)} standard string(s) are the machine DRAFT from tools/common_strings.json (blank or left as pre-filled): {', '.join(drafted[:20])}."
+        if sens: msg += f" Meaning-critical, need a native speaker's eye ({'reviewer named: ' + rev if rev else 'no reviewer named in Settings'}): {', '.join(sens)}."
+        warn(msg)
     if missing: warn(f"{len(missing)} cell(s) left blank, English used instead: {', '.join(missing[:12])}{' ...' if len(missing) > 12 else ''}")
     if same: warn(f"{len(same)} cell(s) identical to English (fine for names/numbers, otherwise untranslated): {', '.join(same[:12])}{' ...' if len(same) > 12 else ''}")
-    return pack, len(S.FIELDS) + len(S.SECTION_IDS) + len(S.QUESTION_IDS) - len(missing)
+    return pack, len(S.FIELDS) + len(S.SECTION_IDS) + len(S.QUESTION_IDS) - len(missing) - len(drafted)
 
 def write_pack(repo, code, pack):
     path = os.path.join(repo, "lang", f"{code}.js")
