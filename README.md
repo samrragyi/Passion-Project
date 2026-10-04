@@ -12,14 +12,39 @@ lang/<code>.js      one text file per language (questions, steps, notice, button
 flags/<code>.svg    one flag per language
 audio/<code>/       one folder of recordings per language
 icons/q01..q15.webp the 15 question illustrations (same for every language)
-tools/check_languages.py   pre-publish checker (languages + icons)
-tools/make_icons.py        rebuilds icons/ from the original artwork
+tools/CLAUDE_PROJECT_GUIDE.md   the routine + rules for working on this project with Claude
+tools/languages_registry.json  every planned language: code, name, voice tag, direction, flag, status
+tools/make_template.py         builds the translator spreadsheet (one per language)
+tools/build_language.py        filled spreadsheet + audio  ->  the exact files to upload (dist/<code>-update.zip)
+tools/browser_test.js          real-browser test of one language (needs `npm install` in tools/)
+tools/check_languages.py       pre-publish checker (languages + icons)
+tools/fetch_flags.py           makes flags/<code>.svg from the free flag-icons collection
+tools/make_icons.py            rebuilds icons/ from the original artwork
+tools/lang_schema.py           what a translator fills in, and where it goes (shared by the tools)
 ```
 
 Only the language the visitor picks is downloaded, and audio files are fetched only when
 they tap a Listen button. Adding languages does **not** make the app heavier for anyone.
 
-## Adding a language (about 10 minutes)
+## Adding a language: the fast way (recommended)
+
+1. **Spreadsheet.** `python3 tools/make_template.py --code fr` makes `fr_French_template.xlsx` with the English filled in
+   and the settings (code, voice tag, direction, flag) pre-filled from `tools/languages_registry.json`.
+   (A language not in the registry: add it there first.) The translator fills the yellow cells; the same file lists the
+   22 recordings to make, with the exact file names and the exact script to read.
+2. **Recordings.** Named with the language code in front: `fr_intro.mp3`, `fr_s1.mp3` ... `fr_s6.mp3`, `fr_q01.mp3` ... `fr_q15.mp3`.
+   MP3, mono, 96 kbps (the tool converts anything else). Zip them as `fr_audio.zip`.
+3. **Build.** `python3 tools/build_language.py --template fr_template.xlsx --audio fr_audio.zip`
+   writes `lang/fr.js`, prepares `audio/fr/`, adds the language to `languages.js`, bumps `ASSET_VERSION`,
+   runs the checker and produces **`dist/fr-update.zip`**: exactly the files to upload. It stops, and makes no package,
+   if anything is wrong. Audio can come later: run it again when more recordings arrive.
+4. **Test.** `cd tools && npm install` (once), then `node tools/browser_test.js fr`. It plays the language in a real
+   headless browser at phone size and checks text, every recording, layout and the results page.
+5. **Upload** the contents of `dist/fr-update.zip` to GitHub (Add file -> Upload files), commit, wait two minutes, test on a phone.
+
+Needs: Python 3 with `pip install openpyxl`, `ffmpeg`, and Node.js for the browser test.
+
+## Adding a language by hand (the manual way, about 10 minutes)
 
 Use a short code, e.g. `fr`, `ar`, `pa`, or `yue` for Cantonese.
 
