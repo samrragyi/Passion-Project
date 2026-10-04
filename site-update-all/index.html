@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Menopause Conversation</title>
+<meta name="description" content="A short, private menopause symptom check-in. Answer 15 questions in your language, with voice, and get a one-page summary to show your GP.">
+<meta name="theme-color" content="#EEEBDF">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Link preview (WhatsApp, iMessage, Facebook, LinkedIn, X...). og:image must be an absolute URL: if the site address changes, change it here too. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Menopause Conversation">
+<meta property="og:title" content="The Menopause Conversation">
+<meta property="og:description" content="Understand what your body is telling you. A short, clear symptom check-in: 100% private, no sign-up, in your language.">
+<meta property="og:url" content="https://samrragyi.github.io/Passion-Project/">
+<meta property="og:image" content="https://samrragyi.github.io/Passion-Project/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Menopause Conversation: Understand what your body is telling you. 100% private, no sign-up required.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Menopause Conversation">
+<meta name="twitter:description" content="Understand what your body is telling you. A short, clear symptom check-in: 100% private, no sign-up, in your language.">
+<meta name="twitter:image" content="https://samrragyi.github.io/Passion-Project/og-image.jpg">
+<style>
+  :root{
+    --bg: #EEEBDF;
+    --panel: #FFFFFF;
+    --ink: #24261F;
+    --ink-soft: #5C5D50;
+    --forest: #3B4F3A;
+    --forest-dim: #55694F;
+    --berry: #954A63;
+    --berry-dim: #B98096;
+    --sage: #C7D0BC;
+    --sage-pale: #E4E8DA;
+    --line: #DAD5C5;
+    --radius: 4px;
+    --radius-lg: 10px;
+    --serif: "Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+    --sans: -apple-system,"Segoe UI",system-ui,"Noto Sans",Roboto,sans-serif;
+    --max: 640px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  [dir="rtl"] body{ text-align:right; }
+  a{color:inherit;}
+  button{font-family:inherit;}
+
+  /* ---------- top bar ---------- */
+  .sticky-header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(238,235,223,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 20px 10px;
+  }
+  .brandmark{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--serif);
+    font-size:1.3rem;
+    color:var(--forest);
+    letter-spacing:0.01em;
+    min-width:0;
+  }
+  .brandmark span{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .brandmark svg{ width:27px; height:27px; flex:none; }
+  @media (max-width:420px){
+    .brandmark{ font-size:1.05rem; }
+    .brandmark svg{ width:22px; height:22px; }
+    .home-btn span{ display:none; }
+  }
+  .home-btn{
+    display:flex; align-items:center; gap:7px;
+    background:var(--panel); border:1px solid var(--sage);
+    color:var(--forest); font-size:0.88rem; font-weight:600;
+    padding:8px 16px; border-radius:30px; cursor:pointer;
+    transition:background .15s ease, border-color .15s ease, box-shadow .15s ease;
+  }
+  .home-btn svg{ width:16px; height:16px; flex:none; }
+  .home-btn:hover{ background:var(--sage-pale); border-color:var(--forest-dim); }
+  .home-btn:active{ transform:translateY(1px); }
+  .home-btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
+
+  /* ---------- progress ---------- */
+  .progress-track{
+    height:4px; width:100%; background:var(--sage-pale);
+  }
+  .sticky-header.home-mode .progress-track{ display:none; }
+  .progress-fill{
+    height:100%; background:var(--berry);
+    width:0%; transition:width .4s ease;
+  }
+  @media (prefers-reduced-motion: reduce){ .progress-fill{ transition:none; } }
+
+  /* ---------- layout ---------- */
+  main{ max-width:var(--max); margin:0 auto; padding:24px 22px 56px; }
+  .screen{ display:none; }
+  .screen.active{ display:block; animation:fadein .5s ease; }
+  @keyframes fadein{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){ .screen.active{ animation:none; } }
+
+  /* ---------- intro ---------- */
+  .hero-art{ width:100%; max-width:260px; margin:0 auto 28px; display:block; color:var(--berry); }
+  h1.appTitle{
+    font-family:var(--serif); font-weight:500;
+    font-size:clamp(1.5rem,4.4vw,2.2rem);
+    color:var(--forest);
+    text-align:center; margin:0 auto 10px; max-width:480px;
+    line-height:1.25;
+    text-wrap:balance;
+  }
+  .appSubtitle{
+    text-align:center; color:var(--ink-soft); font-size:1.02rem;
+    max-width:440px; margin:0 auto 26px;
+  }
+  .intro-body{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:22px 24px; font-size:0.98rem; color:var(--ink);
+    margin-bottom:28px;
+  }
+  .cta-row{ text-align:center; }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    background:var(--forest); color:#fff; border:none;
+    padding:13px 28px; border-radius:var(--radius);
+    font-size:1rem; cursor:pointer;
+    transition:background .15s ease, transform .1s ease;
+  }
+  .btn:hover{ background:var(--forest-dim); }
+  .btn:active{ transform:translateY(1px); }
+  .btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
+  .btn-ghost{
+    background:var(--panel); color:var(--forest); border:1px solid var(--sage);
+  }
+  .btn-ghost:hover{ background:var(--sage-pale); border-color:var(--forest-dim); }
+  .btn-back svg{ width:15px; height:15px; flex:none; }
+  [dir="rtl"] .btn-back svg{ transform:scaleX(-1); }
+  .btn[disabled]{ opacity:0.4; cursor:not-allowed; }
+
+  .disclaimer{
+    text-align:center; font-size:0.8rem; color:var(--ink-soft);
+    margin-top:22px; max-width:460px; margin-left:auto; margin-right:auto;
+  }
+  .disclaimer + .disclaimer{ margin-top:10px; }
+
+  /* ---------- language & instructions pages ---------- */
+  .page-title{
+    font-family:var(--serif); font-weight:500; color:var(--forest);
+    font-size:clamp(1.5rem,4.5vw,1.9rem); text-align:center; margin:6px 0 8px;
+  }
+  .page-sub{ text-align:center; color:var(--ink-soft); font-size:0.95rem; margin:0 0 28px; }
+
+  /* One column, one row per language: flag + the language's own name, English name on the far side.
+     Tiles come from languages.js in country order; the first tile of each country gets a little extra space above it
+     (.group-start), so e.g. all of India's languages read as one block. Any number of languages just flows down the page. */
+  .language-grid{
+    display:grid; grid-template-columns:1fr; gap:8px;
+  }
+  .lang-card{
+    position:relative;
+    display:flex; flex-direction:row; align-items:center; gap:14px;
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:10px 16px; cursor:pointer; transition:border-color .15s ease, transform .1s ease, background .15s ease;
+  }
+  .lang-card.group-start{ margin-top:12px; }
+  .lang-card:hover{ border-color:var(--sage); background:var(--sage-pale); }
+  .lang-card:active{ transform:translateY(1px); }
+  .lang-card:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
+  .lang-card.selected{
+    border-color:#2B9946; border-width:2px; background:rgba(43,153,70,0.10);
+  }
+  .lang-check{
+    position:absolute; top:-8px; right:-8px;
+    width:24px; height:24px; border-radius:50%;
+    background:#2B9946; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transform:scale(0.5);
+    transition:opacity .15s ease, transform .15s ease;
+  }
+  [dir="rtl"] .lang-check{ right:auto; left:-8px; }
+  .lang-check svg{ width:14px; height:14px; }
+  .lang-card.selected .lang-check{ opacity:1; transform:scale(1); }
+  .lang-flag{ display:flex; align-items:center; justify-content:center; }
+  .lang-flag img{
+    display:block; border-radius:4px;
+    box-shadow:0 0 0 1px rgba(36,38,31,0.15);
+  }
+  .lang-error{ color:#8F2B2B; background:#FBEAEA; border:1px solid #E3B4B4; border-radius:10px; padding:10px 12px; margin-top:12px; font-size:0.9rem; }
+  .lang-native{ font-family:var(--serif); color:var(--forest); font-size:1.1rem; flex:1; text-align:start; }
+  .lang-gloss{ font-size:0.8rem; color:var(--ink-soft); text-align:end; }
+  .lang-flag img{ width:36px; height:27px; }
+  /* first screen: a slimmer header so the languages start higher up the page (many readers cannot read this English) */
+  #screen-language .hero-art{ max-width:110px; margin:0 auto 6px; }
+  #screen-language h1.appTitle{ font-size:clamp(1.3rem,5vw,1.7rem); margin-bottom:6px; }
+  #screen-language .appSubtitle{ font-size:.95rem; margin-bottom:12px; }
+  #screen-language .page-title{ font-size:1.25rem; margin:14px 0 10px; }
+
+  .formal-disclaimer{
+    background:#FBF3E7; border:1px solid #E3C79A; border-radius:var(--radius-lg);
+    padding:20px 22px; margin-bottom:26px;
+  }
+  .formal-disclaimer-head{
+    display:flex; align-items:center; gap:9px; margin-bottom:10px;
+    color:#8A5A17; font-weight:700; font-size:0.98rem;
+  }
+  .formal-disclaimer-head svg{ width:20px; height:20px; flex:none; }
+  .formal-disclaimer p{ font-size:0.9rem; color:#4A3A1F; margin:0 0 14px; line-height:1.55; }
+  .consent-row{
+    display:flex; align-items:flex-start; gap:10px; cursor:pointer;
+    font-size:0.88rem; color:#4A3A1F; font-weight:600;
+  }
+  .consent-row input{ margin-top:3px; width:18px; height:18px; flex:none; accent-color:var(--forest); cursor:pointer; }
+
+  .instr-title{
+    font-family:var(--serif); color:var(--forest); font-size:1.2rem; margin:0 0 14px;
+  }
+  .howto-list{ margin:0 0 8px; padding-left:22px; }
+  [dir="rtl"] .howto-list{ padding-left:0; padding-right:22px; }
+  .howto-list li{ margin-bottom:12px; font-size:0.95rem; color:var(--ink); line-height:1.5; }
+
+  .severity-legend{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:14px 16px; margin-bottom:20px;
+  }
+  .legend-row{ display:flex; align-items:flex-start; gap:10px; padding:5px 0; font-size:0.88rem; color:var(--ink); }
+  .legend-dot{ flex:none; width:12px; height:12px; border-radius:50%; margin-top:4px; }
+  .legend-dot.lvl0{ background:#2B9946; }
+  .legend-dot.lvl1{ background:#E6B50F; }
+  .legend-dot.lvl2{ background:#E67E0F; }
+  .legend-dot.lvl3{ background:#D32F2F; }
+
+  /* ---------- question screen ---------- */
+  .q-meta{ margin-bottom:6px; }
+  .q-section-row{ display:flex; align-items:center; gap:8px; }
+  .q-section{
+    font-size:0.8rem; color:var(--berry); font-weight:700;
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .q-block{ margin-bottom:6px; scroll-margin-top:84px; }
+  .q-subcount{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 4px; }
+  .q-divider{ border:none; border-top:1px solid var(--line); margin:22px 0; }
+  .q-title-row{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    margin:2px 0 8px;
+  }
+  .q-icon{
+    flex:none; display:block; width:var(--q-icon-size, 72px); height:var(--q-icon-size, 72px);
+    object-fit:contain;
+  }
+  @media (max-width:360px){ :root{ --q-icon-size:60px; } }
+  .q-title{
+    font-family:var(--serif); font-size:clamp(1.2rem,3.8vw,1.4rem); color:var(--forest);
+    margin:0; line-height:1.25; flex:1;
+  }
+  .q-text{ font-size:1rem; color:var(--ink); margin-bottom:16px; }
+
+  .intro-with-voice{ display:flex; align-items:flex-start; gap:10px; margin-bottom:20px; }
+  .voice-icon-btn{
+    flex:none; width:34px; height:34px; border-radius:50%; margin-top:2px;
+    background:var(--sage-pale); border:1px solid var(--sage);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; color:var(--forest);
+    transition:background .15s ease;
+  }
+  .voice-icon-btn:hover{ background:var(--sage); }
+  .voice-icon-btn.playing{ background:var(--berry); color:#fff; border-color:var(--berry); }
+  .voice-icon-btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
+  .voice-icon-btn svg{ width:15px; height:15px; }
+  .voice-icon-btn-sm{ min-width:26px; width:26px; height:26px; }
+  .voice-icon-btn-sm svg{ width:11px; height:11px; }
+
+  .scale-title{ font-size:0.88rem; color:var(--ink-soft); margin-bottom:10px; }
+  .scale-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:8px;
+  }
+  @media (max-width:480px){ .scale-grid{ grid-template-columns:repeat(2,1fr); } }
+  .scale-opt{
+    border:2px solid var(--line); background:var(--panel);
+    border-radius:var(--radius); padding:10px 8px 12px;
+    font-size:0.84rem; text-align:center; cursor:pointer;
+    color:var(--ink); line-height:1.25;
+    display:flex; flex-direction:column; align-items:center; gap:5px;
+    transition:background .15s ease, border-color .15s ease, color .15s ease, transform .1s ease;
+  }
+  .scale-opt svg{ width:34px; height:34px; flex:none; }
+  .scale-opt:active{ transform:translateY(1px); }
+  .scale-opt[data-level="0"]{ background:rgba(43,153,70,0.10); border-color:#2B9946; color:#1E6B32; }
+  .scale-opt[data-level="1"]{ background:rgba(230,181,15,0.14); border-color:#E6B50F; color:#7A5E05; }
+  .scale-opt[data-level="2"]{ background:rgba(230,126,15,0.14); border-color:#E67E0F; color:#8A4B08; }
+  .scale-opt[data-level="3"]{ background:rgba(211,47,47,0.12); border-color:#D32F2F; color:#8E1F1F; }
+  .scale-opt[data-level="0"]:hover{ background:rgba(43,153,70,0.2); }
+  .scale-opt[data-level="1"]:hover{ background:rgba(230,181,15,0.26); }
+  .scale-opt[data-level="2"]:hover{ background:rgba(230,126,15,0.26); }
+  .scale-opt[data-level="3"]:hover{ background:rgba(211,47,47,0.22); }
+  .scale-opt[data-level="0"].selected{ background:#2B9946; border-color:#217538; color:#fff; }
+  .scale-opt[data-level="1"].selected{ background:#E6B50F; border-color:#B8900C; color:#3D2E00; }
+  .scale-opt[data-level="2"].selected{ background:#E67E0F; border-color:#B8630B; color:#fff; }
+  .scale-opt[data-level="3"].selected{ background:#D32F2F; border-color:#A32323; color:#fff; }
+  .scale-opt:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
+
+  .nav-row{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:20px;
+  }
+
+  /* ---------- results ---------- */
+  .results-hero{ text-align:center; margin-bottom:22px; }
+  .results-hero h2{
+    font-family:var(--serif); font-weight:500; color:var(--forest);
+    font-size:clamp(1.5rem,4.5vw,1.9rem); margin:0 0 8px;
+  }
+  .score-badge{
+    display:inline-flex; flex-direction:column; align-items:center; gap:6px;
+    margin-top:10px;
+    background:var(--panel); border:2px solid var(--sage);
+    color:var(--forest); padding:16px 32px; border-radius:24px;
+  }
+  .score-badge .score-label{
+    font-size:0.76rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;
+  }
+  .score-badge .score-number{
+    font-family:var(--serif); font-weight:600; font-size:1.9rem; color:var(--forest); line-height:1;
+  }
+  .score-badge .score-band{
+    font-size:0.8rem; font-weight:700; padding:4px 16px; border-radius:20px;
+  }
+  .score-badge.band0{ border-color:#2B9946; }
+  .score-badge.band1{ border-color:#E67E0F; }
+  .score-badge.band2{ border-color:#D32F2F; }
+  .score-badge .score-band.band0{ background:#2B9946; color:#fff; }
+  .score-badge .score-band.band1{ background:#E67E0F; color:#fff; }
+  .score-badge .score-band.band2{ background:#D32F2F; color:#fff; }
+
+  .score-explain{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:16px 18px; margin-bottom:22px;
+  }
+  .score-explain-title{
+    font-family:var(--serif); color:var(--forest); font-size:1rem; margin:0 0 10px;
+  }
+  .score-explain-row{
+    display:flex; align-items:flex-start; gap:10px; padding:5px 0; font-size:0.86rem; color:var(--ink);
+  }
+  .score-explain-dot{
+    flex:none; width:11px; height:11px; border-radius:50%; margin-top:4px;
+  }
+  .score-explain-dot.band0{ background:#2B9946; }
+  .score-explain-dot.band1{ background:#E67E0F; }
+  .score-explain-dot.band2{ background:#D32F2F; }
+  .score-explain-row.current{ font-weight:700; }
+  .section-block{ margin-bottom:22px; }
+  .section-block h3{
+    font-family:var(--serif); font-size:1.05rem; color:var(--forest);
+    border-bottom:1px solid var(--line); padding-bottom:6px; margin-bottom:10px;
+  }
+
+  .quick-summary{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:18px 20px; margin-bottom:22px;
+  }
+  .quick-counts{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+  .quick-chip{
+    font-size:0.82rem; font-weight:600; padding:5px 12px; border-radius:20px;
+    background:var(--sage-pale); color:var(--forest-dim);
+  }
+  .quick-chip.lvl0{ background:#2B9946; color:#fff; }
+  .quick-chip.lvl1{ background:#E6B50F; color:#3D2E00; }
+  .quick-chip.lvl2{ background:#E67E0F; color:#fff; }
+  .quick-chip.lvl3{ background:#D32F2F; color:#fff; }
+  .quick-line{ font-size:0.92rem; color:var(--ink); margin:0; line-height:1.5; }
+  .quick-line strong{ color:var(--forest); }
+  .result-item{
+    display:flex; justify-content:space-between; gap:12px;
+    padding:9px 0; border-bottom:1px dashed var(--line);
+    font-size:0.92rem;
+  }
+  .result-item:last-child{ border-bottom:none; }
+  .result-item .ri-label{ color:var(--ink); }
+  .result-item .ri-chip{
+    flex:none; font-size:0.78rem; padding:3px 10px; border-radius:20px;
+    background:var(--sage-pale); color:var(--forest-dim); white-space:nowrap;
+  }
+  .result-item .ri-chip.lvl0{ background:#2B9946; color:#fff; }
+  .result-item .ri-chip.lvl1{ background:#E6B50F; color:#3D2E00; }
+  .result-item .ri-chip.lvl2{ background:#E67E0F; color:#fff; }
+  .result-item .ri-chip.lvl3{ background:#D32F2F; color:#fff; }
+
+  .gp-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
+    padding:24px; margin-top:30px;
+  }
+  .gp-panel h3{
+    font-family:var(--serif); color:var(--forest); margin:0 0 4px; font-size:1.2rem;
+  }
+  .gp-note{ font-size:0.85rem; color:var(--ink-soft); margin-bottom:16px; }
+  .gp-table{ width:100%; border-collapse:collapse; font-size:0.85rem; }
+  .gp-table th, .gp-table td{
+    text-align:left; padding:7px 6px; border-bottom:1px solid var(--line); vertical-align:top;
+  }
+  .gp-table th{ color:var(--ink-soft); font-weight:600; font-size:0.78rem; text-transform:none; }
+  .gp-section-row td{
+    font-weight:600; color:var(--forest); background:var(--sage-pale);
+    padding-top:8px; padding-bottom:8px;
+  }
+  .gp-flagged{ color:var(--berry); font-weight:600; }
+  .gp-summary-line{ margin-top:16px; font-size:0.9rem; }
+  .gp-actions{ display:flex; gap:10px; margin-top:26px; flex-wrap:wrap; }
+
+  .trust-badge{
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    text-align:center; margin:0 auto 22px; width:fit-content;
+    background:var(--sage-pale); border:1px solid var(--sage);
+    color:var(--forest); font-size:0.82rem; font-weight:600;
+    padding:7px 16px; border-radius:30px;
+  }
+  .trust-badge svg{ width:15px; height:15px; flex:none; }
+
+  .legal-block{
+    background:var(--sage-pale); border:1px solid var(--sage);
+    border-radius:var(--radius-lg); padding:18px 20px;
+    font-size:0.78rem; color:var(--ink-soft); text-align:justify;
+    margin:24px 0 0;
+  }
+  [dir="rtl"] .legal-block{ text-align:justify; }
+  .legal-block p{ margin:0 0 6px; }
+  .legal-block p:last-child{ margin-bottom:0; }
+  .legal-list{ margin:0; padding-left:20px; }
+  [dir="rtl"] .legal-list{ padding-left:0; padding-right:20px; }
+  .legal-list li{ margin-bottom:9px; }
+  .legal-list li:last-child{ margin-bottom:0; }
+  .legal-block strong{ color:var(--forest-dim); }
+  .final-notice-title{
+    font-family:var(--serif); color:var(--forest); font-size:1rem;
+    margin:0 0 10px;
+  }
+  .print-only{ display:none; }
+  @media print{ .print-only{ display:block; } }
+
+  .prototype-banner{
+    background:#FBEAEA; border-bottom:2px dashed #B8302A; color:#8A1F1F;
+    text-align:center; font-size:0.72rem; font-weight:700; letter-spacing:0.03em;
+    text-transform:uppercase; padding:7px 14px; position:relative; z-index:30;
+  }
+
+  footer.page-footer{
+    margin-top:40px; text-align:center; font-size:0.78rem; color:var(--ink-soft);
+  }
+
+  @media print{
+    .sticky-header, .cta-row, .gp-actions, footer.page-footer{ display:none !important; }
+    body{ background:#fff; }
+    .screen{ display:none !important; }
+    #screen-results{ display:block !important; }
+    main{ max-width:100%; padding:0; }
+    .prototype-banner{
+      display:block !important; background:#fff; border:2px solid #8A1F1F;
+      border-radius:6px; text-transform:none; letter-spacing:0; font-weight:700;
+      font-size:0.85rem; padding:10px 14px; margin-bottom:16px;
+    }
+  }
+  /* Korean is written with spaces between words and should wrap at those spaces, not mid-word */
+  :lang(ko){ word-break:keep-all; overflow-wrap:break-word; }
+</style>
+</head>
+<body>
+
+<div class="prototype-banner" id="prototypeBanner">Prototype — for design feedback only. Not for medical use. Test data only.</div>
+
+<div class="sticky-header">
+  <div class="topbar">
+    <div class="brandmark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 C7 6 5 10 5 14 a7 7 0 0 0 14 0 c0 -4 -2 -8 -7 -12 Z" stroke="currentColor" stroke-width="1.4"/></svg>
+      <span data-i18n="appTitleShort">The Menopause Conversation</span>
+    </div>
+    <button type="button" class="home-btn" id="homeBtn" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 9.5V19a1 1 0 0 0 1 1H10a1 1 0 0 0 1-1v-3.5a1 1 0 0 1 1-1h0a1 1 0 0 1 1 1V19a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1V9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="homeLabel">Home</span>
+    </button>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+</div>
+
+<main>
+
+  <!-- LANGUAGE (first screen) -->
+  <section class="screen active" id="screen-language">
+    <svg class="hero-art" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 90 Q 40 20 70 90 T 130 90 T 190 90" stroke="#3B4F3A" stroke-width="2" opacity="0.5"/>
+      <path d="M10 70 Q 40 100 70 70 T 130 70 T 190 70" stroke="#954A63" stroke-width="2" opacity="0.6"/>
+      <circle cx="100" cy="60" r="34" stroke="#C7D0BC" stroke-width="1.4"/>
+    </svg>
+    <h1 class="appTitle" data-i18n="appTitle"></h1>
+    <p class="appSubtitle" data-i18n="appSubtitle"></p>
+    <div class="trust-badge">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-i18n="privacyBadge"></span>
+    </div>
+    <h2 class="page-title" data-i18n="languagePageTitle"></h2>
+    <div class="language-grid" id="languageGrid"></div>
+    <p class="lang-error" id="langError" role="alert" hidden>Sorry, that language could not be loaded. Please check your connection and try again.</p>
+
+    <div class="legal-block">
+    <h3 class="final-notice-title">Important Information &amp; Privacy</h3>
+    <ul class="legal-list">
+      <li><strong>Educational Symptom Tracker Only:</strong> This tool is an educational symptom tracking aid created to help you prepare for a consultation with your NHS General Practitioner (GP). It does not provide medical advice, diagnosis, or treatment recommendations.</li>
+      <li><strong>Clinical Guidance:</strong> Questioning is framed around the validated Greene Climacteric Scale (GCS) and aligns with National Institute for Health and Care Excellence (NICE NG23) guidelines on perimenopause and menopause assessment.</li>
+      <li><strong>100% Data Privacy (GDPR Compliant):</strong> This tool does not collect, store, transmit, or share any personal identifiable data or health records. All inputs remain strictly on your device during this session and are deleted as soon as you close your browser.</li>
+      <li><strong>Medical Emergencies:</strong> If you are experiencing severe pain, unusual bleeding, severe sudden chest pain, or mental health crisis, please contact NHS 111, your local GP surgery, or call 999 in an emergency.</li>
+    </ul>
+    </div>
+
+  </section>
+
+  <!-- WELCOME: intro copy + INSTRUCTIONS + DISCLAIMER + START CTA (second screen) -->
+  <section class="screen" id="screen-instructions">
+    <div class="intro-with-voice">
+      <button class="voice-icon-btn" data-voice-key="instructions" aria-label="Listen">
+        <svg class="vi-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="vi-pause" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+      </button>
+      <div class="intro-body" id="introBodyText" data-i18n="introBody"></div>
+    </div>
+
+    <ol class="howto-list" id="howItWorksList"></ol>
+
+    <div class="severity-legend" id="severityLegend"></div>
+
+    <div class="formal-disclaimer">
+      <div class="formal-disclaimer-head">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 2 20h20L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17.6" r="1" fill="currentColor"/></svg>
+        <span id="disclaimerHeading">Notice</span>
+      </div>
+      <p id="formalDisclaimerText"></p>
+      <label class="consent-row">
+        <input type="checkbox" id="consentCheck">
+        <span id="consentLabelText"></span>
+      </label>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost btn-back" id="instrBackBtn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="instrBackBtnLabel"></span></button>
+      <button class="btn" id="instrContinueBtn" disabled></button>
+    </div>
+  </section>
+
+  <!-- QUESTIONS (grouped by section) -->
+  <section class="screen" id="screen-question">
+    <div class="q-meta">
+      <div class="q-section-row">
+        <span class="q-section" id="qSection"></span>
+        <button class="voice-icon-btn voice-icon-btn-sm" id="sectionVoiceBtn" data-voice-key="s0" aria-label="Listen">
+          <svg class="vi-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="vi-pause" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="questionList"></div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost btn-back" id="prevBtn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="prevBtnLabel"></span></button>
+      <button class="btn" id="nextBtn" disabled></button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="screen" id="screen-results">
+    <div class="results-hero">
+      <h2 id="resultsTitle"></h2>
+      <p id="resultsIntro" style="color:var(--ink-soft); font-size:0.95rem;"></p>
+      <div class="score-badge" id="scoreBadge"></div>
+    </div>
+
+    <div class="score-explain" id="scoreExplain"></div>
+
+    <div id="patientSummary"></div>
+
+    <div class="gp-panel" id="gpPanel">
+      <h3>📋 Patient Symptom Summary (Pre-Consultation Reference)</h3>
+      <p class="gp-note" id="gpSummaryNote" style="margin-top:14px;"></p>
+      <table class="gp-table">
+        <thead>
+          <tr><th data-fixed="item">Item</th><th data-fixed="severity">Severity</th><th data-fixed="score">Score</th></tr>
+        </thead>
+        <tbody id="gpTableBody"></tbody>
+      </table>
+      <p class="gp-summary-line" id="gpOverallLine"></p>
+      <p class="gp-summary-line" id="gpFlaggedLine"></p>
+    </div>
+
+    <div class="legal-block" id="finalNoticeBlock"></div>
+
+    <div class="gp-actions">
+      <button class="btn" id="printBtn"></button>
+      <button class="btn btn-ghost" id="restartBtn"></button>
+    </div>
+  </section>
+
+  <footer class="page-footer" id="pageFooter">
+    <p id="footerDisclaimer"></p>
+  </footer>
+</main>
+
+<script src="languages.js"></script>
+<script>
+/* ============ LANGUAGE LOADING ============
+   languages.js (loaded first) lists every available language. Each language's text
+   lives in lang/<code>.js and is fetched only when someone picks that language.
+   English is always loaded: it drives the clinician-facing results page. */
+const T = {};
+window.registerLanguage = function(pack){ T[pack.code] = pack; };
+const LANG_META = {};
+(window.LANGUAGES || []).forEach(l => { LANG_META[l.code] = l; });
+const ASSET_V = window.ASSET_VERSION ? ("?v=" + window.ASSET_VERSION) : "";
+
+function loadLanguage(code){
+  if(T[code]) return Promise.resolve(T[code]);
+  return new Promise((resolve, reject)=>{
+    const s = document.createElement("script");
+    s.src = "lang/" + code + ".js" + ASSET_V;
+    s.onload = ()=> T[code] ? resolve(T[code]) : reject(new Error("Language pack " + code + " did not register"));
+    s.onerror = ()=> reject(new Error("Could not load lang/" + code + ".js"));
+    document.head.appendChild(s);
+  });
+}
+
+/* ---------- smiley faces (mirror the traffic-light colours) ---------- */
+function faceSVG(level){
+  const mouths = [
+    'M10,18 Q16,25 22,18',                 // 0 green - big smile
+    'M10,19 Q16,22.5 22,19',                // 1 yellow - gentle smile
+    'M10,21.5 Q16,18.5 22,21.5',            // 2 amber - slight frown
+    'M9,22.5 Q16,16 23,22.5'                // 3 red - deep frown
+  ];
+  const brows = level >= 2
+    ? `<path d="M9,11 L13,12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+       <path d="M23,11 L19,12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`
+    : '';
+  return `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.6"/>
+    <circle cx="11.5" cy="14.5" r="1.6" fill="currentColor"/>
+    <circle cx="20.5" cy="14.5" r="1.6" fill="currentColor"/>
+    ${brows}
+    <path d="${mouths[level]}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  </svg>`;
+}
+
+/* ---------- per-question icons (extracted from the provided reference file;
+   redrawn as inline SVG line-art since Font Awesome can't load in this environment) ---------- */
+
+const SECTION_MAP = [[0,1],[2,3],[4,5,6],[7,8,9],[10,11,12],[13,14]];
+const EN_SEVERITY = ["None","Mild","Moderate","Severe"];
+/* step map: 0 language, 1 welcome/instructions, 2-7 section pages (secPageIdx = step-2), 8 results */
+const STEP_LANGUAGE = 0, STEP_INSTRUCTIONS = 1, STEP_SECTION_FIRST = 2, STEP_SECTION_LAST = 7, STEP_RESULTS = 8;
+
+let currentLang = "en";
+let currentStep = STEP_LANGUAGE;
+let answers = new Array(15).fill(null);
+let isSpeaking = false, isPaused = false;
+
+/* ---------- language picker page (home screen) ----------
+   Built from window.LANGUAGES (languages.js). One column. Ordered by country (group) A-Z, then by English name A-Z inside a country,
+   so e.g. every language of India sits together. A language with no group sorts under its own English name. */
+const languageGrid = document.getElementById("languageGrid");
+const langError = document.getElementById("langError");
+function buildLanguagePicker(){
+  const langs = (window.LANGUAGES || []).slice().sort((a,b)=> (a.group||a.gloss).localeCompare(b.group||b.gloss, "en") || a.gloss.localeCompare(b.gloss, "en"));
+  let prevGroup = null;
+  langs.forEach(l=>{
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "lang-card";
+    const grp = l.group || l.gloss;
+    if (prevGroup !== null && grp !== prevGroup) card.classList.add("group-start");
+    prevGroup = grp;
+    card.innerHTML = `<span class="lang-flag"><img src="flags/${l.code}.svg${ASSET_V}" alt="" width="36" height="27"></span>
+      <span class="lang-native"></span>
+      <span class="lang-gloss"></span>
+      <span class="lang-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5 10 17 19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>`;
+    card.querySelector(".lang-native").textContent = l.name;
+    card.querySelector(".lang-gloss").textContent = l.gloss;
+    card.addEventListener("click", ()=>{
+      langError.hidden = true;
+      document.querySelectorAll(".lang-card").forEach(c=>c.classList.remove("selected"));
+      card.classList.add("selected");
+      loadLanguage(l.code).then(()=>{
+        currentLang = l.code;
+        applyLanguage();
+        setTimeout(()=>{
+          currentStep = STEP_INSTRUCTIONS;
+          renderCurrentScreen();
+        }, 260);
+      }).catch(err=>{
+        console.error(err);
+        card.classList.remove("selected");
+        langError.hidden = false;
+      });
+    });
+    languageGrid.appendChild(card);
+  });
+}
+
+function applyLanguage(){
+  const tr = T[currentLang];
+  document.documentElement.lang = tr.tag;
+  document.documentElement.dir = tr.dir;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(tr.ui[key] !== undefined) el.textContent = tr.ui[key];
+  });
+  document.getElementById("footerDisclaimer").textContent = tr.ui.disclaimer;
+
+  /* instructions / notice page */
+  document.getElementById("disclaimerHeading").textContent = tr.ui.beforeYouBegin;
+  document.getElementById("formalDisclaimerText").textContent = tr.ui.formalDisclaimer;
+  document.getElementById("consentLabelText").textContent = tr.ui.consentLabel;
+  document.getElementById("instrBackBtnLabel").textContent = tr.ui.prevButton;
+  document.getElementById("instrContinueBtn").textContent = tr.ui.startButton;
+  const howList = document.getElementById("howItWorksList");
+  howList.innerHTML = "";
+  tr.howItWorks.forEach(step=>{
+    const li = document.createElement("li");
+    li.textContent = step;
+    howList.appendChild(li);
+  });
+  document.getElementById("severityLegend").innerHTML = tr.severityLegend.map((item, i)=>
+    `<div class="legend-row"><span class="legend-dot lvl${i}"></span><span><strong>${item.label}</strong> — ${item.desc}</span></div>`
+  ).join("");
+
+  stopAllPlayback();
+  renderCurrentScreen();
+}
+
+/* ---------- navigation ---------- */
+document.getElementById("homeBtn").addEventListener("click", ()=>{
+  currentStep = STEP_LANGUAGE; renderCurrentScreen();
+});
+const consentCheck = document.getElementById("consentCheck");
+const instrContinueBtn = document.getElementById("instrContinueBtn");
+consentCheck.addEventListener("change", ()=>{ instrContinueBtn.disabled = !consentCheck.checked; });
+document.getElementById("instrBackBtn").addEventListener("click", ()=>{ currentStep = STEP_LANGUAGE; renderCurrentScreen(); });
+instrContinueBtn.addEventListener("click", ()=>{
+  if(!consentCheck.checked) return;
+  currentStep = STEP_SECTION_FIRST; renderCurrentScreen();
+});
+
+document.getElementById("prevBtn").addEventListener("click", ()=>{
+  if(currentStep > STEP_INSTRUCTIONS){ currentStep--; renderCurrentScreen(); }
+});
+document.getElementById("nextBtn").addEventListener("click", ()=>{
+  if(currentStep < STEP_SECTION_LAST){ currentStep++; renderCurrentScreen(); }
+  else { currentStep = STEP_RESULTS; renderResults(); renderCurrentScreen(); }
+});
+document.getElementById("restartBtn").addEventListener("click", ()=>{
+  answers = new Array(15).fill(null);
+  consentCheck.checked = false; instrContinueBtn.disabled = true;
+  currentStep = STEP_LANGUAGE; renderCurrentScreen();
+});
+document.getElementById("printBtn").addEventListener("click", ()=> window.print());
+
+function renderCurrentScreen(){
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+  stopAllPlayback();
+  window.scrollTo(0, 0);
+
+  document.querySelector(".sticky-header").classList.toggle("home-mode", currentStep === STEP_LANGUAGE);
+
+  if(currentStep === STEP_LANGUAGE){
+    document.getElementById("screen-language").classList.add("active");
+    document.getElementById("progressFill").style.width = "0%";
+  } else if(currentStep === STEP_INSTRUCTIONS){
+    document.getElementById("screen-instructions").classList.add("active");
+    document.getElementById("progressFill").style.width = "0%";
+  } else if(currentStep >= STEP_SECTION_FIRST && currentStep <= STEP_SECTION_LAST){
+    document.getElementById("screen-question").classList.add("active");
+    const secPageIdx = currentStep - STEP_SECTION_FIRST;
+    renderSectionPage(secPageIdx);
+    document.getElementById("progressFill").style.width = (SECTION_MAP[secPageIdx][0]/15*100) + "%";
+  } else {
+    document.getElementById("screen-results").classList.add("active");
+    document.getElementById("progressFill").style.width = "100%";
+  }
+}
+
+function renderSectionPage(secPageIdx){
+  const tr = T[currentLang];
+  const qIdxs = SECTION_MAP[secPageIdx];
+
+  document.getElementById("qSection").textContent =
+    tr.ui.sectionPrefix.replace("{n}", secPageIdx+1) + " · " + tr.sections[secPageIdx];
+  document.getElementById("sectionVoiceBtn").setAttribute("data-voice-key", "s" + secPageIdx);
+
+  const list = document.getElementById("questionList");
+  list.innerHTML = qIdxs.map((qi, i)=>{
+    const q = tr.questions[qi];
+    const optsHtml = tr.scale.map((label, level)=>{
+      const selected = answers[qi] === level;
+      return `<button type="button" class="scale-opt${selected ? " selected" : ""}" data-level="${level}" data-qidx="${qi}" aria-pressed="${selected}">${faceSVG(level)}<span>${label}</span></button>`;
+    }).join("");
+    const divider = i < qIdxs.length - 1 ? '<hr class="q-divider">' : "";
+    return `<div class="q-block" data-qidx="${qi}">
+      <p class="q-subcount">${tr.ui.questionCounter.replace("{n}", qi+1)}</p>
+      <div class="q-title-row">
+        <img class="q-icon" src="icons/q${pad2(qi+1)}.webp${ASSET_V}" alt="" width="72" height="72" decoding="async" onerror="this.remove()">
+        <h2 class="q-title">${q.t}</h2>
+        <button class="voice-icon-btn" data-voice-key="q${qi}" aria-label="${tr.ui.listenLabel}">${VOICE_ICON_SVG}</button>
+      </div>
+      <p class="q-text">${q.q}</p>
+      <div class="scale-grid" role="group">${optsHtml}</div>
+    </div>${divider}`;
+  }).join("");
+
+  document.getElementById("prevBtnLabel").textContent = tr.ui.prevButton;
+  const nextBtn = document.getElementById("nextBtn");
+  nextBtn.textContent = secPageIdx === SECTION_MAP.length - 1 ? tr.ui.submitButton : tr.ui.nextButton;
+  nextBtn.disabled = qIdxs.some(qi => answers[qi] === null);
+}
+
+/* answer selection and per-question voice buttons are delegated, since question
+   blocks are rebuilt on every render */
+
+document.getElementById("questionList").addEventListener("click", (e)=>{
+  const scaleBtn = e.target.closest(".scale-opt");
+  if(scaleBtn){
+    const qi = parseInt(scaleBtn.getAttribute("data-qidx"), 10);
+    const level = parseInt(scaleBtn.getAttribute("data-level"), 10);
+    answers[qi] = level;
+    const secPageIdx = currentStep - STEP_SECTION_FIRST;
+    renderSectionPage(secPageIdx);
+
+    const qIdxs = SECTION_MAP[secPageIdx];
+    const posInSection = qIdxs.indexOf(qi);
+    const nextQi = qIdxs.slice(posInSection + 1).find(q2 => answers[q2] === null);
+    if(nextQi !== undefined){
+      const nextBlock = document.querySelector(`.q-block[data-qidx="${nextQi}"]`);
+      if(nextBlock) nextBlock.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    return;
+  }
+  const voiceBtn = e.target.closest(".voice-icon-btn");
+  if(voiceBtn){
+    toggleVoiceForBtn(voiceBtn, voiceBtn.getAttribute("data-voice-key"));
+  }
+});
+
+/* ---------- generic voice-over system (instructions, and every question) ---------- */
+const VOICE_ICON_SVG =
+  '<svg class="vi-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
+  '<svg class="vi-pause" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>';
+
+let activeVoiceBtn = null;
+let activeAudioEl = null;
+
+function setVoiceBtnState(btn, playing){
+  const tr = T[currentLang];
+  btn.classList.toggle("playing", playing);
+  const playIcon = btn.querySelector(".vi-play"), pauseIcon = btn.querySelector(".vi-pause");
+  if(playIcon) playIcon.style.display = playing ? "none" : "";
+  if(pauseIcon) pauseIcon.style.display = playing ? "" : "none";
+  btn.setAttribute("aria-label", playing ? tr.ui.pauseLabel : tr.ui.listenLabel);
+}
+function resetAllVoiceUI(){
+  document.querySelectorAll(".voice-icon-btn").forEach(btn => setVoiceBtnState(btn, false));
+}
+function stopAllPlayback(){
+  window.speechSynthesis && window.speechSynthesis.cancel();
+  isSpeaking = false; isPaused = false;
+  if(activeAudioEl){ activeAudioEl.pause(); activeAudioEl = null; }
+  activeVoiceBtn = null;
+  resetAllVoiceUI();
+}
+
+function getVoiceText(key){
+  const tr = T[currentLang];
+  if(key === "instructions"){
+    const legendText = tr.severityLegend.map(item => item.label + " — " + item.desc);
+    return [tr.ui.introBody]
+      .concat(tr.howItWorks)
+      .concat(legendText)
+      .concat([tr.ui.beforeYouBegin, tr.ui.formalDisclaimer])
+      .join(". ");
+  }
+  if(key && key[0] === "q"){
+    const q = tr.questions[parseInt(key.slice(1), 10)];
+    return q ? (q.t + ". " + q.q) : "";
+  }
+  if(key && key[0] === "s"){
+    const secIdx = parseInt(key.slice(1), 10);
+    return tr.sections[secIdx] || "";
+  }
+  return "";
+}
+
+/* Recorded clips are real files: audio/<lang>/intro.mp3, s1..s6.mp3, q01..q15.mp3.
+   If a language has no recordings (audio:false in languages.js) or a file is missing,
+   playback falls back to the browser's text-to-speech automatically. */
+function pad2(n){ return String(n).padStart(2, "0"); }
+function getAudioClipUrl(key){
+  if(!key) return null;
+  const meta = LANG_META[currentLang];
+  if(!meta || !meta.audio) return null;
+  const base = "audio/" + currentLang + "/";
+  if(key === "instructions") return base + "intro.mp3" + ASSET_V;
+  if(key[0] === "q") return base + "q" + pad2(parseInt(key.slice(1), 10) + 1) + ".mp3" + ASSET_V;
+  if(key[0] === "s") return base + "s" + (parseInt(key.slice(1), 10) + 1) + ".mp3" + ASSET_V;
+  return null;
+}
+
+function toggleRecordedAudio(btn, url, fallbackText){
+  if(activeVoiceBtn === btn && activeAudioEl){
+    if(!activeAudioEl.paused){ activeAudioEl.pause(); setVoiceBtnState(btn, false); return; }
+    activeAudioEl.play(); setVoiceBtnState(btn, true); return;
+  }
+  stopAllPlayback();
+  const audio = new Audio(url);
+  let failed = false;
+  const fail = ()=>{
+    if(failed) return;
+    failed = true;
+    if(activeAudioEl === audio){ activeAudioEl = null; activeVoiceBtn = null; }
+    setVoiceBtnState(btn, false);
+    if(fallbackText) toggleSpeechSynthesis(btn, fallbackText);   // clip missing -> TTS
+  };
+  audio.onended = ()=>{ setVoiceBtnState(btn, false); activeAudioEl = null; activeVoiceBtn = null; };
+  audio.onerror = fail;
+  const p = audio.play();
+  if(p && p.catch) p.catch(err=>{ if(!(err && err.name === "AbortError")) fail(); });
+  activeAudioEl = audio;
+  activeVoiceBtn = btn;
+  setVoiceBtnState(btn, true);
+}
+
+function toggleSpeechSynthesis(btn, text){
+  if(!('speechSynthesis' in window)) return;
+  const tr = T[currentLang];
+  const synth = window.speechSynthesis;
+
+  if(activeVoiceBtn === btn && isSpeaking && !isPaused){
+    synth.pause(); isPaused = true; setVoiceBtnState(btn, false); return;
+  }
+  if(activeVoiceBtn === btn && isPaused){
+    synth.resume(); isPaused = false; setVoiceBtnState(btn, true); return;
+  }
+  stopAllPlayback();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = tr.tag;
+  const voice = pickCalmFemaleVoice(tr.tag);
+  if(voice) utter.voice = voice;
+  utter.rate = 0.88;
+  utter.pitch = 0.95;
+  utter.volume = 1;
+  utter.onend = ()=>{ isSpeaking = false; isPaused = false; activeVoiceBtn = null; setVoiceBtnState(btn, false); };
+  utter.onerror = ()=>{ isSpeaking = false; isPaused = false; activeVoiceBtn = null; setVoiceBtnState(btn, false); };
+  synth.speak(utter);
+  isSpeaking = true; isPaused = false; activeVoiceBtn = btn;
+  setVoiceBtnState(btn, true);
+}
+
+function toggleVoiceForBtn(btn, key){
+  const clipUrl = getAudioClipUrl(key);
+  if(clipUrl){ toggleRecordedAudio(btn, clipUrl, getVoiceText(key)); return; }
+  toggleSpeechSynthesis(btn, getVoiceText(key));
+}
+
+/* ---------- voice selection: prefer a calm female voice per language ---------- */
+let cachedVoices = [];
+function refreshVoices(){
+  if('speechSynthesis' in window) cachedVoices = window.speechSynthesis.getVoices();
+}
+if('speechSynthesis' in window){
+  refreshVoices();
+  window.speechSynthesis.onvoiceschanged = refreshVoices;
+}
+const FEMALE_HINTS = ["female","zira","hazel","samantha","victoria","karen","moira","tessa","fiona",
+  "amelie","amélie","anna","ivy","joanna","kendra","kimberly","salli","aria","jenny","natasha","sonia",
+  "libby","maisie","olivia","emma","ava","allison","elena","maria","katya","irina","milena","ioana",
+  "helena","catarina","joana","carmit","veena","lekha","kalpana","shruti","xiaoxiao","xiaoyi","yaoyao",
+  "huihui","meijia","ting-ting","sin-ji","mei-jia","nora","ingrid","elin","sofie","paulina","angelica",
+  "raquel","luciana","camila","laila","damayanti","nizhoni","mónica","monica","lucia","paloma"];
+function pickCalmFemaleVoice(langTag){
+  if(!cachedVoices || !cachedVoices.length) refreshVoices();
+  const prefix = langTag.split("-")[0].toLowerCase();
+  const matches = cachedVoices.filter(v => v.lang && v.lang.toLowerCase().startsWith(prefix));
+  const female = matches.find(v => FEMALE_HINTS.some(h => v.name.toLowerCase().includes(h)));
+  if(female) return female;
+  if(matches.length) return matches[0];
+  return cachedVoices.find(v => v.default) || cachedVoices[0] || null;
+}
+
+/* welcome/instructions page voice-over (fixed button, always present) */
+document.querySelector('.voice-icon-btn[data-voice-key="instructions"]').addEventListener("click", (e)=>{
+  toggleVoiceForBtn(e.currentTarget, "instructions");
+});
+
+/* section-heading voice-over (fixed button; its data-voice-key is updated
+   to "s"+secPageIdx on every renderSectionPage call) */
+document.getElementById("sectionVoiceBtn").addEventListener("click", (e)=>{
+  toggleVoiceForBtn(e.currentTarget, e.currentTarget.getAttribute("data-voice-key"));
+});
+
+/* ---------- results ---------- */
+function severityClass(level){
+  if(level === 3) return "lvl3";
+  if(level === 2) return "lvl2";
+  if(level === 1) return "lvl1";
+  if(level === 0) return "lvl0";
+  return "";
+}
+
+function renderResults(){
+  const tr = T.en;              // results page content is always English, regardless of patient's language
+  const trLang = T[currentLang]; // only for nav-button labels and the "completed in" language name
+  document.getElementById("resultsTitle").textContent = tr.ui.resultsTitle;
+  document.getElementById("resultsIntro").textContent = tr.ui.resultsIntro;
+
+  document.getElementById("finalNoticeBlock").innerHTML =
+    `<h3 class="final-notice-title">${tr.ui.finalNoticeTitle}</h3>` +
+    `<ul class="legal-list">` +
+      `<li><strong>${tr.ui.finalNoticeFrameworkLabel}</strong> ${tr.ui.finalNoticeFramework}</li>` +
+      `<li><strong>${tr.ui.finalNoticePatientLabel}</strong> ${tr.ui.finalNoticePatient}</li>` +
+      `<li><strong>${tr.ui.finalNoticeClinicianLabel}</strong> ${tr.ui.finalNoticeClinician}</li>` +
+      `<li><strong>${tr.ui.finalNoticeConfidentialityLabel}</strong> ${tr.ui.finalNoticeConfidentiality}</li>` +
+    `</ul>`;
+
+  const total = answers.reduce((sum,v)=> sum + (v===null?0:v), 0);
+  const max = 45;
+  let bandIdx = total <= 11 ? 0 : (total <= 26 ? 1 : 2);
+  const scoreBadgeEl = document.getElementById("scoreBadge");
+  const bandClass = ["band0","band1","band2"][bandIdx];
+  scoreBadgeEl.className = "score-badge " + bandClass;
+  scoreBadgeEl.innerHTML =
+    `<span class="score-label">${tr.ui.overallLabel}</span>` +
+    `<span class="score-number">${total} / ${max}</span>` +
+    `<span class="score-band ${bandClass}">${tr.bands[bandIdx]}</span>`;
+
+  const tierRanges = ["0–11", "12–26", "27–45"];
+  const tierCopy = [tr.ui.scoreExplainMild, tr.ui.scoreExplainModerate, tr.ui.scoreExplainSevere];
+  document.getElementById("scoreExplain").innerHTML =
+    `<h3 class="score-explain-title">${tr.ui.scoreExplainTitle}</h3>` +
+    [0,1,2].map(i =>
+      `<div class="score-explain-row ${i === bandIdx ? "current" : ""}">` +
+        `<span class="score-explain-dot band${i}"></span>` +
+        `<span>${tierRanges[i]} — ${tierCopy[i]}</span>` +
+      `</div>`
+    ).join("");
+
+  /* patient-facing summary: short, simple, at a glance */
+  const patientDiv = document.getElementById("patientSummary");
+  patientDiv.innerHTML = "";
+
+  const counts = [0,0,0,0];
+  answers.forEach(a=>{ if(a !== null) counts[a]++; });
+
+  const quick = document.createElement("div");
+  quick.className = "quick-summary";
+
+  const countsRow = document.createElement("div");
+  countsRow.className = "quick-counts";
+  [0,1,2,3].forEach(lvl=>{
+    const chip = document.createElement("span");
+    chip.className = "quick-chip " + severityClass(lvl);
+    chip.textContent = counts[lvl] + " · " + tr.scale[lvl];
+    countsRow.appendChild(chip);
+  });
+  quick.appendChild(countsRow);
+
+  const line = document.createElement("p");
+  line.className = "quick-line";
+  const severe = [];
+  answers.forEach((a,qi)=>{ if(a === 3) severe.push(tr.questions[qi].t); });
+  if(severe.length){
+    line.innerHTML = "<strong>" + tr.ui.mostNoticeable + "</strong> " + severe.join(", ");
+  } else {
+    line.textContent = tr.ui.noSevereSymptoms;
+  }
+  quick.appendChild(line);
+  patientDiv.appendChild(quick);
+
+  /* GP summary - always English */
+  document.getElementById("gpSummaryNote").textContent = tr.ui.gpSummaryNote +
+    " (Patient completed this form in: " + trLang.name + ")";
+  document.querySelector('[data-fixed="item"]').textContent = T.en.ui.item;
+  document.querySelector('[data-fixed="severity"]').textContent = T.en.ui.severity;
+  document.querySelector('[data-fixed="score"]').textContent = T.en.ui.score;
+
+  const tbody = document.getElementById("gpTableBody");
+  tbody.innerHTML = "";
+  const flagged = [];
+  SECTION_MAP.forEach((qIdxs, secIdx)=>{
+    const secRow = document.createElement("tr");
+    secRow.className = "gp-section-row";
+    const td = document.createElement("td");
+    td.colSpan = 3;
+    td.textContent = T.en.sections[secIdx];
+    secRow.appendChild(td);
+    tbody.appendChild(secRow);
+    qIdxs.forEach(qi=>{
+      const level = answers[qi];
+      const tr2 = document.createElement("tr");
+      const c1 = document.createElement("td");
+      c1.textContent = T.en.questions[qi].t;
+      const c2 = document.createElement("td");
+      c2.textContent = level === null ? "Not answered" : EN_SEVERITY[level];
+      if(level === 3) c2.classList.add("gp-flagged");
+      const c3 = document.createElement("td");
+      c3.textContent = level === null ? "-" : String(level);
+      tr2.appendChild(c1); tr2.appendChild(c2); tr2.appendChild(c3);
+      tbody.appendChild(tr2);
+      if(level === 3) flagged.push(T.en.questions[qi].t);
+    });
+  });
+
+  const bandEn = ["Mild Burden Index","Moderate Burden Index","Severe Burden Index"][bandIdx];
+  document.getElementById("gpOverallLine").innerHTML =
+    "<strong>Overall score:</strong> " + total + " / " + max + " — " + bandEn +
+    " · Assessment date: " + new Date().toLocaleDateString("en-GB");
+  document.getElementById("gpFlaggedLine").innerHTML =
+    "<strong>" + T.en.ui.flagged + ":</strong> " + (flagged.length ? flagged.join(", ") : T.en.ui.none);
+
+  document.getElementById("printBtn").textContent = trLang.ui.printButton;
+  document.getElementById("restartBtn").textContent = trLang.ui.restartButton;
+}
+
+/* ---------- init ---------- */
+buildLanguagePicker();
+loadLanguage("en").then(()=>{
+  currentLang = "en";
+  applyLanguage();
+}).catch(err=>{
+  console.error(err);
+  document.getElementById("screen-language").insertAdjacentHTML("afterbegin",
+    '<p class="lang-error" role="alert">Sorry, the app could not load its language files. Please reload the page.</p>');
+});
+</script>
+</body>
+</html>
