@@ -1,26 +1,202 @@
 {
   "_about": "Every language we plan to offer. status: live | planned | pending. flag = ISO country code of the flag to show (flags/<code>.svg is made from it).",
   "languages": [
-    {"code": "en",    "name": "English",            "gloss": "English",              "tag": "en-US", "dir": "ltr", "flag": "gb", "status": "live"},
-    {"code": "hi",    "name": "हिन्दी",              "gloss": "Hindi",                "tag": "hi-IN", "dir": "ltr", "flag": "in", "status": "live"},
-    {"code": "yue",   "name": "廣東話",               "gloss": "Cantonese",            "tag": "zh-HK", "dir": "ltr", "flag": "hk", "status": "live"},
-    {"code": "ko",    "name": "한국어",               "gloss": "Korean",               "tag": "ko-KR", "dir": "ltr", "flag": "kr", "status": "live"},
-    {"code": "pa",    "name": "ਪੰਜਾਬੀ",              "gloss": "Punjabi",              "tag": "pa-IN", "dir": "ltr", "flag": "in", "status": "planned", "note": "Gurmukhi script (India). Pakistani Punjabi uses a different, right-to-left script (Shahmukhi)."},
-    {"code": "bn",    "name": "বাংলা",               "gloss": "Bengali",              "tag": "bn-IN", "dir": "ltr", "flag": "in", "status": "planned", "note": "India flag as requested."},
-    {"code": "bn-bd", "name": "বাংলা (বাংলাদেশ)",     "gloss": "Bengali (Bangladesh)", "tag": "bn-BD", "dir": "ltr", "flag": "bd", "status": "pending", "note": "NEEDS DECISION: same language as `bn`. Only needed if you want a second tile with the Bangladesh flag."},
-    {"code": "sq",    "name": "Shqip",              "gloss": "Albanian",             "tag": "sq-AL", "dir": "ltr", "flag": "al", "status": "planned"},
-    {"code": "zh",    "name": "中文（普通话）",         "gloss": "Mandarin Chinese",     "tag": "zh-CN", "dir": "ltr", "flag": "cn", "status": "planned", "note": "Assumed Simplified characters (mainland China). Confirm before translating."},
-    {"code": "fr",    "name": "Français",           "gloss": "French",               "tag": "fr-FR", "dir": "ltr", "flag": "fr", "status": "planned"},
-    {"code": "de",    "name": "Deutsch",            "gloss": "German",               "tag": "de-DE", "dir": "ltr", "flag": "de", "status": "planned"},
-    {"code": "ja",    "name": "日本語",               "gloss": "Japanese",             "tag": "ja-JP", "dir": "ltr", "flag": "jp", "status": "planned"},
-    {"code": "fa",    "name": "فارسی",              "gloss": "Persian",              "tag": "fa-IR", "dir": "rtl", "flag": "ir", "status": "planned", "note": "Right-to-left: test the layout on a phone."},
-    {"code": "pl",    "name": "Polski",             "gloss": "Polish",               "tag": "pl-PL", "dir": "ltr", "flag": "pl", "status": "planned"},
-    {"code": "pt-br", "name": "Português (Brasil)", "gloss": "Portuguese (Brazil)",  "tag": "pt-BR", "dir": "ltr", "flag": "br", "status": "planned"},
-    {"code": "pt",    "name": "Português (Portugal)","gloss": "Portuguese (Portugal)","tag": "pt-PT", "dir": "ltr", "flag": "pt", "status": "planned"},
-    {"code": "ro",    "name": "Română",             "gloss": "Romanian",             "tag": "ro-RO", "dir": "ltr", "flag": "ro", "status": "planned"},
-    {"code": "es",    "name": "Español",            "gloss": "Spanish",              "tag": "es-ES", "dir": "ltr", "flag": "es", "status": "planned", "note": "Assumed Spain. Confirm if Latin American Spanish is wanted."},
-    {"code": "tl",    "name": "Tagalog",            "gloss": "Tagalog",              "tag": "fil-PH","dir": "ltr", "flag": "ph", "status": "planned"},
-    {"code": "ur",    "name": "اردو",               "gloss": "Urdu",                 "tag": "ur-PK", "dir": "rtl", "flag": "pk", "status": "planned", "note": "Right-to-left: test the layout on a phone."},
-    {"code": "vi",    "name": "Tiếng Việt",         "gloss": "Vietnamese",           "tag": "vi-VN", "dir": "ltr", "flag": "vn", "status": "planned"}
+    {
+      "code": "en",
+      "name": "English",
+      "gloss": "English",
+      "tag": "en-US",
+      "dir": "ltr",
+      "flag": "gb",
+      "status": "live"
+    },
+    {
+      "code": "hi",
+      "name": "हिन्दी",
+      "gloss": "Hindi",
+      "tag": "hi-IN",
+      "dir": "ltr",
+      "flag": "in",
+      "status": "live"
+    },
+    {
+      "code": "yue",
+      "name": "廣東話",
+      "gloss": "Cantonese",
+      "tag": "zh-HK",
+      "dir": "ltr",
+      "flag": "hk",
+      "status": "live"
+    },
+    {
+      "code": "ko",
+      "name": "한국어",
+      "gloss": "Korean",
+      "tag": "ko-KR",
+      "dir": "ltr",
+      "flag": "kr",
+      "status": "live"
+    },
+    {
+      "code": "pa",
+      "name": "ਪੰਜਾਬੀ",
+      "gloss": "Punjabi",
+      "tag": "pa-IN",
+      "dir": "ltr",
+      "flag": "in",
+      "status": "planned",
+      "note": "Gurmukhi script (India), confirmed."
+    },
+    {
+      "code": "bn",
+      "name": "বাংলা",
+      "gloss": "Bengali",
+      "tag": "bn-IN",
+      "dir": "ltr",
+      "flag": "in",
+      "status": "planned",
+      "note": "India flag as requested."
+    },
+    {
+      "code": "bn-bd",
+      "name": "বাংলা (বাংলাদেশ)",
+      "gloss": "Bengali (Bangladesh)",
+      "tag": "bn-BD",
+      "dir": "ltr",
+      "flag": "bd",
+      "status": "planned",
+      "note": "Same Bengali text as `bn`, shown as a second tile with the Bangladesh flag (confirmed)."
+    },
+    {
+      "code": "sq",
+      "name": "Shqip",
+      "gloss": "Albanian",
+      "tag": "sq-AL",
+      "dir": "ltr",
+      "flag": "al",
+      "status": "planned"
+    },
+    {
+      "code": "zh",
+      "name": "中文（普通话）",
+      "gloss": "Mandarin Chinese",
+      "tag": "zh-CN",
+      "dir": "ltr",
+      "flag": "cn",
+      "status": "planned",
+      "note": "Simplified characters (mainland China), confirmed."
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "gloss": "French",
+      "tag": "fr-FR",
+      "dir": "ltr",
+      "flag": "fr",
+      "status": "planned"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "gloss": "German",
+      "tag": "de-DE",
+      "dir": "ltr",
+      "flag": "de",
+      "status": "planned"
+    },
+    {
+      "code": "ja",
+      "name": "日本語",
+      "gloss": "Japanese",
+      "tag": "ja-JP",
+      "dir": "ltr",
+      "flag": "jp",
+      "status": "planned"
+    },
+    {
+      "code": "fa",
+      "name": "فارسی",
+      "gloss": "Persian",
+      "tag": "fa-IR",
+      "dir": "rtl",
+      "flag": "ir",
+      "status": "planned",
+      "note": "Right-to-left: test the layout on a phone."
+    },
+    {
+      "code": "pl",
+      "name": "Polski",
+      "gloss": "Polish",
+      "tag": "pl-PL",
+      "dir": "ltr",
+      "flag": "pl",
+      "status": "planned"
+    },
+    {
+      "code": "pt-br",
+      "name": "Português (Brasil)",
+      "gloss": "Portuguese (Brazil)",
+      "tag": "pt-BR",
+      "dir": "ltr",
+      "flag": "br",
+      "status": "planned"
+    },
+    {
+      "code": "pt",
+      "name": "Português (Portugal)",
+      "gloss": "Portuguese (Portugal)",
+      "tag": "pt-PT",
+      "dir": "ltr",
+      "flag": "pt",
+      "status": "planned"
+    },
+    {
+      "code": "ro",
+      "name": "Română",
+      "gloss": "Romanian",
+      "tag": "ro-RO",
+      "dir": "ltr",
+      "flag": "ro",
+      "status": "planned"
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "gloss": "Spanish",
+      "tag": "es-ES",
+      "dir": "ltr",
+      "flag": "es",
+      "status": "planned",
+      "note": "Spanish for Spain, confirmed."
+    },
+    {
+      "code": "tl",
+      "name": "Tagalog",
+      "gloss": "Tagalog",
+      "tag": "fil-PH",
+      "dir": "ltr",
+      "flag": "ph",
+      "status": "planned",
+      "note": "Philippines flag, confirmed."
+    },
+    {
+      "code": "ur",
+      "name": "اردو",
+      "gloss": "Urdu",
+      "tag": "ur-PK",
+      "dir": "rtl",
+      "flag": "pk",
+      "status": "planned",
+      "note": "Right-to-left: test the layout on a phone."
+    },
+    {
+      "code": "vi",
+      "name": "Tiếng Việt",
+      "gloss": "Vietnamese",
+      "tag": "vi-VN",
+      "dir": "ltr",
+      "flag": "vn",
+      "status": "planned"
+    }
   ]
 }

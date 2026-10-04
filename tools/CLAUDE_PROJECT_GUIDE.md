@@ -68,6 +68,9 @@ If the English text of the app ever changes: regenerate templates (`make_templat
   Urdu is traditionally written in Nastaliq; the default font is Naskh. Mention it, don't fix it unasked.
 - Right-to-left (Persian, Urdu): set `dir` in the spreadsheet; the layout mirrors by itself. The English "PROTOTYPE" banner shows its full stop on the wrong side in RTL; cosmetic, vanishes when the banner is removed.
 - Text the owner did not supply must not be invented silently: the spreadsheet covers every visible string, so blanks fall back to English with a WARN.
+- **Build languages one at a time.** Each package replaces `languages.js` as a whole file, and a chat only knows the repo as it was when the chat started.
+  So start a language's build chat only AFTER the previous language is committed to GitHub. Translators and recorders can work on many languages in parallel;
+  only the build-and-upload step is one at a time. If two were built in parallel, merge by adding the missing language's line to `languages.js` by hand.
 - Keep tool output short. Never print base64 or whole files. Re-use the scripts; do not rewrite them, and do not re-verify what they already check.
 
 ## 8. Open items (owner decisions: raise, don't fix unasked)
@@ -80,7 +83,9 @@ If the English text of the app ever changes: regenerate templates (`make_templat
 
 ## 9. Language registry (canonical file: `tools/languages_registry.json`)
 Live: en, hi, yue (Cantonese), ko.
-Planned: pa Punjabi (Gurmukhi, India flag) | bn Bengali (India flag) | sq Albanian | zh Mandarin (assumed Simplified) | fr French | de German | ja Japanese |
-fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) | ro Romanian | es Spanish (assumed Spain) | tl Tagalog (Philippines flag) |
-ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
-Pending owner decision: bn-bd (Bengali with the Bangladesh flag: the same language as bn; only needed as a second tile).
+Planned (17): pa Punjabi (Gurmukhi, India flag) | bn Bengali (India flag) | bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
+zh Mandarin (Simplified) | fr French | de German | ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
+ro Romanian | es Spanish (Spain) | tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
+The owner has confirmed these choices (Simplified, Spain, Gurmukhi, Philippines flag, the Bangladesh tile): do not ask again.
+Not yet translated on the home page: hi, yue and ko still show English for the home-page headline, subtitle, privacy badge and "Select your language"
+(the newer template covers these). Offer a refresh only if the owner asks.
