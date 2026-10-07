@@ -26,7 +26,7 @@ window.registerLanguage({
     "submitButton": "ਮੁਕੰਮਲ ਕਰੋ",
     "resultsTitle": "Your summary",
     "resultsIntro": "Here is an overview of your answers. Show the section below to your doctor.",
-    "gpSummaryTitle": "GP summary (English)",
+    "gpSummaryTitle": "Summary for your doctor (English)",
     "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly.",
     "printButton": "ਪ੍ਰਿੰਟ ਕਰੋ / PDF ਵਜੋਂ ਸੰਭਾਲੋ",
     "restartButton": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ",
@@ -56,7 +56,7 @@ window.registerLanguage({
     "finalNoticeFrameworkLabel": "Clinical Framework:",
     "finalNoticeFramework": "Generated via an open-source, patient-led tracking checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "Patient Notice:",
-    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming GP appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
+    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
     "finalNoticeClinicianLabel": "Clinician Notice:",
     "finalNoticeClinician": "This document is a patient-generated symptom log (similar to a digital journal) mapped against standard Greene Climacteric Scale domains to support an efficient primary care consultation in line with NICE NG23 diagnostic principles.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",
@@ -144,7 +144,7 @@ window.registerLanguage({
     }
   ],
   "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan, or prescription advice.",
-  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management and to NHS accessibility principles for digital health tools, but it is not an NHS service and has not undergone a formal DTAC assessment.",
+  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
   "howItWorks": [
     "ਅਵਾਜ਼ ਵਾਲਾ ਸੁਨੇਹਾ ਸੁਣੋ: ਹਰ ਸਵਾਲ ਦੇ ਉੱਤੇ ਦਿੱਤੇ ਬਟਨ ਨੂੰ ਦਬਾਓ, ਤਾਂ ਜੋ ਸਵਾਲ ਤੁਹਾਨੂੰ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਬੋਲ ਕੇ ਸੁਣਾਇਆ ਜਾਵੇ।",
     "ਆਪਣੀ ਤਕਲੀਫ਼ ਦੀ ਸ਼ਿੱਦਤ ਚੁਣੋ: ਹਰ ਸਵਾਲ ਦੇ ਹੇਠਾਂ ਉਹ ਬਟਨ ਦਬਾਓ ਜੋ ਪਿਛਲੇ ਮਹੀਨੇ ਦੇ ਤੁਹਾਡੇ ਹਾਲ ਨੂੰ ਸਭ ਤੋਂ ਵਧੀਆ ਦੱਸਦਾ ਹੋਵੇ:",

@@ -97,3 +97,12 @@ def bump_asset_version(repo):
     if date < today: date, n = today, 0
     new = f"{date}-{n+1}"; s = re.sub(r'(window\.ASSET_VERSION\s*=\s*)"[^"]*"', rf'\g<1>"{new}"', s)
     open(p, "w", encoding="utf-8").write(s); return old, new
+
+
+# ---------------------------------------------------------------- older English wording still accepted in templates
+# When the app's English for a translator-facing field is reworded, templates already sent to translators keep the OLD English.
+# The builder normally refuses those (see build_pack), so list the previous wording here: the build is then accepted with a WARN
+# telling the owner to check that the translator did not carry the old wording over (e.g. "GP").
+LEGACY_ENGLISH = {
+    "how3": ["Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your GP during your appointment."],
+}

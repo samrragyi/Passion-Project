@@ -63,14 +63,19 @@ def clean(fid, text):
 def build_pack(code, settings, tr, en_tpl, repo):
     base = S.load_pack(os.path.join(repo, "lang", "en.js")); pack = json.loads(json.dumps(base))
     # --- template English must still match the app's English (otherwise rows may have shifted)
-    drift = []
+    drift, legacy_used = [], []
+    norm = lambda t: re.sub(r"\s+", " ", t or "").strip()
     for sh, fid, _, path, _ in S.FIELDS:
-        if en_tpl.get(fid) != re.sub(r"\s+", " ", S.get_path(base, path)).strip(): drift.append(fid)
+        current = norm(S.get_path(base, path))
+        if en_tpl.get(fid) != current:
+            if norm(en_tpl.get(fid)) in [norm(x) for x in S.LEGACY_ENGLISH.get(fid, [])]: legacy_used.append(fid)   # issued before a rewording: accept, but warn
+            else: drift.append(fid)
     for i, sid in enumerate(S.SECTION_IDS):
         if en_tpl.get(sid) != base["sections"][i]: drift.append(sid)
     for i, qid in enumerate(S.QUESTION_IDS):
         if en_tpl.get(qid + "_t") != base["questions"][i]["t"] or en_tpl.get(qid + "_q") != base["questions"][i]["q"]: drift.append(qid)
     if drift: err(f"template's English no longer matches the app ({len(drift)} cells, e.g. {', '.join(drift[:4])}). Regenerate the template with tools/make_template.py and copy the translations across.")
+    if legacy_used: warn(f"this template was issued with older English wording for: {', '.join(legacy_used)}. The build is accepted, but check the translator's text for that field does not still refer to a 'GP' (the English now says 'doctor').")
     missing, same, drafted = [], [], []
     common = S.common_for(code); supplied = set(S.load_common()["supplied"].get(code, []))
     def put(fid, path, kind="plain"):

@@ -26,7 +26,7 @@ window.registerLanguage({
     "submitButton": "完成",
     "resultsTitle": "Your summary",
     "resultsIntro": "Here is an overview of your answers. Show the section below to your doctor.",
-    "gpSummaryTitle": "GP summary (English)",
+    "gpSummaryTitle": "Summary for your doctor (English)",
     "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly.",
     "printButton": "打印 / 保存为 PDF",
     "restartButton": "重新开始",
@@ -56,7 +56,7 @@ window.registerLanguage({
     "finalNoticeFrameworkLabel": "Clinical Framework:",
     "finalNoticeFramework": "Generated via an open-source, patient-led tracking checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "Patient Notice:",
-    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming GP appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
+    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
     "finalNoticeClinicianLabel": "Clinician Notice:",
     "finalNoticeClinician": "This document is a patient-generated symptom log (similar to a digital journal) mapped against standard Greene Climacteric Scale domains to support an efficient primary care consultation in line with NICE NG23 diagnostic principles.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",
@@ -144,11 +144,11 @@ window.registerLanguage({
     }
   ],
   "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan, or prescription advice.",
-  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management and to NHS accessibility principles for digital health tools, but it is not an NHS service and has not undergone a formal DTAC assessment.",
+  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
   "howItWorks": [
     "请听语音提示：每道问题上方都有一个音频按钮。点击按钮，即可用您所选择的语言听取问题。",
     "选择您症状的严重程度：请根据过去一个月的情况，选择最符合您实际感受的选项：",
-    "查看您的总结：完成所有问题后，系统会根据您的回答生成一份一页的个人情况总结。您可以在预约医生时将这份总结分享给您的全科医生（GP），帮助您更方便地与医生沟通自己的情况。"
+    "查看您的总结：完成所有问题后，系统会根据您的回答生成一份一页的个人情况总结。您可以在预约医生时将这份总结分享给您的医生，帮助您更方便地与医生沟通自己的情况。"
   ],
   "severityLegend": [
     {
