@@ -93,6 +93,7 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - **The printed summary fits ONE page** (A4 and US Letter): `@media print` in `index.html` uses a compact layout (12px root, tight padding, the long "Show the section below to your doctor" intro hidden). `tools/print_test.js` checks it with worst-case answers in every language. Headroom on Letter is only about 20px, so if the results page gets longer, recheck it.
 - **Printing / PDF:** the results page is printed with the browser's own print (`window.print()`), and browsers drop all background colours by default. `@media print` therefore sets `print-color-adjust: exact` on everything (keep it); the paper stays white. To test, drive the page to the results screen, then `page.pdf({ printBackground: false })` and rasterize with `pdftoppm`: that is what a normal user's Save-as-PDF does.
 - **Rewording English on a translator-facing field** (anything in `lang_schema.FIELDS`) makes every already-issued template fail the builder's English-drift check. Add the OLD wording to `LEGACY_ENGLISH` in `lang_schema.py`: the build is then accepted with a WARN to check the translator's text. (Done for `how3`: it used to say "GP"; the app now says "doctor", not "GP" or "NHS", anywhere.)
+- **Long words:** `.q-title` and `.q-section-name` have `overflow-wrap:break-word; hyphens:auto` (needs the page `lang`, which the app sets from the pack tag). German compounds such as "Stimmungsschwankungen" once pushed the audio button off a 320px screen. The browser test's 320px overflow check catches this: run it for every new language.
 - Keep tool output short. Never print base64 or whole files. Re-use the scripts; do not rewrite them, and do not re-verify what they already check.
 
 ## 8. Open items (owner decisions: raise, don't fix unasked)
@@ -107,9 +108,9 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - Hong Kong flag (Cantonese) is a simplified drawing; the official artwork is available via `fetch_flags.py --force` if wanted.
 
 ## 9. Language registry (canonical file: `tools/languages_registry.json`)
-Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi), zh (Mandarin, Simplified).
+Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi), zh (Mandarin, Simplified), fr (French), de (German).
 Truth check: what is live is whatever `languages.js` in the cloned repo lists; if this section and `languages.js` disagree, trust `languages.js` and tell the owner.
-Planned (14): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
-fr French | de German | ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
+Planned (12): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
+ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
 ro Romanian | es Spanish (Spain) | tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
 The owner has confirmed these choices (Simplified, Spain, Gurmukhi, Philippines flag, the Bangladesh tile): do not ask again.

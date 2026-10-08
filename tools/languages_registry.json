@@ -103,7 +103,7 @@
       "tag": "fr-FR",
       "dir": "ltr",
       "flag": "fr",
-      "status": "planned"
+      "status": "live"
     },
     {
       "code": "de",
@@ -113,7 +113,7 @@
       "tag": "de-DE",
       "dir": "ltr",
       "flag": "de",
-      "status": "planned"
+      "status": "live"
     },
     {
       "code": "ja",

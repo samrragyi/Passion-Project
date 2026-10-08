@@ -256,7 +256,7 @@
   }
   .q-section-num{ font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em; }
   .q-section-sep{ display:none; }
-  .q-section-name{ font-size:clamp(1.5rem,5.2vw,1.8rem); line-height:1.2; }
+  .q-section-name{ font-size:clamp(1.5rem,5.2vw,1.8rem); line-height:1.2; min-width:0; overflow-wrap:break-word; hyphens:auto; -webkit-hyphens:auto; }
   .q-block{ margin-bottom:6px; scroll-margin-top:84px; }
   .q-subcount{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 4px; }
   .q-divider{ border:none; border-top:1px solid var(--line); margin:22px 0; }
@@ -272,6 +272,8 @@
   .q-title{
     font-family:var(--serif); font-size:clamp(1.2rem,3.8vw,1.4rem); color:var(--forest);
     margin:0; line-height:1.25; flex:1;
+    /* long compound words (German "Stimmungsschwankungen") must be allowed to break, or they push the audio button off a narrow screen */
+    min-width:0; overflow-wrap:break-word; hyphens:auto; -webkit-hyphens:auto;
   }
   .q-text{ font-size:1rem; color:var(--ink); margin-bottom:16px; }
 
