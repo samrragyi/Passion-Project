@@ -11,7 +11,7 @@
    Bump ASSET_VERSION whenever you replace an existing clip or text file, so
    phones that cached the old one fetch the new one.
    ============================================================ */
-window.ASSET_VERSION = "2026-10-08-1";
+window.ASSET_VERSION = "2026-10-09-1";
 
 window.LANGUAGES = [
   { code: "en", name: "English", gloss: "English", group: "United Kingdom", audio: true },
@@ -22,5 +22,6 @@ window.LANGUAGES = [
   { code: "pa", name: "ਪੰਜਾਬੀ", gloss: "Punjabi", group: "India", audio: true },
   { code: "zh", name: "中文（普通话）", gloss: "Mandarin Chinese", group: "China", audio: true },
   { code: "fr", name: "Français", gloss: "French", group: "France", audio: true },
-  { code: "de", name: "Deutsch", gloss: "German", group: "Germany", audio: true }
+  { code: "de", name: "Deutsch", gloss: "German", group: "Germany", audio: true },
+  { code: "es", name: "Español", gloss: "Spanish", group: "Spain", audio: true }
 ];

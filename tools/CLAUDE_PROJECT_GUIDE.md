@@ -108,9 +108,9 @@ The Audio sheet shows the exact script for each, built from the translation. The
 - Hong Kong flag (Cantonese) is a simplified drawing; the official artwork is available via `fetch_flags.py --force` if wanted.
 
 ## 9. Language registry (canonical file: `tools/languages_registry.json`)
-Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi), zh (Mandarin, Simplified), fr (French), de (German).
+Live: en, hi, yue (Cantonese), ko, bn (Bengali, India flag), pa (Punjabi, Gurmukhi), zh (Mandarin, Simplified), fr (French), de (German), es (Spanish).
 Truth check: what is live is whatever `languages.js` in the cloned repo lists; if this section and `languages.js` disagree, trust `languages.js` and tell the owner.
-Planned (12): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
+Planned (11): bn-bd Bengali (Bangladesh flag: same text as bn, a second tile) | sq Albanian |
 ja Japanese | fa Persian (rtl, Iran flag) | pl Polish | pt-br Portuguese (Brazil) | pt Portuguese (Portugal) |
-ro Romanian | es Spanish (Spain) | tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
+ro Romanian |  tl Tagalog (Philippines flag) | ur Urdu (rtl, Pakistan flag) | vi Vietnamese.
 The owner has confirmed these choices (Simplified, Spain, Gurmukhi, Philippines flag, the Bangladesh tile): do not ask again.
