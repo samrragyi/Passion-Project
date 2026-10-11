@@ -95,7 +95,7 @@ window.registerLanguage({
       "q": "Cât de tare vă deranjează când uitați lucruri, vă pierdeți ideile pe parcursul discuţiei’ sau vă găsiți greu cuvintele?"
     },
     {
-      "t": "Stări de nervozitate’ or ‘Iritabilitate’ și dureri de cap",
+      "t": "Stări de nervozitate sau iritabilitate și dureri de cap",
       "q": "Cât de neplăcute sunt furnicăturile fără motiv pe piele („ace pe piele”), durerile noi de cap, migrenele hormonale sau amețelile?"
     },
     {
