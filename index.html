@@ -167,18 +167,16 @@
   }
   .page-sub{ text-align:center; color:var(--ink-soft); font-size:0.95rem; margin:0 0 28px; }
 
-  /* Grid of country blocks: each country's languages stay together in one block (.lang-group), and the blocks flow down
-     2 columns on a phone, 3 on a wider screen, 1 on a very narrow one. Tiles come from languages.js in country order
-     (English first). Any number of languages just keeps flowing. */
+  /* Language grid: a true grid, filled row by row. Every tile in a row is stretched to the same height, so the rows
+     line up across the columns whatever the length of the names (2 columns on a phone, 3 from 560px, 1 under 360px).
+     Tiles still come from languages.js in country order (English first, then countries A-Z); the .lang-group wrappers
+     only keep the markup tidy and take no part in the layout (display:contents). */
   .language-grid{
-    column-count:2; column-gap:10px;
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 10px;
   }
-  @media (min-width:560px){ .language-grid{ column-count:3; } }
-  @media (max-width:359px){ .language-grid{ column-count:1; } }
-  .lang-group{
-    break-inside:avoid; -webkit-column-break-inside:avoid; page-break-inside:avoid;
-    display:grid; gap:6px; margin-bottom:10px;
-  }
+  @media (min-width:560px){ .language-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+  @media (max-width:359px){ .language-grid{ grid-template-columns:minmax(0,1fr); } }
+  .lang-group{ display:contents; }
   .lang-card{
     position:relative;
     display:grid; grid-template-columns:32px minmax(0,1fr); grid-template-areas:"flag native" "flag gloss";
