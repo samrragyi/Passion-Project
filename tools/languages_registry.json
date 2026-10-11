@@ -82,7 +82,7 @@
       "tag": "sq-AL",
       "dir": "ltr",
       "flag": "al",
-      "status": "planned"
+      "status": "live"
     },
     {
       "code": "zh",
@@ -123,7 +123,7 @@
       "tag": "ja-JP",
       "dir": "ltr",
       "flag": "jp",
-      "status": "planned"
+      "status": "live"
     },
     {
       "code": "fa",
@@ -174,7 +174,7 @@
       "tag": "ro-RO",
       "dir": "ltr",
       "flag": "ro",
-      "status": "planned"
+      "status": "live"
     },
     {
       "code": "es",
@@ -195,7 +195,7 @@
       "tag": "fil-PH",
       "dir": "ltr",
       "flag": "ph",
-      "status": "planned",
+      "status": "live",
       "note": "Philippines flag, confirmed."
     },
     {
@@ -217,7 +217,7 @@
       "tag": "vi-VN",
       "dir": "ltr",
       "flag": "vn",
-      "status": "planned"
+      "status": "live"
     },
     {
       "code": "ne",
@@ -238,8 +238,8 @@
       "tag": "hak-CN",
       "dir": "ltr",
       "flag": "cn",
-      "status": "planned",
-      "note": "Added from the translator's file. Written in traditional Chinese characters; no text-to-speech voice exists, so a speaker must record the audio. Country/flag provisional: confirm."
+      "status": "live",
+      "note": "Written in traditional Chinese characters; no text-to-speech voice exists, so the audio was recorded by a Hakka speaker (long pauses capped at 0.7 s). Flag/country China: confirmed by the owner."
     },
     {
       "code": "yue-wt",
@@ -260,8 +260,8 @@
       "tag": "nan-CN",
       "dir": "ltr",
       "flag": "cn",
-      "status": "planned",
-      "note": "Added from the translator's file. Written Chinese; a speaker must record the audio. Country/flag provisional: confirm."
+      "status": "live",
+      "note": "Written in traditional Chinese; no text-to-speech voice exists, so the audio was recorded by a speaker (used exactly as sent). Flag/country China: provisional, please confirm."
     }
   ]
 }
