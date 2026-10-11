@@ -248,9 +248,9 @@
       "group": "China",
       "tag": "yue-HK",
       "dir": "ltr",
-      "flag": "hk",
-      "status": "planned",
-      "note": "Added from the translator's file (Hong Kong flag, like Cantonese). Written Chinese; a speaker must record the audio. Country/flag provisional: confirm."
+      "flag": "cn",
+      "status": "live",
+      "note": "Written Chinese (Cantonese-style); no text-to-speech voice exists, so the audio was recorded by a speaker (long pauses capped at 0.7 s). Flag/country China: confirmed by the owner. The 20 standard strings reuse the Cantonese wording: have a Weitou speaker check them."
     },
     {
       "code": "nan-cz",
