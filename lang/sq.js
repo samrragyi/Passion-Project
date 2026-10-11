@@ -1,0 +1,171 @@
+/* Language pack: Shqip (sq). Loaded on demand by index.html. */
+window.registerLanguage({
+  "code": "sq",
+  "name": "Shqip",
+  "gloss": "Albanian",
+  "tag": "sq-AL",
+  "dir": "ltr",
+  "ui": {
+    "appTitleShort": "The Menopause Conversation",
+    "appTitle": "Kuptoni çfarë po ju thotë trupi juaj",
+    "appSubtitle": "Një kontroll i shkurtër dhe i qartë i simptomave tuaja.",
+    "introBody": "Mirë se vini në Bisedën për Menopauzën. Ky mjet i shkurtër shëndetësor ju ndihmon të organizoni dhe të ndiqni simptomat tuaja përpara se të flisni me mjekun tuaj. Ju lutemi ndiqni hapat e thjeshtë më poshtë:",
+    "startButton": "Filloni kontrollin",
+    "questionCounter": "Pyetja {n} nga 15",
+    "sectionPrefix": "Seksioni {n} nga 6",
+    "questionsRemaining": "{n} left",
+    "introStepLabel": "Getting started",
+    "languageStepLabel": "Choose your language",
+    "instructionsStepLabel": "Before you begin",
+    "resultsStepLabel": "Your summary is ready",
+    "scaleTitle": "How severe is this for you?",
+    "listenLabel": "Dëgjo",
+    "pauseLabel": "Pauzë",
+    "prevButton": "Prapa",
+    "nextButton": "Tjetra",
+    "submitButton": "Përfundo",
+    "resultsTitle": "Your summary",
+    "resultsIntro": "Here is an overview of your answers. Show the section below to your doctor.",
+    "gpSummaryTitle": "Summary for your doctor (English)",
+    "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly.",
+    "printButton": "Printo / Ruaj si PDF",
+    "restartButton": "Fillo përsëri",
+    "overallLabel": "Overall score",
+    "notAnswered": "Not answered",
+    "item": "Item",
+    "severity": "Severity",
+    "score": "Score",
+    "flagged": "Highest-severity items",
+    "none": "None",
+    "mostNoticeable": "Most noticeable today:",
+    "noSevereSymptoms": "Nothing was rated as extremely severe today.",
+    "scoreExplainTitle": "Understanding your score",
+    "scoreExplainMild": "Mild — symptoms are mostly absent or manageable day to day.",
+    "scoreExplainModerate": "Moderate — multiple systems are affected, or a few symptoms are quite severe.",
+    "scoreExplainSevere": "Severe — a profound impact across multiple systems, including sleep, mood and physical function.",
+    "privacyBadge": "100% privat dhe pa nevojë për regjistrim",
+    "languagePageTitle": "Zgjidhni gjuhën tuaj",
+    "languagePageSub": "Choose a language to continue. You can change it anytime from the menu at the top of the page.",
+    "homeLabel": "Ballina",
+    "beforeYouBegin": "Njoftim",
+    "continueButton": "I understand — continue",
+    "instructionsTitle": "How this works",
+    "formalDisclaimer": "Ky mjet është vetëm për qëllime edukative dhe për t'ju ndihmuar të përgatiteni para vizitës te mjeku. Nuk është një mjet diagnostikues dhe nuk zëvendëson këshillën mjekësore. Çdo vendim që lidhet me shëndetin tuaj duhet të merret gjithmonë në konsultim me një mjek të kualifikuar.",
+    "consentLabel": "E kuptoj.",
+    "finalNoticeTitle": "Notice for Patient and Clinician",
+    "finalNoticeFrameworkLabel": "Clinical Framework:",
+    "finalNoticeFramework": "Generated via an open-source, patient-led tracking checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticePatientLabel": "Patient Notice:",
+    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
+    "finalNoticeClinicianLabel": "Clinician Notice:",
+    "finalNoticeClinician": "This document is a patient-generated symptom log (similar to a digital journal) mapped against standard Greene Climacteric Scale domains to support an efficient primary care consultation in line with NICE NG23 diagnostic principles.",
+    "finalNoticeConfidentialityLabel": "Data Confidentiality:",
+    "finalNoticeConfidentiality": "No data from this session has been saved to any server or external database. Once this tab or PDF export is closed, all entered information is permanently erased."
+  },
+  "scale": [
+    "Aspak",
+    "Pak",
+    "Mjaft",
+    "Jashtëzakonisht"
+  ],
+  "bands": [
+    "Mild Burden Index",
+    "Moderate Burden Index",
+    "Severe Burden Index"
+  ],
+  "sections": [
+    "Cikli Menstrual dhe Afshet e Nxehtësisë",
+    "Kujtesa dhe Sistemi Nervor",
+    "Trupi dhe Fiziku",
+    "Lëkura, Goja dhe Imuniteti",
+    "Gjendja Shpirtërore dhe Humori",
+    "Shëndeti Intim dhe Urinar"
+  ],
+  "questions": [
+    {
+      "t": "Ndryshimet e Ciklit Menstrual",
+      "q": "Sa të rënda janë ndryshimet në kohën e ciklit tuaj (vonesa apo humbje e periodave) apo në sasinë e gjakderdhjes (gjakderdhje shumë e rëndë apo pikatje e lehtë)?"
+    },
+    {
+      "t": "Afshet e Nxehtësisë dhe Djersa e Natës",
+      "q": "Sa fort ju ndikojnë gjatë ditës apo natës valët e menjëhershme të nxehtësisë (afshet), djersitja e natës, apo ethet e ftohta?"
+    },
+    {
+      "t": "Mjegullimi i Mendjes dhe Kujtesa",
+      "q": "Sa e rëndë është përvoja juaj me harresën e pazakontë, humbjen e fillit të mendimit, apo vështirësinë për të gjetur fjalët?"
+    },
+    {
+      "t": "Nervat dhe Dhimbjet e Kokës",
+      "q": "Sa ju shqetësojnë mpirjet apo ndjesia si gjilpëra në lëkurë, dhimbjet e reja të kokës, migrena hormonale, apo marramendja?"
+    },
+    {
+      "t": "Kyçet dhe Muskujt",
+      "q": "Sa e rëndë është ngurtësimi i vazhdueshëm i kyçeve, enjtja, apo dhimbja e pashpjegueshme e muskujve (veçanërisht në mëngjes)?"
+    },
+    {
+      "t": "Rrahjet e Shpejta të Zemrës",
+      "q": "Sa ju shqetëson kur zemra ju rreh papritur shumë shpejt, fort, apo me përplasje të lehta ndërsa jeni duke pushuar?"
+    },
+    {
+      "t": "Lodhja Fizike",
+      "q": "Sa e rëndë është lodhja juaj e përditshme fizike apo ajo plogështi e thellë që nuk kalon as me gjumë?"
+    },
+    {
+      "t": "Tharja e Lëkurës dhe Syve",
+      "q": "Sa e rëndë është hollimi i menjëhershëm i lëkurës, humbja e elasticitetit, apo kruarja dhe ndjesia e tharjes si me rërë në sy?"
+    },
+    {
+      "t": "Goja dhe Djegia e Gjuhës",
+      "q": "Sa ju shqetëson ndjesia e \"djegies së gjuhës\", shija si metal në gojë, apo mishrat e dhëmbëve që janë të ndjeshëm dhe u rrjedh gjaku?"
+    },
+    {
+      "t": "Alergjitë dhe Reaksionet",
+      "q": "Sa të rënda janë reaksionet e reja alergjike të menjëhershme, skuqjet e pashpjegueshme të lëkurës (urtikaria), apo ndjeshmëria ndaj ushqimeve apo produkteve?"
+    },
+    {
+      "t": "Ankthi dhe Frika e Menjëhershme",
+      "q": "Sa të rënda janë ndjenjat e menjëhershme të panikut pa arsye, trazi e brendshme, tensioni, apo një frikë e paqartë?"
+    },
+    {
+      "t": "Ndryshimet e Humorit",
+      "q": "Sa të rënda janë ndryshimet e menjëhershme të humorit që nuk i kontrolloni dot, të qarët e shpeshtë, humbja e durimit, apo zemërimi i pazakontë?"
+    },
+    {
+      "t": "Prishja e Gjumit",
+      "q": "Sa rëndë ju prishet gjumi nga zgjimi shumë herët (p.sh., ora 2:00–4:00 e mëngjesit) dhe pamundësia për t'ju zënë sërish gjumi?"
+    },
+    {
+      "t": "Shqetësimet Intime dhe Dëshira",
+      "q": "Sa e rëndë është tharja, kruarja apo irritimi në zonat intime, apo një ulje e pazakontë e dëshirës ose ndjeshmërisë seksuale?"
+    },
+    {
+      "t": "Shqetësimet e Urinimit",
+      "q": "Sa e rëndë është nevoja e ngutshme për të urinuar shpesh apo irritimet dhe infeksionet e përsëritura të fshikëzës së urinës?"
+    }
+  ],
+  "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan, or prescription advice.",
+  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
+  "howItWorks": [
+    "Dëgjoni Mesazhin me Zë: Klikoni butonin e audios mbi çdo pyetje për ta dëgjuar pyetjen të lexuar me zë në gjuhën tuaj.",
+    "Zgjidhni Shkallën e Shqetësimit: Zgjidhni butonin nën çdo pyetje që përshkruan më së miri përvojën tuaj gjatë muajit të kaluar:",
+    "Rishikoni Përmbledhjen Tuaj: Pasi të përfundoni, përgjigjet tuaja do të krijojnë një përmbledhje prej 1 faqeje për t'ia treguar mjekut tuaj gjatë vizitës."
+  ],
+  "severityLegend": [
+    {
+      "label": "Jeshile",
+      "desc": "Nuk ka simptomë të pranishme ose nuk shkakton asnjë problem."
+    },
+    {
+      "label": "E verdhë",
+      "desc": "Ka simptomë të lehtë, e cila është e pranishme pak ose vërehet vetëm herë pas here."
+    },
+    {
+      "label": "Portokalli (amber)",
+      "desc": "Ka simptomë të moderuar, e cila është mjaft e dukshme, ndodh rregullisht, ose mund të menaxhohet por është shqetësuese."
+    },
+    {
+      "label": "E kuqe",
+      "desc": "Ekziston simptomë e rëndë. Shqetësimi është ekstrem, i shpeshtë, ose ndikon ndjeshëm në jetën e përditshme, gjumin ose mirëqenien."
+    }
+  ]
+});

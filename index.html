@@ -32,6 +32,7 @@
     --ink-soft: #5C5D50;
     --forest: #3B4F3A;
     --forest-dim: #55694F;
+    --btn:#5C7A59; --btn-dim:#4D6A4A;   /* main buttons (Begin, Next, Finish, Print): a lighter, calmer version of the site green; white text 4.8:1 */
     --berry: #954A63;
     --berry-dim: #B98096;
     --sage: #C7D0BC;
@@ -137,12 +138,12 @@
   .cta-row{ text-align:center; }
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    background:var(--forest); color:#fff; border:none;
+    background:var(--btn); color:#fff; border:none;
     padding:13px 28px; border-radius:var(--radius);
     font-size:1rem; cursor:pointer;
     transition:background .15s ease, transform .1s ease;
   }
-  .btn:hover{ background:var(--forest-dim); }
+  .btn:hover{ background:var(--btn-dim); }
   .btn:active{ transform:translateY(1px); }
   .btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
   .btn-ghost{
@@ -254,7 +255,7 @@
 
   /* ---------- question screen ---------- */
   .q-meta{ margin-bottom:6px; }
-  .q-section-row{ display:flex; align-items:center; gap:8px; }
+  .q-section-row{ display:flex; align-items:center; justify-content:space-between; gap:8px; }   /* section audio button lines up with the question buttons */
   /* Section header: the biggest text on the question screen (larger than the question titles, which are 1.2-1.4rem),
      so the reader can tell at a glance which section she is in. Small "Section 1 / 6" label above, section name large below.
      The three spans still add up to the exact text "prefix · name" (the test checks that); the " · " is hidden visually. */
@@ -285,28 +286,31 @@
   .q-text{ font-size:1rem; color:var(--ink); margin-bottom:16px; }
 
   .intro-with-voice{ display:flex; align-items:flex-start; gap:10px; margin-bottom:20px; }
+  /* long unbreakable strings (e.g. a slash-joined pair of words in a translator's text) must wrap instead of pushing the intro card off a 320px screen */
+  .intro-body{ min-width:0; overflow-wrap:break-word; }
+  .intro-with-voice{ padding-top:22px; }   /* room above the audio sign for the one-time "Listen" bubble */
   .voice-icon-btn{
     flex:none; width:48px; height:48px; border-radius:50%; margin-top:2px; position:relative;
-    /* dusty blue + white icon + a soft always-on halo. Blue is a hue none of the answers use (they are green/yellow/orange/red,
-       so a green button read as "Not at all") and it is calm next to the watercolour artwork. Idle = blue, playing = berry. */
-    background:#4A7BA6; border:2px solid #4A7BA6;
-    box-shadow:0 0 0 5px rgba(74,123,166,0.18), 0 2px 6px rgba(74,123,166,0.35);
+    /* white button with a blue outline: quiet next to the four answer colours, which are the loud thing on this screen.
+       Blue is a hue none of the answers use (they are green/yellow/orange/red). Idle = white + blue, playing = berry. */
+    background:#fff; border:2px solid #4A7BA6; color:#4A7BA6;
     display:flex; align-items:center; justify-content:center;
-    cursor:pointer; color:#fff;
+    cursor:pointer;
     transition:background .15s ease, transform .1s ease;
   }
-  .voice-icon-btn:hover{ background:#3E6A92; border-color:#3E6A92; }
+  .voice-icon-btn:hover{ background:#EAF1F8; }
   .voice-icon-btn:active{ transform:scale(0.95); }
-  .voice-icon-btn.playing{ background:var(--berry); border-color:var(--berry); box-shadow:0 0 0 5px rgba(149,74,99,0.18), 0 2px 6px rgba(149,74,99,0.35); }
+  .voice-icon-btn.playing{ background:var(--berry); border-color:var(--berry); color:#fff; }
   /* gentle pulse INSIDE the button: the halo breathes and an inner ring glows. Only on the Page 2 intro and the first question,
      and only until she taps any audio button once (see updateVoicePulse). Off for people who ask for reduced motion. */
   @keyframes voicePulse{
-    0%,100%{ box-shadow:0 0 0 5px rgba(74,123,166,0.18), 0 2px 6px rgba(74,123,166,0.35), inset 0 0 0 0 rgba(255,255,255,0); }
-    50%    { box-shadow:0 0 0 9px rgba(74,123,166,0.10), 0 3px 10px rgba(74,123,166,0.45), inset 0 0 0 4px rgba(255,255,255,0.40); }
+    0%,100%{ box-shadow:0 0 0 0 rgba(74,123,166,0), inset 0 0 0 0 rgba(74,123,166,0); background:#fff; }
+    50%    { box-shadow:0 0 0 8px rgba(74,123,166,0.16), inset 0 0 0 4px rgba(74,123,166,0.22); background:#EAF1F8; }
   }
   .voice-icon-btn.voice-pulse{ animation:voicePulse 1.7s ease-in-out infinite; }
   .voice-icon-btn.playing.voice-pulse{ animation:none; }
-  /* one-time hint bubble on the first question: the word "Listen" in her own language (the pack's listenLabel), gone after her first tap */
+  /* one-time hint bubble ABOVE the audio sign (Page 2 intro and question 1): the word "Listen" in her own language
+     (the pack's listenLabel), gone after her first tap. The intro button sits at the start edge, so its bubble opens inward. */
   .voice-icon-btn.voice-hint::after{
     content:attr(data-hint); position:absolute; inset-inline-end:-4px; bottom:calc(100% + 12px); z-index:6;
     background:#24261F; color:#fff; font:700 0.78rem/1 var(--sans, system-ui, sans-serif); white-space:nowrap;
@@ -316,8 +320,10 @@
     content:""; position:absolute; inset-inline-end:16px; bottom:calc(100% + 7px); z-index:6;
     width:10px; height:10px; background:#24261F; transform:rotate(45deg); pointer-events:none;
   }
+  .voice-icon-btn.voice-hint-start::after{ inset-inline-end:auto; inset-inline-start:-4px; }
+  .voice-icon-btn.voice-hint-start::before{ inset-inline-end:auto; inset-inline-start:16px; }
   @media (prefers-reduced-motion: reduce){
-    .voice-icon-btn.voice-pulse{ animation:none; }
+    .voice-icon-btn.voice-pulse{ animation:none; box-shadow:0 0 0 4px rgba(74,123,166,0.20); }
   }
   .voice-icon-btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
   .voice-icon-btn svg{ width:26px; height:26px; }
@@ -951,12 +957,13 @@ let activeVoiceBtn = null;
 let activeAudioEl = null;
 let voiceDiscovered = false;   // set once she has tapped an audio button: the pulse then stops for good (memory only, nothing stored)
 function updateVoicePulse(){
-  document.querySelectorAll(".voice-pulse, .voice-hint").forEach(b => { b.classList.remove("voice-pulse","voice-hint"); b.removeAttribute("data-hint"); });
+  document.querySelectorAll(".voice-pulse, .voice-hint").forEach(b => { b.classList.remove("voice-pulse","voice-hint","voice-hint-start"); b.removeAttribute("data-hint"); });
   if(voiceDiscovered) return;
   const intro = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]');
   const q1 = document.querySelector('.q-block[data-qidx="0"] .voice-icon-btn');
-  if(intro) intro.classList.add("voice-pulse");
-  if(q1){ q1.classList.add("voice-pulse","voice-hint"); q1.setAttribute("data-hint", T[currentLang].ui.listenLabel); }   // the hint word comes from her language pack
+  const word = T[currentLang] && T[currentLang].ui.listenLabel;            // the hint word comes from her language pack
+  if(intro){ intro.classList.add("voice-pulse","voice-hint","voice-hint-start"); if(word) intro.setAttribute("data-hint", word); }
+  if(q1){ q1.classList.add("voice-pulse","voice-hint"); if(word) q1.setAttribute("data-hint", word); }
 }
 
 function setVoiceBtnState(btn, playing){
