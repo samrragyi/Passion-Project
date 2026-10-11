@@ -166,19 +166,25 @@
   }
   .page-sub{ text-align:center; color:var(--ink-soft); font-size:0.95rem; margin:0 0 28px; }
 
-  /* One column, one row per language: flag + the language's own name, English name on the far side.
-     Tiles come from languages.js in country order; the first tile of each country gets a little extra space above it
-     (.group-start), so e.g. all of India's languages read as one block. Any number of languages just flows down the page. */
+  /* Grid of country blocks: each country's languages stay together in one block (.lang-group), and the blocks flow down
+     2 columns on a phone, 3 on a wider screen, 1 on a very narrow one. Tiles come from languages.js in country order
+     (English first). Any number of languages just keeps flowing. */
   .language-grid{
-    display:grid; grid-template-columns:1fr; gap:8px;
+    column-count:2; column-gap:10px;
+  }
+  @media (min-width:560px){ .language-grid{ column-count:3; } }
+  @media (max-width:359px){ .language-grid{ column-count:1; } }
+  .lang-group{
+    break-inside:avoid; -webkit-column-break-inside:avoid; page-break-inside:avoid;
+    display:grid; gap:6px; margin-bottom:10px;
   }
   .lang-card{
     position:relative;
-    display:flex; flex-direction:row; align-items:center; gap:14px;
+    display:grid; grid-template-columns:32px minmax(0,1fr); grid-template-areas:"flag native" "flag gloss";
+    column-gap:10px; row-gap:0; align-items:center; text-align:start; min-width:0;
     background:var(--panel); border:1px solid var(--line); border-radius:var(--radius-lg);
-    padding:10px 16px; cursor:pointer; transition:border-color .15s ease, transform .1s ease, background .15s ease;
+    padding:9px 10px; cursor:pointer; transition:border-color .15s ease, transform .1s ease, background .15s ease;
   }
-  .lang-card.group-start{ margin-top:12px; }
   .lang-card:hover{ border-color:var(--sage); background:var(--sage-pale); }
   .lang-card:active{ transform:translateY(1px); }
   .lang-card:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
@@ -202,9 +208,10 @@
     box-shadow:0 0 0 1px rgba(36,38,31,0.15);
   }
   .lang-error{ color:#8F2B2B; background:#FBEAEA; border:1px solid #E3B4B4; border-radius:10px; padding:10px 12px; margin-top:12px; font-size:0.9rem; }
-  .lang-native{ font-family:var(--serif); color:var(--forest); font-size:1.1rem; flex:1; text-align:start; }
-  .lang-gloss{ font-size:0.8rem; color:var(--ink-soft); text-align:end; }
-  .lang-flag img{ width:36px; height:27px; }
+  .lang-native{ grid-area:native; font-family:var(--serif); color:var(--forest); font-size:1.02rem; line-height:1.2; text-align:start; overflow-wrap:anywhere; }
+  .lang-gloss{ grid-area:gloss; font-size:0.74rem; color:var(--ink-soft); line-height:1.2; text-align:start; overflow-wrap:anywhere; }
+  .lang-flag{ grid-area:flag; }
+  .lang-flag img{ width:32px; height:24px; }
   /* first screen: a slimmer header so the languages start higher up the page (many readers cannot read this English) */
   #screen-language .hero-art{ max-width:110px; margin:0 auto 6px; }
   #screen-language h1.appTitle{ font-size:clamp(1.3rem,5vw,1.7rem); margin-bottom:6px; }
@@ -280,13 +287,27 @@
   .intro-with-voice{ display:flex; align-items:flex-start; gap:10px; margin-bottom:20px; }
   .voice-icon-btn{
     flex:none; width:48px; height:48px; border-radius:50%; margin-top:2px;
-    background:var(--sage-pale); border:1px solid var(--sage);
+    /* solid dark green + white icon: the audio is the key feature, so the button must look like a button (idle = green, playing = berry) */
+    background:var(--forest); border:2px solid var(--forest);
+    box-shadow:0 2px 6px rgba(59,79,58,0.30);
     display:flex; align-items:center; justify-content:center;
-    cursor:pointer; color:var(--forest);
-    transition:background .15s ease;
+    cursor:pointer; color:#fff;
+    transition:background .15s ease, transform .1s ease;
   }
-  .voice-icon-btn:hover{ background:var(--sage); }
+  .voice-icon-btn:hover{ background:#2C3D2B; }
+  .voice-icon-btn:active{ transform:scale(0.95); }
   .voice-icon-btn.playing{ background:var(--berry); color:#fff; border-color:var(--berry); }
+  /* gentle pulse INSIDE the button: it breathes and an inner ring glows. Only on the Page 2 intro and the first question,
+     and only until she taps any audio button once (see updateVoicePulse). Off for people who ask for reduced motion. */
+  @keyframes voicePulse{
+    0%,100%{ transform:scale(1);    box-shadow:0 2px 6px rgba(59,79,58,0.30), inset 0 0 0 0 rgba(255,255,255,0); }
+    50%    { transform:scale(1.08); box-shadow:0 3px 10px rgba(59,79,58,0.45), inset 0 0 0 4px rgba(255,255,255,0.40); }
+  }
+  .voice-icon-btn.voice-pulse{ animation:voicePulse 1.7s ease-in-out infinite; }
+  .voice-icon-btn.playing.voice-pulse{ animation:none; }
+  @media (prefers-reduced-motion: reduce){
+    .voice-icon-btn.voice-pulse{ animation:none; box-shadow:0 0 0 3px rgba(59,79,58,0.35); }
+  }
   .voice-icon-btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
   .voice-icon-btn svg{ width:26px; height:26px; }
   .voice-icon-btn-sm{ min-width:44px; width:44px; height:44px; }
@@ -723,15 +744,17 @@ const languageGrid = document.getElementById("languageGrid");
 const langError = document.getElementById("langError");
 function buildLanguagePicker(){
   const langs = (window.LANGUAGES || []).slice().sort((a,b)=> (b.code==="en") - (a.code==="en") || (a.group||a.gloss).localeCompare(b.group||b.gloss, "en") || a.gloss.localeCompare(b.gloss, "en"));
-  let prevGroup = null;
+  let prevGroup = null, groupEl = null;
   langs.forEach(l=>{
     const card = document.createElement("button");
     card.type = "button";
     card.className = "lang-card";
     const grp = l.group || l.gloss;
-    if (prevGroup !== null && grp !== prevGroup) card.classList.add("group-start");
-    prevGroup = grp;
-    card.innerHTML = `<span class="lang-flag"><img src="flags/${l.code}.svg${ASSET_V}" alt="" width="36" height="27"></span>
+    if (groupEl === null || grp !== prevGroup){            // a new country: start a new block
+      groupEl = document.createElement("div"); groupEl.className = "lang-group";
+      languageGrid.appendChild(groupEl); prevGroup = grp;
+    }
+    card.innerHTML = `<span class="lang-flag"><img src="flags/${l.code}.svg${ASSET_V}" alt="" width="32" height="24"></span>
       <span class="lang-native"></span>
       <span class="lang-gloss"></span>
       <span class="lang-check" aria-hidden="true">
@@ -756,7 +779,7 @@ function buildLanguagePicker(){
         langError.hidden = false;
       });
     });
-    languageGrid.appendChild(card);
+    groupEl.appendChild(card);
   });
 }
 
@@ -840,6 +863,7 @@ function renderCurrentScreen(){
     document.getElementById("screen-results").classList.add("active");
     document.getElementById("progressFill").style.width = "100%";
   }
+  updateVoicePulse();
 }
 
 function renderSectionPage(secPageIdx){
@@ -902,6 +926,7 @@ document.getElementById("questionList").addEventListener("click", (e)=>{
   }
   const voiceBtn = e.target.closest(".voice-icon-btn");
   if(voiceBtn){
+    voiceDiscovered = true; updateVoicePulse();
     toggleVoiceForBtn(voiceBtn, voiceBtn.getAttribute("data-voice-key"));
   }
 });
@@ -913,6 +938,13 @@ const VOICE_ICON_SVG =
 
 let activeVoiceBtn = null;
 let activeAudioEl = null;
+let voiceDiscovered = false;   // set once she has tapped an audio button: the pulse then stops for good (memory only, nothing stored)
+function updateVoicePulse(){
+  document.querySelectorAll(".voice-pulse").forEach(b => b.classList.remove("voice-pulse"));
+  if(voiceDiscovered) return;
+  [document.querySelector('.voice-icon-btn[data-voice-key="instructions"]'),
+   document.querySelector('.q-block[data-qidx="0"] .voice-icon-btn')].forEach(b => { if(b) b.classList.add("voice-pulse"); });
+}
 
 function setVoiceBtnState(btn, playing){
   const tr = T[currentLang];
