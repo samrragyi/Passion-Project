@@ -133,8 +133,8 @@
       "tag": "fa-IR",
       "dir": "rtl",
       "flag": "ir",
-      "status": "planned",
-      "note": "Right-to-left: test the layout on a phone."
+      "status": "live",
+      "note": "Persian (colloquial register); audio made with a native Persian Narakeet voice (Shohreh/Reza). The doubled 'small' in the intro was resolved to the colloquial کوچیک. The 20 standard strings are drafts: have a Persian speaker check them."
     },
     {
       "code": "pl",
