@@ -206,8 +206,8 @@
       "tag": "ur-PK",
       "dir": "rtl",
       "flag": "pk",
-      "status": "planned",
-      "note": "Right-to-left: test the layout on a phone."
+      "status": "live",
+      "note": "Urdu (rtl, Pakistan flag). The six section headings were missing from the translator's file and were WRITTEN BY CLAUDE at the owner's request: a native speaker must check them. The first Narakeet run (non-Urdu voice) gave one tiny blip per sentence; the second run with a native Urdu voice (Mawra/Imran) and plain sheets worked. Urdu is traditionally written in Nastaliq; the default font is Naskh."
     },
     {
       "code": "vi",
