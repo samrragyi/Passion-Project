@@ -72,7 +72,7 @@
       "dir": "ltr",
       "flag": "bd",
       "status": "planned",
-      "note": "Same Bengali text as `bn`, shown as a second tile with the Bangladesh flag (confirmed)."
+      "note": "Own translation supplied (the Bangladeshi Bangla file): NOT the same text as bn. Shown as a second Bengali tile with the Bangladesh flag (confirmed)."
     },
     {
       "code": "sq",
@@ -218,6 +218,50 @@
       "dir": "ltr",
       "flag": "vn",
       "status": "planned"
+    },
+    {
+      "code": "ne",
+      "name": "नेपाली",
+      "gloss": "Nepali",
+      "group": "Nepal",
+      "tag": "ne-NP",
+      "dir": "ltr",
+      "flag": "np",
+      "status": "planned",
+      "note": "Added from the translator's file. Nepal's flag is not rectangular: check the tile."
+    },
+    {
+      "code": "hak",
+      "name": "客家話",
+      "gloss": "Hakka",
+      "group": "China",
+      "tag": "hak-CN",
+      "dir": "ltr",
+      "flag": "cn",
+      "status": "planned",
+      "note": "Added from the translator's file. Written in traditional Chinese characters; no text-to-speech voice exists, so a speaker must record the audio. Country/flag provisional: confirm."
+    },
+    {
+      "code": "yue-wt",
+      "name": "圍頭話",
+      "gloss": "Weitou (Waitau)",
+      "group": "China",
+      "tag": "yue-HK",
+      "dir": "ltr",
+      "flag": "hk",
+      "status": "planned",
+      "note": "Added from the translator's file (Hong Kong flag, like Cantonese). Written Chinese; a speaker must record the audio. Country/flag provisional: confirm."
+    },
+    {
+      "code": "nan-cz",
+      "name": "潮州話",
+      "gloss": "Chaozhou (Teochew)",
+      "group": "China",
+      "tag": "nan-CN",
+      "dir": "ltr",
+      "flag": "cn",
+      "status": "planned",
+      "note": "Added from the translator's file. Written Chinese; a speaker must record the audio. Country/flag provisional: confirm."
     }
   ]
 }
