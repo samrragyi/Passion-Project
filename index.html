@@ -286,27 +286,38 @@
 
   .intro-with-voice{ display:flex; align-items:flex-start; gap:10px; margin-bottom:20px; }
   .voice-icon-btn{
-    flex:none; width:48px; height:48px; border-radius:50%; margin-top:2px;
-    /* solid dark green + white icon: the audio is the key feature, so the button must look like a button (idle = green, playing = berry) */
-    background:var(--forest); border:2px solid var(--forest);
-    box-shadow:0 2px 6px rgba(59,79,58,0.30);
+    flex:none; width:48px; height:48px; border-radius:50%; margin-top:2px; position:relative;
+    /* dusty blue + white icon + a soft always-on halo. Blue is a hue none of the answers use (they are green/yellow/orange/red,
+       so a green button read as "Not at all") and it is calm next to the watercolour artwork. Idle = blue, playing = berry. */
+    background:#4A7BA6; border:2px solid #4A7BA6;
+    box-shadow:0 0 0 5px rgba(74,123,166,0.18), 0 2px 6px rgba(74,123,166,0.35);
     display:flex; align-items:center; justify-content:center;
     cursor:pointer; color:#fff;
     transition:background .15s ease, transform .1s ease;
   }
-  .voice-icon-btn:hover{ background:#2C3D2B; }
+  .voice-icon-btn:hover{ background:#3E6A92; border-color:#3E6A92; }
   .voice-icon-btn:active{ transform:scale(0.95); }
-  .voice-icon-btn.playing{ background:var(--berry); color:#fff; border-color:var(--berry); }
-  /* gentle pulse INSIDE the button: it breathes and an inner ring glows. Only on the Page 2 intro and the first question,
+  .voice-icon-btn.playing{ background:var(--berry); border-color:var(--berry); box-shadow:0 0 0 5px rgba(149,74,99,0.18), 0 2px 6px rgba(149,74,99,0.35); }
+  /* gentle pulse INSIDE the button: the halo breathes and an inner ring glows. Only on the Page 2 intro and the first question,
      and only until she taps any audio button once (see updateVoicePulse). Off for people who ask for reduced motion. */
   @keyframes voicePulse{
-    0%,100%{ transform:scale(1);    box-shadow:0 2px 6px rgba(59,79,58,0.30), inset 0 0 0 0 rgba(255,255,255,0); }
-    50%    { transform:scale(1.08); box-shadow:0 3px 10px rgba(59,79,58,0.45), inset 0 0 0 4px rgba(255,255,255,0.40); }
+    0%,100%{ box-shadow:0 0 0 5px rgba(74,123,166,0.18), 0 2px 6px rgba(74,123,166,0.35), inset 0 0 0 0 rgba(255,255,255,0); }
+    50%    { box-shadow:0 0 0 9px rgba(74,123,166,0.10), 0 3px 10px rgba(74,123,166,0.45), inset 0 0 0 4px rgba(255,255,255,0.40); }
   }
   .voice-icon-btn.voice-pulse{ animation:voicePulse 1.7s ease-in-out infinite; }
   .voice-icon-btn.playing.voice-pulse{ animation:none; }
+  /* one-time hint bubble on the first question: the word "Listen" in her own language (the pack's listenLabel), gone after her first tap */
+  .voice-icon-btn.voice-hint::after{
+    content:attr(data-hint); position:absolute; inset-inline-end:-4px; bottom:calc(100% + 12px); z-index:6;
+    background:#24261F; color:#fff; font:700 0.78rem/1 var(--sans, system-ui, sans-serif); white-space:nowrap;
+    padding:7px 11px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.25); pointer-events:none;
+  }
+  .voice-icon-btn.voice-hint::before{
+    content:""; position:absolute; inset-inline-end:16px; bottom:calc(100% + 7px); z-index:6;
+    width:10px; height:10px; background:#24261F; transform:rotate(45deg); pointer-events:none;
+  }
   @media (prefers-reduced-motion: reduce){
-    .voice-icon-btn.voice-pulse{ animation:none; box-shadow:0 0 0 3px rgba(59,79,58,0.35); }
+    .voice-icon-btn.voice-pulse{ animation:none; }
   }
   .voice-icon-btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
   .voice-icon-btn svg{ width:26px; height:26px; }
@@ -580,7 +591,7 @@
     <ul class="legal-list">
       <li><strong>Educational Symptom Tracker Only:</strong> This tool is an educational symptom tracking aid created to help you prepare for a consultation with your doctor. It does not provide medical advice, diagnosis, or treatment recommendations.</li>
       <li><strong>Clinical Guidance:</strong> Questioning is framed around the validated Greene Climacteric Scale (GCS) and aligns with National Institute for Health and Care Excellence (NICE NG23) guidelines on perimenopause and menopause assessment.</li>
-      <li><strong>100% Data Privacy:</strong> This tool does not collect, store, transmit, or share any personal identifiable data or health records. All inputs remain strictly on your device during this session and are deleted as soon as you close your browser.</li>
+      <li><strong>100% Data Privacy:</strong> Your answers are not stored or sent anywhere. They stay on your device and disappear when you close this page. Like any website, the host only records that a page was visited.</li>
       <li><strong>Medical Emergencies:</strong> If you are experiencing severe pain, unusual bleeding, severe sudden chest pain, or mental health crisis, please contact your local doctor or emergency services straight away (for example, NHS 111 or 999 in the UK).</li>
     </ul>
     </div>
@@ -940,10 +951,12 @@ let activeVoiceBtn = null;
 let activeAudioEl = null;
 let voiceDiscovered = false;   // set once she has tapped an audio button: the pulse then stops for good (memory only, nothing stored)
 function updateVoicePulse(){
-  document.querySelectorAll(".voice-pulse").forEach(b => b.classList.remove("voice-pulse"));
+  document.querySelectorAll(".voice-pulse, .voice-hint").forEach(b => { b.classList.remove("voice-pulse","voice-hint"); b.removeAttribute("data-hint"); });
   if(voiceDiscovered) return;
-  [document.querySelector('.voice-icon-btn[data-voice-key="instructions"]'),
-   document.querySelector('.q-block[data-qidx="0"] .voice-icon-btn')].forEach(b => { if(b) b.classList.add("voice-pulse"); });
+  const intro = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]');
+  const q1 = document.querySelector('.q-block[data-qidx="0"] .voice-icon-btn');
+  if(intro) intro.classList.add("voice-pulse");
+  if(q1){ q1.classList.add("voice-pulse","voice-hint"); q1.setAttribute("data-hint", T[currentLang].ui.listenLabel); }   // the hint word comes from her language pack
 }
 
 function setVoiceBtnState(btn, playing){
