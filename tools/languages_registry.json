@@ -71,8 +71,8 @@
       "tag": "bn-BD",
       "dir": "ltr",
       "flag": "bd",
-      "status": "planned",
-      "note": "Own translation supplied (the Bangladeshi Bangla file): NOT the same text as bn. Shown as a second Bengali tile with the Bangladesh flag (confirmed)."
+      "status": "live",
+      "note": "Own translation (the Bangladeshi Bangla file): NOT the same text as bn. Second Bengali tile with the Bangladesh flag (confirmed). Audio made with a native Bangladesh-accent Narakeet voice (Mahiya/Salman). Section 4's long name wraps to three lines on a 320px phone: fine."
     },
     {
       "code": "sq",
