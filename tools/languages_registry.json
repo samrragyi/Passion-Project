@@ -227,8 +227,8 @@
       "tag": "ne-NP",
       "dir": "ltr",
       "flag": "np",
-      "status": "planned",
-      "note": "Added from the translator's file. Nepal's flag is not rectangular: check the tile."
+      "status": "live",
+      "note": "Nepali; audio made with a native Nepali Narakeet voice (Lhakpa/Tenzing). The English word 'step' in the intro was replaced with चरणहरू. Nepal's non-rectangular flag renders correctly. The 20 standard strings are drafts: have a Nepali speaker check them."
     },
     {
       "code": "hak",
