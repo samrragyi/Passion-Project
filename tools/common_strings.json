@@ -100,7 +100,7 @@
    "restartButton": "আবার শুরু করুন",
    "appTitle": "আপনার শরীর কী বলছে তা বুঝুন",
    "appSubtitle": "আপনার লক্ষণগুলির একটি সংক্ষিপ্ত ও স্পষ্ট চেক-ইন।",
-   "privacyBadge": "100% গোপনীয় এবং সাইন-আপের প্রয়োজন নেই",
+   "privacyBadge": "গোপনীয় এবং সাইন-আপের প্রয়োজন নেই",
    "languagePageTitle": "আপনার ভাষা নির্বাচন করুন",
    "homeLabel": "হোম"
   },
@@ -122,7 +122,7 @@
    "restartButton": "फिर से शुरू करें",
    "appTitle": "जानिए आपका शरीर क्या कह रहा है",
    "appSubtitle": "आपके लक्षणों की एक छोटी और स्पष्ट जांच।",
-   "privacyBadge": "100% निजी और बिना साइन-अप के",
+   "privacyBadge": "निजी और बिना साइन-अप के",
    "languagePageTitle": "अपनी भाषा चुनें",
    "homeLabel": "होम"
   },
@@ -144,7 +144,7 @@
    "restartButton": "다시 시작",
    "appTitle": "내 몸이 전하는 이야기를 이해해 보세요",
    "appSubtitle": "증상을 간단하고 명확하게 확인해 보세요.",
-   "privacyBadge": "100% 비공개 · 가입 불필요",
+   "privacyBadge": "비공개 · 가입 불필요",
    "languagePageTitle": "언어를 선택하세요",
    "homeLabel": "홈"
   },
@@ -166,7 +166,7 @@
    "restartButton": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ",
    "appTitle": "ਜਾਣੋ ਤੁਹਾਡਾ ਸਰੀਰ ਕੀ ਕਹਿ ਰਿਹਾ ਹੈ",
    "appSubtitle": "ਤੁਹਾਡੇ ਲੱਛਣਾਂ ਦੀ ਇੱਕ ਛੋਟੀ ਅਤੇ ਸਪੱਸ਼ਟ ਜਾਂਚ।",
-   "privacyBadge": "100% ਨਿੱਜੀ ਅਤੇ ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ",
+   "privacyBadge": "ਨਿੱਜੀ ਅਤੇ ਸਾਈਨ-ਅੱਪ ਦੀ ਲੋੜ ਨਹੀਂ",
    "languagePageTitle": "ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ",
    "homeLabel": "ਹੋਮ"
   },
@@ -188,7 +188,7 @@
    "restartButton": "重新開始",
    "appTitle": "了解你身體想告訴你嘅嘢",
    "appSubtitle": "簡短清晰嘅症狀自我檢查。",
-   "privacyBadge": "100% 私隱保障，無需註冊",
+   "privacyBadge": "私隱保障，無需註冊",
    "languagePageTitle": "選擇你嘅語言",
    "homeLabel": "主頁"
   },
@@ -210,7 +210,7 @@
    "restartButton": "আবার শুরু করুন",
    "appTitle": "আপনার শরীর কী বলছে তা বুঝুন",
    "appSubtitle": "আপনার লক্ষণগুলির একটি সংক্ষিপ্ত ও স্পষ্ট চেক-ইন।",
-   "privacyBadge": "100% গোপনীয় এবং সাইন-আপের প্রয়োজন নেই",
+   "privacyBadge": "গোপনীয় এবং সাইন-আপের প্রয়োজন নেই",
    "languagePageTitle": "আপনার ভাষা নির্বাচন করুন",
    "homeLabel": "হোম"
   },
@@ -232,7 +232,7 @@
    "restartButton": "Neu starten",
    "appTitle": "Verstehen Sie, was Ihr Körper Ihnen sagt",
    "appSubtitle": "Ein kurzer, klarer Check Ihrer Symptome.",
-   "privacyBadge": "100 % privat, ohne Anmeldung",
+   "privacyBadge": "Privat, ohne Anmeldung",
    "languagePageTitle": "Wählen Sie Ihre Sprache",
    "homeLabel": "Startseite"
   },
@@ -254,7 +254,7 @@
    "restartButton": "Empezar de nuevo",
    "appTitle": "Entienda lo que le dice su cuerpo",
    "appSubtitle": "Un chequeo breve y claro de sus síntomas.",
-   "privacyBadge": "100 % privado y sin necesidad de registrarse",
+   "privacyBadge": "Privado y sin necesidad de registrarse",
    "languagePageTitle": "Seleccione su idioma",
    "homeLabel": "Inicio"
   },
@@ -276,7 +276,7 @@
    "restartButton": "شروع دوباره",
    "appTitle": "بفهمید بدنتان چه می‌گوید",
    "appSubtitle": "یک بررسی کوتاه و روشن از علائم شما.",
-   "privacyBadge": "100% خصوصی و بدون نیاز به ثبت‌نام",
+   "privacyBadge": "خصوصی و بدون نیاز به ثبت‌نام",
    "languagePageTitle": "زبان خود را انتخاب کنید",
    "homeLabel": "خانه"
   },
@@ -298,7 +298,7 @@
    "restartButton": "Recommencer",
    "appTitle": "Comprenez ce que votre corps vous dit",
    "appSubtitle": "Un bilan court et clair de vos symptômes.",
-   "privacyBadge": "100 % privé, sans inscription",
+   "privacyBadge": "Privé, sans inscription",
    "languagePageTitle": "Choisissez votre langue",
    "homeLabel": "Accueil"
   },
@@ -320,7 +320,7 @@
    "restartButton": "最初からやり直す",
    "appTitle": "あなたの体が伝えていることを知りましょう",
    "appSubtitle": "症状を短く、わかりやすくチェックします。",
-   "privacyBadge": "100% プライバシー保護・登録不要",
+   "privacyBadge": "プライバシー保護・登録不要",
    "languagePageTitle": "言語を選択してください",
    "homeLabel": "ホーム"
   },
@@ -342,7 +342,7 @@
    "restartButton": "Zacznij od nowa",
    "appTitle": "Zrozum, co mówi Twoje ciało",
    "appSubtitle": "Krótkie, jasne sprawdzenie Twoich objawów.",
-   "privacyBadge": "W 100% prywatne, bez rejestracji",
+   "privacyBadge": "Prywatne, bez rejestracji",
    "languagePageTitle": "Wybierz swój język",
    "homeLabel": "Strona główna"
   },
@@ -364,7 +364,7 @@
    "restartButton": "Recomeçar",
    "appTitle": "Compreenda o que o seu corpo lhe está a dizer",
    "appSubtitle": "Uma avaliação curta e clara dos seus sintomas.",
-   "privacyBadge": "100% privado e sem necessidade de registo",
+   "privacyBadge": "Privado e sem necessidade de registo",
    "languagePageTitle": "Selecione o seu idioma",
    "homeLabel": "Início"
   },
@@ -386,7 +386,7 @@
    "restartButton": "Recomeçar",
    "appTitle": "Entenda o que seu corpo está dizendo",
    "appSubtitle": "Uma avaliação rápida e clara dos seus sintomas.",
-   "privacyBadge": "100% privado e sem necessidade de cadastro",
+   "privacyBadge": "Privado e sem necessidade de cadastro",
    "languagePageTitle": "Selecione seu idioma",
    "homeLabel": "Início"
   },
@@ -408,7 +408,7 @@
    "restartButton": "Începe din nou",
    "appTitle": "Înțelege ce îți spune corpul tău",
    "appSubtitle": "O verificare scurtă și clară a simptomelor tale.",
-   "privacyBadge": "100% privat, fără înregistrare",
+   "privacyBadge": "Privat, fără înregistrare",
    "languagePageTitle": "Alege limba ta",
    "homeLabel": "Acasă"
   },
@@ -430,7 +430,7 @@
    "restartButton": "Fillo përsëri",
    "appTitle": "Kuptoni çfarë po ju thotë trupi juaj",
    "appSubtitle": "Një kontroll i shkurtër dhe i qartë i simptomave tuaja.",
-   "privacyBadge": "100% privat dhe pa nevojë për regjistrim",
+   "privacyBadge": "Privat dhe pa nevojë për regjistrim",
    "languagePageTitle": "Zgjidhni gjuhën tuaj",
    "homeLabel": "Ballina"
   },
@@ -452,7 +452,7 @@
    "restartButton": "Magsimulang muli",
    "appTitle": "Unawain kung ano ang sinasabi ng iyong katawan",
    "appSubtitle": "Isang maikli at malinaw na pagsusuri ng iyong mga sintomas.",
-   "privacyBadge": "100% pribado at hindi kailangang mag-sign up",
+   "privacyBadge": "Pribado at hindi kailangang mag-sign up",
    "languagePageTitle": "Piliin ang iyong wika",
    "homeLabel": "Home"
   },
@@ -474,7 +474,7 @@
    "restartButton": "دوبارہ شروع کریں",
    "appTitle": "جانیے آپ کا جسم کیا کہہ رہا ہے",
    "appSubtitle": "آپ کی علامات کا ایک مختصر اور واضح جائزہ۔",
-   "privacyBadge": "100% نجی اور سائن اپ کی ضرورت نہیں",
+   "privacyBadge": "نجی اور سائن اپ کی ضرورت نہیں",
    "languagePageTitle": "اپنی زبان منتخب کریں",
    "homeLabel": "ہوم"
   },
@@ -496,7 +496,7 @@
    "restartButton": "Bắt đầu lại",
    "appTitle": "Hiểu cơ thể bạn đang nói gì",
    "appSubtitle": "Một bài kiểm tra ngắn gọn, rõ ràng về các triệu chứng của bạn.",
-   "privacyBadge": "Riêng tư 100%, không cần đăng ký",
+   "privacyBadge": "Riêng tư, không cần đăng ký",
    "languagePageTitle": "Chọn ngôn ngữ của bạn",
    "homeLabel": "Trang chủ"
   },
@@ -518,7 +518,7 @@
    "restartButton": "重新开始",
    "appTitle": "了解您的身体在告诉您什么",
    "appSubtitle": "简短清晰的症状自查。",
-   "privacyBadge": "100% 私密，无需注册",
+   "privacyBadge": "私密，无需注册",
    "languagePageTitle": "选择您的语言",
    "homeLabel": "首页"
   },
@@ -540,7 +540,7 @@
    "restartButton": "फेरि सुरु गर्नुहोस्",
    "appTitle": "आफ्नो शरीरले के भन्दैछ बुझ्नुहोस्",
    "appSubtitle": "तपाईंका लक्षणहरूको छोटो र स्पष्ट जाँच।",
-   "privacyBadge": "100% निजी, साइन-अप आवश्यक छैन",
+   "privacyBadge": "निजी, साइन-अप आवश्यक छैन",
    "languagePageTitle": "आफ्नो भाषा छान्नुहोस्",
    "homeLabel": "होम"
   },
@@ -562,7 +562,7 @@
    "restartButton": "重新開始",
    "appTitle": "了解您的身體在告訴您什麼",
    "appSubtitle": "簡短清晰的症狀自查。",
-   "privacyBadge": "100% 私密，無需註冊",
+   "privacyBadge": "私密，無需註冊",
    "languagePageTitle": "選擇您的語言",
    "homeLabel": "首頁"
   },
@@ -584,7 +584,7 @@
    "restartButton": "重新開始",
    "appTitle": "了解你身體想告訴你嘅嘢",
    "appSubtitle": "簡短清晰嘅症狀自我檢查。",
-   "privacyBadge": "100% 私隱保障，無需註冊",
+   "privacyBadge": "私隱保障，無需註冊",
    "languagePageTitle": "選擇你嘅語言",
    "homeLabel": "主頁"
   },
@@ -606,7 +606,7 @@
    "restartButton": "重新開始",
    "appTitle": "了解您的身體在告訴您什麼",
    "appSubtitle": "簡短清晰的症狀自查。",
-   "privacyBadge": "100% 私密，無需註冊",
+   "privacyBadge": "私密，無需註冊",
    "languagePageTitle": "選擇您的語言",
    "homeLabel": "首頁"
   }

@@ -154,7 +154,8 @@
       "tag": "pt-BR",
       "dir": "ltr",
       "flag": "br",
-      "status": "planned"
+      "status": "live",
+      "note": "Built from the translator's file labelled 'Portuguese (Brazil)'. Two European words were changed to Brazilian in the text (intro yellow legend line: ligeiro -> leve; question 2 title: Vaga de calor -> Onda de calor). Audio recorded by the owner with a Brazilian voice (Claude cannot verify accents); the intro and question 2 clips were recorded BEFORE those two words changed, so they may still say the old words until re-recorded (2-row sheet provided). The 20 standard strings and the three new interface strings are Brazilian drafts by Claude: have a Brazilian speaker check them."
     },
     {
       "code": "pt",
@@ -164,7 +165,8 @@
       "tag": "pt-PT",
       "dir": "ltr",
       "flag": "pt",
-      "status": "planned"
+      "status": "planned",
+      "note": "Planned (second tile, decided 13 Oct 2026: Brazil first, Portugal later). Same translation with the translator's ORIGINAL wording (ligeiro, vaga de calor), European standard strings (drafts in tools/common_strings.json: secção, registo, Compreendo) and its OWN recording with a EUROPEAN Narakeet voice (the 22-row sheet is in portuguese-sheets.zip). Build with tools/make_template.py --code pt, then tools/apply_new_ui_strings.py."
     },
     {
       "code": "ro",

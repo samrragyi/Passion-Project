@@ -15,6 +15,7 @@ for fn in sorted(os.listdir(os.path.join(REPO, "lang"))):
     if code not in tr: missing.append(code); continue
     ui = pack["ui"]; new = {}
     for k, v in ui.items():
+        if k in keys: continue          # never copy an existing (e.g. English-inherited) value back over the translation
         new[k] = v
         if k == "privacyBadge":
             for kk in keys: new[kk] = tr[code][kk]
