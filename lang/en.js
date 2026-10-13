@@ -43,7 +43,10 @@ window.registerLanguage({
     "scoreExplainMild": "Mild — symptoms are mostly absent or manageable day to day.",
     "scoreExplainModerate": "Moderate — multiple systems are affected, or a few symptoms are quite severe.",
     "scoreExplainSevere": "Severe — a profound impact across multiple systems, including sleep, mood and physical function.",
-    "privacyBadge": "100% Private & No Sign-Up Required",
+    "privacyBadge": "Private & No Sign-Up Required",
+    "myAnswersTitle": "Your answers",
+    "myAnswersNote": "These are your answers in your own language. The summary for your doctor, further down, is in English.",
+    "multiSymptomHint": "If a question lists several symptoms, rate the one that bothers you most. Even one is enough.",
     "languagePageTitle": "Select your language",
     "languagePageSub": "Choose a language to continue. You can change it anytime from the menu at the top of the page.",
     "homeLabel": "Home",
@@ -88,23 +91,23 @@ window.registerLanguage({
     },
     {
       "t": "Hot Flushes & Night Sweats",
-      "q": "How severely do sudden heat surges, night sweats, or cold chills affect you during the day or night?"
+      "q": "How severely do sudden heat surges, night sweats or cold chills affect you during the day or night?"
     },
     {
       "t": "Brain Fog & Memory",
-      "q": "How severe is your experience with unusual forgetfulness, losing your train of thought, or struggling for words?"
+      "q": "How severe is your experience with unusual forgetfulness, losing your train of thought or struggling for words?"
     },
     {
       "t": "Nerves & Headaches",
-      "q": "How bothersome are unexplained skin tingling (\"pins and needles\"), new headaches, hormonal migraines, or dizziness?"
+      "q": "How bothersome are unexplained skin tingling (\"pins and needles\"), new headaches, hormonal migraines or dizziness?"
     },
     {
       "t": "Joints & Muscles",
-      "q": "How severe is persistent joint stiffness, swelling, or unexplained muscle soreness (especially in the morning)?"
+      "q": "How severe is persistent joint stiffness, swelling or unexplained muscle soreness (especially in the morning)?"
     },
     {
       "t": "Palpitations & Heart Racing",
-      "q": "How bothersome are sudden racing, pounding, or fluttering heartbeats while resting?"
+      "q": "How bothersome are sudden racing, pounding or fluttering heartbeats while resting?"
     },
     {
       "t": "Physical Exhaustion",
@@ -112,23 +115,23 @@ window.registerLanguage({
     },
     {
       "t": "Skin & Eye Dryness",
-      "q": "How severe is sudden skin thinning, loss of elasticity, crepey texture, or persistent dry/gritty eye irritation?"
+      "q": "How severe is sudden skin thinning, loss of elasticity, crepey texture or persistent dry/gritty eye irritation?"
     },
     {
       "t": "Oral & Burning Tongue",
-      "q": "How bothersome is a \"burning tongue\" sensation, metallic taste, or sensitive, bleeding gums?"
+      "q": "How bothersome is a \"burning tongue\" sensation, metallic taste or sensitive, bleeding gums?"
     },
     {
       "t": "Histamine & Allergies",
-      "q": "How severe are sudden new allergic reactions, unexplained skin hives, or food/product sensitivities?"
+      "q": "How severe are sudden new allergic reactions, unexplained skin hives or food/product sensitivities?"
     },
     {
       "t": "Anxiety & Dread",
-      "q": "How severe are sudden feelings of unprovoked panic, inner agitation, tension, or dread without a clear cause?"
+      "q": "How severe are sudden feelings of unprovoked panic, inner agitation, tension or dread without a clear cause?"
     },
     {
       "t": "Mood Changes",
-      "q": "How severe are sudden, uncontrollable mood swings, tearfulness, loss of patience, or uncharacteristic anger?"
+      "q": "How severe are sudden, uncontrollable mood swings, tearfulness, loss of patience or uncharacteristic anger?"
     },
     {
       "t": "Sleep Architecture",
@@ -136,14 +139,14 @@ window.registerLanguage({
     },
     {
       "t": "Intimate Discomfort & Libido",
-      "q": "How severe is dryness, itching, or irritation in intimate areas, or an uncharacteristic drop in sexual desire/sensation?"
+      "q": "How severe is dryness, itching or irritation in intimate areas, or an uncharacteristic drop in sexual desire/sensation?"
     },
     {
       "t": "Urinary Irritation",
       "q": "How severe is the urgent need to urinate frequently or recurrent bladder irritation/infections?"
     }
   ],
-  "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan, or prescription advice.",
+  "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan or prescription advice.",
   "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
   "howItWorks": [
     "Listen to the Voice Note: Click the audio button above each question to hear the prompt read aloud in your language.",
@@ -161,11 +164,11 @@ window.registerLanguage({
     },
     {
       "label": "Amber",
-      "desc": "Moderate symptom, which is quite noticeable, occurs regularly, or is manageable but disruptive."
+      "desc": "Moderate symptom, which is quite noticeable, occurs regularly or is manageable but disruptive."
     },
     {
       "label": "Red",
-      "desc": "Severe symptom exists. Discomfort is extreme, frequent, or significantly affects daily life, sleep, or wellbeing."
+      "desc": "Severe symptom exists. Discomfort is extreme, frequent or significantly affects daily life, sleep or wellbeing."
     }
   ]
 });

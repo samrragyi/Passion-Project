@@ -13,16 +13,16 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Menopause Conversation">
 <meta property="og:title" content="The Menopause Conversation">
-<meta property="og:description" content="Understand what your body is telling you. A short, clear symptom check-in: 100% private, no sign-up, in your language.">
+<meta property="og:description" content="Understand what your body is telling you. A short, clear symptom check-in: private, no sign-up, in your language.">
 <meta property="og:url" content="https://samrragyi.github.io/Passion-Project/">
 <meta property="og:image" content="https://samrragyi.github.io/Passion-Project/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Menopause Conversation: Understand what your body is telling you. 100% private, no sign-up required.">
+<meta property="og:image:alt" content="The Menopause Conversation: Understand what your body is telling you. Private, no sign-up required.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Menopause Conversation">
-<meta name="twitter:description" content="Understand what your body is telling you. A short, clear symptom check-in: 100% private, no sign-up, in your language.">
+<meta name="twitter:description" content="Understand what your body is telling you. A short, clear symptom check-in: private, no sign-up, in your language.">
 <meta name="twitter:image" content="https://samrragyi.github.io/Passion-Project/og-image.jpg">
 <style>
   :root{
@@ -426,6 +426,31 @@
   .quick-chip.lvl1{ background:#E6B50F; color:#3D2E00; }
   .quick-chip.lvl2{ background:#E67E0F; color:#fff; }
   .quick-chip.lvl3{ background:#D32F2F; color:#fff; }
+  /* audio speed: three small language-neutral buttons (0.75x / 1x / 1.25x), quiet like the audio buttons; memory only */
+  .speed-bar{ display:flex; justify-content:flex-end; align-items:center; gap:6px; margin:0 0 8px; }
+  .speed-bar[hidden]{ display:none; }
+  .speed-btn{
+    min-width:46px; height:32px; padding:0 10px; border-radius:16px; border:1.5px solid #4A7BA6; background:#fff; color:#4A7BA6;
+    font-family:inherit; font-weight:600; font-size:0.82rem; line-height:1; cursor:pointer; transition:background .15s ease;
+  }
+  .speed-btn:hover{ background:#EAF1F8; }
+  .speed-btn[aria-pressed="true"]{ background:#4A7BA6; color:#fff; }
+  .speed-btn[aria-pressed="true"]:hover{ background:#3E6A92; }
+  /* page 2: shown on screen only (not read aloud), in her language */
+  .multi-hint{ margin:10px 0 14px; font-size:0.88rem; color:var(--ink-soft); font-style:italic; }
+  .multi-hint:empty{ display:none; }
+  /* results: "Your answers" in her own language (hidden for English and in print; the English doctor summary is what prints) */
+  .my-answers{ margin:18px 0; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:16px 18px; }
+  .my-answers[hidden]{ display:none; }
+  .my-answers-title{ font-family:var(--serif); color:var(--forest); margin:0 0 4px; font-size:1.15rem; }
+  .my-answers-note{ color:var(--ink-soft); font-size:0.88rem; margin:0 0 6px; }
+  .ma-sec{ font-size:0.8rem; font-weight:700; color:var(--berry); margin:14px 0 2px; }
+  .ma-list{ list-style:none; margin:0; padding:0; }
+  .ma-row{ display:flex; align-items:center; gap:10px; padding:7px 0; border-top:1px solid var(--line); }
+  .ma-dot{ flex:none; width:12px; height:12px; border-radius:50%; background:#C9C9BF; }
+  .ma-dot.lvl0{ background:#2B9946; } .ma-dot.lvl1{ background:#E6B50F; } .ma-dot.lvl2{ background:#E67E0F; } .ma-dot.lvl3{ background:#D32F2F; }
+  .ma-q{ flex:1; min-width:0; overflow-wrap:break-word; font-size:0.95rem; }
+  .ma-a{ flex:none; max-width:46%; overflow-wrap:break-word; font-weight:700; font-size:0.9rem; text-align:end; }
   .quick-line{ font-size:0.92rem; color:var(--ink); margin:0; line-height:1.5; }
   .quick-line strong{ color:var(--forest); }
   .result-item{
@@ -525,7 +550,8 @@
     @page{ margin:9mm 10mm; }
     html{ font-size:12px; }
     body{ line-height:1.3; }
-    #resultsIntro{ display:none; }                                       /* "Show the section below to your doctor" is for the screen */
+    #resultsIntro{ display:none; }
+    #myAnswers, #speedBar, .multi-hint{ display:none !important; }   /* print = the one-page English doctor summary only */                                       /* "Show the section below to your doctor" is for the screen */
     .results-hero{ margin-bottom:6px; }
     .results-hero h2{ font-size:1.5rem; margin:0 0 2px; }
     .score-badge{ flex-direction:row; gap:12px; margin-top:2px; padding:5px 18px; border-radius:14px; }
@@ -572,6 +598,11 @@
 </div>
 
 <main>
+  <div class="speed-bar" id="speedBar" role="group" aria-label="Audio speed" hidden>
+    <button type="button" class="speed-btn" data-rate="0.75" aria-pressed="false">0.75&times;</button>
+    <button type="button" class="speed-btn" data-rate="1" aria-pressed="true">1&times;</button>
+    <button type="button" class="speed-btn" data-rate="1.25" aria-pressed="false">1.25&times;</button>
+  </div>
 
   <!-- LANGUAGE (first screen) -->
   <section class="screen active" id="screen-language">
@@ -593,10 +624,10 @@
     <div class="legal-block">
     <h3 class="final-notice-title">Important Information &amp; Privacy</h3>
     <ul class="legal-list">
-      <li><strong>Educational Symptom Tracker Only:</strong> This tool is an educational symptom tracking aid created to help you prepare for a consultation with your doctor. It does not provide medical advice, diagnosis, or treatment recommendations.</li>
-      <li><strong>Clinical Guidance:</strong> Questioning is framed around the validated Greene Climacteric Scale (GCS) and aligns with National Institute for Health and Care Excellence (NICE NG23) guidelines on perimenopause and menopause assessment.</li>
-      <li><strong>100% Data Privacy:</strong> Your answers are not stored or sent anywhere. They stay on your device and disappear when you close this page. Like any website, the host only records that a page was visited.</li>
-      <li><strong>Medical Emergencies:</strong> If you are experiencing severe pain, unusual bleeding, severe sudden chest pain, or mental health crisis, please contact your local doctor or emergency services straight away (for example, NHS 111 or 999 in the UK).</li>
+      <li><strong>Educational Symptom Tracker Only:</strong> This tool is an educational symptom tracking aid created to help you prepare for a consultation with your doctor. It does not provide medical advice, diagnosis or treatment recommendations.</li>
+      <li><strong>Clinical Guidance:</strong> Questioning is adapted from the Greene Climacteric Scale (Greene JG, Maturitas 1998;29:25&ndash;31) and aligns with National Institute for Health and Care Excellence (NICE NG23) guidelines on perimenopause and menopause assessment.</li>
+      <li><strong>Data Privacy:</strong> Your answers are not stored or sent anywhere. They stay on your device and disappear when you close this page. Like any website, the host only records that a page was visited.</li>
+      <li><strong>Medical Emergencies:</strong> If you are experiencing severe pain, unusual bleeding, severe sudden chest pain or mental health crisis, please contact your local doctor or emergency services straight away (for example, NHS 111 or 999 in the UK).</li>
     </ul>
     </div>
 
@@ -613,6 +644,7 @@
     </div>
 
     <ol class="howto-list" id="howItWorksList"></ol>
+    <p class="multi-hint" id="multiSymptomHint"></p>
 
     <div class="severity-legend" id="severityLegend"></div>
 
@@ -664,6 +696,8 @@
     <div class="score-explain" id="scoreExplain"></div>
 
     <div id="patientSummary"></div>
+
+    <div class="my-answers" id="myAnswers" hidden></div>
 
     <div class="gp-panel" id="gpPanel">
       <h3>📋 Patient Symptom Summary (Pre-Consultation Reference)</h3>
@@ -821,6 +855,7 @@ function applyLanguage(){
     li.textContent = step;
     howList.appendChild(li);
   });
+  document.getElementById("multiSymptomHint").textContent = tr.ui.multiSymptomHint || "";   // on-screen only, not in the audio
   document.getElementById("severityLegend").innerHTML = tr.severityLegend.map((item, i)=>
     `<div class="legend-row"><span class="legend-dot lvl${i}"></span><span><strong>${item.label}</strong> — ${item.desc}</span></div>`
   ).join("");
@@ -878,6 +913,7 @@ function renderCurrentScreen(){
     document.getElementById("screen-results").classList.add("active");
     document.getElementById("progressFill").style.width = "100%";
   }
+  updateSpeedBar();
   updateVoicePulse();
 }
 
@@ -953,6 +989,16 @@ const VOICE_ICON_SVG =
 
 let activeVoiceBtn = null;
 let activeAudioEl = null;
+let audioRate = 1;                                   // playback speed for recordings and the phone voice; memory only, resets on reload
+const speedBar = document.getElementById("speedBar");
+function setAudioRate(r){
+  audioRate = r;
+  speedBar.querySelectorAll(".speed-btn").forEach(b => b.setAttribute("aria-pressed", String(parseFloat(b.dataset.rate) === r)));
+  if(activeAudioEl) activeAudioEl.playbackRate = r;  // changes the clip that is playing right now
+}
+speedBar.addEventListener("click", e => { const b = e.target.closest(".speed-btn"); if(b) setAudioRate(parseFloat(b.dataset.rate)); });
+function updateSpeedBar(){ speedBar.hidden = !(currentStep >= 1 && currentStep <= 7); }   // only on the pages that have audio
+const escHtml = t => String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 let voiceDiscovered = false;   // set once she has tapped an audio button: the pulse then stops for good (memory only, nothing stored)
 function updateVoicePulse(){
   document.querySelectorAll(".voice-pulse, .voice-hint").forEach(b => { b.classList.remove("voice-pulse","voice-hint","voice-hint-start"); b.removeAttribute("data-hint"); });
@@ -1026,6 +1072,8 @@ function toggleRecordedAudio(btn, url, fallbackText){
   }
   stopAllPlayback();
   const audio = new Audio(url);
+  audio.defaultPlaybackRate = audioRate; audio.playbackRate = audioRate;
+  audio.addEventListener("loadedmetadata", ()=>{ audio.playbackRate = audioRate; });
   let failed = false;
   const fail = ()=>{
     if(failed) return;
@@ -1056,6 +1104,7 @@ function toggleSpeechSynthesis(btn, text){
   }
   stopAllPlayback();
   const utter = new SpeechSynthesisUtterance(text);
+  utter.rate = audioRate;
   utter.lang = tr.tag;
   const voice = pickCalmFemaleVoice(tr.tag);
   if(voice) utter.voice = voice;
@@ -1229,6 +1278,21 @@ function renderResults(){
     " · Assessment date: " + new Date().toLocaleDateString("en-GB");
   document.getElementById("gpFlaggedLine").innerHTML =
     "<strong>" + T.en.ui.flagged + ":</strong> " + (flagged.length ? flagged.join(", ") : T.en.ui.none);
+
+  /* "Your answers" in her own language: built only from text that is already translated (symptom titles, section names,
+     the four answer labels) plus two short strings. Hidden for English and in print; the English doctor summary is unchanged. */
+  const myA = document.getElementById("myAnswers");
+  if(currentLang !== "en" && trLang.ui.myAnswersTitle){
+    let h = `<h3 class="my-answers-title">${escHtml(trLang.ui.myAnswersTitle)}</h3><p class="my-answers-note">${escHtml(trLang.ui.myAnswersNote)}</p>`;
+    SECTION_MAP.forEach((qIdxs, secIdx)=>{
+      h += `<div class="ma-sec">${escHtml(trLang.sections[secIdx])}</div><ul class="ma-list">` +
+        qIdxs.map(qi=>{
+          const lv = answers[qi];
+          return `<li class="ma-row"><span class="ma-dot${lv === null ? "" : " lvl" + lv}"></span><span class="ma-q">${escHtml(trLang.questions[qi].t)}</span><span class="ma-a">${lv === null ? "–" : escHtml(trLang.scale[lv])}</span></li>`;
+        }).join("") + `</ul>`;
+    });
+    myA.innerHTML = h; myA.hidden = false;
+  } else { myA.innerHTML = ""; myA.hidden = true; }
 
   document.getElementById("printBtn").textContent = trLang.ui.printButton;
   document.getElementById("restartBtn").textContent = trLang.ui.restartButton;

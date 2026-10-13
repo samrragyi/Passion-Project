@@ -1,0 +1,135 @@
+{
+ "_comment": "Interface strings added 13 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: have a native speaker check it. Keys: myAnswersTitle, myAnswersNote (the 'Your answers' block on the results page), multiSymptomHint (the on-screen line on page 2). Applied to the language packs by tools/apply_new_ui_strings.py (also run it after building pt-br and pt).",
+ "keys": [
+  "myAnswersTitle",
+  "myAnswersNote",
+  "multiSymptomHint"
+ ],
+ "languages": {
+  "en": {
+   "myAnswersTitle": "Your answers",
+   "myAnswersNote": "These are your answers in your own language. The summary for your doctor, further down, is in English.",
+   "multiSymptomHint": "If a question lists several symptoms, rate the one that bothers you most. Even one is enough."
+  },
+  "hi": {
+   "myAnswersTitle": "आपके जवाब",
+   "myAnswersNote": "ये आपके जवाब आपकी अपनी भाषा में हैं। नीचे डॉक्टर के लिए दिया गया सारांश अंग्रेज़ी में है।",
+   "multiSymptomHint": "अगर किसी सवाल में कई लक्षण दिए हैं, तो जो लक्षण आपको सबसे ज़्यादा परेशान करता है उसके हिसाब से जवाब दें। एक लक्षण भी काफ़ी है।"
+  },
+  "bn": {
+   "myAnswersTitle": "আপনার উত্তর",
+   "myAnswersNote": "এগুলো আপনার নিজের ভাষায় আপনার উত্তর। নিচে ডাক্তারের জন্য সারাংশটি ইংরেজিতে দেওয়া আছে।",
+   "multiSymptomHint": "কোনো প্রশ্নে একাধিক লক্ষণ থাকলে, যে লক্ষণটি আপনাকে সবচেয়ে বেশি বিরক্ত করে তার ভিত্তিতে উত্তর দিন। একটি লক্ষণ থাকলেও যথেষ্ট।"
+  },
+  "bn-bd": {
+   "myAnswersTitle": "আপনার উত্তর",
+   "myAnswersNote": "এগুলো আপনার নিজের ভাষায় আপনার উত্তর। নিচে ডাক্তারের জন্য সারাংশটি ইংরেজিতে দেওয়া আছে।",
+   "multiSymptomHint": "কোনো প্রশ্নে একাধিক লক্ষণ থাকলে, যে লক্ষণটি আপনাকে সবচেয়ে বেশি কষ্ট দেয় তার ভিত্তিতে উত্তর দিন। একটি লক্ষণ থাকলেও যথেষ্ট।"
+  },
+  "pa": {
+   "myAnswersTitle": "ਤੁਹਾਡੇ ਜਵਾਬ",
+   "myAnswersNote": "ਇਹ ਤੁਹਾਡੇ ਜਵਾਬ ਤੁਹਾਡੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਹਨ। ਹੇਠਾਂ ਡਾਕਟਰ ਲਈ ਸਾਰ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
+   "multiSymptomHint": "ਜੇ ਕਿਸੇ ਸਵਾਲ ਵਿੱਚ ਕਈ ਲੱਛਣ ਦਿੱਤੇ ਹੋਣ, ਤਾਂ ਜਿਹੜਾ ਲੱਛਣ ਤੁਹਾਨੂੰ ਸਭ ਤੋਂ ਵੱਧ ਪਰੇਸ਼ਾਨ ਕਰਦਾ ਹੈ ਉਸ ਦੇ ਹਿਸਾਬ ਨਾਲ ਜਵਾਬ ਦਿਓ। ਇੱਕ ਲੱਛਣ ਵੀ ਕਾਫ਼ੀ ਹੈ।"
+  },
+  "ne": {
+   "myAnswersTitle": "तपाईंका उत्तरहरू",
+   "myAnswersNote": "यी तपाईंका आफ्नै भाषामा दिइएका उत्तरहरू हुन्। तल डाक्टरका लागि दिइएको सारांश अङ्ग्रेजीमा छ।",
+   "multiSymptomHint": "कुनै प्रश्नमा धेरै लक्षणहरू दिइएका छन् भने, तपाईंलाई सबैभन्दा बढी सताउने लक्षणको आधारमा उत्तर दिनुहोस्। एउटा लक्षण भए पनि पर्याप्त छ।"
+  },
+  "ur": {
+   "myAnswersTitle": "آپ کے جوابات",
+   "myAnswersNote": "یہ آپ کے جوابات آپ کی اپنی زبان میں ہیں۔ نیچے ڈاکٹر کے لیے خلاصہ انگریزی میں ہے۔",
+   "multiSymptomHint": "اگر کسی سوال میں کئی علامات دی گئی ہوں تو جو علامت آپ کو سب سے زیادہ پریشان کرتی ہے اس کے مطابق جواب دیں۔ ایک علامت بھی کافی ہے۔"
+  },
+  "fa": {
+   "myAnswersTitle": "پاسخ‌های شما",
+   "myAnswersNote": "این‌ها پاسخ‌های شما به زبان خودتان است. خلاصه‌ای که برای دکتر در ادامه آمده به انگلیسی است.",
+   "multiSymptomHint": "اگر در یک سؤال چند علامت آمده، بر اساس علامتی که بیشتر از همه اذیتتان می‌کند پاسخ بدهید. حتی یک علامت هم کافی است."
+  },
+  "ja": {
+   "myAnswersTitle": "あなたの回答",
+   "myAnswersNote": "あなたの言語での回答です。下にある医師向けの要約は英語で表示されます。",
+   "multiSymptomHint": "1つの質問に複数の症状が挙げられている場合は、いちばん気になる症状について回答してください。1つだけでも大丈夫です。"
+  },
+  "ko": {
+   "myAnswersTitle": "나의 답변",
+   "myAnswersNote": "내 언어로 보는 답변입니다. 아래의 의사 전달용 요약은 영어로 되어 있습니다.",
+   "multiSymptomHint": "한 질문에 여러 증상이 나열되어 있다면, 가장 불편한 증상을 기준으로 답해 주세요. 하나만 있어도 괜찮습니다."
+  },
+  "zh": {
+   "myAnswersTitle": "您的回答",
+   "myAnswersNote": "这是用您自己的语言显示的回答。下方提供给医生的摘要为英文。",
+   "multiSymptomHint": "如果一个问题列出了多种症状，请按最困扰您的那一种来评分。只有一种也可以。"
+  },
+  "yue": {
+   "myAnswersTitle": "你嘅回答",
+   "myAnswersNote": "呢度係用你自己嘅語言顯示嘅回答。下面畀醫生睇嘅摘要係英文。",
+   "multiSymptomHint": "如果一條問題列出幾種症狀，請按最困擾你嗰一種作答。得一種都得。"
+  },
+  "yue-wt": {
+   "myAnswersTitle": "你嘅回答",
+   "myAnswersNote": "呢度係用你自己嘅語言顯示嘅回答。下面畀醫生睇嘅摘要係英文。",
+   "multiSymptomHint": "如果一條問題列出幾種症狀，請按最困擾你嗰一種作答。得一種都得。"
+  },
+  "hak": {
+   "myAnswersTitle": "你个答案",
+   "myAnswersNote": "這係用你自家話顯示个答案。下背分醫生看个摘要係英文。",
+   "multiSymptomHint": "若果一條問題列出幾種症頭，請照最困擾你个該一種來答。就算淨有一種都可以。"
+  },
+  "nan-cz": {
+   "myAnswersTitle": "你个答案",
+   "myAnswersNote": "這是用你家己个話顯示个答案。下底提供予醫生个摘要是英文。",
+   "multiSymptomHint": "若有一條問題列出幾種症頭，請照最困擾你个彼種來答。就算淨有一種都可以。"
+  },
+  "vi": {
+   "myAnswersTitle": "Câu trả lời của bạn",
+   "myAnswersNote": "Đây là câu trả lời của bạn bằng ngôn ngữ của bạn. Bản tóm tắt dành cho bác sĩ ở phía dưới được viết bằng tiếng Anh.",
+   "multiSymptomHint": "Nếu một câu hỏi nêu nhiều triệu chứng, hãy chọn theo triệu chứng làm bạn khó chịu nhất. Chỉ có một triệu chứng cũng đủ."
+  },
+  "tl": {
+   "myAnswersTitle": "Mga sagot mo",
+   "myAnswersNote": "Ito ang mga sagot mo sa sarili mong wika. Ang buod para sa doktor sa ibaba ay nasa Ingles.",
+   "multiSymptomHint": "Kung maraming sintomas ang nakalista sa isang tanong, sagutin batay sa sintomas na pinakamalaki ang abala sa iyo. Kahit isang sintomas lang ay sapat na."
+  },
+  "sq": {
+   "myAnswersTitle": "Përgjigjet tuaja",
+   "myAnswersNote": "Këto janë përgjigjet tuaja në gjuhën tuaj. Përmbledhja për mjekun, më poshtë, është në anglisht.",
+   "multiSymptomHint": "Nëse një pyetje rendit disa simptoma, vlerësoni atë që ju shqetëson më shumë. Edhe vetëm një është e mjaftueshme."
+  },
+  "ro": {
+   "myAnswersTitle": "Răspunsurile dumneavoastră",
+   "myAnswersNote": "Acestea sunt răspunsurile dumneavoastră, în limba dumneavoastră. Rezumatul pentru medic, mai jos, este în engleză.",
+   "multiSymptomHint": "Dacă o întrebare enumeră mai multe simptome, evaluați-l pe cel care vă deranjează cel mai mult. Chiar și unul singur este suficient."
+  },
+  "pl": {
+   "myAnswersTitle": "Twoje odpowiedzi",
+   "myAnswersNote": "To Twoje odpowiedzi w Twoim języku. Podsumowanie dla lekarza, poniżej, jest po angielsku.",
+   "multiSymptomHint": "Jeśli pytanie wymienia kilka objawów, oceń ten, który dokucza Ci najbardziej. Wystarczy nawet jeden."
+  },
+  "fr": {
+   "myAnswersTitle": "Vos réponses",
+   "myAnswersNote": "Voici vos réponses dans votre langue. Le résumé destiné à votre médecin, plus bas, est en anglais.",
+   "multiSymptomHint": "Si une question énumère plusieurs symptômes, évaluez celui qui vous gêne le plus. Un seul suffit."
+  },
+  "de": {
+   "myAnswersTitle": "Ihre Antworten",
+   "myAnswersNote": "Hier sehen Sie Ihre Antworten in Ihrer Sprache. Die Zusammenfassung für Ihre Ärztin oder Ihren Arzt weiter unten ist auf Englisch.",
+   "multiSymptomHint": "Wenn eine Frage mehrere Symptome nennt, bewerten Sie das, das Sie am meisten belastet. Auch ein einziges genügt."
+  },
+  "es": {
+   "myAnswersTitle": "Sus respuestas",
+   "myAnswersNote": "Estas son sus respuestas en su idioma. El resumen para su médico, más abajo, está en inglés.",
+   "multiSymptomHint": "Si una pregunta menciona varios síntomas, valore el que más le moleste. Basta con uno."
+  },
+  "pt-br": {
+   "myAnswersTitle": "Suas respostas",
+   "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
+   "multiSymptomHint": "Se uma pergunta listar vários sintomas, avalie o que mais incomoda você. Basta um só."
+  },
+  "pt": {
+   "myAnswersTitle": "As suas respostas",
+   "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
+   "multiSymptomHint": "Se uma pergunta indicar vários sintomas, avalie aquele que mais a incomoda. Basta um só."
+  }
+ }
+}
