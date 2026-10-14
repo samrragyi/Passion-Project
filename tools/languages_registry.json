@@ -286,6 +286,17 @@
       "flag": "om",
       "status": "live",
       "note": "Omani Arabic, written as the translator speaks it (colloquial Gulf: قد ايش, بيساعدج, the feminine ـج ending, بچي), addressed to women. Right-to-left, tag ar-OM, Oman flag. Audio recorded by the owner with Narakeet's Omani voice (Claude cannot verify accents; which sheet was used, AS-WRITTEN or CH-RESPELLED, is not recorded). The translator's file has NO Arabic welcome line, so the intro (and the on-screen text) start at 'هذا التطبيق البسيط': the owner has not decided whether to add مرحباً بك في «حديث سن اليأس» (optional intro sheets exist; re-record clip 0001 and add it to the text if wanted). To check with the translator: يأثر (twice) is normally يؤثر; the doctor is always the feminine الدكتورة; the green legend line has no severity word like the others. The 20 standard strings and the 3 new interface strings are drafts by Claude."
+    },
+    {
+      "code": "ar-eg",
+      "name": "العربية المصرية",
+      "gloss": "Egyptian Arabic",
+      "group": "Egypt",
+      "tag": "ar-EG",
+      "dir": "rtl",
+      "flag": "eg",
+      "status": "live",
+      "note": "Egyptian Arabic, written as the translator speaks it (colloquial: قد إيه, بيضايقك, دي, زرار, the feminine ـي/ـك address), addressed to women. Right-to-left, tag ar-EG, Egypt flag. Audio recorded by the owner (the files arrived named 00_Chapter_1 ... 14_Chapter_15 = questions 1-15, 15_Intro, 16_Section_1 ... 21_Section_6; the tool, model and voice were not reported and Claude cannot verify the accent). The translator's file ('Arabic Scripts: Final Versions'; its name mentions Omani/Khaleeji but it contains ONLY Egyptian; the later Egyptian.docx is identical) gives an Arabic title (كلام عن سن اليأس) but NO welcome sentence, so the on-screen intro has none: the owner was asked to listen to the first 5 seconds of the intro clip, and if it opens with a welcome/title, that line must be added to the text. To check with the translator: بيأثر (twice) is normally بيؤثر; the doctor is always the feminine دكتورتك. The 20 standard strings and the 3 new interface strings are drafts by Claude."
     }
   ]
 }
