@@ -631,6 +631,28 @@
    "privacyBadge": "خاص وبدون حاجة للتسجيل",
    "languagePageTitle": "اختاري لغتج",
    "homeLabel": "الرئيسية"
+  },
+  "ar-om": {
+   "consentLabel": "فهمت.",
+   "startButton": "ابدئي التقييم",
+   "prevButton": "السابق",
+   "nextButton": "التالي",
+   "submitButton": "إنهاء",
+   "scale1": "أبداً",
+   "scale2": "قليلاً",
+   "scale3": "بدرجة كبيرة",
+   "scale4": "بشدة",
+   "questionCounter": "السؤال {n} من 15",
+   "sectionPrefix": "القسم {n} من 6",
+   "listenLabel": "اسمعي",
+   "pauseLabel": "إيقاف مؤقت",
+   "printButton": "طباعة / حفظ بصيغة PDF",
+   "restartButton": "ابدئي من جديد",
+   "appTitle": "افهمي ايش يقول لج جسمج",
+   "appSubtitle": "تقييم قصير وواضح لأعراضج.",
+   "privacyBadge": "خاص وبدون حاجة للتسجيل",
+   "languagePageTitle": "اختاري لغتج",
+   "homeLabel": "الرئيسية"
   }
  }
 }

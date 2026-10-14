@@ -275,6 +275,17 @@
       "flag": "ae",
       "status": "live",
       "note": "Gulf (Khaleeji) Arabic, written as the translator speaks it (colloquial: شقد, وايد, the feminine ـج ending, بچي), addressed to women. Right-to-left, tag ar-AE. UAE flag/country is PROVISIONAL (the dialect spans UAE, Kuwait, Qatar, Bahrain, Oman and eastern Saudi): the owner to confirm. Audio made by the owner with a Narakeet Emirati voice (Claude cannot verify accents; the owner chose between the AS-WRITTEN and the CH-RESPELLED sheets: which one was used is not recorded). Spelling to check: يأثر (twice) is normally يؤثر; 'your doctor' is دكتورتك in the intro but دكتورتج elsewhere. The 20 standard strings and the 3 new interface strings are drafts by Claude: have a Khaleeji speaker check them."
+    },
+    {
+      "code": "ar-om",
+      "name": "العربية العمانية",
+      "gloss": "Omani Arabic",
+      "group": "Oman",
+      "tag": "ar-OM",
+      "dir": "rtl",
+      "flag": "om",
+      "status": "live",
+      "note": "Omani Arabic, written as the translator speaks it (colloquial Gulf: قد ايش, بيساعدج, the feminine ـج ending, بچي), addressed to women. Right-to-left, tag ar-OM, Oman flag. Audio recorded by the owner with Narakeet's Omani voice (Claude cannot verify accents; which sheet was used, AS-WRITTEN or CH-RESPELLED, is not recorded). The translator's file has NO Arabic welcome line, so the intro (and the on-screen text) start at 'هذا التطبيق البسيط': the owner has not decided whether to add مرحباً بك في «حديث سن اليأس» (optional intro sheets exist; re-record clip 0001 and add it to the text if wanted). To check with the translator: يأثر (twice) is normally يؤثر; the doctor is always the feminine الدكتورة; the green legend line has no severity word like the others. The 20 standard strings and the 3 new interface strings are drafts by Claude."
     }
   ]
 }
