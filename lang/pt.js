@@ -1,0 +1,174 @@
+/* Language pack: Português (Portugal) (pt). Loaded on demand by index.html. */
+window.registerLanguage({
+  "code": "pt",
+  "name": "Português (Portugal)",
+  "gloss": "Portuguese (Portugal)",
+  "tag": "pt-PT",
+  "dir": "ltr",
+  "ui": {
+    "appTitleShort": "The Menopause Conversation",
+    "appTitle": "Compreenda o que o seu corpo lhe está a dizer",
+    "appSubtitle": "Uma avaliação curta e clara dos seus sintomas.",
+    "introBody": "Bem-vinda à Conversa sobre a Menopausa: Esta ferramenta simples ajuda a organizar e acompanhar os seus sintomas antes de falar com o seu médico. Por favor, siga estes passos simples:",
+    "startButton": "Iniciar a avaliação",
+    "questionCounter": "Pergunta {n} de 15",
+    "sectionPrefix": "Secção {n} de 6",
+    "questionsRemaining": "{n} left",
+    "introStepLabel": "Getting started",
+    "languageStepLabel": "Choose your language",
+    "instructionsStepLabel": "Before you begin",
+    "resultsStepLabel": "Your summary is ready",
+    "scaleTitle": "How severe is this for you?",
+    "listenLabel": "Ouvir",
+    "pauseLabel": "Pausa",
+    "prevButton": "Anterior",
+    "nextButton": "Seguinte",
+    "submitButton": "Concluir",
+    "resultsTitle": "Your summary",
+    "resultsIntro": "Here is an overview of your answers. Show the section below to your doctor.",
+    "gpSummaryTitle": "Summary for your doctor (English)",
+    "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly.",
+    "printButton": "Imprimir / Guardar como PDF",
+    "restartButton": "Recomeçar",
+    "overallLabel": "Overall score",
+    "notAnswered": "Not answered",
+    "item": "Item",
+    "severity": "Severity",
+    "score": "Score",
+    "flagged": "Highest-severity items",
+    "none": "None",
+    "mostNoticeable": "Most noticeable today:",
+    "noSevereSymptoms": "Nothing was rated as extremely severe today.",
+    "scoreExplainTitle": "Understanding your score",
+    "scoreExplainMild": "Mild — symptoms are mostly absent or manageable day to day.",
+    "scoreExplainModerate": "Moderate — multiple systems are affected, or a few symptoms are quite severe.",
+    "scoreExplainSevere": "Severe — a profound impact across multiple systems, including sleep, mood and physical function.",
+    "privacyBadge": "Privado e sem necessidade de registo",
+    "myAnswersTitle": "As suas respostas",
+    "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
+    "multiSymptomHint": "Se uma pergunta indicar vários sintomas, avalie aquele que mais a incomoda. Basta um só.",
+    "languagePageTitle": "Selecione o seu idioma",
+    "languagePageSub": "Choose a language to continue. You can change it anytime from the menu at the top of the page.",
+    "homeLabel": "Início",
+    "beforeYouBegin": "Aviso",
+    "continueButton": "I understand — continue",
+    "instructionsTitle": "How this works",
+    "formalDisclaimer": "Esta ferramenta destina-se apenas a fins educativos e de preparação para consultas. Não é uma ferramenta de diagnóstico nem aconselhamento médico. Todas as decisões médicas devem ser tomadas em consulta com um médico qualificado.",
+    "consentLabel": "Compreendo.",
+    "finalNoticeTitle": "Notice for Patient and Clinician",
+    "finalNoticeFrameworkLabel": "Clinical Framework:",
+    "finalNoticeFramework": "Generated via an open-source, patient-led tracking checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticePatientLabel": "Patient Notice:",
+    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
+    "finalNoticeClinicianLabel": "Clinician Notice:",
+    "finalNoticeClinician": "This document is a patient-generated symptom log (similar to a digital journal) mapped against standard Greene Climacteric Scale domains to support an efficient primary care consultation in line with NICE NG23 diagnostic principles.",
+    "finalNoticeConfidentialityLabel": "Data Confidentiality:",
+    "finalNoticeConfidentiality": "No data from this session has been saved to any server or external database. Once this tab or PDF export is closed, all entered information is permanently erased."
+  },
+  "scale": [
+    "Nada",
+    "Um pouco",
+    "Bastante",
+    "Extremamente"
+  ],
+  "bands": [
+    "Mild Burden Index",
+    "Moderate Burden Index",
+    "Severe Burden Index"
+  ],
+  "sections": [
+    "Menstruação e Sintomas Vasomotores (Afrontamentos)",
+    "Memória, Cabeça e Nervos",
+    "Articulações, Músculos e Cansaço Físico",
+    "Pele, Mucosas e Alergias",
+    "Estado de Ânimo e Emoções",
+    "Zona Íntima e Bexiga"
+  ],
+  "questions": [
+    {
+      "t": "Alterações no ciclo menstrual",
+      "q": "Até que ponto as mudanças nas datas da menstruação (atrasos ou faltas) ou no fluxo (hemorragias muito intensas ou pequenas perdas de sangue) a incomodam?"
+    },
+    {
+      "t": "Afrontamentos e suores noturnos",
+      "q": "Com que intensidade os calores repentinos (afrontamentos), os suores à noite ou os arrepios de frio de dia ou de noite afetam a sua vida?"
+    },
+    {
+      "t": "Sensação de “névoa mental” e memória",
+      "q": "Até que ponto a afeta esquecer-se das coisas de forma invulgar, perder o fio à meada do que estava a pensar ou custar-lhe a encontrar as palavras certas?"
+    },
+    {
+      "t": "Nervos e dores de cabeça",
+      "q": "Até que ponto a incomodam os formigueiros ou picadas na pele sem razão, dores de cabeça novas, enxaquecas hormonais ou tonturas?"
+    },
+    {
+      "t": "Articulações e músculos",
+      "q": "Qual a intensidade da rigidez persistente nas articulações (juntas), do inchaço ou das dores musculares sem explicação (especialmente de manhã)?"
+    },
+    {
+      "t": "Palpitações e coração acelerado",
+      "q": "Até que ponto a incomoda sentir o coração subitamente aos saltos, a bater com muita força ou descompassado enquanto está em repouso?"
+    },
+    {
+      "t": "Esgotamento físico",
+      "q": "Até que ponto é grave o seu cansaço físico diário ou aquela sensação de profunda falta de forças que nem depois de dormir passa?"
+    },
+    {
+      "t": "Secura na pele e nos olhos",
+      "q": "Com que intensidade sente a pele mais fina, com menos firmeza e enrugada, ou uma sensação constante de olhos secos e irritados (como se tivesse areia nos olhos)?"
+    },
+    {
+      "t": "Desconforto na boca e ardor na língua",
+      "q": "Até que ponto a incomoda a sensação de ter a língua a arder, um sabor metálico na boca ou ter as gengivas sensíveis e a sangrar?"
+    },
+    {
+      "t": "Alergias e reações na pele",
+      "q": "Até que ponto são graves as alergias que surgiram de repente, a comichão e a urticária (vergões com comichão) na pele sem motivo, ou a sensibilidade a certos alimentos e produtos?"
+    },
+    {
+      "t": "Ansiedade e sensação de aflição",
+      "q": "Até que ponto são fortes os ataques repentinos de pânico sem motivo, a agitação interior, a tensão ou uma sensação de medo/aflição sem causa óbvia?"
+    },
+    {
+      "t": "Mudanças de humor",
+      "q": "Com que intensidade sente mudanças repentinas de humor difíceis de controlar, vontade de chorar do nada, falta de paciência ou acessos de raiva invulgares?"
+    },
+    {
+      "t": "Problemas de sono",
+      "q": "Até que ponto o seu sono é perturbado por acordar muito cedo (por exemplo, entre as 2h e as 4h da madrugada) e não conseguir voltar a adormecer?"
+    },
+    {
+      "t": "Desconforto íntimo e desejo sexual",
+      "q": "Com que intensidade sente secura, comichão ou irritação nas partes íntimas, ou uma diminuição invulgar do desejo ou da sensibilidade sexual?"
+    },
+    {
+      "t": "Irritação urinária",
+      "q": "Até que ponto a afeta a vontade urgente e frequente de ir urinar ou as irritações e infeções urinárias repetidas?"
+    }
+  ],
+  "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan or prescription advice.",
+  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
+  "howItWorks": [
+    "Ouça a mensagem de voz: Clique no botão de áudio por cima de cada pergunta para ouvir o texto lido em voz alta na sua língua.",
+    "Selecione a intensidade do sintoma: Escolha o botão por baixo de cada pergunta que melhor descreve como se sentiu no último mês:",
+    "Veja o seu resumo: Quando terminar, as suas respostas vão gerar um resumo de 1 página para mostrar ao seu médico durante a consulta."
+  ],
+  "severityLegend": [
+    {
+      "label": "Verde",
+      "desc": "O sintoma não está presente ou não causa qualquer incómodo."
+    },
+    {
+      "label": "Amarelo",
+      "desc": "Está presente um sintoma ligeiro, pouco percetível ou notado apenas ocasionalmente."
+    },
+    {
+      "label": "Âmbar (laranja)",
+      "desc": "Está presente um sintoma moderado, bastante percetível, que ocorre regularmente ou é controlável mas incómodo."
+    },
+    {
+      "label": "Vermelho",
+      "desc": "Existe um sintoma grave. O desconforto é extremo, frequente, ou afeta significativamente a vida quotidiana, o sono ou o bem-estar."
+    }
+  ]
+});

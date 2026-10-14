@@ -165,8 +165,8 @@
       "tag": "pt-PT",
       "dir": "ltr",
       "flag": "pt",
-      "status": "planned",
-      "note": "Planned (second tile, decided 13 Oct 2026: Brazil first, Portugal later). Same translation with the translator's ORIGINAL wording (ligeiro, vaga de calor), European standard strings (drafts in tools/common_strings.json: secção, registo, Compreendo) and its OWN recording with a EUROPEAN Narakeet voice (the 22-row sheet is in portuguese-sheets.zip). Build with tools/make_template.py --code pt, then tools/apply_new_ui_strings.py."
+      "status": "live",
+      "note": "Português (Portugal): a separate, genuinely EUROPEAN translation (Portugese-_EU-_updated.docx, 14 Oct 2026; 12 of 20 fields and 13 of 15 questions differ from the earlier Brazil-labelled file; European markers afrontamentos, percetível, quotidiana, incómodo and no Brazilian ones). Step 3 'médico de família' was changed to 'médico' (the doctor rule). Audio recorded by the owner with a European Narakeet voice (Claude cannot verify accents); which sheet was used (AS-WRITTEN or NUMBERS-SPOKEN: '1 página' / '2h e as 4h') is not recorded. Standard strings and the 3 new interface strings are European drafts by Claude: have a Portuguese speaker check them. Brazil is the other Portuguese tile (pt-br)."
     },
     {
       "code": "ro",
