@@ -264,6 +264,17 @@
       "flag": "cn",
       "status": "live",
       "note": "Written in traditional Chinese; no text-to-speech voice exists, so the audio was recorded by a speaker (used exactly as sent). Flag/country China: provisional, please confirm."
+    },
+    {
+      "code": "ar-gulf",
+      "name": "العربية الخليجية",
+      "gloss": "Khaleeji Arabic",
+      "group": "United Arab Emirates",
+      "tag": "ar-AE",
+      "dir": "rtl",
+      "flag": "ae",
+      "status": "live",
+      "note": "Gulf (Khaleeji) Arabic, written as the translator speaks it (colloquial: شقد, وايد, the feminine ـج ending, بچي), addressed to women. Right-to-left, tag ar-AE. UAE flag/country is PROVISIONAL (the dialect spans UAE, Kuwait, Qatar, Bahrain, Oman and eastern Saudi): the owner to confirm. Audio made by the owner with a Narakeet Emirati voice (Claude cannot verify accents; the owner chose between the AS-WRITTEN and the CH-RESPELLED sheets: which one was used is not recorded). Spelling to check: يأثر (twice) is normally يؤثر; 'your doctor' is دكتورتك in the intro but دكتورتج elsewhere. The 20 standard strings and the 3 new interface strings are drafts by Claude: have a Khaleeji speaker check them."
     }
   ]
 }

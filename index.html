@@ -432,6 +432,7 @@
   .speed-btn{
     min-width:46px; height:32px; padding:0 10px; border-radius:16px; border:1.5px solid #4A7BA6; background:#fff; color:#4A7BA6;
     font-family:inherit; font-weight:600; font-size:0.82rem; line-height:1; cursor:pointer; transition:background .15s ease;
+    direction:ltr; unicode-bidi:isolate;   /* keep "1.25×" reading the same in right-to-left languages */
   }
   .speed-btn:hover{ background:#EAF1F8; }
   .speed-btn[aria-pressed="true"]{ background:#4A7BA6; color:#fff; }

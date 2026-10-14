@@ -130,6 +130,11 @@
    "myAnswersTitle": "As suas respostas",
    "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
    "multiSymptomHint": "Se uma pergunta indicar vários sintomas, avalie aquele que mais a incomoda. Basta um só."
+  },
+  "ar-gulf": {
+   "myAnswersTitle": "إجاباتج",
+   "myAnswersNote": "هذي إجاباتج بلغتج. الملخص اللي لدكتورتج بالأسفل مكتوب بالإنجليزي.",
+   "multiSymptomHint": "إذا السؤال يذكر أكثر من عرض، قيّمي العرض اللي يضايقج أكثر. حتى لو عندج عرض واحد بس، يكفي."
   }
  }
 }
