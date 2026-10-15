@@ -9,7 +9,7 @@ window.registerLanguage({
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Understand what your body is telling you",
     "appSubtitle": "A short, clear check-in on your symptoms.",
-    "introBody": "Welcome to The Menopause Conversation. This brief health tool helps you organize and track your symptoms before speaking with your healthcare provider. Please follow the simple steps below:",
+    "introBody": "Welcome to The Menopause Conversation. This brief health tool helps you organise and track your symptoms before speaking with your healthcare provider. Please follow the simple steps below:",
     "startButton": "Begin the check",
     "questionCounter": "Question {n} of 15",
     "sectionPrefix": "Section {n} of 6",
@@ -41,29 +41,27 @@ window.registerLanguage({
     "noSevereSymptoms": "Nothing was rated as extremely severe today.",
     "scoreExplainTitle": "Understanding your score",
     "scoreExplainMild": "Mild — symptoms are mostly absent or manageable day to day.",
-    "scoreExplainModerate": "Moderate — multiple systems are affected, or a few symptoms are quite severe.",
-    "scoreExplainSevere": "Severe — a profound impact across multiple systems, including sleep, mood and physical function.",
+    "scoreExplainModerate": "Moderate — multiple systems are affected or a few symptoms are quite severe.",
+    "scoreExplainSevere": "Severe — symptoms have a profound impact across multiple systems, including sleep, mood and physical function.",
     "privacyBadge": "Private & No Sign-Up Required",
     "myAnswersTitle": "Your answers",
     "myAnswersNote": "These are your answers in your own language. The summary for your doctor, further down, is in English.",
     "multiSymptomHint": "If a question lists several symptoms, rate the one that bothers you most. Even one is enough.",
     "languagePageTitle": "Select your language",
-    "languagePageSub": "Choose a language to continue. You can change it anytime from the menu at the top of the page.",
+    "languagePageSub": "Choose a language to continue. You can change it at any time from the menu at the top of the page.",
     "homeLabel": "Home",
     "beforeYouBegin": "Notice",
     "continueButton": "I understand — continue",
     "instructionsTitle": "How this works",
-    "formalDisclaimer": "This tool is for educational and appointment preparation purposes only. It is not a diagnostic tool or medical advice. All medical decisions should be made in consultation with a qualified doctor.",
+    "formalDisclaimer": "This tool is for educational and appointment-preparation purposes only. It is not a diagnostic tool or medical advice. All medical decisions should be made in consultation with a qualified doctor.",
     "consentLabel": "I understand.",
-    "finalNoticeTitle": "Notice for Patient and Clinician",
-    "finalNoticeFrameworkLabel": "Clinical Framework:",
-    "finalNoticeFramework": "Generated via an open-source, patient-led tracking checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticeTitle": "Notice for Patient",
+    "finalNoticeFrameworkLabel": "Framework:",
+    "finalNoticeFramework": "Generated via an open-source, patient-led checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "Patient Notice:",
-    "finalNoticePatient": "This summary report organizes your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your clinician does not guarantee a specific diagnosis or prescription.",
-    "finalNoticeClinicianLabel": "Clinician Notice:",
-    "finalNoticeClinician": "This document is a patient-generated symptom log (similar to a digital journal) mapped against standard Greene Climacteric Scale domains to support an efficient primary care consultation in line with NICE NG23 diagnostic principles.",
+    "finalNoticePatient": "This summary report organises your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your doctor does not guarantee a specific diagnosis or prescription.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",
-    "finalNoticeConfidentiality": "No data from this session has been saved to any server or external database. Once this tab or PDF export is closed, all entered information is permanently erased."
+    "finalNoticeConfidentiality": "Your answers are not saved or sent anywhere by this tool. They stay in your browser and are erased when you close or reload this page. Any PDF or printout you make is yours to keep or delete. Like any website, its host keeps standard server logs of requests for the site's files, but your answers are never part of them. In some browsers, if a recording cannot play, the built-in voice may run online; it reads only the question text, never your answers."
   },
   "scale": [
     "Not at all",
@@ -139,7 +137,7 @@ window.registerLanguage({
     },
     {
       "t": "Intimate Discomfort & Libido",
-      "q": "How severe is dryness, itching or irritation in intimate areas, or an uncharacteristic drop in sexual desire/sensation?"
+      "q": "How severe is dryness, itching or irritation in intimate areas or an uncharacteristic drop in sexual desire/sensation?"
     },
     {
       "t": "Urinary Irritation",
@@ -150,25 +148,25 @@ window.registerLanguage({
   "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
   "howItWorks": [
     "Listen to the Voice Note: Click the audio button above each question to hear the prompt read aloud in your language.",
-    "Select Your Symptom Severity: Choose the button below each question, that best describes your experience over the past month:",
+    "Select Your Symptom Severity: Choose the button below each question that best describes your experience over the past month:",
     "Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your doctor during your appointment."
   ],
   "severityLegend": [
     {
       "label": "Green",
-      "desc": "No symptom present or causes no issue."
+      "desc": "No symptom is present or it causes no issue."
     },
     {
       "label": "Yellow",
-      "desc": "Mild symptom is present and is little or only occasionally noticeable."
+      "desc": "A mild symptom is present, but it is barely noticeable or only occasionally noticeable."
     },
     {
       "label": "Amber",
-      "desc": "Moderate symptom, which is quite noticeable, occurs regularly or is manageable but disruptive."
+      "desc": "A moderate symptom is quite noticeable, occurs regularly or is manageable but disruptive."
     },
     {
       "label": "Red",
-      "desc": "Severe symptom exists. Discomfort is extreme, frequent or significantly affects daily life, sleep or wellbeing."
+      "desc": "A severe symptom is present. The discomfort is extreme, is frequent or significantly affects daily life, sleep or wellbeing."
     }
   ]
 });
