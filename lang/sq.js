@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Kuptoni çfarë po ju thotë trupi juaj",
-    "appSubtitle": "Një kontroll i shkurtër dhe i qartë i simptomave tuaja.",
+    "appSubtitle": "Një hapësirë e qetë për të dëgjuar trupin tuaj dhe për t'u përgatitur.",
     "introBody": "Mirë se vini në Bisedën për Menopauzën. Ky mjet i shkurtër shëndetësor ju ndihmon të organizoni dhe të ndiqni simptomat tuaja përpara se të flisni me mjekun tuaj. Ju lutemi ndiqni hapat e thjeshtë më poshtë:",
     "startButton": "Filloni kontrollin",
     "questionCounter": "Pyetja {n} nga 15",

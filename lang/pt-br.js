@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Entenda o que seu corpo está dizendo",
-    "appSubtitle": "Uma avaliação rápida e clara dos seus sintomas.",
+    "appSubtitle": "Um espaço tranquilo para ouvir o seu corpo e se preparar.",
     "introBody": "Boas-vindas à Conversa sobre Menopausa: Esta ferramenta simples ajuda a organizar e acompanhar os seus sintomas antes de falar com o seu médico. Por favor, siga estes passos simples:",
     "startButton": "Iniciar a avaliação",
     "questionCounter": "Pergunta {n} de 15",

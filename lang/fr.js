@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Comprenez ce que votre corps vous dit",
-    "appSubtitle": "Un bilan court et clair de vos symptômes.",
+    "appSubtitle": "Un espace calme pour écouter votre corps et vous préparer.",
     "introBody": "Bienvenue dans l'espace de discussion sur la ménopause : Ce petit questionnaire de santé vous aide à faire le point et à suivre vos symptômes avant d'en parler avec votre médecin. Suivez simplement les étapes ci-dessous :",
     "startButton": "Commencer le bilan",
     "questionCounter": "Question {n} sur 15",

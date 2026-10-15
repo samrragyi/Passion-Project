@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "あなたの体が伝えていることを知りましょう",
-    "appSubtitle": "症状を短く、わかりやすくチェックします。",
+    "appSubtitle": "自分の体の声に耳を傾け、備えるための静かな場所。",
     "introBody": "更年期についての対話へようこそ. この簡単な健康管理ツールは、医療機関に相談する前に、症状を整理して記録するのに役立ちます。以下の簡単な手順に沿ってご利用ください。",
     "startButton": "チェックを始める",
     "questionCounter": "質問 {n} / 15",

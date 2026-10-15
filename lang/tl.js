@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Unawain kung ano ang sinasabi ng iyong katawan",
-    "appSubtitle": "Isang maikli at malinaw na pagsusuri ng iyong mga sintomas.",
+    "appSubtitle": "Isang tahimik na lugar para making sa iyong katawan at maghanda.",
     "introBody": "Maligayang Pagdating sa The Menopause Conversation (Usapang Menepause) Itong simpleng pangkalusugang kasangkapan na ito ay makakatulong sa'yo na ayusin at (masubaybayan/masuri) ang mga sintomas mo bago ka kumausap ng manggagamot. Pakiusap Sundan mo lang itong simpleng hakbang:",
     "startButton": "Simulan ang pagsusuri",
     "questionCounter": "Tanong {n} sa 15",

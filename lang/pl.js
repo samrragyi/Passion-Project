@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Zrozum, co mówi Twoje ciało",
-    "appSubtitle": "Krótkie, jasne sprawdzenie Twoich objawów.",
+    "appSubtitle": "Spokojne miejsce, by wsłuchać się w swoje ciało i się przygotować.",
     "introBody": "Dzień dobry! Witamy w mini quizie do rozmowy o menopauzie. Jest to krótka ściągawka, która pomoże Ci zebrać i zapisać wszystkie dolegliwości przed wizytą u lekarza. Wykonaj poniższe kroki:",
     "startButton": "Rozpocznij sprawdzanie",
     "questionCounter": "Pytanie {n} z 15",

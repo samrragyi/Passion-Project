@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Understand what your body is telling you",
-    "appSubtitle": "A short, clear check-in on your symptoms.",
+    "appSubtitle": "A quiet space to listen to your body and prepare.",
     "introBody": "Welcome to The Menopause Conversation. This brief health tool helps you organise and track your symptoms before speaking with your healthcare provider. Please follow the simple steps below:",
     "startButton": "Begin the check",
     "questionCounter": "Question {n} of 15",

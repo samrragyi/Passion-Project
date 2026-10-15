@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Entienda lo que le dice su cuerpo",
-    "appSubtitle": "Un chequeo breve y claro de sus síntomas.",
+    "appSubtitle": "Un espacio tranquilo para escuchar a su cuerpo y prepararse.",
     "introBody": "Bienvenida a Conversaciones sobre la Menopausia: Esta simple herramienta de salud le ayudará a organizar y llevar un control de sus síntomas antes de hablar con su médico. Por favor, siga estos pasos sencillos:",
     "startButton": "Comenzar el chequeo",
     "questionCounter": "Pregunta {n} de 15",

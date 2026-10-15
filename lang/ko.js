@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "내 몸이 전하는 이야기를 이해해 보세요",
-    "appSubtitle": "증상을 간단하고 명확하게 확인해 보세요.",
+    "appSubtitle": "내 몸의 소리에 귀 기울이고 준비하는 조용한 공간.",
     "introBody": "폐경기 자가진단 설문지. 이 설문지는 의사 선생님과 상담하기 전에 본인의 증상을 정리하고 기록하는 데 도움을 드립니다. 아래의 간단한 단계를 따라와 주십시오.",
     "startButton": "시작하기",
     "questionCounter": "질문 {n} / 15",

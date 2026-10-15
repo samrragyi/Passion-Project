@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "了解您的身体在告诉您什么",
-    "appSubtitle": "简短清晰的症状自查。",
+    "appSubtitle": "一个倾听身体、做好准备的安静空间。",
     "introBody": "欢迎使用《更年期对话》。这是一份简单、贴心的健康小工具，帮助您整理和记录近期出现的症状，让您在与医生或其他医疗专业人员沟通时，更清楚地了解和表达自己的感受。请按照以下简单步骤完成：",
     "startButton": "开始检查",
     "questionCounter": "第 {n} 题，共 15 题",

@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "افهمي شنو يقول لج جسمج",
-    "appSubtitle": "تقييم قصير وواضح لأعراضج.",
+    "appSubtitle": "مساحة هادية تسمعين فيها جسمج وتستعدين.",
     "introBody": "مرحباً بك في «حديث سن اليأس». هالأداة البسيطة تساعدك تنظمين وتتابعين أعراضك قبل لا تتكلمين مع دكتورتك. اتبعي هالخطوات البسيطة:",
     "startButton": "ابدئي التقييم",
     "questionCounter": "السؤال {n} من 15",

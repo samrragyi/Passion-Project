@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "افهمي ايش يقول لج جسمج",
-    "appSubtitle": "تقييم قصير وواضح لأعراضج.",
+    "appSubtitle": "مساحة هادية تسمعين فيها جسمج وتستعدين.",
     "introBody": "هذا التطبيق البسيط بيساعدج تنظمين وتتابعين أعراضج قبل لا تتكلمين مع الدكتورة. اتبعي الخطوات السهلة هذي:",
     "startButton": "ابدئي التقييم",
     "questionCounter": "السؤال {n} من 15",

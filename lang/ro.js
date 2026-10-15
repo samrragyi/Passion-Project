@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Înțelege ce îți spune corpul tău",
-    "appSubtitle": "O verificare scurtă și clară a simptomelor tale.",
+    "appSubtitle": "Un spațiu liniștit pentru a vă asculta corpul și a vă pregăti.",
     "introBody": "Bine ați venit la conversația despre sănătatea femeilor și menopauză: Acest scurt chestionar de sănătate vă ajută să vă organizați și să vă urmăriți stările și simptomele înainte de a vorbi cu medicul dumneavoastră. Vă rugăm să urmați acești pași simpli:",
     "startButton": "Începe verificarea",
     "questionCounter": "Întrebarea {n} din 15",

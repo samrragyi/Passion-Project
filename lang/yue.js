@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "了解你身體想告訴你嘅嘢",
-    "appSubtitle": "簡短清晰嘅症狀自我檢查。",
+    "appSubtitle": "一個靜靜聆聽身體、做好準備嘅空間。",
     "introBody": "歡迎使用「更年期健康交流指南」。呢個簡短嘅健康小工具可以幫您喺睇醫生之前，整理同記錄好自己嘅身體狀況。請跟住以下簡單步驟做：",
     "startButton": "開始檢查",
     "questionCounter": "第 {n} 題，共 15 題",

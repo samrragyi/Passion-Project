@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Verstehen Sie, was Ihr Körper Ihnen sagt",
-    "appSubtitle": "Ein kurzer, klarer Check Ihrer Symptome.",
+    "appSubtitle": "Ein ruhiger Raum, um auf Ihren Körper zu hören und sich vorzubereiten.",
     "introBody": "Willkommen beim Thema Wechseljahre – Unser Gespräch: Dieses kleine Gesundheitstool hilft Ihnen dabei, Ihre Beschwerden zu ordnen und aufzuschreiben, bevor Sie mit Ihrem Arzt oder Ihrer Ärztin sprechen. Bitte folgen Sie einfach diesen Schritten:",
     "startButton": "Check starten",
     "questionCounter": "Frage {n} von 15",

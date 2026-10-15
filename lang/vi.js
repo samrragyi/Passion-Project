@@ -8,7 +8,7 @@ window.registerLanguage({
   "ui": {
     "appTitleShort": "The Menopause Conversation",
     "appTitle": "Hiểu cơ thể bạn đang nói gì",
-    "appSubtitle": "Một bài kiểm tra ngắn gọn, rõ ràng về các triệu chứng của bạn.",
+    "appSubtitle": "Một không gian yên tĩnh để lắng nghe cơ thể và chuẩn bị.",
     "introBody": "Chào mừng các bạn đến với công cụ “Trò chuyện về Sức khỏe Tuổi mãn kinh” Công cụ theo dõi sức khỏe ngắn gọn này sẽ giúp chị em dễ dàng ghi lại các dấu hiệu bất thường trước cuộc hẹn với bác sĩ. Xin vui lòng làm theo các bước đơn giản sau:",
     "startButton": "Bắt đầu kiểm tra",
     "questionCounter": "Câu hỏi {n}/15",
