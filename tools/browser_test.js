@@ -142,6 +142,13 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   const my = await p.evaluate(() => { const e = document.getElementById('myAnswers'); return { hidden: e.hidden, rows: e.querySelectorAll('.ma-row').length, secs: e.querySelectorAll('.ma-sec').length, title: (e.querySelector('.my-answers-title') || {}).textContent, printHidden: getComputedStyle(e).display }; });
   if (code === 'en') ok(my.hidden, 'English: the "Your answers" block is hidden (the English summary is the only one)');
   else ok(!my.hidden && my.rows === 15 && my.secs === 6 && my.title === pk.ui.myAnswersTitle, 'results page shows "Your answers" in the patient\'s language (6 sections, 15 rows)');
+  const hdr = await p.evaluate(() => { const br = document.querySelector('.brandmark').getBoundingClientRect(), h = document.querySelector('.home-btn').getBoundingClientRect(); return br.left < h.left; });
+  ok(hdr, 'header: the logo is on the left and the Home button on the right on the results page, in every language (same as English)');
+  const engBad = await p.evaluate(() => { const out = []; document.querySelectorAll('#gpPanel, #gpPanel *, #finalNoticeBlock, #finalNoticeBlock *').forEach(el => {     // the English-by-design blocks only (native text in Latin-script languages is allowed to be anywhere)
+    const own = [...el.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join(' ').trim(); if (!/[A-Za-z]{3,}/.test(own) || /[\u0600-\u06FF]/.test(own)) return;
+    const cs = getComputedStyle(el), r = el.getBoundingClientRect(); if (!r.width || cs.display === 'none' || cs.visibility === 'hidden' || el.closest('.print-top')) return;
+    const a = cs.textAlign, d = cs.direction; if (d !== 'ltr' || a === 'right' || (a === 'end' && d === 'ltr')) out.push((el.id || el.className || el.tagName) + ':' + d + '/' + a); }); return out; });
+  ok(engBad.length === 0, 'every piece of English text in the doctor summary and the Notice is left-to-right and not right-aligned' + (engBad.length ? ': ' + engBad.slice(0, 3).join('; ') : ''));
   o2.push(['results', await overflow(p)]);
   await p.close();
 
