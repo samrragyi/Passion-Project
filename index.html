@@ -511,6 +511,11 @@
   .legal-block p:last-child{ margin-bottom:0; }
   .legal-list{ margin:0; padding-left:20px; }
   [dir="rtl"] .legal-list{ padding-left:0; padding-right:20px; }
+  [dir="rtl"] .legal-block[dir="ltr"] .legal-list{ padding-right:0; padding-left:20px; }   /* the English blocks stay left-to-right inside right-to-left pages */
+  .gp-panel[dir="ltr"]{ text-align:left; }
+  .print-top{ display:none; }
+  .ma-summary{ margin-top:14px; padding-top:10px; border-top:2px solid var(--line); }
+  .ma-line{ margin:6px 0; font-size:0.92rem; line-height:1.5; }
   .legal-list li{ margin-bottom:9px; }
   .legal-list li:last-child{ margin-bottom:0; }
   .legal-block strong{ color:var(--forest-dim); }
@@ -536,6 +541,8 @@
        Without this, browsers drop all background colours by default. The paper itself stays white. */
     *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .sticky-header, .cta-row, .gp-actions, footer.page-footer{ display:none !important; }
+    .screen-top{ display:none !important; }          /* the patient's-language top section is for the screen only ... */
+    .print-top{ display:block !important; }          /* ... the printout carries the English copy of it */
     body{ background:#fff; }
     .screen{ display:none !important; }
     #screen-results{ display:block !important; }
@@ -582,7 +589,7 @@
 </head>
 <body>
 
-<div class="prototype-banner" id="prototypeBanner">Prototype — for design feedback only. Not for medical use. Test data only.</div>
+<div class="prototype-banner" id="prototypeBanner" dir="ltr">Prototype — for design feedback only. Not for medical use. Test data only.</div>
 
 <div class="sticky-header">
   <div class="topbar">
@@ -622,7 +629,7 @@
     <div class="language-grid" id="languageGrid"></div>
     <p class="lang-error" id="langError" role="alert" hidden>Sorry, that language could not be loaded. Please check your connection and try again.</p>
 
-    <div class="legal-block">
+    <div class="legal-block" dir="ltr">
     <h3 class="final-notice-title">Important Information &amp; Privacy</h3>
     <ul class="legal-list">
       <li><strong>Educational Symptom Tracker Only:</strong> This tool is an educational symptom tracking aid created to help you prepare for a consultation with your doctor. It does not provide medical advice, diagnosis or treatment recommendations.</li>
@@ -688,19 +695,22 @@
 
   <!-- RESULTS -->
   <section class="screen" id="screen-results">
-    <div class="results-hero">
+    <div class="results-hero screen-top">
       <h2 id="resultsTitle"></h2>
       <p id="resultsIntro" style="color:var(--ink-soft); font-size:0.95rem;"></p>
       <div class="score-badge" id="scoreBadge"></div>
     </div>
 
-    <div class="score-explain" id="scoreExplain"></div>
+    <div class="score-explain screen-top" id="scoreExplain"></div>
 
-    <div id="patientSummary"></div>
+    <div id="patientSummary" class="screen-top"></div>
 
     <div class="my-answers" id="myAnswers" hidden></div>
 
-    <div class="gp-panel" id="gpPanel">
+    <!-- print-only English copy of the header, score card and quick summary: the printout is always the English doctor summary -->
+    <div class="print-top" id="printTopEn" dir="ltr"></div>
+
+    <div class="gp-panel" id="gpPanel" dir="ltr">
       <h3>📋 Patient Symptom Summary (Pre-Consultation Reference)</h3>
       <p class="gp-note" id="gpSummaryNote" style="margin-top:14px;"></p>
       <table class="gp-table">
@@ -713,7 +723,7 @@
       <p class="gp-summary-line" id="gpFlaggedLine"></p>
     </div>
 
-    <div class="legal-block" id="finalNoticeBlock"></div>
+    <div class="legal-block" id="finalNoticeBlock" dir="ltr"></div>
 
     <div class="gp-actions">
       <button class="btn" id="printBtn"></button>
@@ -1171,10 +1181,14 @@ function severityClass(level){
 }
 
 function renderResults(){
-  const tr = T.en;              // results page content is always English, regardless of patient's language
-  const trLang = T[currentLang]; // only for nav-button labels and the "completed in" language name
-  document.getElementById("resultsTitle").textContent = tr.ui.resultsTitle;
-  document.getElementById("resultsIntro").textContent = tr.ui.resultsIntro;
+  const tr = T.en;              // the doctor summary, the Notice and the printout are always English
+  const trLang = T[currentLang]; // the patient's own language: everything she reads herself on screen
+  const nui = k => (trLang.ui[k] && String(trLang.ui[k]).trim()) ? trLang.ui[k] : tr.ui[k];   // her wording (English only if a string is missing)
+  const nbands = (trLang.bands && trLang.bands.length === 3) ? trLang.bands : tr.bands;
+  const listSep = trLang.dir === "rtl" ? "، " : (["ja","zh","yue","yue-wt","hak","nan-cz"].indexOf(currentLang) >= 0 ? "、" : ", ");
+  const dateStr = new Date().toLocaleDateString("en-GB");
+  document.getElementById("resultsTitle").textContent = nui("resultsTitle");
+  document.getElementById("resultsIntro").textContent = nui("resultsIntro");
 
   document.getElementById("finalNoticeBlock").innerHTML =
     `<h3 class="final-notice-title">${tr.ui.finalNoticeTitle}</h3>` +
@@ -1190,53 +1204,43 @@ function renderResults(){
   const scoreBadgeEl = document.getElementById("scoreBadge");
   const bandClass = ["band0","band1","band2"][bandIdx];
   scoreBadgeEl.className = "score-badge " + bandClass;
-  scoreBadgeEl.innerHTML =
-    `<span class="score-label">${tr.ui.overallLabel}</span>` +
-    `<span class="score-number">${total} / ${max}</span>` +
-    `<span class="score-band ${bandClass}">${tr.bands[bandIdx]}</span>`;
-
-  const tierRanges = ["0–11", "12–26", "27–45"];
-  const tierCopy = [tr.ui.scoreExplainMild, tr.ui.scoreExplainModerate, tr.ui.scoreExplainSevere];
-  document.getElementById("scoreExplain").innerHTML =
-    `<h3 class="score-explain-title">${tr.ui.scoreExplainTitle}</h3>` +
-    [0,1,2].map(i =>
-      `<div class="score-explain-row ${i === bandIdx ? "current" : ""}">` +
-        `<span class="score-explain-dot band${i}"></span>` +
-        `<span>${tierRanges[i]} — ${tierCopy[i]}</span>` +
-      `</div>`
-    ).join("");
-
-  /* patient-facing summary: short, simple, at a glance */
-  const patientDiv = document.getElementById("patientSummary");
-  patientDiv.innerHTML = "";
 
   const counts = [0,0,0,0];
   answers.forEach(a=>{ if(a !== null) counts[a]++; });
-
-  const quick = document.createElement("div");
-  quick.className = "quick-summary";
-
-  const countsRow = document.createElement("div");
-  countsRow.className = "quick-counts";
-  [0,1,2,3].forEach(lvl=>{
-    const chip = document.createElement("span");
-    chip.className = "quick-chip " + severityClass(lvl);
-    chip.textContent = counts[lvl] + " · " + tr.scale[lvl];
-    countsRow.appendChild(chip);
-  });
-  quick.appendChild(countsRow);
-
-  const line = document.createElement("p");
-  line.className = "quick-line";
-  const severe = [];
-  answers.forEach((a,qi)=>{ if(a === 3) severe.push(tr.questions[qi].t); });
-  if(severe.length){
-    line.innerHTML = "<strong>" + tr.ui.mostNoticeable + "</strong> " + severe.join(", ");
-  } else {
-    line.textContent = tr.ui.noSevereSymptoms;
-  }
-  quick.appendChild(line);
-  patientDiv.appendChild(quick);
+  const tierRanges = ["0–11", "12–26", "27–45"];
+  /* The top of the results page is built twice from the same code: in the patient's language (screen) and in English (print copy).
+     Numbers and ranges sit in <bdi dir="ltr"> so "31 / 45" and "0–11" never flip inside a right-to-left page; each text line has
+     dir="auto" so any English fallback text is laid out left-to-right instead of being reversed. */
+  const buildTop = (ui, bands, scale, questions, sep) => {
+    const tierCopy = [ui("scoreExplainMild"), ui("scoreExplainModerate"), ui("scoreExplainSevere")];
+    const severe = []; answers.forEach((a,qi)=>{ if(a === 3) severe.push(questions[qi].t); });
+    return {
+      badge: `<span class="score-label">${escHtml(ui("overallLabel"))}</span>` +
+             `<span class="score-number"><bdi dir="ltr">${total} / ${max}</bdi></span>` +
+             `<span class="score-band ${bandClass}">${escHtml(bands[bandIdx])}</span>`,
+      explain: `<h3 class="score-explain-title" dir="auto">${escHtml(ui("scoreExplainTitle"))}</h3>` +
+        [0,1,2].map(i =>
+          `<div class="score-explain-row ${i === bandIdx ? "current" : ""}">` +
+            `<span class="score-explain-dot band${i}"></span>` +
+            `<span dir="auto"><bdi dir="ltr">${tierRanges[i]}</bdi> — ${escHtml(tierCopy[i])}</span>` +
+          `</div>`).join(""),
+      quick: `<div class="quick-summary"><div class="quick-counts">` +
+        [0,1,2,3].map(lvl => `<span class="quick-chip ${severityClass(lvl)}" dir="auto">${counts[lvl]} · ${escHtml(scale[lvl])}</span>`).join("") +
+        `</div>` +
+        (severe.length
+          ? `<p class="quick-line" dir="auto"><strong>${escHtml(ui("mostNoticeable"))}</strong> ${escHtml(severe.join(sep))}</p>`
+          : `<p class="quick-line" dir="auto">${escHtml(ui("noSevereSymptoms"))}</p>`) +
+        `</div>`
+    };
+  };
+  const nat = buildTop(nui, nbands, trLang.scale || tr.scale, trLang.questions || tr.questions, listSep);
+  scoreBadgeEl.innerHTML = nat.badge;
+  document.getElementById("scoreExplain").innerHTML = nat.explain;
+  document.getElementById("patientSummary").innerHTML = nat.quick;
+  const eng = buildTop(k => tr.ui[k], tr.bands, tr.scale, tr.questions, ", ");
+  document.getElementById("printTopEn").innerHTML =
+    `<div class="results-hero"><h2>${escHtml(tr.ui.resultsTitle)}</h2><div class="score-badge ${bandClass}">${eng.badge}</div></div>` +
+    `<div class="score-explain">${eng.explain}</div>` + eng.quick;
 
   /* GP summary - always English */
   document.getElementById("gpSummaryNote").textContent = tr.ui.gpSummaryNote +
@@ -1275,7 +1279,7 @@ function renderResults(){
   const bandEn = ["Mild Burden Index","Moderate Burden Index","Severe Burden Index"][bandIdx];
   document.getElementById("gpOverallLine").innerHTML =
     "<strong>Overall score:</strong> " + total + " / " + max + " — " + bandEn +
-    " · Assessment date: " + new Date().toLocaleDateString("en-GB");
+    " · " + T.en.ui.assessmentDate + ": " + dateStr;
   document.getElementById("gpFlaggedLine").innerHTML =
     "<strong>" + T.en.ui.flagged + ":</strong> " + (flagged.length ? flagged.join(", ") : T.en.ui.none);
 
@@ -1291,6 +1295,11 @@ function renderResults(){
           return `<li class="ma-row"><span class="ma-dot${lv === null ? "" : " lvl" + lv}"></span><span class="ma-q">${escHtml(trLang.questions[qi].t)}</span><span class="ma-a">${lv === null ? "–" : escHtml(trLang.scale[lv])}</span></li>`;
         }).join("") + `</ul>`;
     });
+    const flaggedN = []; answers.forEach((a,qi)=>{ if(a === 3) flaggedN.push(trLang.questions[qi].t); });
+    h += `<div class="ma-summary">` +
+      `<p class="ma-line" dir="auto"><strong>${escHtml(nui("overallLabel"))}:</strong> <bdi dir="ltr">${total} / ${max}</bdi> — ${escHtml(nbands[bandIdx])} · ${escHtml(nui("assessmentDate"))}: <bdi dir="ltr">${dateStr}</bdi></p>` +
+      `<p class="ma-line" dir="auto"><strong>${escHtml(nui("flagged"))}:</strong> ${flaggedN.length ? escHtml(flaggedN.join(listSep)) : escHtml(nui("none"))}</p>` +
+      `</div>`;
     myA.innerHTML = h; myA.hidden = false;
   } else { myA.innerHTML = ""; myA.hidden = true; }
 

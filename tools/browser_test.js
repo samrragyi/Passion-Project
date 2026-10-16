@@ -126,7 +126,19 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   // ------------------------------------------------------------ results
   const res = await p.evaluate(en => ({ active: document.getElementById('screen-results').classList.contains('active'), title: document.getElementById('resultsTitle').textContent, note: document.getElementById('gpSummaryNote').textContent, print: document.getElementById('printBtn').textContent }), null);
   const enPack = await p.evaluate(() => JSON.parse(JSON.stringify(T.en)));
-  ok(res.active && res.title === enPack.ui.resultsTitle && res.note.includes(pk.name), 'results page appears, in English, and records the patient\'s language');
+  ok(res.active && res.title === pk.ui.resultsTitle && res.note.includes(pk.name), 'results page appears in the patient\'s language and the English doctor summary records that language');
+  const top = await p.evaluate(() => { const q = (sel) => document.querySelector(sel); const dir = (el) => el ? getComputedStyle(el).direction : null; return {
+    idx: (() => { const t = answers.reduce((a, v) => a + (v === null ? 0 : v), 0); return t <= 11 ? 0 : (t <= 26 ? 1 : 2); })(), severe: answers.filter(a => a === 3).length,
+    band: (q('#scoreBadge .score-band') || {}).textContent, bandEn: (q('#printTopEn .score-band') || {}).textContent,
+    explainTitle: (q('#scoreExplain .score-explain-title') || {}).textContent, line: ((q('#patientSummary .quick-line') || {}).textContent || '').trim(),
+    scoreDir: dir(q('#scoreBadge .score-number bdi')), rangeDir: dir(q('#scoreExplain bdi')), gpDir: dir(q('#gpPanel')), noticeDir: dir(q('#finalNoticeBlock')), printDir: dir(q('#printTopEn')),
+    printShown: getComputedStyle(q('#printTopEn')).display, ma: [...document.querySelectorAll('#myAnswers .ma-line')].map(e => e.textContent), intro: (q('#resultsIntro') || {}).textContent }; });
+  ok(top.band === pk.bands[top.idx] && top.explainTitle === pk.ui.scoreExplainTitle && (top.severe ? top.line.startsWith(pk.ui.mostNoticeable) : top.line === pk.ui.noSevereSymptoms) && top.intro === pk.ui.resultsIntro, 'results page top (score band, "Understanding your score", quick summary line, intro) is in the patient\'s language');
+  if (code !== 'en') ok(pk.ui.scoreExplainTitle !== enPack.ui.scoreExplainTitle && pk.ui.mostNoticeable !== enPack.ui.mostNoticeable && pk.ui.noSevereSymptoms !== enPack.ui.noSevereSymptoms && pk.bands[top.idx] !== enPack.bands[top.idx] && pk.ui.assessmentDate !== enPack.ui.assessmentDate, 'those results strings are translated, not copies of the English');
+  ok(top.bandEn === enPack.bands[top.idx] && top.printShown === 'none', 'the English print copy of the top section exists and is hidden on screen');
+  ok(top.scoreDir === 'ltr' && top.rangeDir === 'ltr', 'score "31 / 45" and ranges "0–11" are isolated left-to-right (never flipped in a right-to-left page)');
+  ok(top.gpDir === 'ltr' && top.noticeDir === 'ltr' && top.printDir === 'ltr', 'the English doctor summary, Notice and print copy are left-to-right in every language');
+  if (code !== 'en') ok(top.ma.length === 2 && top.ma[0].includes(pk.ui.assessmentDate) && top.ma[0].includes(pk.ui.overallLabel) && top.ma[1].includes(pk.ui.flagged), '"Your answers" ends with the overall score / assessment date and highest-severity lines in the patient\'s language');
   const my = await p.evaluate(() => { const e = document.getElementById('myAnswers'); return { hidden: e.hidden, rows: e.querySelectorAll('.ma-row').length, secs: e.querySelectorAll('.ma-sec').length, title: (e.querySelector('.my-answers-title') || {}).textContent, printHidden: getComputedStyle(e).display }; });
   if (code === 'en') ok(my.hidden, 'English: the "Your answers" block is hidden (the English summary is the only one)');
   else ok(!my.hidden && my.rows === 15 && my.secs === 6 && my.title === pk.ui.myAnswersTitle, 'results page shows "Your answers" in the patient\'s language (6 sections, 15 rows)');

@@ -1,0 +1,536 @@
+{
+ "_comment": "Results-page strings (the patient-facing top of the results page, plus the new 'Assessment date' label), 15 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: native review needed (Hindi keeps its translator's text except resultsIntro and assessmentDate). Keys are ui.<key>; 'bands' is the list of three band names. Applied by tools/apply_results_strings.py.",
+ "ui_keys": [
+  "resultsTitle",
+  "resultsIntro",
+  "overallLabel",
+  "scoreExplainTitle",
+  "scoreExplainMild",
+  "scoreExplainModerate",
+  "scoreExplainSevere",
+  "mostNoticeable",
+  "noSevereSymptoms",
+  "flagged",
+  "none",
+  "assessmentDate"
+ ],
+ "languages": {
+  "en": {
+   "resultsTitle": "Your summary",
+   "resultsIntro": "Here is an overview of your answers. Show the section below to your doctor.",
+   "overallLabel": "Overall score",
+   "scoreExplainTitle": "Understanding your score",
+   "scoreExplainMild": "Mild — symptoms are mostly absent or manageable day to day.",
+   "scoreExplainModerate": "Moderate — multiple systems are affected or a few symptoms are quite severe.",
+   "scoreExplainSevere": "Severe — symptoms have a profound impact across multiple systems, including sleep, mood and physical function.",
+   "mostNoticeable": "Most noticeable today:",
+   "noSevereSymptoms": "Nothing was rated as extremely severe today.",
+   "flagged": "Highest-severity items",
+   "none": "None",
+   "assessmentDate": "Assessment date",
+   "bands": [
+    "Mild Burden Index",
+    "Moderate Burden Index",
+    "Severe Burden Index"
+   ]
+  },
+  "hi": {
+   "resultsIntro": "यह रहा आपके उत्तरों का अवलोकन। नीचे दिया गया अंग्रेज़ी सारांश अपने डॉक्टर को दिखाएं।",
+   "assessmentDate": "मूल्यांकन की तारीख"
+  },
+  "fr": {
+   "resultsTitle": "Votre synthèse",
+   "resultsIntro": "Voici un aperçu de vos réponses. Montrez à votre médecin la synthèse en anglais, plus bas.",
+   "overallLabel": "Score global",
+   "scoreExplainTitle": "Comprendre votre score",
+   "scoreExplainMild": "Léger — les symptômes sont pour la plupart absents ou gérables au quotidien.",
+   "scoreExplainModerate": "Modéré — plusieurs systèmes sont touchés ou quelques symptômes sont assez sévères.",
+   "scoreExplainSevere": "Sévère — les symptômes ont un impact profond sur plusieurs systèmes, notamment le sommeil, l’humeur et les fonctions physiques.",
+   "mostNoticeable": "Le plus marquant aujourd’hui :",
+   "noSevereSymptoms": "Rien n’a été évalué comme extrêmement sévère aujourd’hui.",
+   "flagged": "Éléments les plus sévères",
+   "none": "Aucun",
+   "assessmentDate": "Date d’évaluation",
+   "bands": [
+    "Indice de charge symptomatique léger",
+    "Indice de charge symptomatique modéré",
+    "Indice de charge symptomatique sévère"
+   ]
+  },
+  "de": {
+   "resultsTitle": "Ihre Zusammenfassung",
+   "resultsIntro": "Hier ist eine Übersicht Ihrer Antworten. Zeigen Sie Ihrer Ärztin oder Ihrem Arzt die englische Zusammenfassung weiter unten.",
+   "overallLabel": "Gesamtpunktzahl",
+   "scoreExplainTitle": "Ihre Punktzahl verstehen",
+   "scoreExplainMild": "Leicht — Die Symptome fehlen meist oder lassen sich im Alltag gut bewältigen.",
+   "scoreExplainModerate": "Mäßig — Mehrere Körpersysteme sind betroffen oder einige Symptome sind recht stark.",
+   "scoreExplainSevere": "Stark — Die Symptome beeinträchtigen mehrere Körpersysteme erheblich, darunter Schlaf, Stimmung und körperliche Funktionen.",
+   "mostNoticeable": "Am deutlichsten heute:",
+   "noSevereSymptoms": "Heute wurde nichts als äußerst stark bewertet.",
+   "flagged": "Am stärksten belastende Punkte",
+   "none": "Keine",
+   "assessmentDate": "Datum der Einschätzung",
+   "bands": [
+    "Leichter Symptomlast-Index",
+    "Mäßiger Symptomlast-Index",
+    "Starker Symptomlast-Index"
+   ]
+  },
+  "es": {
+   "resultsTitle": "Su resumen",
+   "resultsIntro": "Aquí tiene un resumen de sus respuestas. Muestre a su médico el resumen en inglés que aparece más abajo.",
+   "overallLabel": "Puntuación total",
+   "scoreExplainTitle": "Cómo entender su puntuación",
+   "scoreExplainMild": "Leve — los síntomas están casi ausentes o se controlan bien en el día a día.",
+   "scoreExplainModerate": "Moderado — varios sistemas están afectados o algunos síntomas son bastante intensos.",
+   "scoreExplainSevere": "Grave — los síntomas tienen un impacto profundo en varios sistemas, incluidos el sueño, el estado de ánimo y la función física.",
+   "mostNoticeable": "Lo más notable hoy:",
+   "noSevereSymptoms": "Hoy nada se calificó como extremadamente intenso.",
+   "flagged": "Elementos de mayor gravedad",
+   "none": "Ninguno",
+   "assessmentDate": "Fecha de evaluación",
+   "bands": [
+    "Índice de carga de síntomas leve",
+    "Índice de carga de síntomas moderado",
+    "Índice de carga de síntomas grave"
+   ]
+  },
+  "pt-br": {
+   "resultsTitle": "Seu resumo",
+   "resultsIntro": "Aqui está uma visão geral das suas respostas. Mostre ao seu médico o resumo em inglês mais abaixo.",
+   "overallLabel": "Pontuação geral",
+   "scoreExplainTitle": "Entendendo a sua pontuação",
+   "scoreExplainMild": "Leve — os sintomas estão quase ausentes ou são fáceis de manejar no dia a dia.",
+   "scoreExplainModerate": "Moderado — vários sistemas são afetados ou alguns sintomas são bem intensos.",
+   "scoreExplainSevere": "Intenso — os sintomas têm um impacto profundo em vários sistemas, incluindo o sono, o humor e a função física.",
+   "mostNoticeable": "Mais perceptível hoje:",
+   "noSevereSymptoms": "Nada foi avaliado como extremamente intenso hoje.",
+   "flagged": "Itens de maior intensidade",
+   "none": "Nenhum",
+   "assessmentDate": "Data da avaliação",
+   "bands": [
+    "Índice de carga de sintomas leve",
+    "Índice de carga de sintomas moderado",
+    "Índice de carga de sintomas intenso"
+   ]
+  },
+  "pt": {
+   "resultsTitle": "O seu resumo",
+   "resultsIntro": "Aqui está uma visão geral das suas respostas. Mostre ao seu médico o resumo em inglês mais abaixo.",
+   "overallLabel": "Pontuação global",
+   "scoreExplainTitle": "Compreender a sua pontuação",
+   "scoreExplainMild": "Ligeiro — os sintomas estão maioritariamente ausentes ou são fáceis de gerir no dia a dia.",
+   "scoreExplainModerate": "Moderado — vários sistemas estão afetados ou alguns sintomas são bastante intensos.",
+   "scoreExplainSevere": "Grave — os sintomas têm um impacto profundo em vários sistemas, incluindo o sono, o humor e a função física.",
+   "mostNoticeable": "Mais notório hoje:",
+   "noSevereSymptoms": "Nada foi avaliado como extremamente intenso hoje.",
+   "flagged": "Itens de maior gravidade",
+   "none": "Nenhum",
+   "assessmentDate": "Data da avaliação",
+   "bands": [
+    "Índice de carga de sintomas ligeiro",
+    "Índice de carga de sintomas moderado",
+    "Índice de carga de sintomas grave"
+   ]
+  },
+  "ro": {
+   "resultsTitle": "Rezumatul dumneavoastră",
+   "resultsIntro": "Iată o privire de ansamblu asupra răspunsurilor dumneavoastră. Arătați medicului rezumatul în limba engleză de mai jos.",
+   "overallLabel": "Scor total",
+   "scoreExplainTitle": "Înțelegerea scorului dumneavoastră",
+   "scoreExplainMild": "Ușor — simptomele sunt în mare parte absente sau ușor de gestionat de la o zi la alta.",
+   "scoreExplainModerate": "Moderat — sunt afectate mai multe sisteme sau câteva simptome sunt destul de severe.",
+   "scoreExplainSevere": "Sever — simptomele au un impact profund asupra mai multor sisteme, inclusiv somnul, starea de spirit și funcțiile fizice.",
+   "mostNoticeable": "Cel mai vizibil astăzi:",
+   "noSevereSymptoms": "Astăzi nimic nu a fost evaluat ca extrem de sever.",
+   "flagged": "Cele mai severe elemente",
+   "none": "Niciunul",
+   "assessmentDate": "Data evaluării",
+   "bands": [
+    "Indice de povară a simptomelor ușor",
+    "Indice de povară a simptomelor moderat",
+    "Indice de povară a simptomelor sever"
+   ]
+  },
+  "pl": {
+   "resultsTitle": "Twoje podsumowanie",
+   "resultsIntro": "Oto przegląd Twoich odpowiedzi. Pokaż lekarzowi podsumowanie w języku angielskim poniżej.",
+   "overallLabel": "Wynik ogólny",
+   "scoreExplainTitle": "Jak rozumieć swój wynik",
+   "scoreExplainMild": "Łagodne — objawy w większości nie występują lub można sobie z nimi radzić na co dzień.",
+   "scoreExplainModerate": "Umiarkowane — dotyczy to kilku układów lub kilka objawów jest dość nasilonych.",
+   "scoreExplainSevere": "Ciężkie — objawy mają głęboki wpływ na kilka układów, w tym na sen, nastrój i sprawność fizyczną.",
+   "mostNoticeable": "Najbardziej zauważalne dziś:",
+   "noSevereSymptoms": "Dziś nic nie zostało ocenione jako skrajnie nasilone.",
+   "flagged": "Najbardziej nasilone objawy",
+   "none": "Brak",
+   "assessmentDate": "Data oceny",
+   "bands": [
+    "Łagodny wskaźnik obciążenia objawami",
+    "Umiarkowany wskaźnik obciążenia objawami",
+    "Ciężki wskaźnik obciążenia objawami"
+   ]
+  },
+  "sq": {
+   "resultsTitle": "Përmbledhja juaj",
+   "resultsIntro": "Ja një pasqyrë e përgjigjeve tuaja. Tregojani mjekut përmbledhjen në anglisht më poshtë.",
+   "overallLabel": "Pikët në total",
+   "scoreExplainTitle": "Të kuptoni pikët tuaja",
+   "scoreExplainMild": "E lehtë — simptomat janë kryesisht të munguara ose të menaxhueshme çdo ditë.",
+   "scoreExplainModerate": "E moderuar — preken disa sisteme ose disa simptoma janë mjaft të forta.",
+   "scoreExplainSevere": "E rëndë — simptomat kanë ndikim të thellë në disa sisteme, përfshirë gjumin, humorin dhe funksionin fizik.",
+   "mostNoticeable": "Më e dukshme sot:",
+   "noSevereSymptoms": "Sot asgjë nuk u vlerësua si jashtëzakonisht e rëndë.",
+   "flagged": "Elementët më të rëndë",
+   "none": "Asnjë",
+   "assessmentDate": "Data e vlerësimit",
+   "bands": [
+    "Indeks i lehtë i barrës së simptomave",
+    "Indeks i moderuar i barrës së simptomave",
+    "Indeks i rëndë i barrës së simptomave"
+   ]
+  },
+  "tl": {
+   "resultsTitle": "Ang iyong buod",
+   "resultsIntro": "Narito ang pangkalahatang-ideya ng mga sagot mo. Ipakita sa iyong doktor ang buod sa Ingles sa ibaba.",
+   "overallLabel": "Kabuuang iskor",
+   "scoreExplainTitle": "Pag-unawa sa iyong iskor",
+   "scoreExplainMild": "Banayad — halos wala ang mga sintomas o kaya itong pangasiwaan araw-araw.",
+   "scoreExplainModerate": "Katamtaman — maraming sistema ang apektado o may ilang sintomas na medyo malala.",
+   "scoreExplainSevere": "Malala — malalim ang epekto ng mga sintomas sa maraming sistema, kasama ang tulog, mood at pisikal na paggana.",
+   "mostNoticeable": "Pinakapansin-pansin ngayon:",
+   "noSevereSymptoms": "Walang naitalang lubhang malala ngayon.",
+   "flagged": "Mga pinakamalalang aytem",
+   "none": "Wala",
+   "assessmentDate": "Petsa ng pagtatasa",
+   "bands": [
+    "Banayad na indeks ng bigat ng sintomas",
+    "Katamtamang indeks ng bigat ng sintomas",
+    "Malalang indeks ng bigat ng sintomas"
+   ]
+  },
+  "vi": {
+   "resultsTitle": "Bản tóm tắt của bạn",
+   "resultsIntro": "Đây là tổng quan các câu trả lời của bạn. Hãy cho bác sĩ xem bản tóm tắt bằng tiếng Anh ở bên dưới.",
+   "overallLabel": "Tổng điểm",
+   "scoreExplainTitle": "Hiểu về điểm số của bạn",
+   "scoreExplainMild": "Nhẹ — các triệu chứng hầu như không có hoặc dễ kiểm soát hằng ngày.",
+   "scoreExplainModerate": "Trung bình — nhiều hệ cơ quan bị ảnh hưởng hoặc một vài triệu chứng khá nặng.",
+   "scoreExplainSevere": "Nặng — các triệu chứng ảnh hưởng sâu sắc đến nhiều hệ cơ quan, bao gồm giấc ngủ, tâm trạng và chức năng thể chất.",
+   "mostNoticeable": "Đáng chú ý nhất hôm nay:",
+   "noSevereSymptoms": "Hôm nay không có mục nào được đánh giá là cực kỳ nặng.",
+   "flagged": "Các mục nặng nhất",
+   "none": "Không có",
+   "assessmentDate": "Ngày đánh giá",
+   "bands": [
+    "Chỉ số gánh nặng triệu chứng nhẹ",
+    "Chỉ số gánh nặng triệu chứng trung bình",
+    "Chỉ số gánh nặng triệu chứng nặng"
+   ]
+  },
+  "ja": {
+   "resultsTitle": "あなたのまとめ",
+   "resultsIntro": "回答の概要です。下にある英語のまとめを医師に見せてください。",
+   "overallLabel": "総合スコア",
+   "scoreExplainTitle": "スコアの見方",
+   "scoreExplainMild": "軽度 — 症状はほとんどない、または日常生活で対処できる程度です。",
+   "scoreExplainModerate": "中等度 — 複数の部位や機能に影響があるか、いくつかの症状がかなり強い状態です。",
+   "scoreExplainSevere": "重度 — 睡眠、気分、身体機能を含む複数の部位や機能に大きな影響があります。",
+   "mostNoticeable": "今日いちばん気になる症状:",
+   "noSevereSymptoms": "今日は「非常に強い」と評価された項目はありませんでした。",
+   "flagged": "特に重い項目",
+   "none": "なし",
+   "assessmentDate": "評価日",
+   "bands": [
+    "症状負担指数（軽度）",
+    "症状負担指数（中等度）",
+    "症状負担指数（重度）"
+   ]
+  },
+  "ko": {
+   "resultsTitle": "나의 요약",
+   "resultsIntro": "답변의 개요입니다. 아래의 영어 요약을 의사에게 보여 주세요.",
+   "overallLabel": "종합 점수",
+   "scoreExplainTitle": "점수 이해하기",
+   "scoreExplainMild": "경도 — 증상이 대부분 없거나 일상에서 관리할 수 있는 수준입니다.",
+   "scoreExplainModerate": "중등도 — 여러 신체 영역이 영향을 받거나 일부 증상이 꽤 심합니다.",
+   "scoreExplainSevere": "중증 — 증상이 수면, 기분, 신체 기능을 포함해 여러 영역에 깊은 영향을 줍니다.",
+   "mostNoticeable": "오늘 가장 두드러진 증상:",
+   "noSevereSymptoms": "오늘은 매우 심하다고 평가된 항목이 없습니다.",
+   "flagged": "가장 심한 항목",
+   "none": "없음",
+   "assessmentDate": "평가 날짜",
+   "bands": [
+    "경도 증상 부담 지수",
+    "중등도 증상 부담 지수",
+    "중증 증상 부담 지수"
+   ]
+  },
+  "zh": {
+   "resultsTitle": "您的摘要",
+   "resultsIntro": "这是您回答的概览。请把下方的英文摘要给您的医生看。",
+   "overallLabel": "总分",
+   "scoreExplainTitle": "了解您的得分",
+   "scoreExplainMild": "轻度 — 症状大多不存在，或在日常生活中可以应对。",
+   "scoreExplainModerate": "中度 — 多个系统受到影响，或有几项症状相当严重。",
+   "scoreExplainSevere": "重度 — 症状对多个系统有深远影响，包括睡眠、情绪和身体功能。",
+   "mostNoticeable": "今天最明显的症状：",
+   "noSevereSymptoms": "今天没有任何项目被评为极其严重。",
+   "flagged": "最严重的项目",
+   "none": "无",
+   "assessmentDate": "评估日期",
+   "bands": [
+    "轻度症状负担指数",
+    "中度症状负担指数",
+    "重度症状负担指数"
+   ]
+  },
+  "yue": {
+   "resultsTitle": "你嘅摘要",
+   "resultsIntro": "呢度係你答案嘅概覽。請將下面嘅英文摘要畀醫生睇。",
+   "overallLabel": "總分",
+   "scoreExplainTitle": "了解你嘅分數",
+   "scoreExplainMild": "輕度 — 症狀大多冇出現，或者日常可以應付。",
+   "scoreExplainModerate": "中度 — 多個系統受影響，或者有幾樣症狀相當嚴重。",
+   "scoreExplainSevere": "嚴重 — 症狀對多個系統有深遠影響，包括睡眠、情緒同身體功能。",
+   "mostNoticeable": "今日最明顯嘅症狀：",
+   "noSevereSymptoms": "今日冇任何項目被評為極度嚴重。",
+   "flagged": "最嚴重嘅項目",
+   "none": "冇",
+   "assessmentDate": "評估日期",
+   "bands": [
+    "輕度症狀負擔指數",
+    "中度症狀負擔指數",
+    "嚴重症狀負擔指數"
+   ]
+  },
+  "yue-wt": {
+   "resultsTitle": "你嘅摘要",
+   "resultsIntro": "呢度係你答案嘅概覽。請將下面嘅英文摘要畀醫生睇。",
+   "overallLabel": "總分",
+   "scoreExplainTitle": "了解你嘅分數",
+   "scoreExplainMild": "輕度 — 症狀大多冇出現，或者日常可以應付。",
+   "scoreExplainModerate": "中度 — 多個系統受影響，或者有幾樣症狀相當嚴重。",
+   "scoreExplainSevere": "嚴重 — 症狀對多個系統有深遠影響，包括睡眠、情緒同身體功能。",
+   "mostNoticeable": "今日最明顯嘅症狀：",
+   "noSevereSymptoms": "今日冇任何項目被評為極度嚴重。",
+   "flagged": "最嚴重嘅項目",
+   "none": "冇",
+   "assessmentDate": "評估日期",
+   "bands": [
+    "輕度症狀負擔指數",
+    "中度症狀負擔指數",
+    "嚴重症狀負擔指數"
+   ]
+  },
+  "hak": {
+   "resultsTitle": "你个摘要",
+   "resultsIntro": "這係你答案个概覽。請將下背个英文摘要分醫生看。",
+   "overallLabel": "總分",
+   "scoreExplainTitle": "了解你个分數",
+   "scoreExplainMild": "輕度 — 症頭大部分無，抑係日常過得去。",
+   "scoreExplainModerate": "中度 — 好幾個系統受影響，抑係有幾項症頭當嚴重。",
+   "scoreExplainSevere": "嚴重 — 症頭對好幾個系統有深遠个影響，包括睡眠、心情摎身體功能。",
+   "mostNoticeable": "今晡日最明顯个症頭：",
+   "noSevereSymptoms": "今晡日無任何項目被評為極度嚴重。",
+   "flagged": "最嚴重个項目",
+   "none": "無",
+   "assessmentDate": "評估日期",
+   "bands": [
+    "輕度症頭負擔指數",
+    "中度症頭負擔指數",
+    "嚴重症頭負擔指數"
+   ]
+  },
+  "nan-cz": {
+   "resultsTitle": "你个摘要",
+   "resultsIntro": "遮是你答案个概覽。請將下底个英文摘要予醫生看。",
+   "overallLabel": "總分",
+   "scoreExplainTitle": "了解你个分數",
+   "scoreExplainMild": "輕度 — 症頭大部分無，抑是日常會應付得來。",
+   "scoreExplainModerate": "中度 — 好幾个系統受影響，抑是有幾項症頭相當嚴重。",
+   "scoreExplainSevere": "嚴重 — 症頭對好幾个系統有深遠个影響，包括睡眠、心情佮身體功能。",
+   "mostNoticeable": "今仔日上明顯个症頭：",
+   "noSevereSymptoms": "今仔日無任何項目被評為極度嚴重。",
+   "flagged": "上嚴重个項目",
+   "none": "無",
+   "assessmentDate": "評估日期",
+   "bands": [
+    "輕度症頭負擔指數",
+    "中度症頭負擔指數",
+    "嚴重症頭負擔指數"
+   ]
+  },
+  "bn": {
+   "resultsTitle": "আপনার সারসংক্ষেপ",
+   "resultsIntro": "এটি আপনার উত্তরগুলোর একটি সংক্ষিপ্ত চিত্র। নিচের ইংরেজি সারসংক্ষেপটি আপনার ডাক্তারকে দেখান।",
+   "overallLabel": "মোট স্কোর",
+   "scoreExplainTitle": "আপনার স্কোর বোঝা",
+   "scoreExplainMild": "মৃদু — লক্ষণ বেশিরভাগ সময় নেই বা প্রতিদিন সামলানো যায়।",
+   "scoreExplainModerate": "মাঝারি — একাধিক শরীরতন্ত্র প্রভাবিত বা কয়েকটি লক্ষণ বেশ তীব্র।",
+   "scoreExplainSevere": "তীব্র — ঘুম, মেজাজ ও শারীরিক কার্যক্ষমতাসহ একাধিক শরীরতন্ত্রে লক্ষণগুলোর গভীর প্রভাব রয়েছে।",
+   "mostNoticeable": "আজ সবচেয়ে লক্ষণীয়:",
+   "noSevereSymptoms": "আজ কোনো কিছুই অত্যন্ত তীব্র হিসেবে মূল্যায়ন করা হয়নি।",
+   "flagged": "সবচেয়ে তীব্র বিষয়গুলো",
+   "none": "কিছু নেই",
+   "assessmentDate": "মূল্যায়নের তারিখ",
+   "bands": [
+    "মৃদু লক্ষণ-ভার সূচক",
+    "মাঝারি লক্ষণ-ভার সূচক",
+    "তীব্র লক্ষণ-ভার সূচক"
+   ]
+  },
+  "bn-bd": {
+   "resultsTitle": "আপনার সারসংক্ষেপ",
+   "resultsIntro": "এটি আপনার উত্তরগুলোর একটি সংক্ষিপ্ত চিত্র। নিচের ইংরেজি সারসংক্ষেপটি আপনার ডাক্তারকে দেখান।",
+   "overallLabel": "মোট স্কোর",
+   "scoreExplainTitle": "আপনার স্কোর বোঝা",
+   "scoreExplainMild": "মৃদু — লক্ষণ বেশিরভাগ সময় নেই বা প্রতিদিন সামলানো যায়।",
+   "scoreExplainModerate": "মাঝারি — একাধিক শরীরতন্ত্র প্রভাবিত বা কয়েকটি লক্ষণ বেশ তীব্র।",
+   "scoreExplainSevere": "তীব্র — ঘুম, মেজাজ ও শারীরিক কার্যক্ষমতাসহ একাধিক শরীরতন্ত্রে লক্ষণগুলোর গভীর প্রভাব রয়েছে।",
+   "mostNoticeable": "আজ সবচেয়ে লক্ষণীয়:",
+   "noSevereSymptoms": "আজ কোনো কিছুই অত্যন্ত তীব্র হিসেবে মূল্যায়ন করা হয়নি।",
+   "flagged": "সবচেয়ে তীব্র বিষয়গুলো",
+   "none": "কিছু নেই",
+   "assessmentDate": "মূল্যায়নের তারিখ",
+   "bands": [
+    "মৃদু লক্ষণ-ভার সূচক",
+    "মাঝারি লক্ষণ-ভার সূচক",
+    "তীব্র লক্ষণ-ভার সূচক"
+   ]
+  },
+  "pa": {
+   "resultsTitle": "ਤੁਹਾਡਾ ਸਾਰ",
+   "resultsIntro": "ਇਹ ਤੁਹਾਡੇ ਜਵਾਬਾਂ ਦੀ ਝਲਕ ਹੈ। ਹੇਠਾਂ ਦਿੱਤਾ ਅੰਗਰੇਜ਼ੀ ਸਾਰ ਆਪਣੇ ਡਾਕਟਰ ਨੂੰ ਦਿਖਾਓ।",
+   "overallLabel": "ਕੁੱਲ ਸਕੋਰ",
+   "scoreExplainTitle": "ਆਪਣੇ ਸਕੋਰ ਨੂੰ ਸਮਝਣਾ",
+   "scoreExplainMild": "ਹਲਕਾ — ਲੱਛਣ ਜ਼ਿਆਦਾਤਰ ਨਹੀਂ ਹਨ ਜਾਂ ਰੋਜ਼ਾਨਾ ਸੰਭਾਲੇ ਜਾ ਸਕਦੇ ਹਨ।",
+   "scoreExplainModerate": "ਦਰਮਿਆਨਾ — ਕਈ ਪ੍ਰਣਾਲੀਆਂ ਪ੍ਰਭਾਵਿਤ ਹਨ ਜਾਂ ਕੁਝ ਲੱਛਣ ਕਾਫ਼ੀ ਗੰਭੀਰ ਹਨ।",
+   "scoreExplainSevere": "ਗੰਭੀਰ — ਲੱਛਣਾਂ ਦਾ ਨੀਂਦ, ਮੂਡ ਅਤੇ ਸਰੀਰਕ ਕੰਮਕਾਜ ਸਮੇਤ ਕਈ ਪ੍ਰਣਾਲੀਆਂ ਉੱਤੇ ਡੂੰਘਾ ਅਸਰ ਹੈ।",
+   "mostNoticeable": "ਅੱਜ ਸਭ ਤੋਂ ਵੱਧ ਧਿਆਨ ਖਿੱਚਣ ਵਾਲੇ:",
+   "noSevereSymptoms": "ਅੱਜ ਕਿਸੇ ਵੀ ਚੀਜ਼ ਨੂੰ ਬਹੁਤ ਜ਼ਿਆਦਾ ਗੰਭੀਰ ਨਹੀਂ ਮੰਨਿਆ ਗਿਆ।",
+   "flagged": "ਸਭ ਤੋਂ ਗੰਭੀਰ ਚੀਜ਼ਾਂ",
+   "none": "ਕੋਈ ਨਹੀਂ",
+   "assessmentDate": "ਮੁਲਾਂਕਣ ਦੀ ਤਾਰੀਖ਼",
+   "bands": [
+    "ਹਲਕਾ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ",
+    "ਦਰਮਿਆਨਾ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ",
+    "ਗੰਭੀਰ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ"
+   ]
+  },
+  "ne": {
+   "resultsTitle": "तपाईंको सारांश",
+   "resultsIntro": "यो तपाईंका उत्तरहरूको सङ्क्षिप्त झलक हो। तल दिइएको अङ्ग्रेजी सारांश आफ्नो डाक्टरलाई देखाउनुहोस्।",
+   "overallLabel": "कुल स्कोर",
+   "scoreExplainTitle": "आफ्नो स्कोर बुझ्नुहोस्",
+   "scoreExplainMild": "हल्का — लक्षणहरू प्रायः छैनन् वा दैनिक रूपमा सम्हाल्न सकिन्छ।",
+   "scoreExplainModerate": "मध्यम — धेरै प्रणालीहरू प्रभावित छन् वा केही लक्षणहरू निकै गम्भीर छन्।",
+   "scoreExplainSevere": "गम्भीर — निद्रा, मनोदशा र शारीरिक कार्यसहित धेरै प्रणालीहरूमा लक्षणहरूको गहिरो प्रभाव छ।",
+   "mostNoticeable": "आज सबैभन्दा बढी देखिएका:",
+   "noSevereSymptoms": "आज कुनै पनि कुरा अत्यन्त गम्भीर भनेर मूल्याङ्कन गरिएन।",
+   "flagged": "सबैभन्दा गम्भीर विषयहरू",
+   "none": "कुनै पनि छैन",
+   "assessmentDate": "मूल्याङ्कन मिति",
+   "bands": [
+    "हल्का लक्षण-भार सूचक",
+    "मध्यम लक्षण-भार सूचक",
+    "गम्भीर लक्षण-भार सूचक"
+   ]
+  },
+  "ur": {
+   "resultsTitle": "آپ کا خلاصہ",
+   "resultsIntro": "یہ آپ کے جوابات کا جائزہ ہے۔ نیچے دیا گیا انگریزی خلاصہ اپنے ڈاکٹر کو دکھائیں۔",
+   "overallLabel": "کل اسکور",
+   "scoreExplainTitle": "اپنے اسکور کو سمجھنا",
+   "scoreExplainMild": "ہلکا — علامات زیادہ تر موجود نہیں ہیں یا روزمرہ میں سنبھالی جا سکتی ہیں۔",
+   "scoreExplainModerate": "درمیانہ — کئی نظام متاثر ہیں یا کچھ علامات کافی شدید ہیں۔",
+   "scoreExplainSevere": "شدید — علامات کا نیند، موڈ اور جسمانی کارکردگی سمیت کئی نظاموں پر گہرا اثر ہے۔",
+   "mostNoticeable": "آج سب سے نمایاں:",
+   "noSevereSymptoms": "آج کسی چیز کو انتہائی شدید نہیں سمجھا گیا۔",
+   "flagged": "سب سے شدید نکات",
+   "none": "کوئی نہیں",
+   "assessmentDate": "جائزے کی تاریخ",
+   "bands": [
+    "ہلکا علامتی بوجھ اشاریہ",
+    "درمیانہ علامتی بوجھ اشاریہ",
+    "شدید علامتی بوجھ اشاریہ"
+   ]
+  },
+  "fa": {
+   "resultsTitle": "خلاصه‌ی شما",
+   "resultsIntro": "این مروری بر پاسخ‌های شماست. خلاصه‌ی انگلیسی پایین را به دکترتان نشان بدهید.",
+   "overallLabel": "امتیاز کل",
+   "scoreExplainTitle": "فهمیدن امتیاز شما",
+   "scoreExplainMild": "خفیف — علائم بیشتر وقت‌ها وجود ندارند یا در زندگی روزمره قابل‌کنترل‌اند.",
+   "scoreExplainModerate": "متوسط — چند دستگاه بدن درگیرند یا چند علامت نسبتاً شدیدند.",
+   "scoreExplainSevere": "شدید — علائم تأثیر عمیقی بر چند دستگاه بدن دارند، از جمله خواب، خلق‌وخو و عملکرد جسمی.",
+   "mostNoticeable": "امروز بیشتر از همه به چشم می‌آیند:",
+   "noSevereSymptoms": "امروز هیچ موردی بسیار شدید ارزیابی نشد.",
+   "flagged": "شدیدترین موارد",
+   "none": "هیچ",
+   "assessmentDate": "تاریخ ارزیابی",
+   "bands": [
+    "شاخص خفیف بار علائم",
+    "شاخص متوسط بار علائم",
+    "شاخص شدید بار علائم"
+   ]
+  },
+  "ar-eg": {
+   "resultsTitle": "ملخصك",
+   "resultsIntro": "دي نظرة عامة على إجاباتك. وري لدكتورتك الملخص بالإنجليزي اللي تحت.",
+   "overallLabel": "النتيجة الكلية",
+   "scoreExplainTitle": "فهم نتيجتك",
+   "scoreExplainMild": "خفيف — الأعراض غالباً مش موجودة أو تقدري تتعاملي معاها في حياتك اليومية.",
+   "scoreExplainModerate": "متوسط — أكتر من جهاز في الجسم متأثر أو في كام عرض شديد نوعاً ما.",
+   "scoreExplainSevere": "شديد — الأعراض ليها تأثير كبير على أكتر من جهاز في الجسم، منها النوم والمزاج والأداء الجسدي.",
+   "mostNoticeable": "الأوضح النهاردة:",
+   "noSevereSymptoms": "مفيش حاجة اتقيّمت إنها شديدة جداً النهاردة.",
+   "flagged": "أشد العناصر",
+   "none": "مفيش",
+   "assessmentDate": "تاريخ التقييم",
+   "bands": [
+    "مؤشر عبء الأعراض الخفيف",
+    "مؤشر عبء الأعراض المتوسط",
+    "مؤشر عبء الأعراض الشديد"
+   ]
+  },
+  "ar-gulf": {
+   "resultsTitle": "ملخصج",
+   "resultsIntro": "هذي نظرة عامة على إجاباتج. وري دكتورتج الملخص بالإنجليزي اللي تحت.",
+   "overallLabel": "النتيجة الإجمالية",
+   "scoreExplainTitle": "فهم نتيجتج",
+   "scoreExplainMild": "خفيف — الأعراض أغلب الوقت ما تكون موجودة أو تقدرين تتعاملين وياها بحياتج اليومية.",
+   "scoreExplainModerate": "متوسط — أكثر من جهاز بالجسم متأثر أو بعض الأعراض شديدة شوي.",
+   "scoreExplainSevere": "شديد — الأعراض لها تأثير كبير على أكثر من جهاز بالجسم، منها النوم والمزاج والأداء الجسدي.",
+   "mostNoticeable": "الأوضح اليوم:",
+   "noSevereSymptoms": "ما انقيّم شي إنه شديد مرة اليوم.",
+   "flagged": "أشد العناصر",
+   "none": "ما في شي",
+   "assessmentDate": "تاريخ التقييم",
+   "bands": [
+    "مؤشر عبء الأعراض الخفيف",
+    "مؤشر عبء الأعراض المتوسط",
+    "مؤشر عبء الأعراض الشديد"
+   ]
+  },
+  "ar-om": {
+   "resultsTitle": "ملخصج",
+   "resultsIntro": "هذي نظرة عامة على إجاباتج. وري الدكتورة الملخص بالإنجليزي اللي تحت.",
+   "overallLabel": "النتيجة الإجمالية",
+   "scoreExplainTitle": "فهم نتيجتج",
+   "scoreExplainMild": "خفيف — الأعراض أغلب الوقت ما تكون موجودة أو تقدرين تتعاملين وياها بحياتج اليومية.",
+   "scoreExplainModerate": "متوسط — أكثر من جهاز بالجسم متأثر أو بعض الأعراض شديدة شوي.",
+   "scoreExplainSevere": "شديد — الأعراض لها تأثير كبير على أكثر من جهاز بالجسم، منها النوم والمزاج والأداء الجسدي.",
+   "mostNoticeable": "الأوضح اليوم:",
+   "noSevereSymptoms": "ما فيه شي انقيّم إنه شديد جداً اليوم.",
+   "flagged": "أشد العناصر",
+   "none": "ما فيه شي",
+   "assessmentDate": "تاريخ التقييم",
+   "bands": [
+    "مؤشر عبء الأعراض الخفيف",
+    "مؤشر عبء الأعراض المتوسط",
+    "مؤشر عبء الأعراض الشديد"
+   ]
+  }
+ }
+}

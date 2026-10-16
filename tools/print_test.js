@@ -36,6 +36,14 @@ const codes = process.argv.slice(2).length ? process.argv.slice(2) : all;
       const pages = parseInt(cp.execSync('pdfinfo ' + file).toString().match(/Pages:\s+(\d+)/)[1], 10);
       res.push(`${size}=${pages} page${pages > 1 ? 's' : ''}`); if (pages > 1) bad++;
     }
+    // the printout must stay English: the English top section is there and nothing of the patient's language leaked in
+    const txt = cp.execSync('pdftotext ' + path.join(OUT, `${code}_A4.pdf`) + ' -').toString();
+    const info = await p.evaluate(c => ({ nat: [T[c].ui.scoreExplainTitle, T[c].ui.mostNoticeable, T[c].bands[2]], en: [T.en.ui.scoreExplainTitle, T.en.bands[2]] }), code);
+    const squash = t => t.replace(/\s+/g, ' ');
+    const englishOk = info.en.every(x => squash(txt).includes(squash(x)));
+    const leaks = code === 'en' ? [] : info.nat.filter(x => x && !info.en.includes(x) && squash(txt).includes(squash(x)));
+    if (!englishOk || leaks.length) { bad++; res.push('PRINT TEXT PROBLEM: ' + (!englishOk ? 'English top section missing. ' : '') + (leaks.length ? 'native text leaked into the printout: ' + leaks.join(' | ') : '')); }
+    else res.push('English print text OK');
     console.log(`${code.padEnd(6)} ${res.join('   ')}`); await p.close();
   }
   await browser.close();
