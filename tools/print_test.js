@@ -1,9 +1,9 @@
 /*
-  Print test: does the results page still print on ONE page, in colour, on both A4 and US Letter?
+  Print test: English prints on ONE page; every other language on exactly TWO (page 1 in her language, page 2 the English summary for the doctor), in colour, on both A4 and US Letter.
   Usage:  node tools/print_test.js <code> [<code> ...]      (default: every language in languages.js)
   For each language it answers every question with the worst case (all "Extremely": the longest flagged lists), opens the
   results page, saves it as a PDF exactly like a browser's default Save-as-PDF (no background graphics) and counts pages.
-  Exit code 1 if any PDF is longer than one page. Needs: pdfinfo (poppler). PDFs are written to /tmp/print_test/.
+  Exit code 1 if any PDF has the wrong number of pages or the wrong language on a page. Needs: pdfinfo (poppler). PDFs are written to /tmp/print_test/.
 */
 const fs = require('fs'), path = require('path'), cp = require('child_process');
 const chromium = require('@sparticuz/chromium').default || require('@sparticuz/chromium');
@@ -29,23 +29,27 @@ const codes = process.argv.slice(2).length ? process.argv.slice(2) : all;
     }
     await p.waitForFunction(() => document.getElementById('screen-results').classList.contains('active'), { timeout: 8000 }); await wait(400);
     await p.emulateMediaType('print');
-    const res = [];
+    const res = []; const native = code !== 'en'; const want = native ? 2 : 1;
+    const info = await p.evaluate(c => ({ nat: [T[c].ui.scoreExplainTitle, T[c].ui.myAnswersTitle, T[c].bands[2]], en: [T.en.ui.scoreExplainTitle, T.en.bands[2]] }), code);
+    const squash = t => t.replace(/\s+/g, ' ');
+    const latinScript = ['fr', 'de', 'es', 'pt', 'pt-br', 'ro', 'pl', 'sq', 'tl', 'vi'].includes(code);   // pdftotext is reliable for these
     for (const size of ['A4', 'Letter']) {
       const file = path.join(OUT, `${code}_${size}.pdf`);
       await p.pdf({ path: file, format: size, printBackground: false, preferCSSPageSize: true });
       const pages = parseInt(cp.execSync('pdfinfo ' + file).toString().match(/Pages:\s+(\d+)/)[1], 10);
-      res.push(`${size}=${pages} page${pages > 1 ? 's' : ''}`); if (pages > 1) bad++;
+      const page = n => squash(cp.execSync(`pdftotext -f ${n} -l ${n} ${file} -`).toString());
+      let note = '';
+      if (pages !== want) { bad++; note = ` (expected ${want})`; }
+      else if (native) {
+        const p1 = page(1), p2 = page(2);
+        const ok1 = !p1.includes('Patient Symptom Summary') && p1.includes('/ 45') && (!latinScript || info.nat.slice(0, 2).every(x => p1.includes(squash(x))));
+        const ok2 = p2.includes('Patient Symptom Summary') && info.en.every(x => p2.includes(squash(x))) && !info.nat.some(x => x && !info.en.includes(x) && p2.includes(squash(x)));
+        if (!ok1 || !ok2) { bad++; note = ' PROBLEM: ' + (!ok1 ? 'page 1 is not her language summary. ' : '') + (!ok2 ? 'page 2 is not the clean English summary.' : ''); }
+      } else if (!info.en.every(x => page(1).includes(squash(x)))) { bad++; note = ' PROBLEM: English top section missing'; }
+      res.push(`${size}=${pages} page${pages > 1 ? 's' : ''}${note}`);
     }
-    // the printout must stay English: the English top section is there and nothing of the patient's language leaked in
-    const txt = cp.execSync('pdftotext ' + path.join(OUT, `${code}_A4.pdf`) + ' -').toString();
-    const info = await p.evaluate(c => ({ nat: [T[c].ui.scoreExplainTitle, T[c].ui.mostNoticeable, T[c].bands[2]], en: [T.en.ui.scoreExplainTitle, T.en.bands[2]] }), code);
-    const squash = t => t.replace(/\s+/g, ' ');
-    const englishOk = info.en.every(x => squash(txt).includes(squash(x)));
-    const leaks = code === 'en' ? [] : info.nat.filter(x => x && !info.en.includes(x) && squash(txt).includes(squash(x)));
-    if (!englishOk || leaks.length) { bad++; res.push('PRINT TEXT PROBLEM: ' + (!englishOk ? 'English top section missing. ' : '') + (leaks.length ? 'native text leaked into the printout: ' + leaks.join(' | ') : '')); }
-    else res.push('English print text OK');
-    console.log(`${code.padEnd(6)} ${res.join('   ')}`); await p.close();
+    console.log(`${code.padEnd(6)} ${res.join('   ')}   ${native ? '(page 1 her language, page 2 English)' : '(English only)'}`); await p.close();
   }
   await browser.close();
-  console.log(bad ? `\n${bad} print(s) longer than one page: tighten @media print in index.html.` : `\nAll prints fit on one page.`); process.exit(bad ? 1 : 0);
+  console.log(bad ? `\n${bad} print problem(s): fix @media print in index.html.` : `\nAll prints are as expected (English 1 page; other languages 2 pages).`); process.exit(bad ? 1 : 0);
 })().catch(e => { console.error('ERR', e.message); process.exit(1); });
