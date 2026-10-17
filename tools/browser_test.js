@@ -94,6 +94,8 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   };
   const results = { rec: 0, tts: 0, bad: [] };
   const tally = (name, v) => { if (!v.good) results.bad.push(`${name}: ${v.detail}`); else v.how === 'recording' ? results.rec++ : results.tts++; };
+  const introHint = await p.evaluate(() => { const b = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]'); return b ? b.getAttribute('data-hint') : null; });
+  ok(introHint === pk.ui.listenLabelIntro, 'Page 2: the audio button carries the long hint ("tap here to hear all the instructions") in her language');
   tally('intro', await voice('.voice-icon-btn[data-voice-key="instructions"]', 'intro', pk.ui.introBody));
 
   // ------------------------------------------------------------ walk all sections
@@ -104,6 +106,8 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
     await wait(350);
     const sec = await p.evaluate(() => document.getElementById('qSection').textContent);
     if (sec !== pk.ui.sectionPrefix.replace('{n}', s + 1) + ' · ' + pk.sections[s]) textBad.push(`section ${s + 1} heading shows "${sec}"`);
+    if (s === 0) { const q1h = await p.evaluate(() => { const was = voiceDiscovered; voiceDiscovered = false; updateVoicePulse(); const b = document.querySelector('.q-block[data-qidx="0"] .voice-icon-btn'); const v = b ? b.getAttribute('data-hint') : null; voiceDiscovered = was; updateVoicePulse(); return v; });
+      ok(q1h === pk.ui.listenLabelQ1, 'question 1: the audio button carries "tap here to hear the question" in her language'); }
     tally(`s${s + 1}`, await voice('#sectionVoiceBtn', `s${s + 1}`, pk.sections[s]));
     for (const qi of SEC[s]) {
       const q = await p.evaluate(n => { const b = document.querySelector('.q-block[data-qidx="' + n + '"]'); const img = b.querySelector('.q-icon'); const ttl = b.querySelector('.q-title'); return { t: ttl.textContent, q: b.querySelector('.q-text').textContent, c: b.querySelector('.q-subcount').textContent, sc: [...b.querySelectorAll('.scale-opt span')].map(x => x.textContent), icon: !!img && img.complete && img.naturalWidth > 0, iconRight: img ? img.getBoundingClientRect().left > ttl.getBoundingClientRect().left : null }; }, qi);
@@ -115,6 +119,9 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
     o2.push([`section ${s + 1}`, await overflow(p)]);
     if (s === 0) await p.screenshot({ path: `${SHOTS}/${code}_3_questions.png` });
     if (s === 5) await p.screenshot({ path: `${SHOTS}/${code}_4_last_section.png`, fullPage: true });
+    if (s === 0) { await p.evaluate(() => { document.querySelectorAll('.q-block').forEach(b => { const n = b.dataset.qidx; const e = document.querySelector('.q-block[data-qidx="' + n + '"] .scale-opt[data-level="1"]'); e && e.click(); }); }); await wait(250);
+      const nh = await p.evaluate(() => ({ hidden: document.getElementById('nextHint').hidden, text: document.getElementById('nextHint').textContent, pulse: document.getElementById('nextBtn').classList.contains('next-pulse') }));
+      ok(!nh.hidden && nh.pulse && nh.text === pk.ui.nextHint.replace('{next}', pk.ui.nextButton), 'first questionnaire page: once answered, the "press Next" hint shows (with the real button label) and Next pulses'); }
     await p.evaluate(() => { document.querySelectorAll('.q-block').forEach(b => { const n = b.dataset.qidx; const e = document.querySelector('.q-block[data-qidx="' + n + '"] .scale-opt[data-level="1"]'); e && e.click(); }); document.getElementById('nextBtn').click(); });
   }
   ok(textBad.length === 0, 'all 6 section headings + 15 questions + answer labels match the pack' + (textBad.length ? ': ' + textBad.slice(0, 3).join('; ') : ''));
@@ -152,6 +159,13 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
     const cs = getComputedStyle(el), r = el.getBoundingClientRect(); if (!r.width || cs.display === 'none' || cs.visibility === 'hidden' || el.closest('.print-top')) return;
     const a = cs.textAlign, d = cs.direction; if (d !== 'ltr' || a === 'right' || (a === 'end' && d === 'ltr')) out.push((el.id || el.className || el.tagName) + ':' + d + '/' + a); }); return out; });
   ok(engBad.length === 0, 'every piece of English text in the doctor summary and the Notice is left-to-right and not right-aligned' + (engBad.length ? ': ' + engBad.slice(0, 3).join('; ') : ''));
+  const rs = await p.evaluate(() => { const q = s => document.querySelector(s); const tg = q('#scoreExplain .collapse-toggle'); const body = q('#scoreExplain .collapsible-body'); const dd = document.getElementById('docDivider');
+    const before = { exp: tg && tg.getAttribute('aria-expanded'), hid: body && body.hidden }; if (tg) tg.click(); const after = { exp: tg && tg.getAttribute('aria-expanded'), hid: body && body.hidden }; if (tg) tg.click();
+    return { before, after, noticeToggle: !!q('#finalNoticeBlock .collapse-toggle'), noticeHidden: !!(q('#finalNoticeBlock .collapsible-body') || {}).hidden, ddHidden: dd.hidden, ddText: dd.textContent, help: document.getElementById('printHelp').textContent }; });
+  ok(rs.before.exp === 'false' && rs.before.hid === true && rs.after.exp === 'true' && rs.after.hid === false, 'results: "Understanding your score" is closed until tapped, then opens');
+  ok(code === 'en' ? !rs.noticeToggle : (rs.noticeToggle && rs.noticeHidden), code === 'en' ? 'English: the Notice is shown open' : 'results: the English Notice is closed until tapped (it always prints in full)');
+  ok(code === 'en' ? rs.ddHidden : (!rs.ddHidden && rs.ddText.includes(pk.ui.forDoctorHeading)), code === 'en' ? 'English: no "for your doctor" divider needed' : 'results: a "For your doctor: summary in English" divider (in her language) sits above the English part');
+  ok(rs.help === pk.ui.printHelp, 'results: the print help line (what to do if Print does nothing) is in her language');
   o2.push(['results', await overflow(p)]);
   await p.close();
 

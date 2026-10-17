@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add the interface strings in tools/new_ui_strings.json (myAnswersTitle, myAnswersNote, multiSymptomHint) to the
+"""Add the interface strings in tools/new_ui_strings.json (myAnswersTitle, myAnswersNote, multiSymptomHint, then listenLabelIntro, listenLabelQ1, nextHint, printHelp, forDoctorHeading) to the
 language packs in lang/. Safe to run again: it only sets the three keys, keeps the key order (they sit right after
 ui.privacyBadge) and writes with the same writer as build_language.py.  Run it after building a new language
 (e.g. pt-br, pt): the builder inherits English for these keys until you do.

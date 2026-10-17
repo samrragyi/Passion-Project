@@ -30,7 +30,7 @@ const codes = process.argv.slice(2).length ? process.argv.slice(2) : all;
     await p.waitForFunction(() => document.getElementById('screen-results').classList.contains('active'), { timeout: 8000 }); await wait(400);
     await p.emulateMediaType('print');
     const res = []; const native = code !== 'en'; const want = native ? 2 : 1;
-    const info = await p.evaluate(c => ({ nat: [T[c].ui.scoreExplainTitle, T[c].ui.myAnswersTitle, T[c].bands[2]], en: [T.en.ui.scoreExplainTitle, T.en.bands[2]] }), code);
+    const info = await p.evaluate(c => ({ nat: [T[c].ui.scoreExplainTitle, T[c].ui.myAnswersTitle, T[c].bands[2]], mild: T[c].ui.scoreExplainMild, en: [T.en.ui.scoreExplainTitle, T.en.bands[2]] }), code);
     const squash = t => t.replace(/\s+/g, ' ');
     const latinScript = ['fr', 'de', 'es', 'pt', 'pt-br', 'ro', 'pl', 'sq', 'tl', 'vi'].includes(code);   // pdftotext is reliable for these
     for (const size of ['A4', 'Letter']) {
@@ -42,10 +42,11 @@ const codes = process.argv.slice(2).length ? process.argv.slice(2) : all;
       if (pages !== want) { bad++; note = ` (expected ${want})`; }
       else if (native) {
         const p1 = page(1), p2 = page(2);
-        const ok1 = !p1.includes('Patient Symptom Summary') && p1.includes('/ 45') && (!latinScript || info.nat.slice(0, 2).every(x => p1.includes(squash(x))));
-        const ok2 = p2.includes('Patient Symptom Summary') && info.en.every(x => p2.includes(squash(x))) && !info.nat.some(x => x && !info.en.includes(x) && p2.includes(squash(x)));
+        const ok1 = !p1.includes('Patient Symptom Summary') && p1.includes('/ 45') && (!latinScript || (info.nat.slice(0, 2).every(x => p1.includes(squash(x))) && p1.includes(squash(info.mild))));   // her explanation box is closed on screen but must print in full
+        const ok2 = p2.includes('Patient Symptom Summary') && p2.includes('Data Confidentiality') &&   // the English Notice is closed on screen but must print in full
+           info.en.every(x => p2.includes(squash(x))) && !info.nat.some(x => x && !info.en.includes(x) && p2.includes(squash(x)));
         if (!ok1 || !ok2) { bad++; note = ' PROBLEM: ' + (!ok1 ? 'page 1 is not her language summary. ' : '') + (!ok2 ? 'page 2 is not the clean English summary.' : ''); }
-      } else if (!info.en.every(x => page(1).includes(squash(x)))) { bad++; note = ' PROBLEM: English top section missing'; }
+      } else if (!info.en.every(x => page(1).includes(squash(x))) || !page(1).includes('Data Confidentiality')) { bad++; note = ' PROBLEM: English top section or Notice missing'; }
       res.push(`${size}=${pages} page${pages > 1 ? 's' : ''}${note}`);
     }
     console.log(`${code.padEnd(6)} ${res.join('   ')}   ${native ? '(page 1 her language, page 2 English)' : '(English only)'}`); await p.close();

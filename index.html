@@ -311,7 +311,7 @@
      (the pack's listenLabel), gone after her first tap. The intro button sits at the start edge, so its bubble opens inward. */
   .voice-icon-btn.voice-hint::after{
     content:attr(data-hint); position:absolute; inset-inline-end:-4px; bottom:calc(100% + 12px); z-index:6;
-    background:#24261F; color:#fff; font:700 0.78rem/1 var(--sans, system-ui, sans-serif); white-space:nowrap;
+    background:#24261F; color:#fff; font:700 0.78rem/1.3 var(--sans, system-ui, sans-serif); white-space:normal; width:max-content; max-width:min(205px,58vw); text-align:center;
     padding:7px 11px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.25); pointer-events:none;
   }
   .voice-icon-btn.voice-hint::before{
@@ -320,8 +320,23 @@
   }
   .voice-icon-btn.voice-hint-start::after{ inset-inline-end:auto; inset-inline-start:-4px; }
   .voice-icon-btn.voice-hint-start::before{ inset-inline-end:auto; inset-inline-start:16px; }
+  /* first questionnaire page only: after she has answered, a hint + a gentle pulse on the Next button (gone after her first Next) */
+  @keyframes nextPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(92,122,89,0); } 50%{ box-shadow:0 0 0 8px rgba(92,122,89,0.28); } }
+  .btn.next-pulse{ animation:nextPulse 1.7s ease-in-out infinite; }
+  .next-hint{ margin:14px 0 0; text-align:center; font-size:0.98rem; font-weight:600; color:var(--btn-dim); }
+  /* results page: tap-to-open sections (the score explanation, and the English Notice when she is not using English) */
+  .collapse-toggle{ display:flex; width:100%; align-items:center; justify-content:space-between; gap:10px; background:none; border:0; padding:0; margin:0; font:inherit; color:inherit; text-align:start; cursor:pointer; }
+  .chev{ flex:none; width:9px; height:9px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); transition:transform .2s; margin-inline:4px; }
+  .collapse-toggle[aria-expanded="true"] .chev{ transform:rotate(-135deg); }
+  .collapsible-body[hidden]{ display:none; }
+  .score-explain-title .collapse-toggle{ font:inherit; }
+  .doc-divider{ margin:22px 0 10px; padding:10px 14px; border-inline-start:4px solid var(--btn); background:rgba(92,122,89,0.10); border-radius:8px; font-size:0.95rem; line-height:1.4; }
+  .doc-divider strong{ display:block; }
+  .doc-divider span{ display:block; font-size:0.82rem; color:var(--ink-soft); text-align:left; }
+  .print-help{ margin:12px 0 0; font-size:0.84rem; color:var(--ink-soft); }
   @media (prefers-reduced-motion: reduce){
     .voice-icon-btn.voice-pulse{ animation:none; box-shadow:0 0 0 4px rgba(74,123,166,0.20); }
+    .btn.next-pulse{ animation:none; box-shadow:0 0 0 4px rgba(92,122,89,0.25); }
   }
   .voice-icon-btn:focus-visible{ outline:3px solid var(--berry-dim); outline-offset:2px; }
   .voice-icon-btn svg{ width:26px; height:26px; }
@@ -543,6 +558,9 @@
        Without this, browsers drop all background colours by default. The paper itself stays white. */
     *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     .sticky-header, .cta-row, .gp-actions, footer.page-footer{ display:none !important; }
+    .print-help, .doc-divider, .next-hint{ display:none !important; }
+    .collapsible-body[hidden]{ display:block !important; }   /* collapsed boxes always print in full */
+    .collapse-toggle .chev{ display:none; }
     .screen-top{ display:none !important; }          /* the patient's-language top section is for the screen only ... */
     .print-top, .en-dup{ display:block !important; } /* ... the printout carries the English copy of it */
     /* Not English: the printout is TWO pages. Page 1 = her own language (header, score card, both boxes, all her answers) for her to keep;
@@ -703,6 +721,7 @@
     </div>
     <div id="questionList"></div>
 
+    <p class="next-hint" id="nextHint" hidden></p>
     <div class="nav-row">
       <button class="btn btn-ghost btn-back" id="prevBtn"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="prevBtnLabel"></span></button>
       <button class="btn" id="nextBtn" disabled></button>
@@ -726,6 +745,7 @@
     <!-- English copy for the doctor: the header + score card are print-only; the two boxes (score explanation, quick summary) show on screen too
          (hidden on screen only when the app is already in English, where they would repeat the boxes above) -->
     <div class="print-top" id="printHeroEn" dir="ltr"></div>
+    <div class="doc-divider" id="docDivider" hidden></div>
     <div id="enTopBoxes" dir="ltr"></div>
 
     <div class="gp-panel" id="gpPanel" dir="ltr">
@@ -747,6 +767,7 @@
       <button class="btn" id="printBtn"></button>
       <button class="btn btn-ghost" id="restartBtn"></button>
     </div>
+    <p class="print-help" id="printHelp"></p>
   </section>
 
   <footer class="page-footer" id="pageFooter">
@@ -910,6 +931,7 @@ document.getElementById("prevBtn").addEventListener("click", ()=>{
   if(currentStep > STEP_INSTRUCTIONS){ currentStep--; renderCurrentScreen(); }
 });
 document.getElementById("nextBtn").addEventListener("click", ()=>{
+  nextDiscovered = true; document.getElementById("nextHint").hidden = true; document.getElementById("nextBtn").classList.remove("next-pulse");
   if(currentStep < STEP_SECTION_LAST){ currentStep++; renderCurrentScreen(); }
   else { currentStep = STEP_RESULTS; renderResults(); renderCurrentScreen(); }
 });
@@ -919,6 +941,11 @@ document.getElementById("restartBtn").addEventListener("click", ()=>{
   currentStep = STEP_LANGUAGE; renderCurrentScreen();
 });
 document.getElementById("printBtn").addEventListener("click", ()=> window.print());
+document.getElementById("screen-results").addEventListener("click", (e)=>{      // tap-to-open boxes on the results page
+  const t = e.target.closest(".collapse-toggle"); if(!t) return;
+  const body = t.closest(".score-explain, .legal-block").querySelector(".collapsible-body"); if(!body) return;
+  const open = t.getAttribute("aria-expanded") === "true"; t.setAttribute("aria-expanded", open ? "false" : "true"); body.hidden = open;
+});
 
 function renderCurrentScreen(){
   document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
@@ -981,6 +1008,7 @@ function renderSectionPage(secPageIdx){
   const nextBtn = document.getElementById("nextBtn");
   nextBtn.textContent = secPageIdx === SECTION_MAP.length - 1 ? tr.ui.submitButton : tr.ui.nextButton;
   nextBtn.disabled = qIdxs.some(qi => answers[qi] === null);
+  updateNextHint(secPageIdx);
 }
 
 /* answer selection and per-question voice buttons are delegated, since question
@@ -1028,6 +1056,13 @@ function setAudioRate(r){
 speedBar.addEventListener("click", e => { const b = e.target.closest(".speed-btn"); if(b) setAudioRate(parseFloat(b.dataset.rate)); });
 function updateSpeedBar(){ speedBar.hidden = !(currentStep >= 1 && currentStep <= 7); }   // only on the pages that have audio
 const escHtml = t => String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+let nextDiscovered = false;   // set at her first Next press: the first-page hint + pulse then stop (memory only)
+function updateNextHint(secPageIdx){
+  const h = document.getElementById("nextHint"), b = document.getElementById("nextBtn");
+  const show = !nextDiscovered && secPageIdx === 0 && !b.disabled;      // first questionnaire page only, once every question on it is answered
+  b.classList.toggle("next-pulse", show); h.hidden = !show;
+  if(show){ const u = T[currentLang].ui; h.textContent = (u.nextHint || T.en.ui.nextHint).replace("{next}", u.nextButton); }
+}
 let voiceDiscovered = false;   // set once she has tapped an audio button: the pulse then stops for good (memory only, nothing stored)
 function updateVoicePulse(){
   document.querySelectorAll(".voice-pulse, .voice-hint").forEach(b => { b.classList.remove("voice-pulse","voice-hint","voice-hint-start"); b.removeAttribute("data-hint"); });
@@ -1035,8 +1070,10 @@ function updateVoicePulse(){
   const intro = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]');
   const q1 = document.querySelector('.q-block[data-qidx="0"] .voice-icon-btn');
   const word = T[currentLang] && T[currentLang].ui.listenLabel;            // the hint word comes from her language pack
-  if(intro){ intro.classList.add("voice-pulse","voice-hint","voice-hint-start"); if(word) intro.setAttribute("data-hint", word); }
-  if(q1){ q1.classList.add("voice-pulse","voice-hint"); if(word) q1.setAttribute("data-hint", word); }
+  const uiN = (T[currentLang] && T[currentLang].ui) || {};
+  const wordIntro = uiN.listenLabelIntro || word, wordQ1 = uiN.listenLabelQ1 || word;   // Page 2: "tap here to hear all the instructions"; question 1: "...the question"
+  if(intro){ intro.classList.add("voice-pulse","voice-hint","voice-hint-start"); if(wordIntro) intro.setAttribute("data-hint", wordIntro); }
+  if(q1){ q1.classList.add("voice-pulse","voice-hint"); if(wordQ1) q1.setAttribute("data-hint", wordQ1); }
 }
 
 function setVoiceBtnState(btn, playing){
@@ -1209,13 +1246,14 @@ function renderResults(){
   document.getElementById("resultsTitle").textContent = nui("resultsTitle");
   document.getElementById("resultsIntro").textContent = nui("resultsIntro");
 
-  document.getElementById("finalNoticeBlock").innerHTML =
-    `<h3 class="final-notice-title">${tr.ui.finalNoticeTitle}</h3>` +
-    `<ul class="legal-list">` +
+  const noticeList = `<ul class="legal-list">` +
       `<li><strong>${tr.ui.finalNoticeFrameworkLabel}</strong> ${tr.ui.finalNoticeFramework}</li>` +
       `<li><strong>${tr.ui.finalNoticePatientLabel}</strong> ${tr.ui.finalNoticePatient}</li>` +
       `<li><strong>${tr.ui.finalNoticeConfidentialityLabel}</strong> ${tr.ui.finalNoticeConfidentiality}</li>` +
     `</ul>`;
+  document.getElementById("finalNoticeBlock").innerHTML = (currentLang === "en")
+    ? `<h3 class="final-notice-title">${tr.ui.finalNoticeTitle}</h3>` + noticeList
+    : `<h3 class="final-notice-title"><button type="button" class="collapse-toggle" aria-expanded="false"><span>${tr.ui.finalNoticeTitle}</span><span class="chev" aria-hidden="true"></span></button></h3><div class="collapsible-body" hidden>${noticeList}</div>`;   // English Notice: tap to open when she is not using English (always printed in full)
 
   const total = answers.reduce((sum,v)=> sum + (v===null?0:v), 0);
   const max = 45;
@@ -1230,19 +1268,24 @@ function renderResults(){
   /* The top of the results page is built twice from the same code: in the patient's language (screen) and in English (print copy).
      Numbers and ranges sit in <bdi dir="ltr"> so "31 / 45" and "0–11" never flip inside a right-to-left page; each text line has
      dir="auto" so any English fallback text is laid out left-to-right instead of being reversed. */
-  const buildTop = (ui, bands, scale, questions, sep) => {
+  const buildTop = (ui, bands, scale, questions, sep, collapsible) => {
     const tierCopy = [ui("scoreExplainMild"), ui("scoreExplainModerate"), ui("scoreExplainSevere")];
     const severe = []; answers.forEach((a,qi)=>{ if(a === 3) severe.push(questions[qi].t); });
     return {
       badge: `<span class="score-label">${escHtml(ui("overallLabel"))}</span>` +
              `<span class="score-number"><bdi dir="ltr">${total} / ${max}</bdi></span>` +
              `<span class="score-band ${bandClass}">${escHtml(bands[bandIdx])}</span>`,
-      explain: `<h3 class="score-explain-title" dir="auto">${escHtml(ui("scoreExplainTitle"))}</h3>` +
-        [0,1,2].map(i =>
+      explain: (() => {
+        const title = escHtml(ui("scoreExplainTitle"));
+        const rows = [0,1,2].map(i =>
           `<div class="score-explain-row ${i === bandIdx ? "current" : ""}">` +
             `<span class="score-explain-dot band${i}"></span>` +
             `<span dir="auto"><bdi dir="ltr">${tierRanges[i]}</bdi> — ${escHtml(tierCopy[i])}</span>` +
-          `</div>`).join(""),
+          `</div>`).join("");
+        return collapsible
+          ? `<h3 class="score-explain-title" dir="auto"><button type="button" class="collapse-toggle" aria-expanded="false"><span>${title}</span><span class="chev" aria-hidden="true"></span></button></h3><div class="collapsible-body" hidden>${rows}</div>`
+          : `<h3 class="score-explain-title" dir="auto">${title}</h3>` + rows;
+      })(),
       quick: `<div class="quick-summary"><div class="quick-counts">` +
         [0,1,2,3].map(lvl => `<span class="quick-chip ${severityClass(lvl)}" dir="auto">${counts[lvl]} · ${escHtml(scale[lvl])}</span>`).join("") +
         `</div>` +
@@ -1252,7 +1295,7 @@ function renderResults(){
         `</div>`
     };
   };
-  const nat = buildTop(nui, nbands, trLang.scale || tr.scale, trLang.questions || tr.questions, listSep);
+  const nat = buildTop(nui, nbands, trLang.scale || tr.scale, trLang.questions || tr.questions, listSep, true);
   scoreBadgeEl.innerHTML = nat.badge;
   document.getElementById("scoreExplain").innerHTML = nat.explain;
   document.getElementById("patientSummary").innerHTML = nat.quick;
@@ -1262,6 +1305,9 @@ function renderResults(){
   const enBoxes = document.getElementById("enTopBoxes");
   enBoxes.innerHTML = `<div class="score-explain">${eng.explain}</div>` + eng.quick;
   enBoxes.classList.toggle("en-dup", currentLang === "en");
+  const dd = document.getElementById("docDivider");      // a clear label before the English part, for her and for the doctor
+  if(currentLang === "en"){ dd.hidden = true; } else { dd.hidden = false; dd.innerHTML = `<strong dir="auto">${escHtml(nui("forDoctorHeading"))}</strong><span dir="ltr">For your doctor: summary in English</span>`; }
+  document.getElementById("printHelp").textContent = nui("printHelp");
 
   /* GP summary - always English */
   document.getElementById("gpSummaryNote").textContent = tr.ui.gpSummaryNote +
