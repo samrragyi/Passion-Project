@@ -675,6 +675,28 @@
    "privacyBadge": "خاص ومن غير تسجيل",
    "languagePageTitle": "اختاري لغتك",
    "homeLabel": "الرئيسية"
+  },
+  "sw": {
+   "consentLabel": "Nimeelewa.",
+   "startButton": "Anza tathmini",
+   "prevButton": "Rudi nyuma",
+   "nextButton": "Endelea",
+   "submitButton": "Maliza",
+   "scale1": "Hapana kabisa",
+   "scale2": "Kidogo",
+   "scale3": "Kiasi kikubwa",
+   "scale4": "Kupita kiasi",
+   "questionCounter": "Swali {n} kati ya 15",
+   "sectionPrefix": "Sehemu ya {n} kati ya 6",
+   "listenLabel": "Sikiliza",
+   "pauseLabel": "Simamisha",
+   "printButton": "Chapisha / Hifadhi kama PDF",
+   "restartButton": "Anza upya",
+   "appTitle": "Elewa mwili wako unakwambia nini",
+   "appSubtitle": "Mahali tulivu pa kusikiliza mwili wako na kujiandaa.",
+   "privacyBadge": "Faragha, bila kujisajili",
+   "languagePageTitle": "Chagua lugha yako",
+   "homeLabel": "Mwanzo"
   }
  }
 }

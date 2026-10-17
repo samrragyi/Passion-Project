@@ -531,6 +531,25 @@
     "مؤشر عبء الأعراض المتوسط",
     "مؤشر عبء الأعراض الشديد"
    ]
+  },
+  "sw": {
+   "resultsTitle": "Muhtasari wako",
+   "resultsIntro": "Huu ni muhtasari wa majibu yako. Muonyeshe daktari wako muhtasari wa Kiingereza ulio hapa chini.",
+   "overallLabel": "Alama ya jumla",
+   "scoreExplainTitle": "Kuelewa alama yako",
+   "scoreExplainMild": "Dhaifu — dalili hazipo kwa kiasi kikubwa au zinaweza kudhibitiwa kila siku.",
+   "scoreExplainModerate": "Wastani — mifumo kadhaa ya mwili imeathirika au dalili chache ni kali kiasi.",
+   "scoreExplainSevere": "Kali — dalili zina athari kubwa kwa mifumo mingi ya mwili, ikiwemo usingizi, hisia na utendaji wa mwili.",
+   "mostNoticeable": "Zinazoonekana zaidi leo:",
+   "noSevereSymptoms": "Hakuna kilichopimwa kuwa kali mno leo.",
+   "flagged": "Dalili kali zaidi",
+   "none": "Hakuna",
+   "assessmentDate": "Tarehe ya tathmini",
+   "bands": [
+    "Kiashiria cha Mzigo Dhaifu",
+    "Kiashiria cha Mzigo wa Wastani",
+    "Kiashiria cha Mzigo Mkali"
+   ]
   }
  }
 }

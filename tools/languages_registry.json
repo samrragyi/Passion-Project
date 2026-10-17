@@ -297,6 +297,17 @@
       "flag": "eg",
       "status": "live",
       "note": "Egyptian Arabic, written as the translator speaks it (colloquial: قد إيه, بيضايقك, دي, زرار, the feminine ـي/ـك address), addressed to women. Right-to-left, tag ar-EG, Egypt flag. Audio recorded by the owner (the files arrived named 00_Chapter_1 ... 14_Chapter_15 = questions 1-15, 15_Intro, 16_Section_1 ... 21_Section_6; the tool, model and voice were not reported and Claude cannot verify the accent). The translator's file ('Arabic Scripts: Final Versions'; its name mentions Omani/Khaleeji but it contains ONLY Egyptian; the later Egyptian.docx is identical) gives an Arabic title (كلام عن سن اليأس) but NO welcome sentence, so the on-screen intro has none: the owner was asked to listen to the first 5 seconds of the intro clip, and if it opens with a welcome/title, that line must be added to the text. To check with the translator: بيأثر (twice) is normally بيؤثر; the doctor is always the feminine دكتورتك. The 20 standard strings and the 3 new interface strings are drafts by Claude."
+    },
+    {
+      "code": "sw",
+      "name": "Kiswahili",
+      "gloss": "Swahili",
+      "group": "Kenya",
+      "tag": "sw-KE",
+      "dir": "ltr",
+      "flag": "ke",
+      "status": "planned",
+      "note": "Swahili (Kiswahili). Kenya flag, group and tag sw-KE are PROVISIONAL (Swahili is also an official language of Tanzania, and widely spoken in Uganda, DRC and Mozambique): the owner to confirm. Audio: Narakeet has two Swahili voices, Ngina (F) and Uhuru (M) (Claude cannot verify accents). The translator's file has NO Swahili section names (sections 1-6 appear only in English), so the six Swahili section headings were WRITTEN BY CLAUDE as drafts: a native speaker must check them. The welcome line ended in a colon and was changed to a full stop; the 'Taarifa:' label was split into the Notice heading and its text. The 20 standard strings and the 3 new interface strings are drafts by Claude."
     }
   ]
 }

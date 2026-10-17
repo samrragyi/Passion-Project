@@ -290,6 +290,16 @@
    "nextHint": "دلوقتي دوسي على «{next}» عشان تكملي.",
    "printHelp": "لو مفيش حاجة حصلت، افتحي الصفحة دي في متصفح موبايلك (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
    "forDoctorHeading": "لدكتورتك: ملخص بالإنجليزي"
+  },
+  "sw": {
+   "myAnswersTitle": "Majibu yako",
+   "myAnswersNote": "Haya ni majibu yako kwa lugha yako. Muhtasari wa daktari wako, ulio hapa chini, uko kwa Kiingereza.",
+   "multiSymptomHint": "Ikiwa swali linataja dalili kadhaa, jibu kwa ile inayokusumbua zaidi. Hata moja inatosha.",
+   "listenLabelIntro": "Gusa hapa kusikiliza maelekezo yote.",
+   "listenLabelQ1": "Gusa hapa kusikiliza swali.",
+   "nextHint": "Sasa bonyeza {next} ili kuendelea.",
+   "printHelp": "Ikiwa hakuna kinachotokea, fungua ukurasa huu kwenye kivinjari cha simu yako (Safari au Chrome), kisha tumia Shiriki, halafu Chapisha.",
+   "forDoctorHeading": "Kwa daktari wako: muhtasari kwa Kiingereza"
   }
  }
 }
