@@ -7,11 +7,11 @@ window.registerLanguage({
   "dir": "ltr",
   "ui": {
     "appTitleShort": "The Menopause Conversation",
-    "appTitle": "了解您的身體在告訴您什麼",
-    "appSubtitle": "一個可以靜靜聆聽身體、做好準備个地方。",
-    "introBody": "歡迎使用「更年期對話」。 這個簡單个健康小工具，會分你在去看醫生以前，整理摎記錄自家个身體情形。請照下背簡單步驟來做：",
-    "startButton": "開始檢查",
-    "questionCounter": "第 {n} 題，共 15 題",
+    "appTitle": "了解您的身体在告诉您什么",
+    "appSubtitle": "一个倾听身体、做好准备的安静空间。",
+    "introBody": "欢迎使用《更年期对话. 这是一份简单、贴心的健康小工具，帮助您整理和记录近期出现的症状，让您在与医生或其他医疗专业人员沟通时，更清楚地了解和表达自己的感受。请按照以下简单步骤完成：",
+    "startButton": "开始检查",
+    "questionCounter": "第 {n} 题，共 15 题",
     "sectionPrefix": "第 {n} 部分，共 6 部分",
     "questionsRemaining": "{n} left",
     "introStepLabel": "Getting started",
@@ -19,47 +19,47 @@ window.registerLanguage({
     "instructionsStepLabel": "Before you begin",
     "resultsStepLabel": "Your summary is ready",
     "scaleTitle": "How severe is this for you?",
-    "listenLabel": "收聽",
-    "pauseLabel": "暫停",
+    "listenLabel": "收听",
+    "pauseLabel": "暂停",
     "prevButton": "上一步",
     "nextButton": "下一步",
     "submitButton": "完成",
-    "resultsTitle": "你个摘要",
-    "resultsIntro": "這係你答案个概覽。請將下背个英文摘要分醫生看。",
+    "resultsTitle": "您的摘要",
+    "resultsIntro": "这是您回答的概览。请把下方的英文摘要给您的医生看。",
     "gpSummaryTitle": "Summary for your doctor (English)",
     "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly.",
-    "printButton": "列印 / 儲存為 PDF",
-    "restartButton": "重新開始",
-    "overallLabel": "總分",
+    "printButton": "打印 / 保存为 PDF",
+    "restartButton": "重新开始",
+    "overallLabel": "总分",
     "notAnswered": "Not answered",
     "item": "Item",
     "severity": "Severity",
     "score": "Score",
-    "flagged": "最嚴重个項目",
-    "none": "無",
-    "assessmentDate": "評估日期",
-    "mostNoticeable": "今晡日最明顯个症頭：",
-    "noSevereSymptoms": "今晡日無任何項目被評為極度嚴重。",
-    "scoreExplainTitle": "了解你个分數",
-    "scoreExplainMild": "輕度 — 症頭大部分無，抑係日常過得去。",
-    "scoreExplainModerate": "中度 — 好幾個系統受影響，抑係有幾項症頭當嚴重。",
-    "scoreExplainSevere": "嚴重 — 症頭對好幾個系統有深遠个影響，包括睡眠、心情摎身體功能。",
-    "privacyBadge": "私密，無需註冊",
-    "myAnswersTitle": "你个答案",
-    "myAnswersNote": "這係用你自家話顯示个答案。下背分醫生看个摘要係英文。",
-    "multiSymptomHint": "若果一條問題列出幾種症頭，請照最困擾你个該一種來答。就算淨有一種都可以。",
-    "listenLabelIntro": "點這位聽全部个說明。",
-    "listenLabelQ1": "點這位聽問題。",
-    "nextHint": "現在請點「{next}」繼續。",
-    "printHelp": "若係無反應，請在手機个瀏覽器（Safari 抑係 Chrome）打開這頁，再用「分享」，然後選「列印」。",
-    "forDoctorHeading": "分你个醫生：英文摘要",
-    "languagePageTitle": "選擇您的語言",
+    "flagged": "最严重的项目",
+    "none": "无",
+    "assessmentDate": "评估日期",
+    "mostNoticeable": "今天最明显的症状：",
+    "noSevereSymptoms": "今天没有任何项目被评为极其严重。",
+    "scoreExplainTitle": "了解您的得分",
+    "scoreExplainMild": "轻度 — 症状大多不存在，或在日常生活中可以应对。",
+    "scoreExplainModerate": "中度 — 多个系统受到影响，或有几项症状相当严重。",
+    "scoreExplainSevere": "重度 — 症状对多个系统有深远影响，包括睡眠、情绪和身体功能。",
+    "privacyBadge": "私密，无需注册",
+    "myAnswersTitle": "您的回答",
+    "myAnswersNote": "这是用您自己的语言显示的回答。下方提供给医生的摘要为英文。",
+    "multiSymptomHint": "如果一个问题列出了多种症状，请按最困扰您的那一种来评分。只有一种也可以。",
+    "listenLabelIntro": "点击这里收听全部说明。",
+    "listenLabelQ1": "点击这里收听问题。",
+    "nextHint": "现在请点击“{next}”继续。",
+    "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
+    "forDoctorHeading": "给您的医生：英文摘要",
+    "languagePageTitle": "选择您的语言",
     "languagePageSub": "Choose a language to continue. You can change it at any time from the menu at the top of the page.",
-    "homeLabel": "首頁",
-    "beforeYouBegin": "溫馨提示",
+    "homeLabel": "首页",
+    "beforeYouBegin": "温馨提示",
     "continueButton": "I understand — continue",
     "instructionsTitle": "How this works",
-    "formalDisclaimer": "這個工具只係分你做健康了解摎看醫生以前个準備用个，毋係診斷工具抑係醫療器材。所有醫療決定都著愛摎合格醫生參詳過正做得下。",
+    "formalDisclaimer": "本工具仅用于健康科普以及帮助您做就医前的准备，并不能用于诊断，也不是医疗器械。任何与您的健康相关的医疗决定，都应在专业医生或其他合格医疗人员的指导下作出。",
     "consentLabel": "我已了解。",
     "finalNoticeTitle": "Notice for Patient",
     "finalNoticeFrameworkLabel": "Framework:",
@@ -70,109 +70,109 @@ window.registerLanguage({
     "finalNoticeConfidentiality": "Your answers are not saved or sent anywhere by this tool. They stay in your browser and are erased when you close or reload this page. Any PDF or printout you make is yours to keep or delete. Like any website, its host keeps standard server logs of requests for the site's files, but your answers are never part of them. In some browsers, if a recording cannot play, the built-in voice may run online; it reads only the question text, never your answers."
   },
   "scale": [
-    "完全沒有",
-    "有一點",
-    "相當明顯",
-    "非常嚴重"
+    "完全没有",
+    "有一点",
+    "相当明显",
+    "非常严重"
   ],
   "bands": [
-    "輕度症頭負擔指數",
-    "中度症頭負擔指數",
-    "嚴重症頭負擔指數"
+    "轻度症状负担指数",
+    "中度症状负担指数",
+    "重度症状负担指数"
   ],
   "sections": [
-    "月經基礎情形摎血管症頭",
-    "認知摎神經症頭",
-    "身體症頭",
-    "黏膜、皮膚摎免疫（較難發現个信號）",
-    "心理摎情緒",
-    "泌尿生殖摎性健康"
+    "月经基础情况与血管舒缩",
+    "认知与神经系统",
+    "躯体与身体感受",
+    "黏膜、皮肤与免疫（隐性指标）",
+    "心理与情绪",
+    "泌尿生殖与性健康"
   ],
   "questions": [
     {
-      "t": "月經週期變化",
-      "q": "你來經个時間（比方講慢來抑係無來）抑係經血量（比方講忽然當多抑係正淡淡仔血絲）有變化無？這種情形分你有幾嚴重？"
+      "t": "月经周期变化",
+      "q": "您的月经周期或经血量有没有发生变化？比如月经推迟、偶尔没来，或者经血量比平时明显增多或减少。这些变化对您的影响有多大？"
     },
     {
-      "t": "燒熱摎夜汗",
-      "q": "日時抑係暗晡頭忽然身體發燒出汗、出冷汗，抑係忽冷忽熱，這種情形對你个影響有幾嚴重？"
+      "t": "潮热与夜间出汗",
+      "q": "您有没有出现突然发热、潮热、夜间出汗，或者一阵冷一阵热的情况？这些症状对您白天或晚上的生活影响有多大？"
     },
     {
-      "t": "頭那霧霧摎記性差",
-      "q": "忽然當容易毋記得事情、講話講一半又毋記得愛講麼介，抑係一時想毋著詞語，這種情形分你有幾困擾？"
+      "t": "脑雾与记忆力",
+      "q": "您有没有觉得自己比以前更容易忘事？比如说话时突然忘了刚才想说什么，或者一时想不起某个词。这些情况让您有多困扰？"
     },
     {
-      "t": "神經麻痺摎頭那疼",
-      "q": "皮膚無端端像針在㧾㧾仔麻、新出現个頭那疼、隨荷爾蒙變化个偏頭疼，抑係頭眩，這種情形分你有幾困擾？"
+      "t": "神经刺痛与头痛",
+      "q": "您有没有出现皮肤麻麻的、像针扎一样的刺痛感，或者新出现的头痛、偏头痛和头晕？这些情况让您有多困扰？"
     },
     {
-      "t": "關節摎筋骨",
-      "q": "關節一直僵硬、腫脹，抑係毋知原因个筋骨痠疼（特別係朝晨較嚴重），這種情形有幾嚴重？"
+      "t": "关节与肌肉",
+      "q": "您有没有持续感觉关节僵硬、肿胀，或者出现不明原因的肌肉酸痛，尤其是在早晨起床的时候？这些情况对您的影响有多大？"
     },
     {
-      "t": "心慌摎心跳加速",
-      "q": "歇睏該陣忽然感覺心臟跳當猛、跳當重，抑係心跳亂跳，這種情形分你有幾困擾？"
+      "t": "心慌与心跳加速",
+      "q": "您有没有在休息的时候，突然感觉心跳加快、或加重，或者心跳忽快忽慢的？这些情况让您有多困扰？"
     },
     {
-      "t": "身體透支摎疲勞",
-      "q": "逐日感覺身體當忝，抑係睡過都還無復原个深層忝勢，有幾嚴重？"
+      "t": "体力透支与疲劳",
+      "q": "您会不会经常觉得身体特别疲惫，即使睡了一觉，还是觉得没有恢复过来？这种疲劳对您的影响有多大？"
     },
     {
-      "t": "皮膚摎目珠乾燥",
-      "q": "皮膚忽然變薄、無彈性、變皺，抑係目珠一直乾燥、像入沙仔咧磨痛，有幾嚴重？"
+      "t": "皮肤与眼睛干涩",
+      "q": "您有没有发现皮肤变得比以前更薄、更干，弹性也有所下降，或者眼睛总是干干的、涩涩的，像有沙子在里面一样？这些情况对您的影响有多大？"
     },
     {
-      "t": "嘴摎舌燒燙感",
-      "q": "舌燒燒燙燙个感覺、嘴肚有金屬味，抑係嘴齒根變敏感較會流血，這種情形分你有幾困擾？"
+      "t": "口腔与舌头灼热感",
+      "q": "您有没有感觉舌头发热、发烫，嘴里出现不太熟悉的金属味，或者牙龈变得比较敏感、容易出血？这些情况让您有多困扰？"
     },
     {
-      "t": "組織胺摎過敏反應",
-      "q": "忽然出現新个過敏反應、身上毋知原因起癢粒（蕁麻疹），抑係對某兜食物抑係物件變較敏感，有幾嚴重？"
+      "t": "过敏与敏感反应",
+      "q": "您有没有突然出现以前没有过的过敏反应，比如身上莫名其妙起荨麻疹，或者发现自己对某些食物或日用品变得比以前更加敏感？这些情况对您的影响有多大？"
     },
     {
-      "t": "焦慮摎驚惶",
-      "q": "無端端忽然感覺當慌、心肚無安、神經繃絚，抑係無明顯原因个驚惶感，這種感覺有幾嚴重？"
+      "t": "焦虑与恐慌感",
+      "q": "您有没有在没有明显原因的情况下，突然觉得心里很慌、坐立不安、特别紧张，或者莫名地产生恐惧感？这些感觉对您的影响有多大？"
     },
     {
-      "t": "情緒起伏",
-      "q": "忽然出現自家控制毋著个情緒起起落落、較會愛噭、無耐性，抑係脾氣變較暴，這種情形有幾嚴重？"
+      "t": "情绪波动",
+      "q": "您有没有发现自己的情绪比以前更容易起伏，有时候控制不住地想哭、容易失去耐心，或者比平时更容易生气？这些变化对您的影响有多大？"
     },
     {
-      "t": "睡目品質",
-      "q": "常常半夜抑係天光透早（比方講半夜兩點到四點）就精神，精神了後就睡毋落去，這種情形對你个睡目有幾大个影響？"
+      "t": "睡眠质量",
+      "q": "您会不会经常在半夜或凌晨早早醒来，比如两点到四点之间，醒来之后很难再睡着？这种情况对您的睡眠影响有多大？"
     },
     {
-      "t": "私密部位無爽快摎性慾變化",
-      "q": "私密部位感覺乾燥、痕抑係刺激無爽快，抑係性慾摎敏感度忽然反常降低，這種情形有幾嚴重？"
+      "t": "私密部位不适与性欲变化",
+      "q": "您有没有感觉私密部位干涩、发痒或有刺激感、不舒服？或者发现自己的性欲或敏感度比以前有所下降？这些变化对您的影响有多大？"
     },
     {
-      "t": "尿道刺激感",
-      "q": "常常感覺尿意當急、常常愛去廁所，抑係膀胱反覆發炎刺激，這種情形有幾嚴重？"
+      "t": "尿路刺激感",
+      "q": "您有没有经常觉得尿意很急、需要频繁上厕所，或者膀胱反复出现不舒服、刺激感，甚至反复发生尿路感染？这些情况对您的影响有多大？"
     }
   ],
-  "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan, or prescription advice.",
+  "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan or prescription advice.",
   "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
   "howItWorks": [
-    "聽語音提示：每隻問題上背有一個語音按鈕，撳一下就會用你个話讀出來。",
-    "揀你个症頭程度：請照過去一個月个感受，在每隻問題下背揀最合你个選項：",
-    "看你个總結：填煞了後，系統會自動出一頁總結，好在去看醫生該陣分醫生看。"
+    "请听语音提示：每道问题上方都有一个音频按钮。点击按钮，即可用您所选择的语言听取问题。",
+    "选择您症状的严重程度：请根据过去一个月的情况，选择最符合您实际感受的选项：",
+    "查看您的总结：完成所有问题后，系统会根据您的回答生成一份一页的个人情况总结。您可以在预约医生时将这份总结分享给您的全科医生（GP），帮助您更方便地与医生沟通自己的情况。"
   ],
   "severityLegend": [
     {
       "label": "綠色",
-      "desc": "完全無症頭，抑係無造成麼介問題。"
+      "desc": "完全沒有症狀，也不會造成任何問題。"
     },
     {
       "label": "黃色",
-      "desc": "症頭輕微，出現無多，抑係偶然正會注意到。"
+      "desc": "症狀比較輕微，出現得不多，或者只是偶爾才會注意到。"
     },
     {
-      "label": "橙色",
-      "desc": "症頭中等，當明顯，常常出現，抑係頂得住毋過會擾人。"
+      "label": "琥珀色（橙色）",
+      "desc": "症狀中等，蠻明顯的，經常出現，或者還能應付但會讓人不舒服。"
     },
     {
       "label": "紅色",
-      "desc": "症頭嚴重。當無爽快、常常發生，抑係對日常生活、睡目抑係身心健康有當大个影響。"
+      "desc": "症狀嚴重。很不舒服，經常發生，或者對日常生活、睡眠或身心健康有明顯影響。"
     }
   ]
 });

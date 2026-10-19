@@ -1,305 +1,305 @@
 {
- "_comment": "Interface strings added 13 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: have a native speaker check it. Keys: myAnswersTitle, myAnswersNote (the 'Your answers' block on the results page), multiSymptomHint (the on-screen line on page 2). Applied to the language packs by tools/apply_new_ui_strings.py (also run it after building pt-br and pt). 17 Oct 2026 (Phase 1 of the Hindi tester's feedback): listenLabelIntro, listenLabelQ1, nextHint ({next} = the language's own Next button label), printHelp, forDoctorHeading; every non-English line is a MACHINE DRAFT by Claude.",
- "keys": [
-  "myAnswersTitle",
-  "myAnswersNote",
-  "multiSymptomHint",
-  "listenLabelIntro",
-  "listenLabelQ1",
-  "nextHint",
-  "printHelp",
-  "forDoctorHeading"
- ],
- "languages": {
-  "en": {
-   "myAnswersTitle": "Your answers",
-   "myAnswersNote": "These are your answers in your own language. The summary for your doctor, further down, is in English.",
-   "multiSymptomHint": "If a question lists several symptoms, rate the one that bothers you most. Even one is enough.",
-   "listenLabelIntro": "Tap here to hear all the instructions.",
-   "listenLabelQ1": "Tap here to hear the question.",
-   "nextHint": "Now press {next} to continue.",
-   "printHelp": "If nothing happens, open this page in your phone's browser (Safari or Chrome) and use Share, then Print.",
-   "forDoctorHeading": "For your doctor: summary in English"
-  },
-  "hi": {
-   "myAnswersTitle": "आपके जवाब",
-   "myAnswersNote": "ये आपके जवाब आपकी अपनी भाषा में हैं। नीचे डॉक्टर के लिए दिया गया सारांश अंग्रेज़ी में है।",
-   "multiSymptomHint": "अगर किसी सवाल में कई लक्षण दिए हैं, तो जो लक्षण आपको सबसे ज़्यादा परेशान करता है उसके हिसाब से जवाब दें। एक लक्षण भी काफ़ी है।",
-   "listenLabelIntro": "सभी निर्देशों को सुनने के लिए कृपया यहां क्लिक करें।",
-   "listenLabelQ1": "प्रश्न सुनने के लिए कृपया यहां क्लिक करें।",
-   "nextHint": "अब आगे बढ़ने के लिए '{next}' बटन दबाएं।",
-   "printHelp": "अगर कुछ नहीं होता है, तो इस पेज को अपने फ़ोन के ब्राउज़र (Safari या Chrome) में खोलें और शेयर करें, फिर प्रिंट चुनें।",
-   "forDoctorHeading": "आपके डॉक्टर के लिए: अंग्रेज़ी में सारांश"
-  },
-  "bn": {
-   "myAnswersTitle": "আপনার উত্তর",
-   "myAnswersNote": "এগুলো আপনার নিজের ভাষায় আপনার উত্তর। নিচে ডাক্তারের জন্য সারাংশটি ইংরেজিতে দেওয়া আছে।",
-   "multiSymptomHint": "কোনো প্রশ্নে একাধিক লক্ষণ থাকলে, যে লক্ষণটি আপনাকে সবচেয়ে বেশি বিরক্ত করে তার ভিত্তিতে উত্তর দিন। একটি লক্ষণ থাকলেও যথেষ্ট।",
-   "listenLabelIntro": "সব নির্দেশনা শুনতে এখানে ট্যাপ করুন।",
-   "listenLabelQ1": "প্রশ্নটি শুনতে এখানে ট্যাপ করুন।",
-   "nextHint": "এখন এগিয়ে যেতে '{next}' চাপুন।",
-   "printHelp": "কিছু না হলে এই পেজটি আপনার ফোনের ব্রাউজারে (Safari বা Chrome) খুলুন এবং শেয়ার করে তারপর প্রিন্ট বেছে নিন।",
-   "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ"
-  },
-  "bn-bd": {
-   "myAnswersTitle": "আপনার উত্তর",
-   "myAnswersNote": "এগুলো আপনার নিজের ভাষায় আপনার উত্তর। নিচে ডাক্তারের জন্য সারাংশটি ইংরেজিতে দেওয়া আছে।",
-   "multiSymptomHint": "কোনো প্রশ্নে একাধিক লক্ষণ থাকলে, যে লক্ষণটি আপনাকে সবচেয়ে বেশি কষ্ট দেয় তার ভিত্তিতে উত্তর দিন। একটি লক্ষণ থাকলেও যথেষ্ট।",
-   "listenLabelIntro": "সব নির্দেশনা শুনতে এখানে ট্যাপ করুন।",
-   "listenLabelQ1": "প্রশ্নটি শুনতে এখানে ট্যাপ করুন।",
-   "nextHint": "এখন এগিয়ে যেতে '{next}' চাপুন।",
-   "printHelp": "কিছু না হলে এই পেজটি আপনার ফোনের ব্রাউজারে (Safari বা Chrome) খুলুন এবং শেয়ার করে তারপর প্রিন্ট বেছে নিন।",
-   "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ"
-  },
-  "pa": {
-   "myAnswersTitle": "ਤੁਹਾਡੇ ਜਵਾਬ",
-   "myAnswersNote": "ਇਹ ਤੁਹਾਡੇ ਜਵਾਬ ਤੁਹਾਡੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਹਨ। ਹੇਠਾਂ ਡਾਕਟਰ ਲਈ ਸਾਰ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
-   "multiSymptomHint": "ਜੇ ਕਿਸੇ ਸਵਾਲ ਵਿੱਚ ਕਈ ਲੱਛਣ ਦਿੱਤੇ ਹੋਣ, ਤਾਂ ਜਿਹੜਾ ਲੱਛਣ ਤੁਹਾਨੂੰ ਸਭ ਤੋਂ ਵੱਧ ਪਰੇਸ਼ਾਨ ਕਰਦਾ ਹੈ ਉਸ ਦੇ ਹਿਸਾਬ ਨਾਲ ਜਵਾਬ ਦਿਓ। ਇੱਕ ਲੱਛਣ ਵੀ ਕਾਫ਼ੀ ਹੈ।",
-   "listenLabelIntro": "ਸਾਰੀਆਂ ਹਦਾਇਤਾਂ ਸੁਣਨ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।",
-   "listenLabelQ1": "ਸਵਾਲ ਸੁਣਨ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।",
-   "nextHint": "ਹੁਣ ਅੱਗੇ ਵਧਣ ਲਈ '{next}' ਦਬਾਓ।",
-   "printHelp": "ਜੇ ਕੁਝ ਨਾ ਹੋਵੇ, ਤਾਂ ਇਸ ਪੰਨੇ ਨੂੰ ਆਪਣੇ ਫ਼ੋਨ ਦੇ ਬ੍ਰਾਊਜ਼ਰ (Safari ਜਾਂ Chrome) ਵਿੱਚ ਖੋਲ੍ਹੋ ਅਤੇ ਸ਼ੇਅਰ ਕਰੋ, ਫਿਰ ਪ੍ਰਿੰਟ ਚੁਣੋ।",
-   "forDoctorHeading": "ਤੁਹਾਡੇ ਡਾਕਟਰ ਲਈ: ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਸਾਰ"
-  },
-  "ne": {
-   "myAnswersTitle": "तपाईंका उत्तरहरू",
-   "myAnswersNote": "यी तपाईंका आफ्नै भाषामा दिइएका उत्तरहरू हुन्। तल डाक्टरका लागि दिइएको सारांश अङ्ग्रेजीमा छ।",
-   "multiSymptomHint": "कुनै प्रश्नमा धेरै लक्षणहरू दिइएका छन् भने, तपाईंलाई सबैभन्दा बढी सताउने लक्षणको आधारमा उत्तर दिनुहोस्। एउटा लक्षण भए पनि पर्याप्त छ।",
-   "listenLabelIntro": "सबै निर्देशन सुन्न यहाँ ट्याप गर्नुहोस्।",
-   "listenLabelQ1": "प्रश्न सुन्न यहाँ ट्याप गर्नुहोस्।",
-   "nextHint": "अब अगाडि बढ्न '{next}' थिच्नुहोस्।",
-   "printHelp": "केही भएन भने यो पेज आफ्नो फोनको ब्राउजर (Safari वा Chrome) मा खोल्नुहोस् र सेयर गरेर प्रिन्ट छान्नुहोस्।",
-   "forDoctorHeading": "तपाईंको डाक्टरका लागि: अङ्ग्रेजीमा सारांश"
-  },
-  "ur": {
-   "myAnswersTitle": "آپ کے جوابات",
-   "myAnswersNote": "یہ آپ کے جوابات آپ کی اپنی زبان میں ہیں۔ نیچے ڈاکٹر کے لیے خلاصہ انگریزی میں ہے۔",
-   "multiSymptomHint": "اگر کسی سوال میں کئی علامات دی گئی ہوں تو جو علامت آپ کو سب سے زیادہ پریشان کرتی ہے اس کے مطابق جواب دیں۔ ایک علامت بھی کافی ہے۔",
-   "listenLabelIntro": "تمام ہدایات سننے کے لیے یہاں ٹیپ کریں۔",
-   "listenLabelQ1": "سوال سننے کے لیے یہاں ٹیپ کریں۔",
-   "nextHint": "اب آگے بڑھنے کے لیے '{next}' دبائیں۔",
-   "printHelp": "اگر کچھ نہ ہو تو اس صفحے کو اپنے فون کے براؤزر (Safari یا Chrome) میں کھولیں اور شیئر کر کے پھر پرنٹ منتخب کریں۔",
-   "forDoctorHeading": "آپ کے ڈاکٹر کے لیے: انگریزی میں خلاصہ"
-  },
-  "fa": {
-   "myAnswersTitle": "پاسخ‌های شما",
-   "myAnswersNote": "این‌ها پاسخ‌های شما به زبان خودتان است. خلاصه‌ای که برای دکتر در ادامه آمده به انگلیسی است.",
-   "multiSymptomHint": "اگر در یک سؤال چند علامت آمده، بر اساس علامتی که بیشتر از همه اذیتتان می‌کند پاسخ بدهید. حتی یک علامت هم کافی است.",
-   "listenLabelIntro": "برای شنیدن همه‌ی راهنمایی‌ها اینجا را لمس کنید.",
-   "listenLabelQ1": "برای شنیدن سؤال اینجا را لمس کنید.",
-   "nextHint": "حالا برای ادامه «{next}» را بزنید.",
-   "printHelp": "اگر اتفاقی نیفتاد، این صفحه را در مرورگر گوشی‌تان (Safari یا Chrome) باز کنید و «اشتراک‌گذاری» و بعد «چاپ» را بزنید.",
-   "forDoctorHeading": "برای دکترتان: خلاصه به انگلیسی"
-  },
-  "ja": {
-   "myAnswersTitle": "あなたの回答",
-   "myAnswersNote": "あなたの言語での回答です。下にある医師向けの要約は英語で表示されます。",
-   "multiSymptomHint": "1つの質問に複数の症状が挙げられている場合は、いちばん気になる症状について回答してください。1つだけでも大丈夫です。",
-   "listenLabelIntro": "ここをタップすると、すべての説明が聞けます。",
-   "listenLabelQ1": "ここをタップすると、質問が聞けます。",
-   "nextHint": "次に「{next}」を押して進んでください。",
-   "printHelp": "何も起こらない場合は、このページをスマートフォンのブラウザ（SafariまたはChrome）で開き、「共有」から「プリント」を選んでください。",
-   "forDoctorHeading": "医師向け：英語のまとめ"
-  },
-  "ko": {
-   "myAnswersTitle": "나의 답변",
-   "myAnswersNote": "내 언어로 보는 답변입니다. 아래의 의사 전달용 요약은 영어로 되어 있습니다.",
-   "multiSymptomHint": "한 질문에 여러 증상이 나열되어 있다면, 가장 불편한 증상을 기준으로 답해 주세요. 하나만 있어도 괜찮습니다.",
-   "listenLabelIntro": "여기를 눌러 모든 안내를 들어 보세요.",
-   "listenLabelQ1": "여기를 눌러 질문을 들어 보세요.",
-   "nextHint": "이제 '{next}'을(를) 눌러 계속하세요.",
-   "printHelp": "아무 반응이 없으면 이 페이지를 휴대폰 브라우저(Safari 또는 Chrome)에서 열고 공유를 누른 다음 인쇄를 선택하세요.",
-   "forDoctorHeading": "의사를 위한 영어 요약"
-  },
-  "zh": {
-   "myAnswersTitle": "您的回答",
-   "myAnswersNote": "这是用您自己的语言显示的回答。下方提供给医生的摘要为英文。",
-   "multiSymptomHint": "如果一个问题列出了多种症状，请按最困扰您的那一种来评分。只有一种也可以。",
-   "listenLabelIntro": "点击这里收听全部说明。",
-   "listenLabelQ1": "点击这里收听问题。",
-   "nextHint": "现在请点击“{next}”继续。",
-   "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
-   "forDoctorHeading": "给您的医生：英文摘要"
-  },
-  "yue": {
-   "myAnswersTitle": "你嘅回答",
-   "myAnswersNote": "呢度係用你自己嘅語言顯示嘅回答。下面畀醫生睇嘅摘要係英文。",
-   "multiSymptomHint": "如果一條問題列出幾種症狀，請按最困擾你嗰一種作答。得一種都得。",
-   "listenLabelIntro": "㩒呢度聽晒所有說明。",
-   "listenLabelQ1": "㩒呢度聽問題。",
-   "nextHint": "而家㩒「{next}」繼續。",
-   "printHelp": "如果冇反應，請喺手機瀏覽器（Safari 或 Chrome）打開呢個頁面，然後用「分享」，再揀「列印」。",
-   "forDoctorHeading": "畀你嘅醫生：英文摘要"
-  },
-  "yue-wt": {
-   "myAnswersTitle": "你嘅回答",
-   "myAnswersNote": "呢度係用你自己嘅語言顯示嘅回答。下面畀醫生睇嘅摘要係英文。",
-   "multiSymptomHint": "如果一條問題列出幾種症狀，請按最困擾你嗰一種作答。得一種都得。",
-   "listenLabelIntro": "㩒呢度聽晒所有說明。",
-   "listenLabelQ1": "㩒呢度聽問題。",
-   "nextHint": "而家㩒「{next}」繼續。",
-   "printHelp": "如果冇反應，請喺手機瀏覽器（Safari 或 Chrome）打開呢個頁面，然後用「分享」，再揀「列印」。",
-   "forDoctorHeading": "畀你嘅醫生：英文摘要"
-  },
-  "hak": {
-   "myAnswersTitle": "你个答案",
-   "myAnswersNote": "這係用你自家話顯示个答案。下背分醫生看个摘要係英文。",
-   "multiSymptomHint": "若果一條問題列出幾種症頭，請照最困擾你个該一種來答。就算淨有一種都可以。",
-   "listenLabelIntro": "點這位聽全部个說明。",
-   "listenLabelQ1": "點這位聽問題。",
-   "nextHint": "現在請點「{next}」繼續。",
-   "printHelp": "若係無反應，請在手機个瀏覽器（Safari 抑係 Chrome）打開這頁，再用「分享」，然後選「列印」。",
-   "forDoctorHeading": "分你个醫生：英文摘要"
-  },
-  "nan-cz": {
-   "myAnswersTitle": "你个答案",
-   "myAnswersNote": "這是用你家己个話顯示个答案。下底提供予醫生个摘要是英文。",
-   "multiSymptomHint": "若有一條問題列出幾種症頭，請照最困擾你个彼種來答。就算淨有一種都可以。",
-   "listenLabelIntro": "點遮聽全部个說明。",
-   "listenLabelQ1": "點遮聽問題。",
-   "nextHint": "今請點「{next}」繼續。",
-   "printHelp": "若是無反應，請佇手機个瀏覽器（Safari 抑是 Chrome）開這頁，再用「分享」，然後選「列印」。",
-   "forDoctorHeading": "予你个醫生：英文摘要"
-  },
-  "vi": {
-   "myAnswersTitle": "Câu trả lời của bạn",
-   "myAnswersNote": "Đây là câu trả lời của bạn bằng ngôn ngữ của bạn. Bản tóm tắt dành cho bác sĩ ở phía dưới được viết bằng tiếng Anh.",
-   "multiSymptomHint": "Nếu một câu hỏi nêu nhiều triệu chứng, hãy chọn theo triệu chứng làm bạn khó chịu nhất. Chỉ có một triệu chứng cũng đủ.",
-   "listenLabelIntro": "Chạm vào đây để nghe tất cả hướng dẫn.",
-   "listenLabelQ1": "Chạm vào đây để nghe câu hỏi.",
-   "nextHint": "Bây giờ hãy nhấn {next} để tiếp tục.",
-   "printHelp": "Nếu không có gì xảy ra, hãy mở trang này trong trình duyệt của điện thoại (Safari hoặc Chrome) rồi chọn Chia sẻ, sau đó chọn In.",
-   "forDoctorHeading": "Dành cho bác sĩ của bạn: bản tóm tắt bằng tiếng Anh"
-  },
-  "tl": {
-   "myAnswersTitle": "Mga sagot mo",
-   "myAnswersNote": "Ito ang mga sagot mo sa sarili mong wika. Ang buod para sa doktor sa ibaba ay nasa Ingles.",
-   "multiSymptomHint": "Kung maraming sintomas ang nakalista sa isang tanong, sagutin batay sa sintomas na pinakamalaki ang abala sa iyo. Kahit isang sintomas lang ay sapat na.",
-   "listenLabelIntro": "I-tap dito para marinig ang lahat ng tagubilin.",
-   "listenLabelQ1": "I-tap dito para marinig ang tanong.",
-   "nextHint": "Ngayon, pindutin ang {next} para magpatuloy.",
-   "printHelp": "Kung walang nangyari, buksan ang page na ito sa browser ng iyong telepono (Safari o Chrome) at gamitin ang Share, tapos Print.",
-   "forDoctorHeading": "Para sa iyong doktor: buod sa Ingles"
-  },
-  "sq": {
-   "myAnswersTitle": "Përgjigjet tuaja",
-   "myAnswersNote": "Këto janë përgjigjet tuaja në gjuhën tuaj. Përmbledhja për mjekun, më poshtë, është në anglisht.",
-   "multiSymptomHint": "Nëse një pyetje rendit disa simptoma, vlerësoni atë që ju shqetëson më shumë. Edhe vetëm një është e mjaftueshme.",
-   "listenLabelIntro": "Prekni këtu për të dëgjuar të gjitha udhëzimet.",
-   "listenLabelQ1": "Prekni këtu për të dëgjuar pyetjen.",
-   "nextHint": "Tani shtypni {next} për të vazhduar.",
-   "printHelp": "Nëse nuk ndodh asgjë, hapeni këtë faqe në shfletuesin e telefonit (Safari ose Chrome) dhe përdorni Ndaj, pastaj Printo.",
-   "forDoctorHeading": "Për mjekun tuaj: përmbledhje në anglisht"
-  },
-  "ro": {
-   "myAnswersTitle": "Răspunsurile dumneavoastră",
-   "myAnswersNote": "Acestea sunt răspunsurile dumneavoastră, în limba dumneavoastră. Rezumatul pentru medic, mai jos, este în engleză.",
-   "multiSymptomHint": "Dacă o întrebare enumeră mai multe simptome, evaluați-l pe cel care vă deranjează cel mai mult. Chiar și unul singur este suficient.",
-   "listenLabelIntro": "Atingeți aici pentru a asculta toate instrucțiunile.",
-   "listenLabelQ1": "Atingeți aici pentru a asculta întrebarea.",
-   "nextHint": "Acum apăsați {next} pentru a continua.",
-   "printHelp": "Dacă nu se întâmplă nimic, deschideți această pagină în browserul telefonului (Safari sau Chrome) și folosiți Partajare, apoi Imprimare.",
-   "forDoctorHeading": "Pentru medicul dumneavoastră: rezumat în engleză"
-  },
-  "pl": {
-   "myAnswersTitle": "Twoje odpowiedzi",
-   "myAnswersNote": "To Twoje odpowiedzi w Twoim języku. Podsumowanie dla lekarza, poniżej, jest po angielsku.",
-   "multiSymptomHint": "Jeśli pytanie wymienia kilka objawów, oceń ten, który dokucza Ci najbardziej. Wystarczy nawet jeden.",
-   "listenLabelIntro": "Dotknij tutaj, aby usłyszeć wszystkie instrukcje.",
-   "listenLabelQ1": "Dotknij tutaj, aby usłyszeć pytanie.",
-   "nextHint": "Teraz naciśnij {next}, aby przejść dalej.",
-   "printHelp": "Jeśli nic się nie dzieje, otwórz tę stronę w przeglądarce telefonu (Safari lub Chrome) i wybierz Udostępnij, a potem Drukuj.",
-   "forDoctorHeading": "Dla Twojego lekarza: podsumowanie po angielsku"
-  },
-  "fr": {
-   "myAnswersTitle": "Vos réponses",
-   "myAnswersNote": "Voici vos réponses dans votre langue. Le résumé destiné à votre médecin, plus bas, est en anglais.",
-   "multiSymptomHint": "Si une question énumère plusieurs symptômes, évaluez celui qui vous gêne le plus. Un seul suffit.",
-   "listenLabelIntro": "Touchez ici pour écouter toutes les instructions.",
-   "listenLabelQ1": "Touchez ici pour écouter la question.",
-   "nextHint": "Appuyez maintenant sur {next} pour continuer.",
-   "printHelp": "Si rien ne se passe, ouvrez cette page dans le navigateur de votre téléphone (Safari ou Chrome), puis utilisez Partager, puis Imprimer.",
-   "forDoctorHeading": "Pour votre médecin : résumé en anglais"
-  },
-  "de": {
-   "myAnswersTitle": "Ihre Antworten",
-   "myAnswersNote": "Hier sehen Sie Ihre Antworten in Ihrer Sprache. Die Zusammenfassung für Ihre Ärztin oder Ihren Arzt weiter unten ist auf Englisch.",
-   "multiSymptomHint": "Wenn eine Frage mehrere Symptome nennt, bewerten Sie das, das Sie am meisten belastet. Auch ein einziges genügt.",
-   "listenLabelIntro": "Tippen Sie hier, um alle Anweisungen zu hören.",
-   "listenLabelQ1": "Tippen Sie hier, um die Frage zu hören.",
-   "nextHint": "Tippen Sie jetzt auf {next}, um fortzufahren.",
-   "printHelp": "Wenn nichts passiert, öffnen Sie diese Seite im Browser Ihres Telefons (Safari oder Chrome) und wählen Sie Teilen, dann Drucken.",
-   "forDoctorHeading": "Für Ihre Ärztin oder Ihren Arzt: Zusammenfassung auf Englisch"
-  },
-  "es": {
-   "myAnswersTitle": "Sus respuestas",
-   "myAnswersNote": "Estas son sus respuestas en su idioma. El resumen para su médico, más abajo, está en inglés.",
-   "multiSymptomHint": "Si una pregunta menciona varios síntomas, valore el que más le moleste. Basta con uno.",
-   "listenLabelIntro": "Toque aquí para escuchar todas las instrucciones.",
-   "listenLabelQ1": "Toque aquí para escuchar la pregunta.",
-   "nextHint": "Ahora pulse {next} para continuar.",
-   "printHelp": "Si no ocurre nada, abra esta página en el navegador de su teléfono (Safari o Chrome) y use Compartir y luego Imprimir.",
-   "forDoctorHeading": "Para su médico: resumen en inglés"
-  },
-  "pt-br": {
-   "myAnswersTitle": "Suas respostas",
-   "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
-   "multiSymptomHint": "Se uma pergunta listar vários sintomas, avalie o que mais incomoda você. Basta um só.",
-   "listenLabelIntro": "Toque aqui para ouvir todas as instruções.",
-   "listenLabelQ1": "Toque aqui para ouvir a pergunta.",
-   "nextHint": "Agora toque em {next} para continuar.",
-   "printHelp": "Se nada acontecer, abra esta página no navegador do seu celular (Safari ou Chrome) e use Compartilhar e depois Imprimir.",
-   "forDoctorHeading": "Para o seu médico: resumo em inglês"
-  },
-  "pt": {
-   "myAnswersTitle": "As suas respostas",
-   "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
-   "multiSymptomHint": "Se uma pergunta indicar vários sintomas, avalie aquele que mais a incomoda. Basta um só.",
-   "listenLabelIntro": "Toque aqui para ouvir todas as instruções.",
-   "listenLabelQ1": "Toque aqui para ouvir a pergunta.",
-   "nextHint": "Agora toque em {next} para continuar.",
-   "printHelp": "Se nada acontecer, abra esta página no navegador do seu telemóvel (Safari ou Chrome) e use Partilhar e depois Imprimir.",
-   "forDoctorHeading": "Para o seu médico: resumo em inglês"
-  },
-  "ar-gulf": {
-   "myAnswersTitle": "إجاباتج",
-   "myAnswersNote": "هذي إجاباتج بلغتج. الملخص اللي لدكتورتج بالأسفل مكتوب بالإنجليزي.",
-   "multiSymptomHint": "إذا السؤال يذكر أكثر من عرض، قيّمي العرض اللي يضايقج أكثر. حتى لو عندج عرض واحد بس، يكفي.",
-   "listenLabelIntro": "اضغطي هنا عشان تسمعين كل التعليمات.",
-   "listenLabelQ1": "اضغطي هنا عشان تسمعين السؤال.",
-   "nextHint": "الحين اضغطي على «{next}» عشان تكملين.",
-   "printHelp": "إذا ما صار شي، افتحي هالصفحة في متصفح جوالج (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
-   "forDoctorHeading": "لدكتورتج: ملخص بالإنجليزي"
-  },
-  "ar-om": {
-   "myAnswersTitle": "إجاباتج",
-   "myAnswersNote": "هذي إجاباتج بلغتج. الملخص اللي لدكتورتج بالأسفل مكتوب بالإنجليزي.",
-   "multiSymptomHint": "إذا السؤال يذكر أكثر من عرض، قيّمي العرض اللي يضايقج أكثر. حتى لو عندج عرض واحد بس، يكفي.",
-   "listenLabelIntro": "اضغطي هنا عشان تسمعين كل التعليمات.",
-   "listenLabelQ1": "اضغطي هنا عشان تسمعين السؤال.",
-   "nextHint": "الحين اضغطي على «{next}» عشان تكملين.",
-   "printHelp": "إذا ما صار شي، افتحي هالصفحة في متصفح جوالج (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
-   "forDoctorHeading": "للدكتورة: ملخص بالإنجليزي"
-  },
-  "ar-eg": {
-   "myAnswersTitle": "إجاباتك",
-   "myAnswersNote": "دي إجاباتك بلغتك. الملخص اللي لدكتورتك تحت مكتوب بالإنجليزي.",
-   "multiSymptomHint": "لو السؤال بيذكر أكتر من عرض، قيّمي العرض اللي بيضايقك أكتر. حتى لو عندك عرض واحد بس، كده كفاية.",
-   "listenLabelIntro": "دوسي هنا عشان تسمعي كل التعليمات.",
-   "listenLabelQ1": "دوسي هنا عشان تسمعي السؤال.",
-   "nextHint": "دلوقتي دوسي على «{next}» عشان تكملي.",
-   "printHelp": "لو مفيش حاجة حصلت، افتحي الصفحة دي في متصفح موبايلك (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
-   "forDoctorHeading": "لدكتورتك: ملخص بالإنجليزي"
-  },
-  "sw": {
-   "myAnswersTitle": "Majibu yako",
-   "myAnswersNote": "Haya ni majibu yako kwa lugha yako. Muhtasari wa daktari wako, ulio hapa chini, uko kwa Kiingereza.",
-   "multiSymptomHint": "Ikiwa swali linataja dalili kadhaa, jibu kwa ile inayokusumbua zaidi. Hata moja inatosha.",
-   "listenLabelIntro": "Gusa hapa kusikiliza maelekezo yote.",
-   "listenLabelQ1": "Gusa hapa kusikiliza swali.",
-   "nextHint": "Sasa bonyeza {next} ili kuendelea.",
-   "printHelp": "Ikiwa hakuna kinachotokea, fungua ukurasa huu kwenye kivinjari cha simu yako (Safari au Chrome), kisha tumia Shiriki, halafu Chapisha.",
-   "forDoctorHeading": "Kwa daktari wako: muhtasari kwa Kiingereza"
+  "_comment": "Interface strings added 13 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: have a native speaker check it. Keys: myAnswersTitle, myAnswersNote (the 'Your answers' block on the results page), multiSymptomHint (the on-screen line on page 2). Applied to the language packs by tools/apply_new_ui_strings.py (also run it after building pt-br and pt). 17 Oct 2026 (Phase 1 of the Hindi tester's feedback): listenLabelIntro, listenLabelQ1, nextHint ({next} = the language's own Next button label), printHelp, forDoctorHeading; every non-English line is a MACHINE DRAFT by Claude.",
+  "keys": [
+    "myAnswersTitle",
+    "myAnswersNote",
+    "multiSymptomHint",
+    "listenLabelIntro",
+    "listenLabelQ1",
+    "nextHint",
+    "printHelp",
+    "forDoctorHeading"
+  ],
+  "languages": {
+    "en": {
+      "myAnswersTitle": "Your answers",
+      "myAnswersNote": "These are your answers in your own language. The summary for your doctor, further down, is in English.",
+      "multiSymptomHint": "If a question lists several symptoms, rate the one that bothers you most. Even one is enough.",
+      "listenLabelIntro": "Tap here to hear all the instructions.",
+      "listenLabelQ1": "Tap here to hear the question.",
+      "nextHint": "Now press {next} to continue.",
+      "printHelp": "If nothing happens, open this page in your phone's browser (Safari or Chrome) and use Share, then Print.",
+      "forDoctorHeading": "For your doctor: summary in English"
+    },
+    "hi": {
+      "myAnswersTitle": "आपके जवाब",
+      "myAnswersNote": "ये आपके जवाब आपकी अपनी भाषा में हैं। नीचे डॉक्टर के लिए दिया गया सारांश अंग्रेज़ी में है।",
+      "multiSymptomHint": "अगर किसी सवाल में कई लक्षण दिए हैं, तो जो लक्षण आपको सबसे ज़्यादा परेशान करता है उसके हिसाब से जवाब दें। एक लक्षण भी काफ़ी है।",
+      "listenLabelIntro": "सभी निर्देशों को सुनने के लिए कृपया यहां क्लिक करें।",
+      "listenLabelQ1": "प्रश्न सुनने के लिए कृपया यहां क्लिक करें।",
+      "nextHint": "अब आगे बढ़ने के लिए '{next}' बटन दबाएं।",
+      "printHelp": "अगर कुछ नहीं होता है, तो इस पेज को अपने फ़ोन के ब्राउज़र (Safari या Chrome) में खोलें और शेयर करें, फिर प्रिंट चुनें।",
+      "forDoctorHeading": "आपके डॉक्टर के लिए: अंग्रेज़ी में सारांश"
+    },
+    "bn": {
+      "myAnswersTitle": "আপনার উত্তর",
+      "myAnswersNote": "এগুলো আপনার নিজের ভাষায় আপনার উত্তর। নিচে ডাক্তারের জন্য সারাংশটি ইংরেজিতে দেওয়া আছে।",
+      "multiSymptomHint": "কোনো প্রশ্নে একাধিক লক্ষণ থাকলে, যে লক্ষণটি আপনাকে সবচেয়ে বেশি বিরক্ত করে তার ভিত্তিতে উত্তর দিন। একটি লক্ষণ থাকলেও যথেষ্ট।",
+      "listenLabelIntro": "সব নির্দেশনা শুনতে এখানে ট্যাপ করুন।",
+      "listenLabelQ1": "প্রশ্নটি শুনতে এখানে ট্যাপ করুন।",
+      "nextHint": "এখন এগিয়ে যেতে '{next}' চাপুন।",
+      "printHelp": "কিছু না হলে এই পেজটি আপনার ফোনের ব্রাউজারে (Safari বা Chrome) খুলুন এবং শেয়ার করে তারপর প্রিন্ট বেছে নিন।",
+      "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ"
+    },
+    "bn-bd": {
+      "myAnswersTitle": "আপনার উত্তর",
+      "myAnswersNote": "এগুলো আপনার নিজের ভাষায় আপনার উত্তর। নিচে ডাক্তারের জন্য সারাংশটি ইংরেজিতে দেওয়া আছে।",
+      "multiSymptomHint": "কোনো প্রশ্নে একাধিক লক্ষণ থাকলে, যে লক্ষণটি আপনাকে সবচেয়ে বেশি কষ্ট দেয় তার ভিত্তিতে উত্তর দিন। একটি লক্ষণ থাকলেও যথেষ্ট।",
+      "listenLabelIntro": "সব নির্দেশনা শুনতে এখানে ট্যাপ করুন।",
+      "listenLabelQ1": "প্রশ্নটি শুনতে এখানে ট্যাপ করুন।",
+      "nextHint": "এখন এগিয়ে যেতে '{next}' চাপুন।",
+      "printHelp": "কিছু না হলে এই পেজটি আপনার ফোনের ব্রাউজারে (Safari বা Chrome) খুলুন এবং শেয়ার করে তারপর প্রিন্ট বেছে নিন।",
+      "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ"
+    },
+    "pa": {
+      "myAnswersTitle": "ਤੁਹਾਡੇ ਜਵਾਬ",
+      "myAnswersNote": "ਇਹ ਤੁਹਾਡੇ ਜਵਾਬ ਤੁਹਾਡੀ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਹਨ। ਹੇਠਾਂ ਡਾਕਟਰ ਲਈ ਸਾਰ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
+      "multiSymptomHint": "ਜੇ ਕਿਸੇ ਸਵਾਲ ਵਿੱਚ ਕਈ ਲੱਛਣ ਦਿੱਤੇ ਹੋਣ, ਤਾਂ ਜਿਹੜਾ ਲੱਛਣ ਤੁਹਾਨੂੰ ਸਭ ਤੋਂ ਵੱਧ ਪਰੇਸ਼ਾਨ ਕਰਦਾ ਹੈ ਉਸ ਦੇ ਹਿਸਾਬ ਨਾਲ ਜਵਾਬ ਦਿਓ। ਇੱਕ ਲੱਛਣ ਵੀ ਕਾਫ਼ੀ ਹੈ।",
+      "listenLabelIntro": "ਸਾਰੀਆਂ ਹਦਾਇਤਾਂ ਸੁਣਨ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।",
+      "listenLabelQ1": "ਸਵਾਲ ਸੁਣਨ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।",
+      "nextHint": "ਹੁਣ ਅੱਗੇ ਵਧਣ ਲਈ '{next}' ਦਬਾਓ।",
+      "printHelp": "ਜੇ ਕੁਝ ਨਾ ਹੋਵੇ, ਤਾਂ ਇਸ ਪੰਨੇ ਨੂੰ ਆਪਣੇ ਫ਼ੋਨ ਦੇ ਬ੍ਰਾਊਜ਼ਰ (Safari ਜਾਂ Chrome) ਵਿੱਚ ਖੋਲ੍ਹੋ ਅਤੇ ਸ਼ੇਅਰ ਕਰੋ, ਫਿਰ ਪ੍ਰਿੰਟ ਚੁਣੋ।",
+      "forDoctorHeading": "ਤੁਹਾਡੇ ਡਾਕਟਰ ਲਈ: ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਸਾਰ"
+    },
+    "ne": {
+      "myAnswersTitle": "तपाईंका उत्तरहरू",
+      "myAnswersNote": "यी तपाईंका आफ्नै भाषामा दिइएका उत्तरहरू हुन्। तल डाक्टरका लागि दिइएको सारांश अङ्ग्रेजीमा छ।",
+      "multiSymptomHint": "कुनै प्रश्नमा धेरै लक्षणहरू दिइएका छन् भने, तपाईंलाई सबैभन्दा बढी सताउने लक्षणको आधारमा उत्तर दिनुहोस्। एउटा लक्षण भए पनि पर्याप्त छ।",
+      "listenLabelIntro": "सबै निर्देशन सुन्न यहाँ ट्याप गर्नुहोस्।",
+      "listenLabelQ1": "प्रश्न सुन्न यहाँ ट्याप गर्नुहोस्।",
+      "nextHint": "अब अगाडि बढ्न '{next}' थिच्नुहोस्।",
+      "printHelp": "केही भएन भने यो पेज आफ्नो फोनको ब्राउजर (Safari वा Chrome) मा खोल्नुहोस् र सेयर गरेर प्रिन्ट छान्नुहोस्।",
+      "forDoctorHeading": "तपाईंको डाक्टरका लागि: अङ्ग्रेजीमा सारांश"
+    },
+    "ur": {
+      "myAnswersTitle": "آپ کے جوابات",
+      "myAnswersNote": "یہ آپ کے جوابات آپ کی اپنی زبان میں ہیں۔ نیچے ڈاکٹر کے لیے خلاصہ انگریزی میں ہے۔",
+      "multiSymptomHint": "اگر کسی سوال میں کئی علامات دی گئی ہوں تو جو علامت آپ کو سب سے زیادہ پریشان کرتی ہے اس کے مطابق جواب دیں۔ ایک علامت بھی کافی ہے۔",
+      "listenLabelIntro": "تمام ہدایات سننے کے لیے یہاں ٹیپ کریں۔",
+      "listenLabelQ1": "سوال سننے کے لیے یہاں ٹیپ کریں۔",
+      "nextHint": "اب آگے بڑھنے کے لیے '{next}' دبائیں۔",
+      "printHelp": "اگر کچھ نہ ہو تو اس صفحے کو اپنے فون کے براؤزر (Safari یا Chrome) میں کھولیں اور شیئر کر کے پھر پرنٹ منتخب کریں۔",
+      "forDoctorHeading": "آپ کے ڈاکٹر کے لیے: انگریزی میں خلاصہ"
+    },
+    "fa": {
+      "myAnswersTitle": "پاسخ‌های شما",
+      "myAnswersNote": "این‌ها پاسخ‌های شما به زبان خودتان است. خلاصه‌ای که برای دکتر در ادامه آمده به انگلیسی است.",
+      "multiSymptomHint": "اگر در یک سؤال چند علامت آمده، بر اساس علامتی که بیشتر از همه اذیتتان می‌کند پاسخ بدهید. حتی یک علامت هم کافی است.",
+      "listenLabelIntro": "برای شنیدن همه‌ی راهنمایی‌ها اینجا را لمس کنید.",
+      "listenLabelQ1": "برای شنیدن سؤال اینجا را لمس کنید.",
+      "nextHint": "حالا برای ادامه «{next}» را بزنید.",
+      "printHelp": "اگر اتفاقی نیفتاد، این صفحه را در مرورگر گوشی‌تان (Safari یا Chrome) باز کنید و «اشتراک‌گذاری» و بعد «چاپ» را بزنید.",
+      "forDoctorHeading": "برای دکترتان: خلاصه به انگلیسی"
+    },
+    "ja": {
+      "myAnswersTitle": "あなたの回答",
+      "myAnswersNote": "あなたの言語での回答です。下にある医師向けの要約は英語で表示されます。",
+      "multiSymptomHint": "1つの質問に複数の症状が挙げられている場合は、いちばん気になる症状について回答してください。1つだけでも大丈夫です。",
+      "listenLabelIntro": "ここをタップすると、すべての説明が聞けます。",
+      "listenLabelQ1": "ここをタップすると、質問が聞けます。",
+      "nextHint": "次に「{next}」を押して進んでください。",
+      "printHelp": "何も起こらない場合は、このページをスマートフォンのブラウザ（SafariまたはChrome）で開き、「共有」から「プリント」を選んでください。",
+      "forDoctorHeading": "医師向け：英語のまとめ"
+    },
+    "ko": {
+      "myAnswersTitle": "나의 답변",
+      "myAnswersNote": "내 언어로 보는 답변입니다. 아래의 의사 전달용 요약은 영어로 되어 있습니다.",
+      "multiSymptomHint": "한 질문에 여러 증상이 나열되어 있다면, 가장 불편한 증상을 기준으로 답해 주세요. 하나만 있어도 괜찮습니다.",
+      "listenLabelIntro": "여기를 눌러 모든 안내를 들어 보세요.",
+      "listenLabelQ1": "여기를 눌러 질문을 들어 보세요.",
+      "nextHint": "이제 '{next}'을(를) 눌러 계속하세요.",
+      "printHelp": "아무 반응이 없으면 이 페이지를 휴대폰 브라우저(Safari 또는 Chrome)에서 열고 공유를 누른 다음 인쇄를 선택하세요.",
+      "forDoctorHeading": "의사를 위한 영어 요약"
+    },
+    "zh": {
+      "myAnswersTitle": "您的回答",
+      "myAnswersNote": "这是用您自己的语言显示的回答。下方提供给医生的摘要为英文。",
+      "multiSymptomHint": "如果一个问题列出了多种症状，请按最困扰您的那一种来评分。只有一种也可以。",
+      "listenLabelIntro": "点击这里收听全部说明。",
+      "listenLabelQ1": "点击这里收听问题。",
+      "nextHint": "现在请点击“{next}”继续。",
+      "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
+      "forDoctorHeading": "给您的医生：英文摘要"
+    },
+    "yue": {
+      "myAnswersTitle": "你嘅回答",
+      "myAnswersNote": "呢度係用你自己嘅語言顯示嘅回答。下面畀醫生睇嘅摘要係英文。",
+      "multiSymptomHint": "如果一條問題列出幾種症狀，請按最困擾你嗰一種作答。得一種都得。",
+      "listenLabelIntro": "㩒呢度聽晒所有說明。",
+      "listenLabelQ1": "㩒呢度聽問題。",
+      "nextHint": "而家㩒「{next}」繼續。",
+      "printHelp": "如果冇反應，請喺手機瀏覽器（Safari 或 Chrome）打開呢個頁面，然後用「分享」，再揀「列印」。",
+      "forDoctorHeading": "畀你嘅醫生：英文摘要"
+    },
+    "yue-wt": {
+      "myAnswersTitle": "你嘅回答",
+      "myAnswersNote": "呢度係用你自己嘅語言顯示嘅回答。下面畀醫生睇嘅摘要係英文。",
+      "multiSymptomHint": "如果一條問題列出幾種症狀，請按最困擾你嗰一種作答。得一種都得。",
+      "listenLabelIntro": "㩒呢度聽晒所有說明。",
+      "listenLabelQ1": "㩒呢度聽問題。",
+      "nextHint": "而家㩒「{next}」繼續。",
+      "printHelp": "如果冇反應，請喺手機瀏覽器（Safari 或 Chrome）打開呢個頁面，然後用「分享」，再揀「列印」。",
+      "forDoctorHeading": "畀你嘅醫生：英文摘要"
+    },
+    "hak": {
+      "myAnswersTitle": "您的回答",
+      "myAnswersNote": "这是用您自己的语言显示的回答。下方提供给医生的摘要为英文。",
+      "multiSymptomHint": "如果一个问题列出了多种症状，请按最困扰您的那一种来评分。只有一种也可以。",
+      "listenLabelIntro": "点击这里收听全部说明。",
+      "listenLabelQ1": "点击这里收听问题。",
+      "nextHint": "现在请点击“{next}”继续。",
+      "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
+      "forDoctorHeading": "给您的医生：英文摘要"
+    },
+    "nan-cz": {
+      "myAnswersTitle": "您的回答",
+      "myAnswersNote": "这是用您自己的语言显示的回答。下方提供给医生的摘要为英文。",
+      "multiSymptomHint": "如果一个问题列出了多种症状，请按最困扰您的那一种来评分。只有一种也可以。",
+      "listenLabelIntro": "点击这里收听全部说明。",
+      "listenLabelQ1": "点击这里收听问题。",
+      "nextHint": "现在请点击“{next}”继续。",
+      "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
+      "forDoctorHeading": "给您的医生：英文摘要"
+    },
+    "vi": {
+      "myAnswersTitle": "Câu trả lời của bạn",
+      "myAnswersNote": "Đây là câu trả lời của bạn bằng ngôn ngữ của bạn. Bản tóm tắt dành cho bác sĩ ở phía dưới được viết bằng tiếng Anh.",
+      "multiSymptomHint": "Nếu một câu hỏi nêu nhiều triệu chứng, hãy chọn theo triệu chứng làm bạn khó chịu nhất. Chỉ có một triệu chứng cũng đủ.",
+      "listenLabelIntro": "Chạm vào đây để nghe tất cả hướng dẫn.",
+      "listenLabelQ1": "Chạm vào đây để nghe câu hỏi.",
+      "nextHint": "Bây giờ hãy nhấn {next} để tiếp tục.",
+      "printHelp": "Nếu không có gì xảy ra, hãy mở trang này trong trình duyệt của điện thoại (Safari hoặc Chrome) rồi chọn Chia sẻ, sau đó chọn In.",
+      "forDoctorHeading": "Dành cho bác sĩ của bạn: bản tóm tắt bằng tiếng Anh"
+    },
+    "tl": {
+      "myAnswersTitle": "Mga sagot mo",
+      "myAnswersNote": "Ito ang mga sagot mo sa sarili mong wika. Ang buod para sa doktor sa ibaba ay nasa Ingles.",
+      "multiSymptomHint": "Kung maraming sintomas ang nakalista sa isang tanong, sagutin batay sa sintomas na pinakamalaki ang abala sa iyo. Kahit isang sintomas lang ay sapat na.",
+      "listenLabelIntro": "I-tap dito para marinig ang lahat ng tagubilin.",
+      "listenLabelQ1": "I-tap dito para marinig ang tanong.",
+      "nextHint": "Ngayon, pindutin ang {next} para magpatuloy.",
+      "printHelp": "Kung walang nangyari, buksan ang page na ito sa browser ng iyong telepono (Safari o Chrome) at gamitin ang Share, tapos Print.",
+      "forDoctorHeading": "Para sa iyong doktor: buod sa Ingles"
+    },
+    "sq": {
+      "myAnswersTitle": "Përgjigjet tuaja",
+      "myAnswersNote": "Këto janë përgjigjet tuaja në gjuhën tuaj. Përmbledhja për mjekun, më poshtë, është në anglisht.",
+      "multiSymptomHint": "Nëse një pyetje rendit disa simptoma, vlerësoni atë që ju shqetëson më shumë. Edhe vetëm një është e mjaftueshme.",
+      "listenLabelIntro": "Prekni këtu për të dëgjuar të gjitha udhëzimet.",
+      "listenLabelQ1": "Prekni këtu për të dëgjuar pyetjen.",
+      "nextHint": "Tani shtypni {next} për të vazhduar.",
+      "printHelp": "Nëse nuk ndodh asgjë, hapeni këtë faqe në shfletuesin e telefonit (Safari ose Chrome) dhe përdorni Ndaj, pastaj Printo.",
+      "forDoctorHeading": "Për mjekun tuaj: përmbledhje në anglisht"
+    },
+    "ro": {
+      "myAnswersTitle": "Răspunsurile dumneavoastră",
+      "myAnswersNote": "Acestea sunt răspunsurile dumneavoastră, în limba dumneavoastră. Rezumatul pentru medic, mai jos, este în engleză.",
+      "multiSymptomHint": "Dacă o întrebare enumeră mai multe simptome, evaluați-l pe cel care vă deranjează cel mai mult. Chiar și unul singur este suficient.",
+      "listenLabelIntro": "Atingeți aici pentru a asculta toate instrucțiunile.",
+      "listenLabelQ1": "Atingeți aici pentru a asculta întrebarea.",
+      "nextHint": "Acum apăsați {next} pentru a continua.",
+      "printHelp": "Dacă nu se întâmplă nimic, deschideți această pagină în browserul telefonului (Safari sau Chrome) și folosiți Partajare, apoi Imprimare.",
+      "forDoctorHeading": "Pentru medicul dumneavoastră: rezumat în engleză"
+    },
+    "pl": {
+      "myAnswersTitle": "Twoje odpowiedzi",
+      "myAnswersNote": "To Twoje odpowiedzi w Twoim języku. Podsumowanie dla lekarza, poniżej, jest po angielsku.",
+      "multiSymptomHint": "Jeśli pytanie wymienia kilka objawów, oceń ten, który dokucza Ci najbardziej. Wystarczy nawet jeden.",
+      "listenLabelIntro": "Dotknij tutaj, aby usłyszeć wszystkie instrukcje.",
+      "listenLabelQ1": "Dotknij tutaj, aby usłyszeć pytanie.",
+      "nextHint": "Teraz naciśnij {next}, aby przejść dalej.",
+      "printHelp": "Jeśli nic się nie dzieje, otwórz tę stronę w przeglądarce telefonu (Safari lub Chrome) i wybierz Udostępnij, a potem Drukuj.",
+      "forDoctorHeading": "Dla Twojego lekarza: podsumowanie po angielsku"
+    },
+    "fr": {
+      "myAnswersTitle": "Vos réponses",
+      "myAnswersNote": "Voici vos réponses dans votre langue. Le résumé destiné à votre médecin, plus bas, est en anglais.",
+      "multiSymptomHint": "Si une question énumère plusieurs symptômes, évaluez celui qui vous gêne le plus. Un seul suffit.",
+      "listenLabelIntro": "Touchez ici pour écouter toutes les instructions.",
+      "listenLabelQ1": "Touchez ici pour écouter la question.",
+      "nextHint": "Appuyez maintenant sur {next} pour continuer.",
+      "printHelp": "Si rien ne se passe, ouvrez cette page dans le navigateur de votre téléphone (Safari ou Chrome), puis utilisez Partager, puis Imprimer.",
+      "forDoctorHeading": "Pour votre médecin : résumé en anglais"
+    },
+    "de": {
+      "myAnswersTitle": "Ihre Antworten",
+      "myAnswersNote": "Hier sehen Sie Ihre Antworten in Ihrer Sprache. Die Zusammenfassung für Ihre Ärztin oder Ihren Arzt weiter unten ist auf Englisch.",
+      "multiSymptomHint": "Wenn eine Frage mehrere Symptome nennt, bewerten Sie das, das Sie am meisten belastet. Auch ein einziges genügt.",
+      "listenLabelIntro": "Tippen Sie hier, um alle Anweisungen zu hören.",
+      "listenLabelQ1": "Tippen Sie hier, um die Frage zu hören.",
+      "nextHint": "Tippen Sie jetzt auf {next}, um fortzufahren.",
+      "printHelp": "Wenn nichts passiert, öffnen Sie diese Seite im Browser Ihres Telefons (Safari oder Chrome) und wählen Sie Teilen, dann Drucken.",
+      "forDoctorHeading": "Für Ihre Ärztin oder Ihren Arzt: Zusammenfassung auf Englisch"
+    },
+    "es": {
+      "myAnswersTitle": "Sus respuestas",
+      "myAnswersNote": "Estas son sus respuestas en su idioma. El resumen para su médico, más abajo, está en inglés.",
+      "multiSymptomHint": "Si una pregunta menciona varios síntomas, valore el que más le moleste. Basta con uno.",
+      "listenLabelIntro": "Toque aquí para escuchar todas las instrucciones.",
+      "listenLabelQ1": "Toque aquí para escuchar la pregunta.",
+      "nextHint": "Ahora pulse {next} para continuar.",
+      "printHelp": "Si no ocurre nada, abra esta página en el navegador de su teléfono (Safari o Chrome) y use Compartir y luego Imprimir.",
+      "forDoctorHeading": "Para su médico: resumen en inglés"
+    },
+    "pt-br": {
+      "myAnswersTitle": "Suas respostas",
+      "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
+      "multiSymptomHint": "Se uma pergunta listar vários sintomas, avalie o que mais incomoda você. Basta um só.",
+      "listenLabelIntro": "Toque aqui para ouvir todas as instruções.",
+      "listenLabelQ1": "Toque aqui para ouvir a pergunta.",
+      "nextHint": "Agora toque em {next} para continuar.",
+      "printHelp": "Se nada acontecer, abra esta página no navegador do seu celular (Safari ou Chrome) e use Compartilhar e depois Imprimir.",
+      "forDoctorHeading": "Para o seu médico: resumo em inglês"
+    },
+    "pt": {
+      "myAnswersTitle": "As suas respostas",
+      "myAnswersNote": "Estas são as suas respostas no seu idioma. O resumo para o seu médico, mais abaixo, está em inglês.",
+      "multiSymptomHint": "Se uma pergunta indicar vários sintomas, avalie aquele que mais a incomoda. Basta um só.",
+      "listenLabelIntro": "Toque aqui para ouvir todas as instruções.",
+      "listenLabelQ1": "Toque aqui para ouvir a pergunta.",
+      "nextHint": "Agora toque em {next} para continuar.",
+      "printHelp": "Se nada acontecer, abra esta página no navegador do seu telemóvel (Safari ou Chrome) e use Partilhar e depois Imprimir.",
+      "forDoctorHeading": "Para o seu médico: resumo em inglês"
+    },
+    "ar-gulf": {
+      "myAnswersTitle": "إجاباتج",
+      "myAnswersNote": "هذي إجاباتج بلغتج. الملخص اللي لدكتورتج بالأسفل مكتوب بالإنجليزي.",
+      "multiSymptomHint": "إذا السؤال يذكر أكثر من عرض، قيّمي العرض اللي يضايقج أكثر. حتى لو عندج عرض واحد بس، يكفي.",
+      "listenLabelIntro": "اضغطي هنا عشان تسمعين كل التعليمات.",
+      "listenLabelQ1": "اضغطي هنا عشان تسمعين السؤال.",
+      "nextHint": "الحين اضغطي على «{next}» عشان تكملين.",
+      "printHelp": "إذا ما صار شي، افتحي هالصفحة في متصفح جوالج (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
+      "forDoctorHeading": "لدكتورتج: ملخص بالإنجليزي"
+    },
+    "ar-om": {
+      "myAnswersTitle": "إجاباتج",
+      "myAnswersNote": "هذي إجاباتج بلغتج. الملخص اللي لدكتورتج بالأسفل مكتوب بالإنجليزي.",
+      "multiSymptomHint": "إذا السؤال يذكر أكثر من عرض، قيّمي العرض اللي يضايقج أكثر. حتى لو عندج عرض واحد بس، يكفي.",
+      "listenLabelIntro": "اضغطي هنا عشان تسمعين كل التعليمات.",
+      "listenLabelQ1": "اضغطي هنا عشان تسمعين السؤال.",
+      "nextHint": "الحين اضغطي على «{next}» عشان تكملين.",
+      "printHelp": "إذا ما صار شي، افتحي هالصفحة في متصفح جوالج (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
+      "forDoctorHeading": "للدكتورة: ملخص بالإنجليزي"
+    },
+    "ar-eg": {
+      "myAnswersTitle": "إجاباتك",
+      "myAnswersNote": "دي إجاباتك بلغتك. الملخص اللي لدكتورتك تحت مكتوب بالإنجليزي.",
+      "multiSymptomHint": "لو السؤال بيذكر أكتر من عرض، قيّمي العرض اللي بيضايقك أكتر. حتى لو عندك عرض واحد بس، كده كفاية.",
+      "listenLabelIntro": "دوسي هنا عشان تسمعي كل التعليمات.",
+      "listenLabelQ1": "دوسي هنا عشان تسمعي السؤال.",
+      "nextHint": "دلوقتي دوسي على «{next}» عشان تكملي.",
+      "printHelp": "لو مفيش حاجة حصلت، افتحي الصفحة دي في متصفح موبايلك (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
+      "forDoctorHeading": "لدكتورتك: ملخص بالإنجليزي"
+    },
+    "sw": {
+      "myAnswersTitle": "Majibu yako",
+      "myAnswersNote": "Haya ni majibu yako kwa lugha yako. Muhtasari wa daktari wako, ulio hapa chini, uko kwa Kiingereza.",
+      "multiSymptomHint": "Ikiwa swali linataja dalili kadhaa, jibu kwa ile inayokusumbua zaidi. Hata moja inatosha.",
+      "listenLabelIntro": "Gusa hapa kusikiliza maelekezo yote.",
+      "listenLabelQ1": "Gusa hapa kusikiliza swali.",
+      "nextHint": "Sasa bonyeza {next} ili kuendelea.",
+      "printHelp": "Ikiwa hakuna kinachotokea, fungua ukurasa huu kwenye kivinjari cha simu yako (Safari au Chrome), kisha tumia Shiriki, halafu Chapisha.",
+      "forDoctorHeading": "Kwa daktari wako: muhtasari kwa Kiingereza"
+    }
   }
- }
 }
