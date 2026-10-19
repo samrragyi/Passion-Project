@@ -127,7 +127,7 @@ window.registerLanguage({
     },
     {
       "t": "組織胺同過敏反應",
-      "q": "突然出現新嘅過敏反應、身上莫名其妙起風癩（蕁麻疹）、或者對某啲食物/用品變得特別敏感，有幾嚴重？"
+      "q": "突然出現新嘅過敏反應、身上莫名其妙起風癩（蕁麻疹）、或者對某啲食物, 用品變得特別敏感，有幾嚴重？"
     },
     {
       "t": "焦慮同恐懼感",
@@ -147,7 +147,7 @@ window.registerLanguage({
     },
     {
       "t": "尿道刺激感",
-      "q": "經常覺得憋唔到尿、頻頻想去廁所，或者膀胱反覆發炎刺激，呢種情況有幾嚴重？"
+      "q": "經常覺得忍唔到尿、頻頻想去廁所，或者膀胱反覆發炎刺激，呢種情況有幾嚴重？"
     }
   ],
   "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan, or prescription advice.",
