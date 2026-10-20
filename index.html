@@ -238,6 +238,8 @@
   }
   .howto-list{ margin:0 0 8px; padding-left:22px; }
   [dir="rtl"] .howto-list{ padding-left:0; padding-right:22px; }
+  .howto-list:empty{ display:none; }
+  .howto-list-2{ margin-top:4px; }
   .howto-list li{ margin-bottom:12px; font-size:0.95rem; color:var(--ink); line-height:1.5; }
 
   .severity-legend{
@@ -690,6 +692,8 @@
 
     <div class="severity-legend" id="severityLegend"></div>
 
+    <ol class="howto-list howto-list-2" id="howItWorksList2" start="3"></ol>
+
     <div class="formal-disclaimer">
       <div class="formal-disclaimer-head">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 2 20h20L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 10v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17.6" r="1" fill="currentColor"/></svg>
@@ -900,10 +904,14 @@ function applyLanguage(){
   document.getElementById("instrContinueBtn").textContent = tr.ui.startButton;
   const howList = document.getElementById("howItWorksList");
   howList.innerHTML = "";
-  tr.howItWorks.forEach(step=>{
+  /* Order on page 2: step 1, step 2, hint, colours, step 3 (matches the voice-over). A pack can set "introOrder": "legacy" to keep step 3 before the colours. */
+  const howList2 = document.getElementById("howItWorksList2");
+  howList2.innerHTML = "";
+  const stepsFirst = (tr.introOrder === "legacy") ? tr.howItWorks.length : 2;
+  tr.howItWorks.forEach((step, i)=>{
     const li = document.createElement("li");
     li.textContent = step;
-    howList.appendChild(li);
+    (i < stepsFirst ? howList : howList2).appendChild(li);
   });
   document.getElementById("multiSymptomHint").textContent = tr.ui.multiSymptomHint || "";   // on-screen only, not in the audio
   document.getElementById("severityLegend").innerHTML = tr.severityLegend.map((item, i)=>
@@ -1099,9 +1107,11 @@ function getVoiceText(key){
   const tr = T[currentLang];
   if(key === "instructions"){
     const legendText = tr.severityLegend.map(item => item.label + " — " + item.desc);
+    const legacy = tr.introOrder === "legacy";
     return [tr.ui.introBody]
-      .concat(tr.howItWorks)
+      .concat(legacy ? tr.howItWorks : tr.howItWorks.slice(0, 2))
       .concat(legendText)
+      .concat(legacy ? [] : tr.howItWorks.slice(2))
       .concat([tr.ui.beforeYouBegin, tr.ui.formalDisclaimer])
       .join(". ");
   }

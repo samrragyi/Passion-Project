@@ -99,9 +99,10 @@ def build(path, reg=None):
     au = wb.create_sheet("Audio"); header(au, ["Narakeet file name (use exactly)", "What it is", "Script to read aloud (from your translation)", "Recorded? (Y/N)"], [26, 34, 90, 14])
     code = "Settings!$C$2"
     def ref(fid): sh, r = rows[fid]; return f"'{sh}'!D{r}"
-    intro_parts = [ref("introBody"), ref("how1"), ref("how2"), ref("how3")]
+    # ORDER: welcome, step 1, step 2, the four colours, step 3, notice (same as the page 2 screen)
+    intro_parts = [ref("introBody"), ref("how1"), ref("how2")]
     intro_parts += [f'{ref(f"legend{i}_label")}&" — "&{ref(f"legend{i}_desc")}' for i in range(1, 5)]
-    intro_parts += [ref("beforeYouBegin"), ref("formalDisclaimer")]
+    intro_parts += [ref("how3"), ref("beforeYouBegin"), ref("formalDisclaimer")]
     audio_rows = [("0001.mp3", "Page 2: read ALL of it, one line after the other (about 1-2 minutes)", "=" + '&CHAR(10)&'.join(intro_parts))]
     for i in range(N := S.N_SECTIONS):
         audio_rows.append((f"{2+i:04d}.mp3", f"Section {i+1} heading (just the section name)", f"=Sections!D{i+2}"))
