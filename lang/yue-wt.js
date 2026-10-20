@@ -59,7 +59,7 @@ window.registerLanguage({
     "beforeYouBegin": "溫馨提示",
     "continueButton": "I understand — continue",
     "instructionsTitle": "How this works",
-    "formalDisclaimer": "呢個工具只係供健康教育同見醫生前準備之用，並唔係診斷工具或醫療設備。所有醫療決定都應該喺諮詢合資格醫生之後作出。",
+    "formalDisclaimer": "呢個工具只係供健康教育同見醫生前準備之用，並唔係診斷工具或醫療建議。所有醫療決定都應該喺諮詢合資格醫生之後作出。",
     "consentLabel": "我明",
     "finalNoticeTitle": "Notice for Patient",
     "finalNoticeFrameworkLabel": "Framework:",
