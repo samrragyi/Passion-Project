@@ -59,7 +59,7 @@ window.registerLanguage({
     "beforeYouBegin": "温馨提示",
     "continueButton": "I understand — continue",
     "instructionsTitle": "How this works",
-    "formalDisclaimer": "本工具仅用于健康科普以及帮助您做就医前的准备，并不能用于诊断，也不是医疗器械。任何与您的健康相关的医疗决定，都应在专业医生或其他合格医疗人员的指导下作出。",
+    "formalDisclaimer": "本工具仅用于健康科普以及帮助您做就医前的准备，并不能用于诊断，也不是医疗建议。任何与您的健康相关的医疗决定，都应在专业医生或其他合格医疗人员的指导下作出。",
     "consentLabel": "我已了解。",
     "finalNoticeTitle": "Notice for Patient",
     "finalNoticeFrameworkLabel": "Framework:",
