@@ -153,6 +153,10 @@
   .btn-back svg{ width:15px; height:15px; flex:none; }
   [dir="rtl"] .btn-back svg{ transform:scaleX(-1); }
   .btn[disabled]{ opacity:0.4; cursor:not-allowed; }
+  #instrContinueBtn[disabled]{ pointer-events:none; }   /* so a tap on the locked Start button reaches .nav-row and can flash the checkbox */
+  .consent-flash{ animation:consentFlash 0.7s ease-in-out 3; border-radius:var(--radius, 10px); }
+  @keyframes consentFlash{ 0%,100%{ box-shadow:0 0 0 0 transparent; } 50%{ box-shadow:0 0 0 5px var(--forest); } }
+  @media (prefers-reduced-motion: reduce){ .consent-flash{ animation:none; outline:3px solid var(--forest); outline-offset:3px; } }
 
   .disclaimer{
     text-align:center; font-size:0.8rem; color:var(--ink-soft);
@@ -930,6 +934,21 @@ const consentCheck = document.getElementById("consentCheck");
 const instrContinueBtn = document.getElementById("instrContinueBtn");
 consentCheck.addEventListener("change", ()=>{ instrContinueBtn.disabled = !consentCheck.checked; });
 document.getElementById("instrBackBtn").addEventListener("click", ()=>{ currentStep = STEP_LANGUAGE; renderCurrentScreen(); });
+/* Tapping the locked Start button makes the "I understand" box flash and scroll into view (no words, so it works in every language) */
+function flashConsent(){
+  const row = document.querySelector(".consent-row");
+  const calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  row.classList.remove("consent-flash"); void row.offsetWidth; row.classList.add("consent-flash");
+  row.scrollIntoView({ block:"center", behavior: calm ? "auto" : "smooth" });
+  try{ consentCheck.focus({ preventScroll:true }); }catch(e){}
+  setTimeout(()=>row.classList.remove("consent-flash"), 2400);
+}
+instrContinueBtn.parentElement.addEventListener("click", e=>{
+  if(!instrContinueBtn.disabled) return;
+  const r = instrContinueBtn.getBoundingClientRect();
+  if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) return;
+  flashConsent();
+});
 instrContinueBtn.addEventListener("click", ()=>{
   if(!consentCheck.checked) return;
   currentStep = STEP_SECTION_FIRST; renderCurrentScreen();
