@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "가장 심한 항목",
     "none": "없음",
-    "assessmentDate": "평가 날짜",
+    "assessmentDate": "작성일",
     "mostNoticeable": "오늘 가장 두드러진 증상:",
     "noSevereSymptoms": "오늘은 매우 심하다고 평가된 항목이 없습니다.",
     "scoreExplainTitle": "점수 이해하기",

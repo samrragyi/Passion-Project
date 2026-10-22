@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Highest-severity items",
     "none": "None",
-    "assessmentDate": "Assessment date",
+    "assessmentDate": "Date completed",
     "mostNoticeable": "Most noticeable today:",
     "noSevereSymptoms": "Nothing was rated as extremely severe today.",
     "scoreExplainTitle": "Understanding your score",

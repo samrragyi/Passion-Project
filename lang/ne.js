@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "सबैभन्दा गम्भीर विषयहरू",
     "none": "कुनै पनि छैन",
-    "assessmentDate": "मूल्याङ्कन मिति",
+    "assessmentDate": "पूरा गरेको मिति",
     "mostNoticeable": "आज सबैभन्दा बढी देखिएका:",
     "noSevereSymptoms": "आज कुनै पनि कुरा अत्यन्त गम्भीर भनेर मूल्याङ्कन गरिएन।",
     "scoreExplainTitle": "आफ्नो स्कोर बुझ्नुहोस्",

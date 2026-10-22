@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Mga pinakamalalang aytem",
     "none": "Wala",
-    "assessmentDate": "Petsa ng pagtatasa",
+    "assessmentDate": "Petsa ng pagkumpleto",
     "mostNoticeable": "Pinakapansin-pansin ngayon:",
     "noSevereSymptoms": "Walang naitalang lubhang malala ngayon.",
     "scoreExplainTitle": "Pag-unawa sa iyong iskor",

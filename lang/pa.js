@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "ਸਭ ਤੋਂ ਗੰਭੀਰ ਚੀਜ਼ਾਂ",
     "none": "ਕੋਈ ਨਹੀਂ",
-    "assessmentDate": "ਮੁਲਾਂਕਣ ਦੀ ਤਾਰੀਖ਼",
+    "assessmentDate": "ਪੂਰਾ ਕਰਨ ਦੀ ਤਾਰੀਖ਼",
     "mostNoticeable": "ਅੱਜ ਸਭ ਤੋਂ ਵੱਧ ਧਿਆਨ ਖਿੱਚਣ ਵਾਲੇ:",
     "noSevereSymptoms": "ਅੱਜ ਕਿਸੇ ਵੀ ਚੀਜ਼ ਨੂੰ ਬਹੁਤ ਜ਼ਿਆਦਾ ਗੰਭੀਰ ਨਹੀਂ ਮੰਨਿਆ ਗਿਆ।",
     "scoreExplainTitle": "ਆਪਣੇ ਸਕੋਰ ਨੂੰ ਸਮਝਣਾ",

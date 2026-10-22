@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "سب سے شدید نکات",
     "none": "کوئی نہیں",
-    "assessmentDate": "جائزے کی تاریخ",
+    "assessmentDate": "تکمیل کی تاریخ",
     "mostNoticeable": "آج سب سے نمایاں:",
     "noSevereSymptoms": "آج کسی چیز کو انتہائی شدید نہیں سمجھا گیا۔",
     "scoreExplainTitle": "اپنے اسکور کو سمجھنا",

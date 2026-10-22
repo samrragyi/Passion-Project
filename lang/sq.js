@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Elementët më të rëndë",
     "none": "Asnjë",
-    "assessmentDate": "Data e vlerësimit",
+    "assessmentDate": "Data e plotësimit",
     "mostNoticeable": "Më e dukshme sot:",
     "noSevereSymptoms": "Sot asgjë nuk u vlerësua si jashtëzakonisht e rëndë.",
     "scoreExplainTitle": "Të kuptoni pikët tuaja",

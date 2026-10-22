@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Các mục nặng nhất",
     "none": "Không có",
-    "assessmentDate": "Ngày đánh giá",
+    "assessmentDate": "Ngày hoàn thành",
     "mostNoticeable": "Đáng chú ý nhất hôm nay:",
     "noSevereSymptoms": "Hôm nay không có mục nào được đánh giá là cực kỳ nặng.",
     "scoreExplainTitle": "Hiểu về điểm số của bạn",

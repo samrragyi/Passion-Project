@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "شدیدترین موارد",
     "none": "هیچ",
-    "assessmentDate": "تاریخ ارزیابی",
+    "assessmentDate": "تاریخ تکمیل",
     "mostNoticeable": "امروز بیشتر از همه به چشم می‌آیند:",
     "noSevereSymptoms": "امروز هیچ موردی بسیار شدید ارزیابی نشد.",
     "scoreExplainTitle": "فهمیدن امتیاز شما",

@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "特に重い項目",
     "none": "なし",
-    "assessmentDate": "評価日",
+    "assessmentDate": "記入日",
     "mostNoticeable": "今日いちばん気になる症状:",
     "noSevereSymptoms": "今日は「非常に強い」と評価された項目はありませんでした。",
     "scoreExplainTitle": "スコアの見方",

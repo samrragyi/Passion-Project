@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Dalili kali zaidi",
     "none": "Hakuna",
-    "assessmentDate": "Tarehe ya tathmini",
+    "assessmentDate": "Tarehe ya kukamilisha",
     "mostNoticeable": "Zinazoonekana zaidi leo:",
     "noSevereSymptoms": "Hakuna kilichopimwa kuwa kali mno leo.",
     "scoreExplainTitle": "Kuelewa alama yako",

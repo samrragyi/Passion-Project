@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "最嚴重嘅項目",
     "none": "冇",
-    "assessmentDate": "評估日期",
+    "assessmentDate": "完成日期",
     "mostNoticeable": "今日最明顯嘅症狀：",
     "noSevereSymptoms": "今日冇任何項目被評為極度嚴重。",
     "scoreExplainTitle": "了解你嘅分數",

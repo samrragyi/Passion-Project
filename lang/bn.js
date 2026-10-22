@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "সবচেয়ে তীব্র বিষয়গুলো",
     "none": "কিছু নেই",
-    "assessmentDate": "মূল্যায়নের তারিখ",
+    "assessmentDate": "পূরণের তারিখ",
     "mostNoticeable": "আজ সবচেয়ে লক্ষণীয়:",
     "noSevereSymptoms": "আজ কোনো কিছুই অত্যন্ত তীব্র হিসেবে মূল্যায়ন করা হয়নি।",
     "scoreExplainTitle": "আপনার স্কোর বোঝা",

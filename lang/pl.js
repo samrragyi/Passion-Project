@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Najbardziej nasilone objawy",
     "none": "Brak",
-    "assessmentDate": "Data oceny",
+    "assessmentDate": "Data wypełnienia",
     "mostNoticeable": "Najbardziej zauważalne dziś:",
     "noSevereSymptoms": "Dziś nic nie zostało ocenione jako skrajnie nasilone.",
     "scoreExplainTitle": "Jak rozumieć swój wynik",

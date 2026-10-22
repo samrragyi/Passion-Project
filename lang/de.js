@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Am stärksten belastende Punkte",
     "none": "Keine",
-    "assessmentDate": "Datum der Einschätzung",
+    "assessmentDate": "Ausgefüllt am",
     "mostNoticeable": "Am deutlichsten heute:",
     "noSevereSymptoms": "Heute wurde nichts als äußerst stark bewertet.",
     "scoreExplainTitle": "Ihre Punktzahl verstehen",

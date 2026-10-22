@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "أشد العناصر",
     "none": "مفيش",
-    "assessmentDate": "تاريخ التقييم",
+    "assessmentDate": "تاريخ الإكمال",
     "mostNoticeable": "الأوضح النهاردة:",
     "noSevereSymptoms": "مفيش حاجة اتقيّمت إنها شديدة جداً النهاردة.",
     "scoreExplainTitle": "فهم نتيجتك",

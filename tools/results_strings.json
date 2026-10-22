@@ -27,7 +27,7 @@
       "noSevereSymptoms": "Nothing was rated as extremely severe today.",
       "flagged": "Highest-severity items",
       "none": "None",
-      "assessmentDate": "Assessment date",
+      "assessmentDate": "Date completed",
       "bands": [
         "Mild Burden Index",
         "Moderate Burden Index",
@@ -36,7 +36,7 @@
     },
     "hi": {
       "resultsIntro": "यह रहा आपके उत्तरों का अवलोकन। नीचे दिया गया अंग्रेज़ी सारांश अपने डॉक्टर को दिखाएं।",
-      "assessmentDate": "मूल्यांकन की तारीख"
+      "assessmentDate": "पूरा करने की तारीख"
     },
     "fr": {
       "resultsTitle": "Votre synthèse",
@@ -50,7 +50,7 @@
       "noSevereSymptoms": "Rien n’a été évalué comme extrêmement sévère aujourd’hui.",
       "flagged": "Éléments les plus sévères",
       "none": "Aucun",
-      "assessmentDate": "Date d’évaluation",
+      "assessmentDate": "Date de remplissage",
       "bands": [
         "Indice de charge symptomatique léger",
         "Indice de charge symptomatique modéré",
@@ -69,7 +69,7 @@
       "noSevereSymptoms": "Heute wurde nichts als äußerst stark bewertet.",
       "flagged": "Am stärksten belastende Punkte",
       "none": "Keine",
-      "assessmentDate": "Datum der Einschätzung",
+      "assessmentDate": "Ausgefüllt am",
       "bands": [
         "Leichter Symptomlast-Index",
         "Mäßiger Symptomlast-Index",
@@ -88,7 +88,7 @@
       "noSevereSymptoms": "Hoy nada se calificó como extremadamente intenso.",
       "flagged": "Elementos de mayor gravedad",
       "none": "Ninguno",
-      "assessmentDate": "Fecha de evaluación",
+      "assessmentDate": "Fecha de cumplimentación",
       "bands": [
         "Índice de carga de síntomas leve",
         "Índice de carga de síntomas moderado",
@@ -107,7 +107,7 @@
       "noSevereSymptoms": "Nada foi avaliado como extremamente intenso hoje.",
       "flagged": "Itens de maior intensidade",
       "none": "Nenhum",
-      "assessmentDate": "Data da avaliação",
+      "assessmentDate": "Data de preenchimento",
       "bands": [
         "Índice de carga de sintomas leve",
         "Índice de carga de sintomas moderado",
@@ -126,7 +126,7 @@
       "noSevereSymptoms": "Nada foi avaliado como extremamente intenso hoje.",
       "flagged": "Itens de maior gravidade",
       "none": "Nenhum",
-      "assessmentDate": "Data da avaliação",
+      "assessmentDate": "Data de preenchimento",
       "bands": [
         "Índice de carga de sintomas ligeiro",
         "Índice de carga de sintomas moderado",
@@ -145,7 +145,7 @@
       "noSevereSymptoms": "Astăzi nimic nu a fost evaluat ca extrem de sever.",
       "flagged": "Cele mai severe elemente",
       "none": "Niciunul",
-      "assessmentDate": "Data evaluării",
+      "assessmentDate": "Data completării",
       "bands": [
         "Indice de povară a simptomelor ușor",
         "Indice de povară a simptomelor moderat",
@@ -164,7 +164,7 @@
       "noSevereSymptoms": "Dziś nic nie zostało ocenione jako skrajnie nasilone.",
       "flagged": "Najbardziej nasilone objawy",
       "none": "Brak",
-      "assessmentDate": "Data oceny",
+      "assessmentDate": "Data wypełnienia",
       "bands": [
         "Łagodny wskaźnik obciążenia objawami",
         "Umiarkowany wskaźnik obciążenia objawami",
@@ -183,7 +183,7 @@
       "noSevereSymptoms": "Sot asgjë nuk u vlerësua si jashtëzakonisht e rëndë.",
       "flagged": "Elementët më të rëndë",
       "none": "Asnjë",
-      "assessmentDate": "Data e vlerësimit",
+      "assessmentDate": "Data e plotësimit",
       "bands": [
         "Indeks i lehtë i barrës së simptomave",
         "Indeks i moderuar i barrës së simptomave",
@@ -202,7 +202,7 @@
       "noSevereSymptoms": "Walang naitalang lubhang malala ngayon.",
       "flagged": "Mga pinakamalalang aytem",
       "none": "Wala",
-      "assessmentDate": "Petsa ng pagtatasa",
+      "assessmentDate": "Petsa ng pagkumpleto",
       "bands": [
         "Banayad na indeks ng bigat ng sintomas",
         "Katamtamang indeks ng bigat ng sintomas",
@@ -221,7 +221,7 @@
       "noSevereSymptoms": "Hôm nay không có mục nào được đánh giá là cực kỳ nặng.",
       "flagged": "Các mục nặng nhất",
       "none": "Không có",
-      "assessmentDate": "Ngày đánh giá",
+      "assessmentDate": "Ngày hoàn thành",
       "bands": [
         "Chỉ số gánh nặng triệu chứng nhẹ",
         "Chỉ số gánh nặng triệu chứng trung bình",
@@ -240,7 +240,7 @@
       "noSevereSymptoms": "今日は「非常に強い」と評価された項目はありませんでした。",
       "flagged": "特に重い項目",
       "none": "なし",
-      "assessmentDate": "評価日",
+      "assessmentDate": "記入日",
       "bands": [
         "症状負担指数（軽度）",
         "症状負担指数（中等度）",
@@ -259,7 +259,7 @@
       "noSevereSymptoms": "오늘은 매우 심하다고 평가된 항목이 없습니다.",
       "flagged": "가장 심한 항목",
       "none": "없음",
-      "assessmentDate": "평가 날짜",
+      "assessmentDate": "작성일",
       "bands": [
         "경도 증상 부담 지수",
         "중등도 증상 부담 지수",
@@ -278,7 +278,7 @@
       "noSevereSymptoms": "今天没有任何项目被评为极其严重。",
       "flagged": "最严重的项目",
       "none": "无",
-      "assessmentDate": "评估日期",
+      "assessmentDate": "完成日期",
       "bands": [
         "轻度症状负担指数",
         "中度症状负担指数",
@@ -297,7 +297,7 @@
       "noSevereSymptoms": "今日冇任何項目被評為極度嚴重。",
       "flagged": "最嚴重嘅項目",
       "none": "冇",
-      "assessmentDate": "評估日期",
+      "assessmentDate": "完成日期",
       "bands": [
         "輕度症狀負擔指數",
         "中度症狀負擔指數",
@@ -316,7 +316,7 @@
       "noSevereSymptoms": "今日冇任何項目被評為極度嚴重。",
       "flagged": "最嚴重嘅項目",
       "none": "冇",
-      "assessmentDate": "評估日期",
+      "assessmentDate": "完成日期",
       "bands": [
         "輕度症狀負擔指數",
         "中度症狀負擔指數",
@@ -335,7 +335,7 @@
       "noSevereSymptoms": "今天没有任何项目被评为极其严重。",
       "flagged": "最严重的项目",
       "none": "无",
-      "assessmentDate": "评估日期",
+      "assessmentDate": "完成日期",
       "bands": [
         "轻度症状负担指数",
         "中度症状负担指数",
@@ -354,7 +354,7 @@
       "noSevereSymptoms": "今天没有任何项目被评为极其严重。",
       "flagged": "最严重的项目",
       "none": "无",
-      "assessmentDate": "评估日期",
+      "assessmentDate": "完成日期",
       "bands": [
         "轻度症状负担指数",
         "中度症状负担指数",
@@ -373,7 +373,7 @@
       "noSevereSymptoms": "আজ কোনো কিছুই অত্যন্ত তীব্র হিসেবে মূল্যায়ন করা হয়নি।",
       "flagged": "সবচেয়ে তীব্র বিষয়গুলো",
       "none": "কিছু নেই",
-      "assessmentDate": "মূল্যায়নের তারিখ",
+      "assessmentDate": "পূরণের তারিখ",
       "bands": [
         "মৃদু লক্ষণ-ভার সূচক",
         "মাঝারি লক্ষণ-ভার সূচক",
@@ -392,7 +392,7 @@
       "noSevereSymptoms": "আজ কোনো কিছুই অত্যন্ত তীব্র হিসেবে মূল্যায়ন করা হয়নি।",
       "flagged": "সবচেয়ে তীব্র বিষয়গুলো",
       "none": "কিছু নেই",
-      "assessmentDate": "মূল্যায়নের তারিখ",
+      "assessmentDate": "পূরণের তারিখ",
       "bands": [
         "মৃদু লক্ষণ-ভার সূচক",
         "মাঝারি লক্ষণ-ভার সূচক",
@@ -411,7 +411,7 @@
       "noSevereSymptoms": "ਅੱਜ ਕਿਸੇ ਵੀ ਚੀਜ਼ ਨੂੰ ਬਹੁਤ ਜ਼ਿਆਦਾ ਗੰਭੀਰ ਨਹੀਂ ਮੰਨਿਆ ਗਿਆ।",
       "flagged": "ਸਭ ਤੋਂ ਗੰਭੀਰ ਚੀਜ਼ਾਂ",
       "none": "ਕੋਈ ਨਹੀਂ",
-      "assessmentDate": "ਮੁਲਾਂਕਣ ਦੀ ਤਾਰੀਖ਼",
+      "assessmentDate": "ਪੂਰਾ ਕਰਨ ਦੀ ਤਾਰੀਖ਼",
       "bands": [
         "ਹਲਕਾ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ",
         "ਦਰਮਿਆਨਾ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ",
@@ -430,7 +430,7 @@
       "noSevereSymptoms": "आज कुनै पनि कुरा अत्यन्त गम्भीर भनेर मूल्याङ्कन गरिएन।",
       "flagged": "सबैभन्दा गम्भीर विषयहरू",
       "none": "कुनै पनि छैन",
-      "assessmentDate": "मूल्याङ्कन मिति",
+      "assessmentDate": "पूरा गरेको मिति",
       "bands": [
         "हल्का लक्षण-भार सूचक",
         "मध्यम लक्षण-भार सूचक",
@@ -449,7 +449,7 @@
       "noSevereSymptoms": "آج کسی چیز کو انتہائی شدید نہیں سمجھا گیا۔",
       "flagged": "سب سے شدید نکات",
       "none": "کوئی نہیں",
-      "assessmentDate": "جائزے کی تاریخ",
+      "assessmentDate": "تکمیل کی تاریخ",
       "bands": [
         "ہلکا علامتی بوجھ اشاریہ",
         "درمیانہ علامتی بوجھ اشاریہ",
@@ -468,7 +468,7 @@
       "noSevereSymptoms": "امروز هیچ موردی بسیار شدید ارزیابی نشد.",
       "flagged": "شدیدترین موارد",
       "none": "هیچ",
-      "assessmentDate": "تاریخ ارزیابی",
+      "assessmentDate": "تاریخ تکمیل",
       "bands": [
         "شاخص خفیف بار علائم",
         "شاخص متوسط بار علائم",
@@ -487,7 +487,7 @@
       "noSevereSymptoms": "مفيش حاجة اتقيّمت إنها شديدة جداً النهاردة.",
       "flagged": "أشد العناصر",
       "none": "مفيش",
-      "assessmentDate": "تاريخ التقييم",
+      "assessmentDate": "تاريخ الإكمال",
       "bands": [
         "مؤشر عبء الأعراض الخفيف",
         "مؤشر عبء الأعراض المتوسط",
@@ -506,7 +506,7 @@
       "noSevereSymptoms": "ما انقيّم شي إنه شديد مرة اليوم.",
       "flagged": "أشد العناصر",
       "none": "ما في شي",
-      "assessmentDate": "تاريخ التقييم",
+      "assessmentDate": "تاريخ الإكمال",
       "bands": [
         "مؤشر عبء الأعراض الخفيف",
         "مؤشر عبء الأعراض المتوسط",
@@ -525,7 +525,7 @@
       "noSevereSymptoms": "ما فيه شي انقيّم إنه شديد جداً اليوم.",
       "flagged": "أشد العناصر",
       "none": "ما فيه شي",
-      "assessmentDate": "تاريخ التقييم",
+      "assessmentDate": "تاريخ الإكمال",
       "bands": [
         "مؤشر عبء الأعراض الخفيف",
         "مؤشر عبء الأعراض المتوسط",
@@ -544,7 +544,7 @@
       "noSevereSymptoms": "Hakuna kilichopimwa kuwa kali mno leo.",
       "flagged": "Dalili kali zaidi",
       "none": "Hakuna",
-      "assessmentDate": "Tarehe ya tathmini",
+      "assessmentDate": "Tarehe ya kukamilisha",
       "bands": [
         "Kiashiria cha Mzigo Dhaifu",
         "Kiashiria cha Mzigo wa Wastani",

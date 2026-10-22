@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Éléments les plus sévères",
     "none": "Aucun",
-    "assessmentDate": "Date d’évaluation",
+    "assessmentDate": "Date de remplissage",
     "mostNoticeable": "Le plus marquant aujourd’hui :",
     "noSevereSymptoms": "Rien n’a été évalué comme extrêmement sévère aujourd’hui.",
     "scoreExplainTitle": "Comprendre votre score",

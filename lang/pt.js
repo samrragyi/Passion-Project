@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Itens de maior gravidade",
     "none": "Nenhum",
-    "assessmentDate": "Data da avaliação",
+    "assessmentDate": "Data de preenchimento",
     "mostNoticeable": "Mais notório hoje:",
     "noSevereSymptoms": "Nada foi avaliado como extremamente intenso hoje.",
     "scoreExplainTitle": "Compreender a sua pontuação",

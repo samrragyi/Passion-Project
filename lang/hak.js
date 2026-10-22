@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "最严重的项目",
     "none": "无",
-    "assessmentDate": "评估日期",
+    "assessmentDate": "完成日期",
     "mostNoticeable": "今天最明显的症状：",
     "noSevereSymptoms": "今天没有任何项目被评为极其严重。",
     "scoreExplainTitle": "了解您的得分",

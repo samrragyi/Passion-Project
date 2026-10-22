@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "स्कोर",
     "flagged": "सबसे गंभीर लक्षण",
     "none": "कोई नहीं",
-    "assessmentDate": "मूल्यांकन की तारीख",
+    "assessmentDate": "पूरा करने की तारीख",
     "mostNoticeable": "आज सबसे अधिक ध्यान देने योग्य:",
     "noSevereSymptoms": "आज किसी भी लक्षण को बेहद गंभीर नहीं आंका गया।",
     "scoreExplainTitle": "अपने स्कोर को समझना",

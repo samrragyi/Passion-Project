@@ -37,7 +37,7 @@ window.registerLanguage({
     "score": "Score",
     "flagged": "Cele mai severe elemente",
     "none": "Niciunul",
-    "assessmentDate": "Data evaluării",
+    "assessmentDate": "Data completării",
     "mostNoticeable": "Cel mai vizibil astăzi:",
     "noSevereSymptoms": "Astăzi nimic nu a fost evaluat ca extrem de sever.",
     "scoreExplainTitle": "Înțelegerea scorului dumneavoastră",
