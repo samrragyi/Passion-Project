@@ -63,7 +63,7 @@ window.registerLanguage({
     "consentLabel": "मैं समझती/समझता हूं।",
     "finalNoticeTitle": "रोगी के लिए सूचना",
     "finalNoticeFrameworkLabel": "फ्रेमवर्क:",
-    "finalNoticeFramework": "यह ओपन-सोर्स, रोगी-नेतृत्व वाली चेकलिस्ट के माध्यम से तैयार किया गया है, जिसे Greene Climacteric Scale के डोमेन और यूके NICE दिशानिर्देश (NG23) के अनुसार मैप किया गया है। इसे एक सिम्पटम बर्डन इंडेक्स (0–45, 15 डोमेन में) के रूप में स्कोर किया जाता है: 0–11 हल्का, 12–26 मध्यम, 27–45 गंभीर। यह उपकरण निदान प्रदान नहीं करता। यह आपके बताए गए लक्षणों को एक संक्षिप्त परामर्श का अधिकतम लाभ उठाने में मदद के लिए व्यवस्थित करता है।",
+    "finalNoticeFramework": "Generated via an open-source, patient-led checklist adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "रोगी सूचना:",
     "finalNoticePatient": "यह सारांश रिपोर्ट आपके आगामी डॉक्टर अपॉइंटमेंट के लिए आपके द्वारा बताए गए लक्षणों को एक संरचित अवलोकन में व्यवस्थित करती है। इसे अपने डॉक्टर को दिखाने से किसी विशेष निदान या नुस्खे की गारंटी नहीं मिलती।",
     "finalNoticeConfidentialityLabel": "डेटा गोपनीयता:",

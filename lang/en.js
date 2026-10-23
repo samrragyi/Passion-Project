@@ -63,7 +63,7 @@ window.registerLanguage({
     "consentLabel": "I understand.",
     "finalNoticeTitle": "Notice for Patient",
     "finalNoticeFrameworkLabel": "Framework:",
-    "finalNoticeFramework": "Generated via an open-source, patient-led checklist mapped to the domains of the Greene Climacteric Scale and UK NICE Guidelines (NG23). Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticeFramework": "Generated via an open-source, patient-led checklist adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "Patient Notice:",
     "finalNoticePatient": "This summary report organises your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your doctor does not guarantee a specific diagnosis or prescription.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",
@@ -151,7 +151,7 @@ window.registerLanguage({
     }
   ],
   "disclaimer": "This tool provides a snapshot of your symptom burden for informational and educational purposes only. It does not provide a medical diagnosis, treatment plan or prescription advice.",
-  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been designed with reference to NICE guideline NG23 on menopause diagnosis and management.",
+  "safetyNote": "Your answers stay only in your browser and are never sent or stored anywhere. This tool has been informed by the symptom list in NICE guideline NG23.",
   "howItWorks": [
     "Listen to the Voice Note: Click the audio button above each question to hear the prompt read aloud in your language.",
     "Select Your Symptom Severity: Choose the button below each question that best describes your experience over the past month:",
