@@ -160,19 +160,19 @@ window.registerLanguage({
   "severityLegend": [
     {
       "label": "Green",
-      "desc": "No symptom is present or it causes no issue."
+      "desc": "No symptom present or causes no issue."
     },
     {
       "label": "Yellow",
-      "desc": "A mild symptom is present, but it is barely noticeable or only occasionally noticeable."
+      "desc": "Mild symptom is present and is little or only occasionally noticeable."
     },
     {
       "label": "Amber",
-      "desc": "A moderate symptom is quite noticeable, occurs regularly or is manageable but disruptive."
+      "desc": "Moderate symptom, which is quite noticeable, occurs regularly or is manageable but disruptive."
     },
     {
       "label": "Red",
-      "desc": "A severe symptom is present. The discomfort is extreme, is frequent or significantly affects daily life, sleep or wellbeing."
+      "desc": "Severe symptom exists. Discomfort is extreme, frequent or significantly affects daily life, sleep or wellbeing."
     }
   ]
 });

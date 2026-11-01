@@ -104,5 +104,9 @@ def bump_asset_version(repo):
 # The builder normally refuses those (see build_pack), so list the previous wording here: the build is then accepted with a WARN
 # telling the owner to check that the translator did not carry the old wording over (e.g. "GP").
 LEGACY_ENGLISH = {
+    "legend1_desc": ["No symptom is present or it causes no issue."],
+    "legend2_desc": ["A mild symptom is present, but it is barely noticeable or only occasionally noticeable."],
+    "legend3_desc": ["A moderate symptom is quite noticeable, occurs regularly or is manageable but disruptive."],
+    "legend4_desc": ["A severe symptom is present. The discomfort is extreme, is frequent or significantly affects daily life, sleep or wellbeing."],
     "how3": ["Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your GP during your appointment."],
 }
