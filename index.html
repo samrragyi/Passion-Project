@@ -59,8 +59,9 @@
   button{font-family:inherit;}
 
   /* ---------- top bar ---------- */
+  .top-stack{ position:sticky; top:0; z-index:30; }
   .sticky-header{
-    position:sticky; top:0; z-index:20;
+    position:relative; z-index:auto;
     background:rgba(238,235,223,0.94);
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
@@ -273,7 +274,7 @@
   .q-section-num{ font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em; }
   .q-section-sep{ display:none; }
   .q-section-name{ font-size:clamp(1.5rem,5.2vw,1.8rem); line-height:1.2; min-width:0; overflow-wrap:break-word; hyphens:auto; -webkit-hyphens:auto; }
-  .q-block{ margin-bottom:6px; scroll-margin-top:84px; }
+  .q-block{ margin-bottom:6px; scroll-margin-top:var(--topstack,130px); }
   .q-subcount{ font-size:0.78rem; color:var(--ink-soft); margin:0 0 4px; }
   .q-divider{ border:none; border-top:1px solid var(--line); margin:22px 0; }
   .q-title-row{
@@ -556,7 +557,7 @@
   .prototype-banner{
     background:#FBEAEA; border-bottom:2px dashed #B8302A; color:#8A1F1F;
     text-align:center; font-size:0.72rem; font-weight:700; letter-spacing:0.03em;
-    text-transform:uppercase; padding:7px 14px; position:relative; z-index:30;
+    text-transform:uppercase; padding:7px 14px;
   }
 
   footer.page-footer{
@@ -569,6 +570,7 @@
     /* Keep every colour (score card, answer chips, severity colours) when printing or saving as PDF.
        Without this, browsers drop all background colours by default. The paper itself stays white. */
     *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .top-stack{ position:static !important; }
     .sticky-header, .cta-row, .gp-actions, footer.page-footer{ display:none !important; }
     .print-help, .doc-divider, .next-hint{ display:none !important; }
     .collapsible-body[hidden]{ display:block !important; }   /* collapsed boxes always print in full */
@@ -635,6 +637,7 @@
 </head>
 <body>
 
+<div class="top-stack" id="topStack">
 <div class="prototype-banner" id="prototypeBanner" dir="ltr">Prototype — for design feedback only. Not for medical use. Test data only.</div>
 
 <div class="sticky-header" dir="ltr">
@@ -650,6 +653,7 @@
   </div>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 </div>
+</div><!-- /top-stack -->
 
 <main>
   <div class="speed-bar" id="speedBar" role="group" aria-label="Audio speed" hidden>
@@ -986,6 +990,7 @@ function renderCurrentScreen(){
   document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
   stopAllPlayback();
   window.scrollTo(0, 0);
+  setTopStack();
 
   document.querySelector(".sticky-header").classList.toggle("home-mode", currentStep === STEP_LANGUAGE);
 
@@ -1347,7 +1352,7 @@ function renderResults(){
   document.getElementById("printHelp").textContent = nui("printHelp");
 
   /* GP summary - always English */
-  document.getElementById("gpSummaryNote").textContent = tr.ui.gpSummaryNote +
+  document.getElementById("gpSummaryNote").textContent = T.en.ui.gpSummaryNote +
     " (Patient completed this form in: " + trLang.name + ")";
   document.querySelector('[data-fixed="item"]').textContent = T.en.ui.item;
   document.querySelector('[data-fixed="severity"]').textContent = T.en.ui.severity;
@@ -1421,6 +1426,12 @@ loadLanguage("en").then(()=>{
   document.getElementById("screen-language").insertAdjacentHTML("afterbegin",
     '<p class="lang-error" role="alert">Sorry, the app could not load its language files. Please reload the page.</p>');
 });
+function setTopStack(){
+  const el = document.getElementById("topStack");
+  if(el) document.documentElement.style.setProperty("--topstack", (el.offsetHeight + 12) + "px");
+}
+window.addEventListener("resize", setTopStack);
+window.addEventListener("load", setTopStack);
 </script>
 </body>
 </html>

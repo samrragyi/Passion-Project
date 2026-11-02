@@ -27,7 +27,7 @@ window.registerLanguage({
     "resultsTitle": "Your summary",
     "resultsIntro": "Here is an overview of your answers. Show the section below to your doctor.",
     "gpSummaryTitle": "Summary for your doctor (English)",
-    "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly.",
+    "gpSummaryNote": "This summary is generated automatically in English so your doctor can read it quickly. It is not medical advice. The overall score adds up all your answers. A low score can still include one severe symptom.",
     "printButton": "Print / Save as PDF",
     "restartButton": "Start again",
     "overallLabel": "Overall score",
@@ -84,7 +84,7 @@ window.registerLanguage({
     "Menstrual Baseline & Vasomotor",
     "Cognitive & Neurological",
     "Somatic & Physical",
-    "Mucosal, Skin & Immune (Hidden Markers)",
+    "Skin, Eyes, Mouth & Allergies",
     "Psychological & Mood",
     "Urogenital & Sexual"
   ],
