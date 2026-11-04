@@ -108,5 +108,7 @@ LEGACY_ENGLISH = {
     "legend2_desc": ["A mild symptom is present, but it is barely noticeable or only occasionally noticeable."],
     "legend3_desc": ["A moderate symptom is quite noticeable, occurs regularly or is manageable but disruptive."],
     "legend4_desc": ["A severe symptom is present. The discomfort is extreme, is frequent or significantly affects daily life, sleep or wellbeing."],
+    "sec4": ["Mucosal, Skin & Immune (Hidden Markers)"],
+    "q14_t": ["Intimate Discomfort & Libido"],
     "how3": ["Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your GP during your appointment."],
 }

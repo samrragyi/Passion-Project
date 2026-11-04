@@ -53,6 +53,9 @@ window.registerLanguage({
     "nextHint": "Now press {next} to continue.",
     "printHelp": "If nothing happens, open this page in your phone's browser (Safari or Chrome) and use Share, then Print.",
     "forDoctorHeading": "For your doctor: summary in English",
+    "startOverMessage": "Start again? All your answers will be cleared.",
+    "startOverYes": "Yes, start again",
+    "startOverNo": "No, keep my answers",
     "languagePageTitle": "Select your language",
     "languagePageSub": "Choose a language to continue. You can change it at any time from the menu at the top of the page.",
     "homeLabel": "Home",
@@ -142,7 +145,7 @@ window.registerLanguage({
       "q": "How severely is your sleep disrupted by waking up early (e.g., 2:00–4:00 AM) and being unable to settle back to sleep?"
     },
     {
-      "t": "Intimate Discomfort & Libido",
+      "t": "Intimate Discomfort & Loss of Desire",
       "q": "How severe is dryness, itching or irritation in intimate areas or an uncharacteristic drop in sexual desire/sensation?"
     },
     {

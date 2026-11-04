@@ -71,11 +71,15 @@ def build_pack(code, settings, tr, en_tpl, repo):
             if norm(en_tpl.get(fid)) in [norm(x) for x in S.LEGACY_ENGLISH.get(fid, [])]: legacy_used.append(fid)   # issued before a rewording: accept, but warn
             else: drift.append(fid)
     for i, sid in enumerate(S.SECTION_IDS):
-        if en_tpl.get(sid) != base["sections"][i]: drift.append(sid)
+        if en_tpl.get(sid) != base["sections"][i]:
+            if norm(en_tpl.get(sid)) in [norm(x) for x in S.LEGACY_ENGLISH.get(sid, [])]: legacy_used.append(sid)   # section renamed after the template was issued
+            else: drift.append(sid)
     for i, qid in enumerate(S.QUESTION_IDS):
-        if en_tpl.get(qid + "_t") != base["questions"][i]["t"] or en_tpl.get(qid + "_q") != base["questions"][i]["q"]: drift.append(qid)
+        t_old = en_tpl.get(qid + "_t") != base["questions"][i]["t"]; q_old = en_tpl.get(qid + "_q") != base["questions"][i]["q"]
+        if t_old and not q_old and norm(en_tpl.get(qid + "_t")) in [norm(x) for x in S.LEGACY_ENGLISH.get(qid + "_t", [])]: legacy_used.append(qid + "_t")   # title reworded after the template was issued
+        elif t_old or q_old: drift.append(qid)
     if drift: err(f"template's English no longer matches the app ({len(drift)} cells, e.g. {', '.join(drift[:4])}). Regenerate the template with tools/make_template.py and copy the translations across.")
-    if legacy_used: warn(f"this template was issued with older English wording for: {', '.join(legacy_used)}. The build is accepted, but check the translator's text for that field does not still refer to a 'GP' (the English now says 'doctor').")
+    if legacy_used: warn(f"this template was issued with older English wording for: {', '.join(legacy_used)}. The build is accepted, but check the translator's text for those fields still fits the current English (for example no 'GP', and a renamed section or question title).")
     missing, same, drafted = [], [], []
     common = S.common_for(code); supplied = set(S.load_common()["supplied"].get(code, []))
     def put(fid, path, kind="plain"):

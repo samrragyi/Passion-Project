@@ -156,6 +156,14 @@
   }
   .btn-ghost:hover{ background:var(--sage-pale); border-color:var(--forest-dim); }
   .btn-back svg{ width:15px; height:15px; flex:none; }
+  /* "Start again?" prompt: stops an accidental tap on Home / Back / Restart from wiping her answers */
+  .confirm-backdrop{ position:fixed; inset:0; z-index:100; background:rgba(36,38,31,0.55); display:flex; align-items:center; justify-content:center; padding:20px; }
+  .confirm-backdrop[hidden]{ display:none; }
+  .confirm-box{ background:var(--panel); border-radius:16px; padding:22px 20px; max-width:360px; width:100%; box-shadow:0 10px 40px rgba(0,0,0,0.25); }
+  .confirm-box p{ margin:0 0 18px; font-size:1.05rem; line-height:1.45; color:var(--forest); overflow-wrap:break-word; }
+  .confirm-actions{ display:flex; flex-direction:column; gap:10px; }
+  .confirm-actions .btn{ width:100%; justify-content:center; }
+  @media print{ .confirm-backdrop{ display:none !important; } }
   [dir="rtl"] .btn-back svg{ transform:scaleX(-1); }
   .btn[disabled]{ opacity:0.4; cursor:not-allowed; }
   #instrContinueBtn[disabled]{ pointer-events:none; }   /* so a tap on the locked Start button reaches .nav-row and can flash the checkbox */
@@ -795,6 +803,16 @@
   </footer>
 </main>
 
+<div class="confirm-backdrop" id="confirmBackdrop" hidden>
+  <div class="confirm-box" role="alertdialog" aria-modal="true" aria-labelledby="confirmMsg">
+    <p id="confirmMsg"></p>
+    <div class="confirm-actions">
+      <button type="button" class="btn" id="confirmNo"></button>
+      <button type="button" class="btn btn-ghost" id="confirmYes"></button>
+    </div>
+  </div>
+</div>
+
 <script src="languages.js"></script>
 <script>
 /* ============ LANGUAGE LOADING ============
@@ -885,6 +903,7 @@ function buildLanguagePicker(){
       langError.hidden = true;
       document.querySelectorAll(".lang-card").forEach(c=>c.classList.remove("selected"));
       card.classList.add("selected");
+      startFresh();
       loadLanguage(l.code).then(()=>{
         currentLang = l.code;
         applyLanguage();
@@ -939,13 +958,45 @@ function applyLanguage(){
 }
 
 /* ---------- navigation ---------- */
+/* Every return to the language screen (Home, Back from page 2, Restart, or choosing a language) is a fresh start:
+   all answers and the consent tick are cleared (memory only, nothing is stored). */
+function startFresh(){
+  answers = new Array(15).fill(null);
+  consentCheck.checked = false; instrContinueBtn.disabled = true;
+  voiceDiscovered = false; nextDiscovered = false;   // a new person (shared laptop): the glowing audio button and the Next hint show again
+}
+/* Ask before wiping answers (only when there are some). The safe choice ("keep my answers") has the focus. */
+let confirmAction = null, confirmReturnFocus = null;
+function askStartOver(onYes){
+  if(!answers.some(a => a !== null)){ onYes(); return; }
+  const u = T[currentLang].ui, e = T.en.ui;
+  document.getElementById("confirmMsg").textContent = u.startOverMessage || e.startOverMessage;
+  document.getElementById("confirmYes").textContent = u.startOverYes || e.startOverYes;
+  document.getElementById("confirmNo").textContent = u.startOverNo || e.startOverNo;
+  confirmAction = onYes; confirmReturnFocus = document.activeElement;
+  document.getElementById("confirmBackdrop").hidden = false;
+  document.getElementById("confirmNo").focus();
+}
+function closeConfirm(){
+  document.getElementById("confirmBackdrop").hidden = true; confirmAction = null;
+  if(confirmReturnFocus && confirmReturnFocus.focus) confirmReturnFocus.focus();
+}
+document.getElementById("confirmNo").addEventListener("click", closeConfirm);
+document.getElementById("confirmYes").addEventListener("click", ()=>{ const go = confirmAction; closeConfirm(); if(go) go(); });
+document.getElementById("confirmBackdrop").addEventListener("click", e=>{ if(e.target.id === "confirmBackdrop") closeConfirm(); });
+document.addEventListener("keydown", e=>{
+  if(document.getElementById("confirmBackdrop").hidden) return;
+  if(e.key === "Escape"){ closeConfirm(); return; }
+  if(e.key === "Tab"){ const a = document.getElementById("confirmNo"), b = document.getElementById("confirmYes");
+    e.preventDefault(); (document.activeElement === a ? b : a).focus(); }
+});
 document.getElementById("homeBtn").addEventListener("click", ()=>{
-  currentStep = STEP_LANGUAGE; renderCurrentScreen();
+  askStartOver(()=>{ startFresh(); currentStep = STEP_LANGUAGE; renderCurrentScreen(); });
 });
 const consentCheck = document.getElementById("consentCheck");
 const instrContinueBtn = document.getElementById("instrContinueBtn");
 consentCheck.addEventListener("change", ()=>{ instrContinueBtn.disabled = !consentCheck.checked; });
-document.getElementById("instrBackBtn").addEventListener("click", ()=>{ currentStep = STEP_LANGUAGE; renderCurrentScreen(); });
+document.getElementById("instrBackBtn").addEventListener("click", ()=>{ askStartOver(()=>{ startFresh(); currentStep = STEP_LANGUAGE; renderCurrentScreen(); }); });
 /* Tapping the locked Start button makes the "I understand" box flash and scroll into view (no words, so it works in every language) */
 function flashConsent(){
   const row = document.querySelector(".consent-row");
@@ -975,9 +1026,8 @@ document.getElementById("nextBtn").addEventListener("click", ()=>{
   else { currentStep = STEP_RESULTS; renderResults(); renderCurrentScreen(); }
 });
 document.getElementById("restartBtn").addEventListener("click", ()=>{
-  answers = new Array(15).fill(null);
-  consentCheck.checked = false; instrContinueBtn.disabled = true;
-  currentStep = STEP_LANGUAGE; renderCurrentScreen();
+  askStartOver(()=>{ startFresh();
+  currentStep = STEP_LANGUAGE; renderCurrentScreen(); });
 });
 document.getElementById("printBtn").addEventListener("click", ()=> window.print());
 document.getElementById("screen-results").addEventListener("click", (e)=>{      // tap-to-open boxes on the results page
@@ -1259,12 +1309,14 @@ function pickCalmFemaleVoice(langTag){
 
 /* welcome/instructions page voice-over (fixed button, always present) */
 document.querySelector('.voice-icon-btn[data-voice-key="instructions"]').addEventListener("click", (e)=>{
+  voiceDiscovered = true; updateVoicePulse();   // tapping any audio button ends the glowing hint (it returns for the next person after a restart)
   toggleVoiceForBtn(e.currentTarget, "instructions");
 });
 
 /* section-heading voice-over (fixed button; its data-voice-key is updated
    to "s"+secPageIdx on every renderSectionPage call) */
 document.getElementById("sectionVoiceBtn").addEventListener("click", (e)=>{
+  voiceDiscovered = true; updateVoicePulse();
   toggleVoiceForBtn(e.currentTarget, e.currentTarget.getAttribute("data-voice-key"));
 });
 

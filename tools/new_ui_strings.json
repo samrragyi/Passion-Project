@@ -1,5 +1,5 @@
 {
-  "_comment": "Interface strings added 13 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: have a native speaker check it. Keys: myAnswersTitle, myAnswersNote (the 'Your answers' block on the results page), multiSymptomHint (the on-screen line on page 2). Applied to the language packs by tools/apply_new_ui_strings.py (also run it after building pt-br and pt). 17 Oct 2026 (Phase 1 of the Hindi tester's feedback): listenLabelIntro, listenLabelQ1, nextHint ({next} = the language's own Next button label), printHelp, forDoctorHeading; every non-English line is a MACHINE DRAFT by Claude.",
+  "_comment": "Interface strings added 13 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: have a native speaker check it. Keys: myAnswersTitle, myAnswersNote (the 'Your answers' block on the results page), multiSymptomHint (the on-screen line on page 2). Applied to the language packs by tools/apply_new_ui_strings.py (also run it after building pt-br and pt). 17 Oct 2026 (Phase 1 of the Hindi tester's feedback): listenLabelIntro, listenLabelQ1, nextHint ({next} = the language's own Next button label), printHelp, forDoctorHeading; every non-English line is a MACHINE DRAFT by Claude. Added 4 Nov 2026: startOverMessage, startOverYes, startOverNo (the 'Start again?' prompt shown before Home or Restart clears her answers). Every non-English line is a MACHINE DRAFT: native review needed.",
   "keys": [
     "myAnswersTitle",
     "myAnswersNote",
@@ -8,7 +8,10 @@
     "listenLabelQ1",
     "nextHint",
     "printHelp",
-    "forDoctorHeading"
+    "forDoctorHeading",
+    "startOverMessage",
+    "startOverYes",
+    "startOverNo"
   ],
   "languages": {
     "en": {
@@ -19,7 +22,10 @@
       "listenLabelQ1": "Tap here to hear the question.",
       "nextHint": "Now press {next} to continue.",
       "printHelp": "If nothing happens, open this page in your phone's browser (Safari or Chrome) and use Share, then Print.",
-      "forDoctorHeading": "For your doctor: summary in English"
+      "forDoctorHeading": "For your doctor: summary in English",
+      "startOverMessage": "Start again? All your answers will be cleared.",
+      "startOverYes": "Yes, start again",
+      "startOverNo": "No, keep my answers"
     },
     "hi": {
       "myAnswersTitle": "आपके जवाब",
@@ -29,7 +35,10 @@
       "listenLabelQ1": "प्रश्न सुनने के लिए कृपया यहां क्लिक करें।",
       "nextHint": "अब आगे बढ़ने के लिए '{next}' बटन दबाएं।",
       "printHelp": "अगर कुछ नहीं होता है, तो इस पेज को अपने फ़ोन के ब्राउज़र (Safari या Chrome) में खोलें और शेयर करें, फिर प्रिंट चुनें।",
-      "forDoctorHeading": "आपके डॉक्टर के लिए: अंग्रेज़ी में सारांश"
+      "forDoctorHeading": "आपके डॉक्टर के लिए: अंग्रेज़ी में सारांश",
+      "startOverMessage": "फिर से शुरू करें? आपके सभी जवाब मिट जाएँगे।",
+      "startOverYes": "हाँ, फिर से शुरू करें",
+      "startOverNo": "नहीं, मेरे जवाब रखें"
     },
     "bn": {
       "myAnswersTitle": "আপনার উত্তর",
@@ -39,7 +48,10 @@
       "listenLabelQ1": "প্রশ্নটি শুনতে এখানে ট্যাপ করুন।",
       "nextHint": "এখন এগিয়ে যেতে '{next}' চাপুন।",
       "printHelp": "কিছু না হলে এই পেজটি আপনার ফোনের ব্রাউজারে (Safari বা Chrome) খুলুন এবং শেয়ার করে তারপর প্রিন্ট বেছে নিন।",
-      "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ"
+      "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ",
+      "startOverMessage": "আবার শুরু করবেন? আপনার সব উত্তর মুছে যাবে।",
+      "startOverYes": "হ্যাঁ, আবার শুরু করুন",
+      "startOverNo": "না, আমার উত্তর রাখুন"
     },
     "bn-bd": {
       "myAnswersTitle": "আপনার উত্তর",
@@ -49,7 +61,10 @@
       "listenLabelQ1": "প্রশ্নটি শুনতে এখানে ট্যাপ করুন।",
       "nextHint": "এখন এগিয়ে যেতে '{next}' চাপুন।",
       "printHelp": "কিছু না হলে এই পেজটি আপনার ফোনের ব্রাউজারে (Safari বা Chrome) খুলুন এবং শেয়ার করে তারপর প্রিন্ট বেছে নিন।",
-      "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ"
+      "forDoctorHeading": "আপনার ডাক্তারের জন্য: ইংরেজিতে সারসংক্ষেপ",
+      "startOverMessage": "আবার শুরু করবেন? আপনার সব উত্তর মুছে যাবে।",
+      "startOverYes": "হ্যাঁ, আবার শুরু করুন",
+      "startOverNo": "না, আমার উত্তর রাখুন"
     },
     "pa": {
       "myAnswersTitle": "ਤੁਹਾਡੇ ਜਵਾਬ",
@@ -59,7 +74,10 @@
       "listenLabelQ1": "ਸਵਾਲ ਸੁਣਨ ਲਈ ਇੱਥੇ ਟੈਪ ਕਰੋ।",
       "nextHint": "ਹੁਣ ਅੱਗੇ ਵਧਣ ਲਈ '{next}' ਦਬਾਓ।",
       "printHelp": "ਜੇ ਕੁਝ ਨਾ ਹੋਵੇ, ਤਾਂ ਇਸ ਪੰਨੇ ਨੂੰ ਆਪਣੇ ਫ਼ੋਨ ਦੇ ਬ੍ਰਾਊਜ਼ਰ (Safari ਜਾਂ Chrome) ਵਿੱਚ ਖੋਲ੍ਹੋ ਅਤੇ ਸ਼ੇਅਰ ਕਰੋ, ਫਿਰ ਪ੍ਰਿੰਟ ਚੁਣੋ।",
-      "forDoctorHeading": "ਤੁਹਾਡੇ ਡਾਕਟਰ ਲਈ: ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਸਾਰ"
+      "forDoctorHeading": "ਤੁਹਾਡੇ ਡਾਕਟਰ ਲਈ: ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਸਾਰ",
+      "startOverMessage": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੀਏ? ਤੁਹਾਡੇ ਸਾਰੇ ਜਵਾਬ ਮਿਟਾ ਦਿੱਤੇ ਜਾਣਗੇ।",
+      "startOverYes": "ਹਾਂ, ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ",
+      "startOverNo": "ਨਹੀਂ, ਮੇਰੇ ਜਵਾਬ ਰੱਖੋ"
     },
     "ne": {
       "myAnswersTitle": "तपाईंका उत्तरहरू",
@@ -69,7 +87,10 @@
       "listenLabelQ1": "प्रश्न सुन्न यहाँ ट्याप गर्नुहोस्।",
       "nextHint": "अब अगाडि बढ्न '{next}' थिच्नुहोस्।",
       "printHelp": "केही भएन भने यो पेज आफ्नो फोनको ब्राउजर (Safari वा Chrome) मा खोल्नुहोस् र सेयर गरेर प्रिन्ट छान्नुहोस्।",
-      "forDoctorHeading": "तपाईंको डाक्टरका लागि: अङ्ग्रेजीमा सारांश"
+      "forDoctorHeading": "तपाईंको डाक्टरका लागि: अङ्ग्रेजीमा सारांश",
+      "startOverMessage": "फेरि सुरु गर्ने? तपाईंका सबै उत्तरहरू मेटिनेछन्।",
+      "startOverYes": "हो, फेरि सुरु गर्नुहोस्",
+      "startOverNo": "होइन, मेरा उत्तर राख्नुहोस्"
     },
     "ur": {
       "myAnswersTitle": "آپ کے جوابات",
@@ -79,7 +100,10 @@
       "listenLabelQ1": "سوال سننے کے لیے یہاں ٹیپ کریں۔",
       "nextHint": "اب آگے بڑھنے کے لیے '{next}' دبائیں۔",
       "printHelp": "اگر کچھ نہ ہو تو اس صفحے کو اپنے فون کے براؤزر (Safari یا Chrome) میں کھولیں اور شیئر کر کے پھر پرنٹ منتخب کریں۔",
-      "forDoctorHeading": "آپ کے ڈاکٹر کے لیے: انگریزی میں خلاصہ"
+      "forDoctorHeading": "آپ کے ڈاکٹر کے لیے: انگریزی میں خلاصہ",
+      "startOverMessage": "دوبارہ شروع کریں؟ آپ کے تمام جوابات مٹا دیے جائیں گے۔",
+      "startOverYes": "جی ہاں، دوبارہ شروع کریں",
+      "startOverNo": "نہیں، میرے جوابات رکھیں"
     },
     "fa": {
       "myAnswersTitle": "پاسخ‌های شما",
@@ -89,7 +113,10 @@
       "listenLabelQ1": "برای شنیدن سؤال اینجا را لمس کنید.",
       "nextHint": "حالا برای ادامه «{next}» را بزنید.",
       "printHelp": "اگر اتفاقی نیفتاد، این صفحه را در مرورگر گوشی‌تان (Safari یا Chrome) باز کنید و «اشتراک‌گذاری» و بعد «چاپ» را بزنید.",
-      "forDoctorHeading": "برای دکترتان: خلاصه به انگلیسی"
+      "forDoctorHeading": "برای دکترتان: خلاصه به انگلیسی",
+      "startOverMessage": "از اول شروع کنیم؟ همه‌ی جواب‌هاتون پاک می‌شه.",
+      "startOverYes": "بله، از اول شروع کنید",
+      "startOverNo": "نه، جواب‌هام بمونه"
     },
     "ja": {
       "myAnswersTitle": "あなたの回答",
@@ -99,7 +126,10 @@
       "listenLabelQ1": "ここをタップすると、質問が聞けます。",
       "nextHint": "次に「{next}」を押して進んでください。",
       "printHelp": "何も起こらない場合は、このページをスマートフォンのブラウザ（SafariまたはChrome）で開き、「共有」から「プリント」を選んでください。",
-      "forDoctorHeading": "医師向け：英語のまとめ"
+      "forDoctorHeading": "医師向け：英語のまとめ",
+      "startOverMessage": "最初からやり直しますか？すべての回答が消去されます。",
+      "startOverYes": "はい、やり直す",
+      "startOverNo": "いいえ、回答を残す"
     },
     "ko": {
       "myAnswersTitle": "나의 답변",
@@ -109,7 +139,10 @@
       "listenLabelQ1": "여기를 눌러 질문을 들어 보세요.",
       "nextHint": "이제 '{next}'을(를) 눌러 계속하세요.",
       "printHelp": "아무 반응이 없으면 이 페이지를 휴대폰 브라우저(Safari 또는 Chrome)에서 열고 공유를 누른 다음 인쇄를 선택하세요.",
-      "forDoctorHeading": "의사를 위한 영어 요약"
+      "forDoctorHeading": "의사를 위한 영어 요약",
+      "startOverMessage": "처음부터 다시 시작할까요? 모든 답변이 지워집니다.",
+      "startOverYes": "예, 다시 시작",
+      "startOverNo": "아니요, 답변 유지"
     },
     "zh": {
       "myAnswersTitle": "您的回答",
@@ -119,7 +152,10 @@
       "listenLabelQ1": "点击这里收听问题。",
       "nextHint": "现在请点击“{next}”继续。",
       "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
-      "forDoctorHeading": "给您的医生：英文摘要"
+      "forDoctorHeading": "给您的医生：英文摘要",
+      "startOverMessage": "要重新开始吗？您的所有回答都会被清除。",
+      "startOverYes": "是，重新开始",
+      "startOverNo": "否，保留我的回答"
     },
     "yue": {
       "myAnswersTitle": "你嘅回答",
@@ -129,7 +165,10 @@
       "listenLabelQ1": "㩒呢度聽問題。",
       "nextHint": "而家㩒「{next}」繼續。",
       "printHelp": "如果冇反應，請喺手機瀏覽器（Safari 或 Chrome）打開呢個頁面，然後用「分享」，再揀「列印」。",
-      "forDoctorHeading": "畀你嘅醫生：英文摘要"
+      "forDoctorHeading": "畀你嘅醫生：英文摘要",
+      "startOverMessage": "要重新開始嗎？你嘅所有答案都會被清除。",
+      "startOverYes": "係，重新開始",
+      "startOverNo": "唔係，保留我嘅答案"
     },
     "yue-wt": {
       "myAnswersTitle": "你嘅回答",
@@ -139,7 +178,10 @@
       "listenLabelQ1": "㩒呢度聽問題。",
       "nextHint": "而家㩒「{next}」繼續。",
       "printHelp": "如果冇反應，請喺手機瀏覽器（Safari 或 Chrome）打開呢個頁面，然後用「分享」，再揀「列印」。",
-      "forDoctorHeading": "畀你嘅醫生：英文摘要"
+      "forDoctorHeading": "畀你嘅醫生：英文摘要",
+      "startOverMessage": "要重新開始嗎？你嘅所有答案都會被清除。",
+      "startOverYes": "係，重新開始",
+      "startOverNo": "唔係，保留我嘅答案"
     },
     "hak": {
       "myAnswersTitle": "您的回答",
@@ -149,7 +191,10 @@
       "listenLabelQ1": "点击这里收听问题。",
       "nextHint": "现在请点击“{next}”继续。",
       "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
-      "forDoctorHeading": "给您的医生：英文摘要"
+      "forDoctorHeading": "给您的医生：英文摘要",
+      "startOverMessage": "要重新开始吗？您的所有回答都会被清除。",
+      "startOverYes": "是，重新开始",
+      "startOverNo": "否，保留我的回答"
     },
     "nan-cz": {
       "myAnswersTitle": "您的回答",
@@ -159,7 +204,10 @@
       "listenLabelQ1": "点击这里收听问题。",
       "nextHint": "现在请点击“{next}”继续。",
       "printHelp": "如果没有反应，请在手机浏览器（Safari 或 Chrome）中打开此页面，然后使用“分享”，再选择“打印”。",
-      "forDoctorHeading": "给您的医生：英文摘要"
+      "forDoctorHeading": "给您的医生：英文摘要",
+      "startOverMessage": "要重新开始吗？您的所有回答都会被清除。",
+      "startOverYes": "是，重新开始",
+      "startOverNo": "否，保留我的回答"
     },
     "vi": {
       "myAnswersTitle": "Câu trả lời của bạn",
@@ -169,7 +217,10 @@
       "listenLabelQ1": "Chạm vào đây để nghe câu hỏi.",
       "nextHint": "Bây giờ hãy nhấn {next} để tiếp tục.",
       "printHelp": "Nếu không có gì xảy ra, hãy mở trang này trong trình duyệt của điện thoại (Safari hoặc Chrome) rồi chọn Chia sẻ, sau đó chọn In.",
-      "forDoctorHeading": "Dành cho bác sĩ của bạn: bản tóm tắt bằng tiếng Anh"
+      "forDoctorHeading": "Dành cho bác sĩ của bạn: bản tóm tắt bằng tiếng Anh",
+      "startOverMessage": "Bắt đầu lại? Tất cả câu trả lời của bạn sẽ bị xóa.",
+      "startOverYes": "Có, bắt đầu lại",
+      "startOverNo": "Không, giữ câu trả lời của tôi"
     },
     "tl": {
       "myAnswersTitle": "Mga sagot mo",
@@ -179,7 +230,10 @@
       "listenLabelQ1": "I-tap dito para marinig ang tanong.",
       "nextHint": "Ngayon, pindutin ang {next} para magpatuloy.",
       "printHelp": "Kung walang nangyari, buksan ang page na ito sa browser ng iyong telepono (Safari o Chrome) at gamitin ang Share, tapos Print.",
-      "forDoctorHeading": "Para sa iyong doktor: buod sa Ingles"
+      "forDoctorHeading": "Para sa iyong doktor: buod sa Ingles",
+      "startOverMessage": "Magsimulang muli? Mabubura ang lahat ng iyong sagot.",
+      "startOverYes": "Oo, magsimulang muli",
+      "startOverNo": "Hindi, panatilihin ang aking mga sagot"
     },
     "sq": {
       "myAnswersTitle": "Përgjigjet tuaja",
@@ -189,7 +243,10 @@
       "listenLabelQ1": "Prekni këtu për të dëgjuar pyetjen.",
       "nextHint": "Tani shtypni {next} për të vazhduar.",
       "printHelp": "Nëse nuk ndodh asgjë, hapeni këtë faqe në shfletuesin e telefonit (Safari ose Chrome) dhe përdorni Ndaj, pastaj Printo.",
-      "forDoctorHeading": "Për mjekun tuaj: përmbledhje në anglisht"
+      "forDoctorHeading": "Për mjekun tuaj: përmbledhje në anglisht",
+      "startOverMessage": "Të fillojmë nga e para? Të gjitha përgjigjet tuaja do të fshihen.",
+      "startOverYes": "Po, fillo nga e para",
+      "startOverNo": "Jo, ruaj përgjigjet e mia"
     },
     "ro": {
       "myAnswersTitle": "Răspunsurile dumneavoastră",
@@ -199,7 +256,10 @@
       "listenLabelQ1": "Atingeți aici pentru a asculta întrebarea.",
       "nextHint": "Acum apăsați {next} pentru a continua.",
       "printHelp": "Dacă nu se întâmplă nimic, deschideți această pagină în browserul telefonului (Safari sau Chrome) și folosiți Partajare, apoi Imprimare.",
-      "forDoctorHeading": "Pentru medicul dumneavoastră: rezumat în engleză"
+      "forDoctorHeading": "Pentru medicul dumneavoastră: rezumat în engleză",
+      "startOverMessage": "Începeți din nou? Toate răspunsurile dvs. vor fi șterse.",
+      "startOverYes": "Da, începeți din nou",
+      "startOverNo": "Nu, păstrați răspunsurile mele"
     },
     "pl": {
       "myAnswersTitle": "Twoje odpowiedzi",
@@ -209,7 +269,10 @@
       "listenLabelQ1": "Dotknij tutaj, aby usłyszeć pytanie.",
       "nextHint": "Teraz naciśnij {next}, aby przejść dalej.",
       "printHelp": "Jeśli nic się nie dzieje, otwórz tę stronę w przeglądarce telefonu (Safari lub Chrome) i wybierz Udostępnij, a potem Drukuj.",
-      "forDoctorHeading": "Dla Twojego lekarza: podsumowanie po angielsku"
+      "forDoctorHeading": "Dla Twojego lekarza: podsumowanie po angielsku",
+      "startOverMessage": "Zacząć od nowa? Wszystkie Twoje odpowiedzi zostaną usunięte.",
+      "startOverYes": "Tak, zacznij od nowa",
+      "startOverNo": "Nie, zachowaj moje odpowiedzi"
     },
     "fr": {
       "myAnswersTitle": "Vos réponses",
@@ -219,7 +282,10 @@
       "listenLabelQ1": "Touchez ici pour écouter la question.",
       "nextHint": "Appuyez maintenant sur {next} pour continuer.",
       "printHelp": "Si rien ne se passe, ouvrez cette page dans le navigateur de votre téléphone (Safari ou Chrome), puis utilisez Partager, puis Imprimer.",
-      "forDoctorHeading": "Pour votre médecin : résumé en anglais"
+      "forDoctorHeading": "Pour votre médecin : résumé en anglais",
+      "startOverMessage": "Recommencer ? Toutes vos réponses seront effacées.",
+      "startOverYes": "Oui, recommencer",
+      "startOverNo": "Non, garder mes réponses"
     },
     "de": {
       "myAnswersTitle": "Ihre Antworten",
@@ -229,7 +295,10 @@
       "listenLabelQ1": "Tippen Sie hier, um die Frage zu hören.",
       "nextHint": "Tippen Sie jetzt auf {next}, um fortzufahren.",
       "printHelp": "Wenn nichts passiert, öffnen Sie diese Seite im Browser Ihres Telefons (Safari oder Chrome) und wählen Sie Teilen, dann Drucken.",
-      "forDoctorHeading": "Für Ihre Ärztin oder Ihren Arzt: Zusammenfassung auf Englisch"
+      "forDoctorHeading": "Für Ihre Ärztin oder Ihren Arzt: Zusammenfassung auf Englisch",
+      "startOverMessage": "Neu beginnen? Alle Ihre Antworten werden gelöscht.",
+      "startOverYes": "Ja, neu beginnen",
+      "startOverNo": "Nein, Antworten behalten"
     },
     "es": {
       "myAnswersTitle": "Sus respuestas",
@@ -239,7 +308,10 @@
       "listenLabelQ1": "Toque aquí para escuchar la pregunta.",
       "nextHint": "Ahora pulse {next} para continuar.",
       "printHelp": "Si no ocurre nada, abra esta página en el navegador de su teléfono (Safari o Chrome) y use Compartir y luego Imprimir.",
-      "forDoctorHeading": "Para su médico: resumen en inglés"
+      "forDoctorHeading": "Para su médico: resumen en inglés",
+      "startOverMessage": "¿Empezar de nuevo? Se borrarán todas sus respuestas.",
+      "startOverYes": "Sí, empezar de nuevo",
+      "startOverNo": "No, conservar mis respuestas"
     },
     "pt-br": {
       "myAnswersTitle": "Suas respostas",
@@ -249,7 +321,10 @@
       "listenLabelQ1": "Toque aqui para ouvir a pergunta.",
       "nextHint": "Agora toque em {next} para continuar.",
       "printHelp": "Se nada acontecer, abra esta página no navegador do seu celular (Safari ou Chrome) e use Compartilhar e depois Imprimir.",
-      "forDoctorHeading": "Para o seu médico: resumo em inglês"
+      "forDoctorHeading": "Para o seu médico: resumo em inglês",
+      "startOverMessage": "Começar de novo? Todas as suas respostas serão apagadas.",
+      "startOverYes": "Sim, começar de novo",
+      "startOverNo": "Não, manter minhas respostas"
     },
     "pt": {
       "myAnswersTitle": "As suas respostas",
@@ -259,7 +334,10 @@
       "listenLabelQ1": "Toque aqui para ouvir a pergunta.",
       "nextHint": "Agora toque em {next} para continuar.",
       "printHelp": "Se nada acontecer, abra esta página no navegador do seu telemóvel (Safari ou Chrome) e use Partilhar e depois Imprimir.",
-      "forDoctorHeading": "Para o seu médico: resumo em inglês"
+      "forDoctorHeading": "Para o seu médico: resumo em inglês",
+      "startOverMessage": "Recomeçar? Todas as suas respostas serão apagadas.",
+      "startOverYes": "Sim, recomeçar",
+      "startOverNo": "Não, manter as minhas respostas"
     },
     "ar-gulf": {
       "myAnswersTitle": "إجاباتج",
@@ -269,7 +347,10 @@
       "listenLabelQ1": "اضغطي هنا عشان تسمعين السؤال.",
       "nextHint": "الحين اضغطي على «{next}» عشان تكملين.",
       "printHelp": "إذا ما صار شي، افتحي هالصفحة في متصفح جوالج (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
-      "forDoctorHeading": "لدكتورتج: ملخص بالإنجليزي"
+      "forDoctorHeading": "لدكتورتج: ملخص بالإنجليزي",
+      "startOverMessage": "تبين تبدين من جديد؟ كل إجاباتج بتنمسح.",
+      "startOverYes": "إي، ابدأي من جديد",
+      "startOverNo": "لا، خلي إجاباتي"
     },
     "ar-om": {
       "myAnswersTitle": "إجاباتج",
@@ -279,7 +360,10 @@
       "listenLabelQ1": "اضغطي هنا عشان تسمعين السؤال.",
       "nextHint": "الحين اضغطي على «{next}» عشان تكملين.",
       "printHelp": "إذا ما صار شي، افتحي هالصفحة في متصفح جوالج (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
-      "forDoctorHeading": "للدكتورة: ملخص بالإنجليزي"
+      "forDoctorHeading": "للدكتورة: ملخص بالإنجليزي",
+      "startOverMessage": "تبين تبدين من جديد؟ كل إجاباتج بتنمسح.",
+      "startOverYes": "إي، ابدأي من جديد",
+      "startOverNo": "لا، خلي إجاباتي"
     },
     "ar-eg": {
       "myAnswersTitle": "إجاباتك",
@@ -289,7 +373,10 @@
       "listenLabelQ1": "دوسي هنا عشان تسمعي السؤال.",
       "nextHint": "دلوقتي دوسي على «{next}» عشان تكملي.",
       "printHelp": "لو مفيش حاجة حصلت، افتحي الصفحة دي في متصفح موبايلك (Safari أو Chrome) واختاري مشاركة وبعدين طباعة.",
-      "forDoctorHeading": "لدكتورتك: ملخص بالإنجليزي"
+      "forDoctorHeading": "لدكتورتك: ملخص بالإنجليزي",
+      "startOverMessage": "تبدأ من جديد؟ كل إجاباتك هتتمسح.",
+      "startOverYes": "أيوه، ابدأ من جديد",
+      "startOverNo": "لأ، خلّي إجاباتي"
     },
     "sw": {
       "myAnswersTitle": "Majibu yako",
@@ -299,7 +386,10 @@
       "listenLabelQ1": "Gusa hapa kusikiliza swali.",
       "nextHint": "Sasa bonyeza {next} ili kuendelea.",
       "printHelp": "Ikiwa hakuna kinachotokea, fungua ukurasa huu kwenye kivinjari cha simu yako (Safari au Chrome), kisha tumia Shiriki, halafu Chapisha.",
-      "forDoctorHeading": "Kwa daktari wako: muhtasari kwa Kiingereza"
+      "forDoctorHeading": "Kwa daktari wako: muhtasari kwa Kiingereza",
+      "startOverMessage": "Anza upya? Majibu yako yote yatafutwa.",
+      "startOverYes": "Ndiyo, anza upya",
+      "startOverNo": "Hapana, weka majibu yangu"
     }
   }
 }

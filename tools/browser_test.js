@@ -76,6 +76,9 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   const sp = await p.evaluate(() => ({ shown: !document.getElementById('speedBar').hidden, rates: [...document.querySelectorAll('#speedBar .speed-btn')].map(b => b.dataset.rate + ':' + b.getAttribute('aria-pressed')), hint: document.getElementById('multiSymptomHint').textContent }));
   ok(sp.shown && sp.rates.join('|') === '0.75:false|1:true|1.25:false', 'speed control (0.75x / 1x / 1.25x, default 1x) shows on page 2');
   ok(sp.hint === pk.ui.multiSymptomHint && sp.hint.length > 20, 'page 2 shows the "even one is enough" line from the pack');
+  // (read the hint BEFORE the speed test taps the audio button: tapping it ends the glow, by design)
+  const introHint = await p.evaluate(() => { const b = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]'); return b ? b.getAttribute('data-hint') : null; });
+  ok(introHint === pk.ui.listenLabelIntro, 'Page 2: the audio button carries the long hint ("tap here to hear all the instructions") in her language');
   const rate = await p.evaluate(async () => { document.querySelector('#speedBar [data-rate="1.25"]').click(); const b = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]'); b.click(); await new Promise(r => setTimeout(r, 400)); const out = { global: audioRate, playing: activeAudioEl ? activeAudioEl.playbackRate : null }; stopAllPlayback(); document.querySelector('#speedBar [data-rate="1"]').click(); voiceDiscovered = false; return out; });
   ok(rate.global === 1.25 && (rate.playing === null || rate.playing === 1.25), 'the speed control changes the playback rate of the clip that is playing (1.25x)');
   const homeTxt = await p.evaluate(() => { const g = k => (document.querySelector(`[data-i18n="${k}"]`) || {}).textContent; return { appTitle: g('appTitle'), appSubtitle: g('appSubtitle'), privacyBadge: g('privacyBadge'), languagePageTitle: g('languagePageTitle') }; });
@@ -100,8 +103,6 @@ const SEC = [[0, 1], [2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14]];
   };
   const results = { rec: 0, tts: 0, bad: [] };
   const tally = (name, v) => { if (!v.good) results.bad.push(`${name}: ${v.detail}`); else v.how === 'recording' ? results.rec++ : results.tts++; };
-  const introHint = await p.evaluate(() => { const b = document.querySelector('.voice-icon-btn[data-voice-key="instructions"]'); return b ? b.getAttribute('data-hint') : null; });
-  ok(introHint === pk.ui.listenLabelIntro, 'Page 2: the audio button carries the long hint ("tap here to hear all the instructions") in her language');
   tally('intro', await voice('.voice-icon-btn[data-voice-key="instructions"]', 'intro', pk.ui.introBody));
 
   // ------------------------------------------------------------ walk all sections
