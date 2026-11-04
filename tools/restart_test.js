@@ -10,7 +10,7 @@ let fails = 0; const ok = (n, c, x) => { console.log((c ? 'PASS ' : 'FAIL ') + n
   const p = await b.newPage(); await p.setViewport({ width: 390, height: 800 });
   const errs = []; p.on('pageerror', e => errs.push(e.message));
   await p.goto('file://' + ROOT + '/index.html', { waitUntil: 'load' }); await w(700);
-  const pick = c => p.evaluate(c => { const l = window.LANGUAGES.find(x => x.code === c); [...document.querySelectorAll('.lang-card')].find(k => k.querySelector('.lang-native').textContent === l.name && k.querySelector('.lang-gloss').textContent === l.gloss).click(); }, c);
+  const pick = async c => { await p.evaluate(c => { const l = window.LANGUAGES.find(x => x.code === c); [...document.querySelectorAll('.lang-card')].find(k => k.querySelector('.lang-native').textContent === l.name && k.querySelector('.lang-gloss').textContent === l.gloss).click(); }, c); await p.waitForFunction('currentStep === 1', { timeout: 8000 }); };   // the app waits ~0.26 s before page 2: never act before it has arrived
   const tick = () => p.evaluate(() => { const c = document.getElementById('consentCheck'); c.checked = true; c.dispatchEvent(new Event('change')); });
   const begin = async () => { await tick(); await p.evaluate(() => document.getElementById('instrContinueBtn').click()); await w(500); };
   const answerAll = () => p.evaluate(() => { document.querySelectorAll('.q-block').forEach(q => { const n = q.dataset.qidx; const e = document.querySelector('.q-block[data-qidx="' + n + '"] .scale-opt[data-level="2"]'); e && e.click(); }); });
