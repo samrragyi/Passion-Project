@@ -1404,8 +1404,18 @@ function renderResults(){
   document.getElementById("printHelp").textContent = nui("printHelp");
 
   /* GP summary - always English */
+  /* The doctor must be able to read the language: English name first, then the language's own name
+     ("Punjabi (ਪੰਜਾਬੀ)"). If the English name already has brackets (Portuguese (Brazil)) a dash is used instead.
+     FSI/PDI keep a right-to-left name (Arabic, Persian, Urdu) from scrambling the English line. */
+  const lm = LANG_META[currentLang] || {};
+  const nativeName = trLang.name, englishName = lm.gloss || nativeName;
+  let langLabel = englishName;
+  if(nativeName && nativeName.toLowerCase() !== englishName.toLowerCase()){
+    const nn = "\u2068" + nativeName + "\u2069";
+    langLabel = englishName.indexOf("(") !== -1 ? englishName + " \u2013 " + nn : englishName + " (" + nn + ")";
+  }
   document.getElementById("gpSummaryNote").textContent = T.en.ui.gpSummaryNote +
-    " (Patient completed this form in: " + trLang.name + ")";
+    " (Patient completed this form in: " + langLabel + ")";
   document.querySelector('[data-fixed="item"]').textContent = T.en.ui.item;
   document.querySelector('[data-fixed="severity"]').textContent = T.en.ui.severity;
   document.querySelector('[data-fixed="score"]').textContent = T.en.ui.score;
