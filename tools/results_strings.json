@@ -550,6 +550,25 @@
         "Kiashiria cha Mzigo wa Wastani",
         "Kiashiria cha Mzigo Mkali"
       ]
+    },
+    "hu": {
+      "resultsTitle": "Az összefoglalód",
+      "resultsIntro": "Itt áttekintheted a válaszaidat. Az alábbi angol nyelvű összefoglalót mutasd meg az orvosodnak.",
+      "overallLabel": "Összpontszám",
+      "scoreExplainTitle": "A pontszámod értelmezése",
+      "scoreExplainMild": "Enyhe — a tünetek többnyire nincsenek jelen, vagy a mindennapokban kezelhetők.",
+      "scoreExplainModerate": "Közepes — több szervrendszert érintenek a tünetek, vagy néhány tünet meglehetősen súlyos.",
+      "scoreExplainSevere": "Súlyos — a tünetek mélyen befolyásolják több területet, köztük az alvást, a hangulatot és a testi működést.",
+      "mostNoticeable": "Ma leginkább észrevehető:",
+      "noSevereSymptoms": "Ma semmit sem értékeltél rendkívül súlyosnak.",
+      "flagged": "Legsúlyosabb tételek",
+      "none": "Nincs",
+      "assessmentDate": "Kitöltés dátuma",
+      "bands": [
+        "Enyhe tünetterhelési index",
+        "Közepes tünetterhelési index",
+        "Súlyos tünetterhelési index"
+      ]
     }
   }
 }

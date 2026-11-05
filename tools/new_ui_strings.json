@@ -390,6 +390,19 @@
       "startOverMessage": "Anza upya? Majibu yako yote yatafutwa.",
       "startOverYes": "Ndiyo, anza upya",
       "startOverNo": "Hapana, weka majibu yangu"
+    },
+    "hu": {
+      "myAnswersTitle": "Válaszaid",
+      "myAnswersNote": "Ezek a válaszaid a saját nyelveden. Az orvosodnak szóló összefoglaló lejjebb angolul található.",
+      "multiSymptomHint": "Ha egy kérdés több tünetet is felsorol, azt értékeld, amelyik a legjobban zavar. Egy is elég.",
+      "listenLabelIntro": "Koppints ide, hogy meghallgathasd az összes útmutatót.",
+      "listenLabelQ1": "Koppints ide, hogy meghallgathasd a kérdést.",
+      "nextHint": "Most nyomd meg a „{next}” gombot a folytatáshoz.",
+      "printHelp": "Ha nem történik semmi, nyisd meg ezt az oldalt a telefonod böngészőjében (Safari vagy Chrome), majd válaszd a Megosztás, azután a Nyomtatás lehetőséget.",
+      "forDoctorHeading": "Az orvosodnak: összefoglaló angolul",
+      "startOverMessage": "Újrakezded? Az összes válaszod törlődik.",
+      "startOverYes": "Igen, újrakezdem",
+      "startOverNo": "Nem, megtartom a válaszaimat"
     }
   }
 }

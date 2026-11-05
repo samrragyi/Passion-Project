@@ -697,6 +697,28 @@
       "privacyBadge": "Faragha, bila kujisajili",
       "languagePageTitle": "Chagua lugha yako",
       "homeLabel": "Mwanzo"
+    },
+    "hu": {
+      "consentLabel": "Megértettem.",
+      "startButton": "Kezdjük el",
+      "prevButton": "Vissza",
+      "nextButton": "Tovább",
+      "submitButton": "Befejezés",
+      "scale1": "Egyáltalán nem",
+      "scale2": "Egy kicsit",
+      "scale3": "Eléggé",
+      "scale4": "Rendkívül",
+      "questionCounter": "{n}. kérdés a 15-ből",
+      "sectionPrefix": "{n}. szakasz a 6-ból",
+      "listenLabel": "Hallgasd meg",
+      "pauseLabel": "Szünet",
+      "printButton": "Nyomtatás / Mentés PDF-ként",
+      "restartButton": "Újrakezdés",
+      "appTitle": "Értsd meg, mit üzen a tested",
+      "appSubtitle": "Egy csendes tér, ahol meghallgathatod a tested, és felkészülhetsz.",
+      "privacyBadge": "Privát, regisztráció nélkül",
+      "languagePageTitle": "Válaszd ki a nyelvedet",
+      "homeLabel": "Kezdőlap"
     }
   }
 }
