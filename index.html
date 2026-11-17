@@ -479,6 +479,7 @@
   .my-answers[hidden]{ display:none; }
   .my-answers-title{ font-family:var(--serif); color:var(--forest); margin:0 0 4px; font-size:1.15rem; }
   .my-answers-note{ color:var(--ink-soft); font-size:0.88rem; margin:0 0 6px; }
+  .ma-other{ font-style:italic; }
   .ma-sec{ font-size:0.8rem; font-weight:700; color:var(--berry); margin:14px 0 2px; }
   .ma-list{ list-style:none; margin:0; padding:0; }
   .ma-row{ display:flex; align-items:center; gap:10px; padding:7px 0; border-top:1px solid var(--line); }
@@ -692,7 +693,7 @@
     <h3 class="final-notice-title">Important Information &amp; Privacy</h3>
     <ul class="legal-list">
       <li><strong>Educational Symptom Checklist Only:</strong> This tool is an educational symptom checklist and preparation aid created to help you get ready for a consultation with your doctor. It does not provide medical advice, diagnosis or treatment recommendations.</li>
-      <li><strong>Clinical Guidance:</strong> Questions are adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in National Institute for Health and Care Excellence (NICE) guideline NG23. The tool is not endorsed by NICE.</li>
+      <li><strong>Clinical Guidance:</strong> Questions are unvalidated and adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in National Institute for Health and Care Excellence (NICE) guideline NG23. The tool is not endorsed by NICE or approved by the NHS.</li>
       <li><strong>Data Privacy:</strong> Your answers are not stored or sent anywhere. They stay on your device and disappear when you close this page. Like any website, the host records that a page was visited.</li>
       <li><strong>Medical Emergencies:</strong> If you have chest pain or pressure or you feel your life or safety is at risk, call 999 now (UK) or your local emergency number. For severe pain, unusual bleeding or a mental health crisis, get urgent help from NHS 111 (UK) or your doctor without delay.</li>
     </ul>
@@ -1470,6 +1471,7 @@ function renderResults(){
     h += `<div class="ma-summary">` +
       `<p class="ma-line" dir="auto"><strong>${escHtml(nui("overallLabel"))}:</strong> <bdi dir="ltr">${total} / ${max}</bdi> — ${escHtml(nbands[bandIdx])} · ${escHtml(nui("assessmentDate"))}: <bdi dir="ltr">${dateStr}</bdi></p>` +
       `<p class="ma-line" dir="auto"><strong>${escHtml(nui("flagged"))}:</strong> ${flaggedN.length ? escHtml(flaggedN.join(listSep)) : escHtml(nui("none"))}</p>` +
+      `<p class="ma-line ma-other" dir="auto">${escHtml(nui("otherCausesNote"))}</p>` +
       `</div>`;
     myA.innerHTML = h; myA.hidden = false;
   } else { myA.innerHTML = ""; myA.hidden = true; }

@@ -1,5 +1,5 @@
 {
-  "_comment": "Results-page strings (the patient-facing top of the results page, plus the new 'Assessment date' label), 15 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: native review needed (Hindi keeps its translator's text except resultsIntro and assessmentDate). Keys are ui.<key>; 'bands' is the list of three band names. Applied by tools/apply_results_strings.py.",
+  "_comment": "Results-page strings (the patient-facing top of the results page, plus the new 'Assessment date' label), 15 Oct 2026. Every non-English line is a MACHINE DRAFT by Claude: native review needed (Hindi keeps its translator's text except resultsIntro and assessmentDate). Keys are ui.<key>; 'bands' is the list of three band names. Applied by tools/apply_results_strings.py. 17 Nov 2026: added otherCausesNote (shown at the end of 'Your answers'; machine drafts except en).",
   "ui_keys": [
     "resultsTitle",
     "resultsIntro",
@@ -12,7 +12,8 @@
     "noSevereSymptoms",
     "flagged",
     "none",
-    "assessmentDate"
+    "assessmentDate",
+    "otherCausesNote"
   ],
   "languages": {
     "en": {
@@ -32,11 +33,13 @@
         "Mild Burden Index",
         "Moderate Burden Index",
         "Severe Burden Index"
-      ]
+      ],
+      "otherCausesNote": "These symptoms can also have causes other than menopause."
     },
     "hi": {
       "resultsIntro": "यह रहा आपके उत्तरों का अवलोकन। नीचे दिया गया अंग्रेज़ी सारांश अपने डॉक्टर को दिखाएं।",
-      "assessmentDate": "पूरा करने की तारीख"
+      "assessmentDate": "पूरा करने की तारीख",
+      "otherCausesNote": "ये लक्षण मेनोपॉज़ के अलावा दूसरे कारणों से भी हो सकते हैं।"
     },
     "fr": {
       "resultsTitle": "Votre synthèse",
@@ -55,7 +58,8 @@
         "Indice de charge symptomatique léger",
         "Indice de charge symptomatique modéré",
         "Indice de charge symptomatique sévère"
-      ]
+      ],
+      "otherCausesNote": "Ces symptômes peuvent aussi avoir d'autres causes que la ménopause."
     },
     "de": {
       "resultsTitle": "Ihre Zusammenfassung",
@@ -74,7 +78,8 @@
         "Leichter Symptomlast-Index",
         "Mäßiger Symptomlast-Index",
         "Starker Symptomlast-Index"
-      ]
+      ],
+      "otherCausesNote": "Diese Beschwerden können auch andere Ursachen als die Wechseljahre haben."
     },
     "es": {
       "resultsTitle": "Su resumen",
@@ -93,7 +98,8 @@
         "Índice de carga de síntomas leve",
         "Índice de carga de síntomas moderado",
         "Índice de carga de síntomas grave"
-      ]
+      ],
+      "otherCausesNote": "Estos síntomas también pueden tener causas distintas de la menopausia."
     },
     "pt-br": {
       "resultsTitle": "Seu resumo",
@@ -112,7 +118,8 @@
         "Índice de carga de sintomas leve",
         "Índice de carga de sintomas moderado",
         "Índice de carga de sintomas intenso"
-      ]
+      ],
+      "otherCausesNote": "Esses sintomas também podem ter outras causas além da menopausa."
     },
     "pt": {
       "resultsTitle": "O seu resumo",
@@ -131,7 +138,8 @@
         "Índice de carga de sintomas ligeiro",
         "Índice de carga de sintomas moderado",
         "Índice de carga de sintomas grave"
-      ]
+      ],
+      "otherCausesNote": "Estes sintomas também podem ter outras causas além da menopausa."
     },
     "ro": {
       "resultsTitle": "Rezumatul dumneavoastră",
@@ -150,7 +158,8 @@
         "Indice de povară a simptomelor ușor",
         "Indice de povară a simptomelor moderat",
         "Indice de povară a simptomelor sever"
-      ]
+      ],
+      "otherCausesNote": "Aceste simptome pot avea și alte cauze decât menopauza."
     },
     "pl": {
       "resultsTitle": "Twoje podsumowanie",
@@ -169,7 +178,8 @@
         "Łagodny wskaźnik obciążenia objawami",
         "Umiarkowany wskaźnik obciążenia objawami",
         "Ciężki wskaźnik obciążenia objawami"
-      ]
+      ],
+      "otherCausesNote": "Te objawy mogą mieć także inne przyczyny niż menopauza."
     },
     "sq": {
       "resultsTitle": "Përmbledhja juaj",
@@ -188,7 +198,8 @@
         "Indeks i lehtë i barrës së simptomave",
         "Indeks i moderuar i barrës së simptomave",
         "Indeks i rëndë i barrës së simptomave"
-      ]
+      ],
+      "otherCausesNote": "Këto simptoma mund të kenë edhe shkaqe të tjera përveç menopauzës."
     },
     "tl": {
       "resultsTitle": "Ang iyong buod",
@@ -207,7 +218,8 @@
         "Banayad na indeks ng bigat ng sintomas",
         "Katamtamang indeks ng bigat ng sintomas",
         "Malalang indeks ng bigat ng sintomas"
-      ]
+      ],
+      "otherCausesNote": "Ang mga sintomas na ito ay maaari ring may ibang dahilan bukod sa menopause."
     },
     "vi": {
       "resultsTitle": "Bản tóm tắt của bạn",
@@ -226,7 +238,8 @@
         "Chỉ số gánh nặng triệu chứng nhẹ",
         "Chỉ số gánh nặng triệu chứng trung bình",
         "Chỉ số gánh nặng triệu chứng nặng"
-      ]
+      ],
+      "otherCausesNote": "Những triệu chứng này cũng có thể do nguyên nhân khác ngoài mãn kinh."
     },
     "ja": {
       "resultsTitle": "あなたのまとめ",
@@ -245,7 +258,8 @@
         "症状負担指数（軽度）",
         "症状負担指数（中等度）",
         "症状負担指数（重度）"
-      ]
+      ],
+      "otherCausesNote": "これらの症状は、更年期以外の原因で起こることもあります。"
     },
     "ko": {
       "resultsTitle": "나의 요약",
@@ -264,7 +278,8 @@
         "경도 증상 부담 지수",
         "중등도 증상 부담 지수",
         "중증 증상 부담 지수"
-      ]
+      ],
+      "otherCausesNote": "이러한 증상은 폐경 이외의 다른 원인으로 생길 수도 있습니다."
     },
     "zh": {
       "resultsTitle": "您的摘要",
@@ -283,7 +298,8 @@
         "轻度症状负担指数",
         "中度症状负担指数",
         "重度症状负担指数"
-      ]
+      ],
+      "otherCausesNote": "这些症状也可能由更年期以外的其他原因引起。"
     },
     "yue": {
       "resultsTitle": "你嘅摘要",
@@ -302,7 +318,8 @@
         "輕度症狀負擔指數",
         "中度症狀負擔指數",
         "嚴重症狀負擔指數"
-      ]
+      ],
+      "otherCausesNote": "呢啲症狀亦可能係由更年期以外嘅原因引起。"
     },
     "yue-wt": {
       "resultsTitle": "你嘅摘要",
@@ -321,7 +338,8 @@
         "輕度症狀負擔指數",
         "中度症狀負擔指數",
         "嚴重症狀負擔指數"
-      ]
+      ],
+      "otherCausesNote": "呢啲症狀亦可能係由更年期以外嘅原因引起。"
     },
     "hak": {
       "resultsTitle": "您的摘要",
@@ -340,7 +358,8 @@
         "轻度症状负担指数",
         "中度症状负担指数",
         "重度症状负担指数"
-      ]
+      ],
+      "otherCausesNote": "这些症状也可能由更年期以外的其他原因引起。"
     },
     "nan-cz": {
       "resultsTitle": "您的摘要",
@@ -359,7 +378,8 @@
         "轻度症状负担指数",
         "中度症状负担指数",
         "重度症状负担指数"
-      ]
+      ],
+      "otherCausesNote": "这些症状也可能由更年期以外的其他原因引起。"
     },
     "bn": {
       "resultsTitle": "আপনার সারসংক্ষেপ",
@@ -378,7 +398,8 @@
         "মৃদু লক্ষণ-ভার সূচক",
         "মাঝারি লক্ষণ-ভার সূচক",
         "তীব্র লক্ষণ-ভার সূচক"
-      ]
+      ],
+      "otherCausesNote": "এই লক্ষণগুলোর মেনোপজ ছাড়াও অন্য কারণ থাকতে পারে।"
     },
     "bn-bd": {
       "resultsTitle": "আপনার সারসংক্ষেপ",
@@ -397,7 +418,8 @@
         "মৃদু লক্ষণ-ভার সূচক",
         "মাঝারি লক্ষণ-ভার সূচক",
         "তীব্র লক্ষণ-ভার সূচক"
-      ]
+      ],
+      "otherCausesNote": "এই লক্ষণগুলোর মেনোপজ ছাড়াও অন্য কারণ থাকতে পারে।"
     },
     "pa": {
       "resultsTitle": "ਤੁਹਾਡਾ ਸਾਰ",
@@ -416,7 +438,8 @@
         "ਹਲਕਾ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ",
         "ਦਰਮਿਆਨਾ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ",
         "ਗੰਭੀਰ ਲੱਛਣ-ਬੋਝ ਸੂਚਕ"
-      ]
+      ],
+      "otherCausesNote": "ਇਹਨਾਂ ਲੱਛਣਾਂ ਦੇ ਮੀਨੋਪੌਜ਼ ਤੋਂ ਇਲਾਵਾ ਹੋਰ ਕਾਰਨ ਵੀ ਹੋ ਸਕਦੇ ਹਨ।"
     },
     "ne": {
       "resultsTitle": "तपाईंको सारांश",
@@ -435,7 +458,8 @@
         "हल्का लक्षण-भार सूचक",
         "मध्यम लक्षण-भार सूचक",
         "गम्भीर लक्षण-भार सूचक"
-      ]
+      ],
+      "otherCausesNote": "यी लक्षणहरू महिनावारी सुक्ने (मिनोपोज) बाहेक अन्य कारणले पनि हुन सक्छन्।"
     },
     "ur": {
       "resultsTitle": "آپ کا خلاصہ",
@@ -454,7 +478,8 @@
         "ہلکا علامتی بوجھ اشاریہ",
         "درمیانہ علامتی بوجھ اشاریہ",
         "شدید علامتی بوجھ اشاریہ"
-      ]
+      ],
+      "otherCausesNote": "ان علامات کی مینوپاز کے علاوہ دوسری وجوہات بھی ہو سکتی ہیں۔"
     },
     "fa": {
       "resultsTitle": "خلاصه‌ی شما",
@@ -473,7 +498,8 @@
         "شاخص خفیف بار علائم",
         "شاخص متوسط بار علائم",
         "شاخص شدید بار علائم"
-      ]
+      ],
+      "otherCausesNote": "این علائم ممکن است دلایل دیگری غیر از یائسگی هم داشته باشند."
     },
     "ar-eg": {
       "resultsTitle": "ملخصك",
@@ -492,7 +518,8 @@
         "مؤشر عبء الأعراض الخفيف",
         "مؤشر عبء الأعراض المتوسط",
         "مؤشر عبء الأعراض الشديد"
-      ]
+      ],
+      "otherCausesNote": "الأعراض دي ممكن يكون ليها أسباب تانية غير سن اليأس."
     },
     "ar-gulf": {
       "resultsTitle": "ملخصج",
@@ -511,7 +538,8 @@
         "مؤشر عبء الأعراض الخفيف",
         "مؤشر عبء الأعراض المتوسط",
         "مؤشر عبء الأعراض الشديد"
-      ]
+      ],
+      "otherCausesNote": "هذي الأعراض ممكن يكون لها أسباب ثانية غير سن اليأس."
     },
     "ar-om": {
       "resultsTitle": "ملخصج",
@@ -530,7 +558,8 @@
         "مؤشر عبء الأعراض الخفيف",
         "مؤشر عبء الأعراض المتوسط",
         "مؤشر عبء الأعراض الشديد"
-      ]
+      ],
+      "otherCausesNote": "هذي الأعراض ممكن تكون لها أسباب ثانية غير سن اليأس."
     },
     "sw": {
       "resultsTitle": "Muhtasari wako",
@@ -549,7 +578,8 @@
         "Kiashiria cha Mzigo Dhaifu",
         "Kiashiria cha Mzigo wa Wastani",
         "Kiashiria cha Mzigo Mkali"
-      ]
+      ],
+      "otherCausesNote": "Dalili hizi zinaweza pia kusababishwa na mambo mengine mbali na menopause."
     },
     "hu": {
       "resultsTitle": "Az összefoglalód",
@@ -568,7 +598,8 @@
         "Enyhe tünetterhelési index",
         "Közepes tünetterhelési index",
         "Súlyos tünetterhelési index"
-      ]
+      ],
+      "otherCausesNote": "Ezeknek a tüneteknek a menopauzán kívül más okai is lehetnek."
     }
   }
 }

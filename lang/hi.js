@@ -66,11 +66,12 @@ window.registerLanguage({
     "consentLabel": "मैं समझती/समझता हूं।",
     "finalNoticeTitle": "रोगी के लिए सूचना",
     "finalNoticeFrameworkLabel": "फ्रेमवर्क:",
-    "finalNoticeFramework": "Generated via an open-source, patient-led checklist adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticeFramework": "Generated via a patient-led checklist with unvalidated questions adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE or approved by the NHS. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "रोगी सूचना:",
-    "finalNoticePatient": "यह सारांश रिपोर्ट आपके आगामी डॉक्टर अपॉइंटमेंट के लिए आपके द्वारा बताए गए लक्षणों को एक संरचित अवलोकन में व्यवस्थित करती है। इसे अपने डॉक्टर को दिखाने से किसी विशेष निदान या नुस्खे की गारंटी नहीं मिलती।",
+    "finalNoticePatient": "यह सारांश रिपोर्ट आपके आगामी डॉक्टर अपॉइंटमेंट के लिए आपके द्वारा बताए गए लक्षणों को एक संरचित अवलोकन में व्यवस्थित करती है। इसे अपने डॉक्टर को दिखाने से किसी विशेष निदान या नुस्खे की गारंटी नहीं मिलती। ये लक्षण मेनोपॉज़ के अलावा दूसरे कारणों से भी हो सकते हैं।",
     "finalNoticeConfidentialityLabel": "डेटा गोपनीयता:",
-    "finalNoticeConfidentiality": "इस टूल से आपके जवाब कहीं भी सहेजे या भेजे नहीं जाते। वे आपके ब्राउज़र में ही रहते हैं और इस पेज को बंद करने या रीलोड करने पर मिट जाते हैं। आप जो भी पीडीएफ या प्रिंटआउट बनाते हैं, उसे रखना या हटाना आपके हाथ में है। किसी भी वेबसाइट की तरह, उसका होस्ट साइट की फ़ाइलों के अनुरोधों के सामान्य सर्वर लॉग रखता है, लेकिन आपके जवाब उनमें कभी शामिल नहीं होते। कुछ ब्राउज़रों में, अगर कोई रिकॉर्डिंग न चल पाए, तो अंतर्निहित आवाज़ ऑनलाइन चल सकती है; वह केवल प्रश्नों का पाठ पढ़ती है, आपके जवाब कभी नहीं।"
+    "finalNoticeConfidentiality": "इस टूल से आपके जवाब कहीं भी सहेजे या भेजे नहीं जाते। वे आपके ब्राउज़र में ही रहते हैं और इस पेज को बंद करने या रीलोड करने पर मिट जाते हैं। आप जो भी पीडीएफ या प्रिंटआउट बनाते हैं, उसे रखना या हटाना आपके हाथ में है। किसी भी वेबसाइट की तरह, उसका होस्ट साइट की फ़ाइलों के अनुरोधों के सामान्य सर्वर लॉग रखता है, लेकिन आपके जवाब उनमें कभी शामिल नहीं होते। कुछ ब्राउज़रों में, अगर कोई रिकॉर्डिंग न चल पाए, तो अंतर्निहित आवाज़ ऑनलाइन चल सकती है; वह केवल प्रश्नों का पाठ पढ़ती है, आपके जवाब कभी नहीं।",
+    "otherCausesNote": "ये लक्षण मेनोपॉज़ के अलावा दूसरे कारणों से भी हो सकते हैं।"
   },
   "scale": [
     "बिल्कुल नहीं",

@@ -22,6 +22,8 @@ for fn in sorted(os.listdir(os.path.join(REPO, "lang"))):
     if "none" not in ui:
         for k in t:
             if k != "bands": new[k] = t[k]
+    for k in t:
+        if k != "bands" and k not in new: new[k] = t[k]   # any other new key (e.g. otherCausesNote) goes at the end
     bands = t["bands"] if "bands" in t else pack["bands"]
     if new != ui or list(new) != list(ui) or bands != pack["bands"]:
         changed.append(code)

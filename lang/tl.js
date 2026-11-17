@@ -66,11 +66,12 @@ window.registerLanguage({
     "consentLabel": "Naiintindihan ko.",
     "finalNoticeTitle": "Notice for Patient",
     "finalNoticeFrameworkLabel": "Framework:",
-    "finalNoticeFramework": "Generated via an open-source, patient-led checklist adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticeFramework": "Generated via a patient-led checklist with unvalidated questions adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE or approved by the NHS. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "Patient Notice:",
-    "finalNoticePatient": "This summary report organises your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your doctor does not guarantee a specific diagnosis or prescription.",
+    "finalNoticePatient": "This summary report organises your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your doctor does not guarantee a specific diagnosis or prescription. These symptoms can also have causes other than menopause.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",
-    "finalNoticeConfidentiality": "Your answers are not saved or sent anywhere by this tool. They stay in your browser and are erased when you close or reload this page. Any PDF or printout you make is yours to keep or delete. Like any website, its host keeps standard server logs of requests for the site's files, but your answers are never part of them. In some browsers, if a recording cannot play, the built-in voice may run online; it reads only the question text, never your answers."
+    "finalNoticeConfidentiality": "Your answers are not saved or sent anywhere by this tool. They stay in your browser and are erased when you close or reload this page. Any PDF or printout you make is yours to keep or delete. Like any website, its host keeps standard server logs of requests for the site's files, but your answers are never part of them. In some browsers, if a recording cannot play, the built-in voice may run online; it reads only the question text, never your answers.",
+    "otherCausesNote": "Ang mga sintomas na ito ay maaari ring may ibang dahilan bukod sa menopause."
   },
   "scale": [
     "Hindi talaga",
