@@ -66,7 +66,7 @@ window.registerLanguage({
     "consentLabel": "Megértettem.",
     "finalNoticeTitle": "Notice for Patient",
     "finalNoticeFrameworkLabel": "Framework:",
-    "finalNoticeFramework": "Generated via a patient-led checklist with unvalidated questions adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE or approved by the NHS. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticeFramework": "Generated via a patient-led checklist. Its questions are adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. They have not been validated. The tool is not endorsed by NICE or approved by the NHS. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "Patient Notice:",
     "finalNoticePatient": "This summary report organises your self-reported symptoms into a structured overview for your upcoming doctor's appointment. Presenting this to your doctor does not guarantee a specific diagnosis or prescription. These symptoms can also have causes other than menopause.",
     "finalNoticeConfidentialityLabel": "Data Confidentiality:",

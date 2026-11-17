@@ -66,7 +66,7 @@ window.registerLanguage({
     "consentLabel": "मैं समझती/समझता हूं।",
     "finalNoticeTitle": "रोगी के लिए सूचना",
     "finalNoticeFrameworkLabel": "फ्रेमवर्क:",
-    "finalNoticeFramework": "Generated via a patient-led checklist with unvalidated questions adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. The tool is not endorsed by NICE or approved by the NHS. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
+    "finalNoticeFramework": "Generated via a patient-led checklist. Its questions are adapted from the Greene Climacteric Scale and cross-checked against the symptoms listed in NICE guideline NG23. They have not been validated. The tool is not endorsed by NICE or approved by the NHS. Scored as a Symptom Burden Index (0–45 across 15 domains): 0–11 mild, 12–26 moderate, 27–45 severe. This tool does not provide a diagnosis. It structures your reported symptoms to help make the most of a short consultation.",
     "finalNoticePatientLabel": "रोगी सूचना:",
     "finalNoticePatient": "यह सारांश रिपोर्ट आपके आगामी डॉक्टर अपॉइंटमेंट के लिए आपके द्वारा बताए गए लक्षणों को एक संरचित अवलोकन में व्यवस्थित करती है। इसे अपने डॉक्टर को दिखाने से किसी विशेष निदान या नुस्खे की गारंटी नहीं मिलती। ये लक्षण मेनोपॉज़ के अलावा दूसरे कारणों से भी हो सकते हैं।",
     "finalNoticeConfidentialityLabel": "डेटा गोपनीयता:",
