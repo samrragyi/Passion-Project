@@ -159,7 +159,7 @@ window.registerLanguage({
   "howItWorks": [
     "Listen to the Voice Note: Click the audio button above each question to hear the prompt read aloud in your language.",
     "Select Your Symptom Severity: Choose the button below each question that best describes your experience over the past month:",
-    "Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your doctor during your appointment."
+    "Review Your Summary: Once finished, your responses will generate a short summary to share with your doctor during your appointment."
   ],
   "severityLegend": [
     {

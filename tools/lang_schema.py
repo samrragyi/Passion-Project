@@ -110,5 +110,5 @@ LEGACY_ENGLISH = {
     "legend4_desc": ["A severe symptom is present. The discomfort is extreme, is frequent or significantly affects daily life, sleep or wellbeing."],
     "sec4": ["Mucosal, Skin & Immune (Hidden Markers)"],
     "q14_t": ["Intimate Discomfort & Libido"],
-    "how3": ["Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your GP during your appointment."],
+    "how3": ["Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your GP during your appointment.", "Review Your Summary: Once finished, your responses will generate a 1-page summary to share with your doctor during your appointment."],
 }
